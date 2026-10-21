@@ -218,3 +218,5 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+# dane BDOT10k – za duże na GitHuba, każdy pobiera je sam z Geoportalu
+dane/

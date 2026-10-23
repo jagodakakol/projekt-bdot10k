@@ -1,0 +1,1268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gml:FeatureCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ot="urn:gugik:specyfikacje:gmlas:bazaDanychObiektowTopograficznych10k:2.0" gml:id="GUGiK_OT_PTLZ_A" xsi:schemaLocation="urn:gugik:specyfikacje:gmlas:bazaDanychObiektowTopograficznych10k:2.0 ../XSD/BDOT10k_BDOO.xsd">
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_3303EA7F-C1DE-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA7F-C1DE-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_706</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-6050ce9c-34ac-4ae5-b0c8-fdf81fd45113-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>664725.81 476490.29 664727.13 476475.83 664721.09 476477.17 664709.91 476479.47 664698.91 476481.12 664691.68 476482.71 664682.10 476491.38 664673.74 476502.18 664669.39 476511.06 664664.17 476522.03 664653.27 476541.45 664646.13 476557.30 664641.08 476565.31 664637.87 476570.57 664654.35 476566.39 664658.44 476564.19 664670.26 476553.68 664687.98 476550.09 664699.21 476539.51 664702.67 476534.76 664709.22 476533.71 664725.81 476490.29</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>zadrzewienie</ot:rodzaj>
+			<ot:kategoria>liściasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_56cba4be-c1c5-4b37-a918-b9020dbe6c71_2023-12-31T120000">
+			<ot:lokalnyId>56cba4be-c1c5-4b37-a918-b9020dbe6c71</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_706</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-05d155dd-8385-49a2-8f1f-29d1fca5b823-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>663966.39 476217.08 663972.06 476211.23 663981.27 476213.18 663984.99 476215.84 663987.65 476219.73 663986.94 476223.63 663984.99 476227.00 663985.35 476231.07 663988.72 476232.67 663997.57 476233.73 664002.77 476236.74 664008.25 476243.82 664013.87 476251.10 664027.47 476258.12 664028.66 476248.70 664029.09 476243.42 664029.94 476239.51 664032.87 476236.97 664026.30 476222.59 664016.84 476207.81 664001.33 476197.38 663985.22 476188.77 663969.19 476183.53 663946.00 476178.73 663940.69 476179.79 663919.74 476201.14 663926.55 476205.01 663936.32 476209.09 663942.92 476214.50 663948.93 476221.59 663953.10 476228.77 663957.58 476238.72 663959.63 476252.09 663959.89 476267.76 663959.19 476270.73 663964.77 476275.84 663968.66 476278.21 663972.98 476277.13 663979.03 476274.54 663986.15 476267.63 663987.60 476263.66 663986.85 476260.11 663976.56 476245.15 663969.76 476228.59 663966.39 476217.08</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>zadrzewienie</ot:rodzaj>
+			<ot:kategoria>liściasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_3303EA7F-C119-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA7F-C119-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_706</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-2ac04dc8-07e1-4880-bf70-39ce1e3a5425-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>662737.94 476398.63 662738.04 476393.16 662741.75 476384.80 662729.45 476395.69 662718.85 476398.41 662699.90 476394.27 662686.31 476390.47 662684.40 476382.80 662693.30 476373.12 662704.71 476363.60 662708.79 476346.20 662718.85 476305.68 662694.42 476307.66 662673.53 476342.66 662668.83 476351.20 662663.26 476362.34 662661.70 476373.48 662662.39 476385.15 662664.83 476393.86 662668.14 476399.95 662675.97 476407.27 662681.02 476412.32 662687.11 476418.24 662693.55 476423.46 662699.64 476425.03 662705.18 476426.03 662711.90 476425.57 662718.44 476422.96 662724.80 476419.12 662731.04 476409.55 662736.36 476402.91 662737.94 476398.63</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>zadrzewienie</ot:rodzaj>
+			<ot:kategoria>liściasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_7dbe663e-5d1d-46b2-84d8-50f0525ef389_2023-12-31T120000">
+			<ot:lokalnyId>7dbe663e-5d1d-46b2-84d8-50f0525ef389</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_705</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-042173a4-67cc-4d8d-9acb-dfa141e6098c-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>663762.29 476480.26 663768.36 476429.19 663747.12 476425.79 663740.60 476478.30 663710.74 476477.21 663704.31 476484.29 663690.58 476499.75 663676.56 476504.21 663676.31 476504.33 663666.93 476508.62 663666.66 476511.67 663654.96 476671.41 663658.62 476667.54 663663.96 476663.95 663667.84 476659.01 663672.51 476656.15 663679.27 476652.13 663692.62 476649.52 663703.55 476643.57 663716.79 476638.52 663727.19 476628.06 663735.14 476621.55 663751.52 476612.00 663754.02 476609.74 663759.72 476606.63 663786.40 476484.60 663774.19 476482.37 663762.29 476480.26</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>las</ot:rodzaj>
+			<ot:kategoria>mieszany</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_4da5a6b9-f9db-48c4-9088-d2f43354dd2d_2023-12-31T120000">
+			<ot:lokalnyId>4da5a6b9-f9db-48c4-9088-d2f43354dd2d</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_706</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-732ecf39-77de-4ff5-8346-2c53c1a993be-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>662760.87 476445.75 662774.79 476431.17 662794.50 476405.27 662811.44 476391.99 662825.92 476383.46 662856.72 476374.15 662885.45 476366.59 662901.31 476359.19 662915.11 476351.52 662921.72 476346.09 662918.66 476341.05 662907.75 476344.83 662894.79 476348.55 662874.22 476349.62 662870.87 476349.65 662851.82 476349.85 662825.64 476350.59 662801.88 476355.47 662789.27 476357.21 662779.00 476363.31 662770.82 476369.40 662761.42 476380.02 662756.37 476389.77 662754.63 476396.23 662751.84 476402.32 662747.95 476411.15 662745.14 476415.69 662741.32 476419.00 662739.12 476423.25 662738.39 476427.85 662736.66 476431.07 662732.04 476433.16 662725.66 476435.97 662717.32 476439.03 662709.63 476441.56 662700.18 476441.94 662690.19 476441.19 662707.58 476447.84 662722.42 476453.02 662726.04 476454.40 662745.50 476452.98 662760.87 476445.75</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>zadrzewienie</ot:rodzaj>
+			<ot:kategoria>liściasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_3303EA7F-CE24-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA7F-CE24-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_703</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-41e580fe-235c-4d0c-a543-488bac07822e-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>663737.08 476149.55 663746.05 476149.11 663756.92 476149.55 663769.18 476151.55 663778.50 476153.73 663792.79 476158.55 663798.44 476159.53 663800.42 476144.54 663800.45 476135.16 663782.41 476133.67 663688.21 476129.84 663678.69 476129.62 663673.98 476129.41 663658.78 476128.94 663659.28 476131.63 663662.49 476146.89 663664.43 476156.28 663666.65 476165.94 663691.93 476160.16 663699.24 476158.68 663714.11 476153.55 663727.51 476151.03 663737.08 476149.55</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>las</ot:rodzaj>
+			<ot:kategoria>liściasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_3303EA7F-D18C-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA7F-D18C-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_704</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-ab2de0f8-7ce5-4e41-a29a-04bb2384a996-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>664743.72 475954.47 664738.01 475953.66 664733.12 475958.82 664720.34 475971.06 664718.03 475975.76 664718.32 475979.05 664718.74 475981.36 664724.67 475984.78 664725.76 475986.20 664726.07 475988.10 664725.47 475990.28 664717.28 475992.14 664714.74 475993.71 664713.77 475995.61 664711.21 476012.85 664713.27 476017.84 664723.33 476028.99 664731.76 476029.53 664740.34 475975.70 664743.72 475954.47</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>las</ot:rodzaj>
+			<ot:kategoria>iglasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_3303EA7F-C054-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA7F-C054-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_703</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-17220d9f-0097-43cc-8ab4-61fa40a9f596-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>664523.54 476864.44 664525.40 476857.41 664518.11 476855.78 664489.69 476849.40 664479.73 476845.10 664456.10 476832.17 664427.86 476813.12 664430.53 476840.70 664407.99 476847.86 664417.37 476858.55 664426.94 476872.55 664429.58 476876.04 664447.07 476870.83 664491.70 476859.02 664506.16 476871.36 664518.57 476883.46 664519.57 476880.31 664523.54 476864.44</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>las</ot:rodzaj>
+			<ot:kategoria>liściasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_3d4e0087-b48b-11ee-8b93-44e5174962da_2023-12-31T120000">
+			<ot:lokalnyId>3d4e0087-b48b-11ee-8b93-44e5174962da</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_705</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-ad9d420b-3a38-4a41-9af7-b2536ab71d53-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>664127.47 475785.21 664136.78 475780.82 664145.92 475781.00 664151.37 475784.16 664154.71 475789.43 664149.18 475824.81 664147.33 475836.35 664149.69 475840.72 664153.83 475843.03 664157.17 475844.79 664159.98 475843.73 664165.60 475840.57 664172.28 475831.08 664191.26 475710.18 664198.54 475654.97 664179.41 475653.02 664129.74 475647.96 664089.50 475642.51 664085.92 475667.89 664097.82 475670.39 664101.79 475676.74 664100.20 475687.32 664091.20 475696.05 664081.25 475700.98 664078.48 475720.58 664090.15 475725.42 664096.76 475739.71 664092.26 475757.44 664107.78 475760.33 664104.45 475776.60 664087.76 475774.63 664080.36 475815.64 664092.00 475825.43 664085.12 475852.42 664095.70 475867.50 664108.40 475859.04 664116.98 475848.89 664119.21 475838.63 664121.34 475825.04 664127.47 475785.21</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>las</ot:rodzaj>
+			<ot:kategoria>mieszany</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_19ce49ad-8691-4b42-8543-b951b30b56c4_2023-12-31T120000">
+			<ot:lokalnyId>19ce49ad-8691-4b42-8543-b951b30b56c4</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_706</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-69e037a6-9fa1-4d87-bad5-89bf958eada0-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>662955.89 476317.43 662962.48 476306.99 662970.13 476293.09 662978.36 476279.19 662986.01 476267.93 662996.23 476260.76 663010.69 476255.37 663028.98 476257.06 663039.62 476262.17 663054.94 476272.67 663066.00 476286.57 663075.64 476298.76 663084.44 476310.39 663107.41 476333.08 663115.35 476345.56 663124.71 476354.35 663130.10 476358.61 663138.53 476363.26 663142.62 476365.51 663150.73 476373.50 663203.85 476375.29 663217.56 476374.07 663229.51 476372.60 663235.12 476371.18 663247.69 476367.99 663270.98 476362.36 663298.72 476355.65 663325.89 476349.50 663336.39 476346.74 663338.19 476338.30 663335.89 476312.41 663333.90 476303.34 663317.92 476309.33 663306.94 476312.80 663282.52 476321.33 663259.85 476329.54 663247.20 476332.20 663238.59 476334.36 663232.71 476335.81 663223.83 476340.28 663218.13 476342.53 663210.70 476345.54 663201.60 476350.91 663189.97 476356.74 663172.68 476358.82 663158.68 476359.62 663147.22 476357.11 663139.68 476354.26 663131.50 476350.08 663122.45 476342.94 663116.53 476333.71 663109.40 476316.64 663099.82 476300.10 663087.89 476284.49 663078.49 476271.95 663067.36 476260.98 663056.74 476252.80 663046.47 476244.09 663034.81 476237.47 663027.50 476231.21 663019.84 476225.46 663013.10 476222.41 663003.96 476222.90 662999.45 476224.71 662994.18 476226.64 662988.21 476230.25 662978.46 476241.22 662970.11 476254.97 662964.19 476266.66 662958.10 476281.28 662955.95 476297.29 662951.18 476312.75 662955.89 476317.43</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>zadrzewienie</ot:rodzaj>
+			<ot:kategoria>liściasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_afb97c10-6a54-4199-b340-3f806bb5eb06_2023-12-31T120000">
+			<ot:lokalnyId>afb97c10-6a54-4199-b340-3f806bb5eb06</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_704</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-007b38a9-f854-4ded-92a3-6b154cb8c0c7-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>664559.74 475839.07 664537.17 475834.45 664529.14 475895.54 664547.26 475899.32 664552.08 475900.64 664559.74 475839.07</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>las</ot:rodzaj>
+			<ot:kategoria>iglasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_3303EA7F-C055-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA7F-C055-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_703</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-e31c6d02-6492-4ada-a411-73dc47aef711-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>664523.46 476561.63 664516.84 476557.56 664508.85 476559.71 664498.97 476564.90 664484.08 476574.28 664478.35 476580.00 664483.82 476587.89 664498.46 476590.60 664507.91 476594.20 664511.02 476597.13 664513.95 476598.51 664518.82 476598.15 664523.04 476595.29 664524.40 476591.14 664523.47 476585.27 664523.01 476581.13 664523.31 476568.08 664523.46 476561.63</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>las</ot:rodzaj>
+			<ot:kategoria>liściasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_d94517fc-8a0f-4957-b89a-76f6c953be57_2023-12-31T120000">
+			<ot:lokalnyId>d94517fc-8a0f-4957-b89a-76f6c953be57</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_703</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-ce1e6757-a512-403e-aab4-7d734d8785e1-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>663456.35 476425.07 663457.36 476399.13 663462.74 476399.23 663517.16 476400.26 663543.08 476399.91 663545.96 476399.87 663546.05 476374.42 663546.65 476359.66 663550.14 476362.01 663563.79 476369.78 663569.61 476347.32 663523.80 476342.48 663487.05 476334.98 663480.83 476333.21 663477.30 476327.91 663474.99 476326.45 663463.73 476322.94 663449.29 476318.78 663445.26 476318.69 663439.81 476320.18 663433.01 476322.15 663398.21 476332.22 663374.66 476337.27 663364.04 476340.09 663342.39 476345.69 663336.39 476346.74 663325.89 476349.50 663325.98 476353.13 663326.22 476363.14 663327.83 476411.38 663328.18 476422.01 663335.90 476421.52 663379.32 476418.79 663380.82 476442.57 663400.23 476441.35 663399.86 476436.75 663456.15 476434.95 663456.59 476434.92 663456.35 476425.07</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+					<gml:interior>
+						<gml:LinearRing>
+							<gml:posList>663485.61 476371.79 663488.48 476370.44 663522.46 476370.50 663524.60 476370.69 663525.76 476371.47 663526.49 476373.02 663526.54 476375.07 663525.76 476389.29 663524.27 476390.70 663522.13 476391.79 663486.46 476393.56 663485.03 476393.52 663483.69 476392.66 663482.60 476391.44 663482.53 476389.53 663484.33 476374.31 663485.61 476371.79</gml:posList>
+						</gml:LinearRing>
+					</gml:interior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>las</ot:rodzaj>
+			<ot:kategoria>liściasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_3303EA7F-D0FC-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA7F-D0FC-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_704</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-dacfcd21-9bf7-46ca-83eb-2631c6c14525-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>662552.88 476314.99 662552.50 476321.05 662550.36 476326.80 662549.67 476335.85 662547.93 476346.65 662545.31 476356.75 662546.54 476371.30 662553.86 476374.48 662558.99 476379.93 662562.56 476384.55 662565.28 476403.31 662565.28 476417.99 662552.23 476435.13 662549.27 476445.05 662552.71 476450.61 662573.99 476458.89 662588.71 476460.08 662596.59 476460.08 662604.47 476460.08 662616.03 476456.53 662638.24 476445.88 662654.08 476429.79 662662.02 476418.07 662654.39 476406.40 662648.51 476393.58 662647.51 476385.88 662647.59 476373.97 662648.82 476363.65 662649.75 476353.78 662652.09 476347.28 662653.68 476342.68 662656.95 476337.56 662674.55 476315.59 662639.61 476309.30 662590.49 476309.29 662570.80 476312.03 662552.88 476314.99</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>las</ot:rodzaj>
+			<ot:kategoria>iglasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_27566f01-1314-45fc-b769-53a94807fc8a_2023-12-31T120000">
+			<ot:lokalnyId>27566f01-1314-45fc-b769-53a94807fc8a</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_706</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-711629ab-5203-4373-b326-67392f3ebff3-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>664548.31 475396.20 664552.10 475370.82 664524.02 475366.57 664514.58 475365.14 664510.69 475390.85 664501.51 475389.47 664488.93 475471.29 664496.57 475484.14 664488.72 475536.00 664498.41 475537.02 664526.81 475540.00 664548.31 475396.20</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>zadrzewienie</ot:rodzaj>
+			<ot:kategoria>iglasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_51f7cdda-8a52-11ee-94f6-44e5174962da_2023-12-31T120000">
+			<ot:lokalnyId>51f7cdda-8a52-11ee-94f6-44e5174962da</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_704</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-ba05c90e-4a11-4b58-8df0-bdf85b075fc8-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>662916.75 475828.14 662895.10 475814.62 662892.71 475818.46 662874.27 475848.06 662909.00 475870.71 662930.85 475837.39 662916.75 475828.14</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>las</ot:rodzaj>
+			<ot:kategoria>iglasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_a5a668ed-d645-4a34-b5c3-bbbb9215123e_2023-12-31T120000">
+			<ot:lokalnyId>a5a668ed-d645-4a34-b5c3-bbbb9215123e</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_704</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-31c5004b-bf15-4242-b7ab-aa5af7c2b2ac-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>664637.98 475855.10 664584.21 475844.09 664575.98 475907.20 664626.86 475921.15 664637.98 475855.10</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>las</ot:rodzaj>
+			<ot:kategoria>iglasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_22e6bc14-ae64-4460-be91-894de491ea8f_2023-12-31T120000">
+			<ot:lokalnyId>22e6bc14-ae64-4460-be91-894de491ea8f</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_706</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-e07e742b-e27c-4dd8-a7bf-5da73fb87b1d-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>663680.63 476275.19 663677.75 476236.72 663675.83 476217.95 663674.98 476209.62 663695.65 476202.37 663710.24 476198.58 663720.05 476196.03 663751.96 476188.28 663752.00 476194.36 663763.37 476199.47 663768.28 476196.55 663774.16 476189.27 663775.31 476179.80 663764.09 476176.24 663755.32 476174.67 663751.77 476174.50 663746.24 476173.70 663739.69 476171.23 663734.76 476169.31 663732.50 476168.68 663728.37 476168.63 663722.89 476168.79 663716.63 476171.10 663708.36 476174.35 663687.36 476179.23 663675.26 476182.05 663664.56 476184.88 663641.36 476192.75 663627.04 476199.82 663617.35 476205.27 663610.29 476211.32 663601.83 476220.17 663592.43 476228.18 663580.42 476235.84 663568.07 476241.06 663554.32 476244.72 663543.00 476245.07 663524.03 476244.72 663504.71 476243.67 663487.30 476239.67 663472.86 476235.32 663450.93 476224.17 663433.48 476218.70 663420.17 476214.94 663411.63 476214.50 663405.76 476214.83 663400.50 476218.25 663408.27 476228.93 663443.96 476265.09 663458.50 476250.95 663466.65 476255.84 663483.19 476260.69 663503.30 476256.84 663518.60 476259.12 663541.62 476271.50 663563.08 476274.26 663573.70 476269.59 663589.85 476267.04 663608.21 476252.54 663623.42 476247.46 663645.91 476243.72 663658.04 476247.02 663664.65 476261.58 663664.65 476279.43 663682.49 476299.96 663682.83 476295.85 663680.63 476275.19</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>zadrzewienie</ot:rodzaj>
+			<ot:kategoria>liściasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_3303EA7F-C1DF-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA7F-C1DF-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_706</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-e3995627-c414-41b5-94d0-b383803820e1-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>664421.57 476439.40 664414.74 476438.51 664411.32 476448.75 664404.12 476451.00 664399.67 476454.47 664404.81 476461.76 664412.90 476465.41 664425.28 476471.71 664434.51 476483.65 664443.07 476482.07 664447.72 476477.36 664452.02 476471.82 664455.23 476469.24 664471.44 476467.66 664475.51 476464.00 664464.30 476458.58 664447.32 476450.39 664435.70 476445.22 664427.92 476442.06 664421.57 476439.40</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>zadrzewienie</ot:rodzaj>
+			<ot:kategoria>liściasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_3122799e-40ae-45d1-abb1-63bb48ffc82b_2023-12-31T120000">
+			<ot:lokalnyId>3122799e-40ae-45d1-abb1-63bb48ffc82b</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_706</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-6399842e-232d-4a10-8dc9-f8bb51360072-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>664606.51 477168.11 664625.05 477164.34 664623.08 477122.41 664623.53 477098.32 664611.82 477089.99 664585.93 477083.23 664572.67 477079.94 664586.63 477044.23 664630.42 477043.61 664721.31 477076.56 664728.13 477072.86 664754.28 477058.67 664747.86 477043.68 664735.59 477001.94 664743.32 476989.47 664754.98 476981.91 664759.95 476979.49 664729.60 476928.92 664712.92 476910.02 664709.01 476905.60 664695.34 476895.14 664675.56 476886.62 664617.90 476876.24 664530.75 476858.61 664525.40 476857.41 664523.54 476864.44 664519.57 476880.31 664518.57 476883.46 664513.45 476895.86 664509.45 476900.51 664502.01 476905.28 664493.17 476908.96 664475.48 476914.70 664486.90 476970.60 664480.27 476971.70 664500.52 477057.09 664485.90 477060.90 664437.22 477022.17 664419.22 477044.39 664475.69 477085.77 664481.39 477078.87 664491.51 477076.65 664506.56 477077.43 664563.35 477089.23 664601.79 477094.87 664606.00 477098.10 664608.32 477102.19 664604.02 477142.97 664601.72 477151.58 664594.78 477156.52 664489.00 477165.60 664480.56 477163.68 664484.28 477174.43 664525.18 477175.36 664606.51 477168.11</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+					<gml:interior>
+						<gml:LinearRing>
+							<gml:posList>664711.47 477031.78 664713.10 477031.04 664714.97 477031.07 664719.48 477032.67 664724.08 477035.08 664729.77 477035.95 664732.31 477037.54 664732.84 477038.20 664733.22 477038.81 664733.14 477039.80 664732.97 477041.99 664732.53 477043.70 664731.63 477045.15 664730.42 477046.46 664729.00 477047.13 664727.36 477047.33 664724.30 477046.67 664716.64 477045.80 664711.39 477043.39 664708.15 477040.60 664707.34 477039.12 664707.78 477037.05 664708.98 477034.86 664711.47 477031.78</gml:posList>
+						</gml:LinearRing>
+					</gml:interior>
+					<gml:interior>
+						<gml:LinearRing>
+							<gml:posList>664536.95 476917.88 664548.90 476915.34 664551.48 476916.57 664552.72 476919.80 664554.95 476959.46 664553.57 476961.16 664549.54 476963.44 664545.24 476962.81 664542.77 476961.52 664541.09 476958.98 664532.17 476921.55 664533.85 476919.67 664536.95 476917.88</gml:posList>
+						</gml:LinearRing>
+					</gml:interior>
+					<gml:interior>
+						<gml:LinearRing>
+							<gml:posList>664608.54 476915.67 664608.29 476914.40 664608.89 476912.62 664609.96 476911.90 664611.41 476911.44 664617.11 476910.85 664624.69 476911.07 664625.08 476911.18 664628.26 476912.09 664629.43 476912.75 664630.08 476914.03 664630.51 476916.17 664630.51 476918.34 664629.70 476919.89 664628.16 476921.43 664627.11 476921.72 664625.88 476921.95 664623.19 476921.88 664621.85 476921.85 664620.51 476921.81 664613.05 476919.44 664609.31 476916.67 664608.54 476915.67</gml:posList>
+						</gml:LinearRing>
+					</gml:interior>
+					<gml:interior>
+						<gml:LinearRing>
+							<gml:posList>664641.29 476905.94 664575.82 476901.16 664569.29 476898.77 664566.49 476896.62 664565.15 476894.63 664563.55 476884.75 664565.35 476882.24 664568.17 476881.09 664635.56 476886.34 664641.61 476887.46 664646.39 476891.76 664649.10 476896.54 664649.58 476902.43 664646.55 476905.30 664641.29 476905.94</gml:posList>
+						</gml:LinearRing>
+					</gml:interior>
+					<gml:interior>
+						<gml:LinearRing>
+							<gml:posList>664548.90 476903.55 664541.73 476904.50 664535.36 476903.39 664533.80 476902.34 664532.69 476901.08 664532.36 476899.24 664532.67 476893.89 664533.57 476889.86 664536.26 476886.45 664546.83 476883.63 664551.14 476885.08 664553.04 476888.73 664553.36 476897.97 664551.62 476901.00 664548.90 476903.55</gml:posList>
+						</gml:LinearRing>
+					</gml:interior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>zadrzewienie</ot:rodzaj>
+			<ot:kategoria>liściasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_b6fb5e01-e5f1-11ee-a9f8-44e5174962da_2023-12-31T120000">
+			<ot:lokalnyId>b6fb5e01-e5f1-11ee-a9f8-44e5174962da</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_706</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-e1f67ba5-f230-4231-8890-c34310359920-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>664211.31 475978.78 664212.44 475972.17 664197.06 475982.12 664188.00 476039.36 664190.00 476041.24 664195.11 476046.00 664216.68 476039.60 664202.92 476037.53 664203.64 476032.92 664204.83 476025.25 664205.72 476019.05 664206.71 476012.34 664209.65 475992.39 664210.57 475985.63 664211.31 475978.78</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>zadrzewienie</ot:rodzaj>
+			<ot:kategoria>mieszany</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_3303EA7F-CF6C-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA7F-CF6C-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_703</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-a6c23d9b-2b76-4d75-939f-feb80d41fdd8-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>663789.46 476219.76 663755.50 476222.31 663759.61 476264.64 663760.36 476279.65 663764.08 476299.26 663757.06 476299.59 663742.32 476298.86 663721.92 476299.23 663682.49 476299.96 663679.04 476307.90 663675.82 476318.70 663675.82 476340.47 663744.25 476341.92 663787.49 476345.61 663793.69 476346.35 663796.14 476346.75 663806.17 476348.39 663837.21 476358.20 663871.31 476381.52 663900.20 476355.23 663925.91 476330.01 663919.62 476309.69 663919.14 476284.05 663880.85 476277.82 663825.48 476268.63 663832.71 476231.94 663814.37 476225.97 663802.31 476220.58 663789.46 476219.76</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>las</ot:rodzaj>
+			<ot:kategoria>liściasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_7b3cb937-c98a-4a5e-bbe6-322291851823_2023-12-31T120000">
+			<ot:lokalnyId>7b3cb937-c98a-4a5e-bbe6-322291851823</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_703</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-2dcb2f2c-27c4-45f6-8cc8-3ca45d9c0483-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>663597.07 476271.71 663589.85 476267.04 663573.70 476269.59 663563.08 476274.26 663557.99 476282.33 663554.16 476288.28 663546.09 476293.80 663532.92 476298.90 663517.21 476305.27 663505.38 476321.44 663521.34 476327.00 663555.43 476331.66 663593.23 476333.27 663598.37 476333.66 663600.04 476322.26 663600.89 476300.60 663598.34 476282.76 663597.07 476271.71</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>las</ot:rodzaj>
+			<ot:kategoria>liściasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_4ca18ac7-aee4-4656-9cab-7902c1941ea5_2023-12-31T120000">
+			<ot:lokalnyId>4ca18ac7-aee4-4656-9cab-7902c1941ea5</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_706</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-940bf473-6680-4285-8a7e-3743d1d3d6a9-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>663605.79 476506.26 663604.81 476480.99 663634.01 476489.36 663668.27 476493.57 663666.93 476508.62 663676.31 476504.33 663676.56 476504.21 663690.58 476499.75 663704.31 476484.29 663710.74 476477.21 663717.17 476470.13 663721.28 476442.32 663722.72 476432.95 663705.74 476434.36 663697.06 476435.08 663689.32 476434.69 663675.10 476434.82 663670.66 476472.63 663660.21 476472.39 663645.09 476469.92 663639.19 476468.81 663633.29 476467.70 663616.32 476463.42 663608.11 476460.79 663604.70 476459.74 663601.29 476458.68 663601.20 476455.45 663601.44 476450.99 663601.75 476445.01 663603.61 476411.84 663605.76 476384.58 663580.91 476383.26 663588.00 476395.68 663588.95 476400.77 663590.99 476425.11 663586.72 476453.08 663587.67 476503.14 663587.26 476518.85 663584.76 476534.56 663585.77 476539.49 663583.60 476542.47 663578.72 476546.33 663573.27 476549.97 663567.36 476553.61 663571.85 476557.38 663583.80 476559.77 663650.22 476555.72 663652.56 476534.27 663639.67 476532.56 663628.35 476531.88 663625.03 476529.47 663626.54 476510.46 663626.97 476508.65 663605.79 476506.26</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+					<gml:interior>
+						<gml:LinearRing>
+							<gml:posList>663705.64 476472.67 663703.39 476472.62 663698.47 476471.09 663691.90 476467.70 663689.30 476466.05 663688.68 476464.51 663688.53 476462.63 663689.51 476460.68 663690.97 476459.33 663693.65 476458.29 663697.15 476458.40 663702.62 476458.94 663706.34 476460.26 663708.86 476461.79 663711.27 476464.14 663711.68 476466.30 663711.05 476468.13 663707.55 476471.75 663705.64 476472.67</gml:posList>
+						</gml:LinearRing>
+					</gml:interior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>zadrzewienie</ot:rodzaj>
+			<ot:kategoria>liściasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_3d4e008d-b48b-11ee-b878-44e5174962da_2023-12-31T120000">
+			<ot:lokalnyId>3d4e008d-b48b-11ee-b878-44e5174962da</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_705</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-69d49659-f2a5-49f3-8705-ccda5a5a34fd-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>664638.38 476533.21 664645.27 476515.66 664647.55 476507.22 664649.03 476500.60 664655.16 476493.09 664662.81 476485.01 664669.31 476478.67 664676.41 476472.44 664678.93 476469.39 664683.37 476466.69 664687.98 476464.69 664691.98 476462.78 664697.03 476459.21 664704.61 476456.27 664710.85 476427.07 664730.61 476417.91 664754.25 476397.19 664766.16 476351.49 664764.08 476351.30 664707.22 476346.20 664710.34 476315.73 664733.70 476318.61 664735.81 476306.34 664737.50 476294.66 664778.14 476301.31 664784.76 476290.56 664790.14 476297.96 664828.96 476288.26 664853.52 476289.25 664894.91 476288.85 664905.01 476288.85 664906.61 476279.35 664918.31 476199.41 664919.00 476194.48 664889.87 476185.61 664896.07 476153.02 664830.28 476145.41 664834.51 476124.36 664836.51 476114.40 664841.25 476074.28 664864.04 475912.01 664867.83 475885.03 664894.48 475723.13 664872.58 475716.63 664830.16 475712.11 664789.45 475983.09 664778.45 476066.13 664777.81 476088.76 664773.25 476108.76 664767.04 476153.06 664763.33 476152.41 664759.03 476150.98 664749.66 476147.98 664744.22 476146.40 664721.54 476138.10 664717.25 476136.31 664721.80 476107.48 664708.90 476102.85 664703.54 476101.62 664694.21 476103.71 664687.77 476110.30 664680.98 476121.51 664675.52 476119.61 664669.72 476117.58 664657.00 476113.15 664634.67 476108.27 664615.78 476104.14 664603.71 476101.92 664580.64 476099.55 664519.06 476091.49 664416.18 476078.06 664382.93 476073.45 664350.97 476069.14 664320.93 476066.74 664307.21 476064.91 664312.66 476037.58 664275.61 476031.65 664271.58 476060.81 664251.09 476057.17 664228.39 476054.14 664219.71 476053.10 664214.44 476052.42 664213.92 476054.29 664213.03 476059.75 664210.28 476080.22 664209.02 476088.13 664206.68 476101.25 664205.54 476108.86 664203.55 476122.20 664190.60 476120.55 664198.17 476069.46 664200.23 476056.54 664200.84 476052.70 664201.33 476049.44 664195.89 476046.73 664195.11 476046.00 664190.00 476041.24 664188.00 476039.36 664186.01 476037.49 664175.75 476028.64 664175.49 476031.14 664174.82 476037.60 664168.72 476096.41 664164.80 476095.98 664147.28 476093.86 664140.34 476092.80 664136.38 476120.33 664135.19 476126.23 664128.49 476171.20 664141.55 476173.44 664133.81 476207.80 664133.05 476215.67 664155.61 476230.65 664191.27 476254.86 664198.84 476261.87 664270.20 476307.27 664272.37 476295.14 664279.30 476260.72 664320.72 476270.87 664486.57 476311.51 664508.80 476160.29 664618.89 476187.63 664653.23 476196.10 664689.60 476205.15 664701.92 476207.96 664699.70 476218.24 664685.38 476300.29 664679.95 476331.36 664678.15 476343.37 664672.30 476382.37 664668.77 476405.87 664679.39 476428.49 664679.69 476440.77 664628.58 476423.91 664622.94 476519.31 664604.52 476510.76 664591.19 476503.39 664581.55 476496.86 664570.48 476490.91 664561.91 476487.53 664555.17 476483.82 664551.20 476482.97 664538.63 476478.42 664539.91 476481.39 664551.62 476490.96 664563.67 476498.10 664564.38 476507.72 664566.30 476514.73 664568.31 476520.82 664572.51 476526.52 664581.68 476537.21 664587.96 476543.76 664597.54 476550.32 664606.03 476549.41 664608.99 476544.58 664632.54 476544.02 664633.69 476542.09 664638.38 476533.21</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>las</ot:rodzaj>
+			<ot:kategoria>mieszany</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_3d4e0083-b48b-11ee-b533-44e5174962da_2023-12-31T120000">
+			<ot:lokalnyId>3d4e0083-b48b-11ee-b533-44e5174962da</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_705</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-277bd61c-50d0-463a-9224-26f34e071332-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>664865.54 475632.15 664842.33 475631.09 664832.74 475694.88 664878.71 475698.63 664887.60 475677.68 664901.15 475670.12 664906.23 475633.30 664869.91 475632.35 664865.54 475632.15</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>las</ot:rodzaj>
+			<ot:kategoria>mieszany</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_3303EA7F-C02A-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA7F-C02A-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_703</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-592eaa98-672a-4f72-980a-3ec070f6beea-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>664886.47 476758.13 664890.01 476755.24 664897.09 476767.46 664910.92 476793.51 664918.00 476806.06 664928.61 476804.13 664942.12 476809.60 664999.59 476775.92 664996.28 476771.45 664996.81 476749.80 664969.79 476762.96 664948.23 476764.56 664932.15 476760.70 664903.84 476741.73 664887.76 476735.94 664873.29 476740.76 664862.03 476756.52 664859.10 476763.73 664854.31 476775.50 664843.69 476786.44 664826.32 476790.62 664814.74 476800.27 664813.24 476807.40 664814.44 476807.49 664815.64 476807.58 664819.04 476810.36 664819.92 476813.26 664816.64 476818.56 664845.94 476810.56 664855.01 476806.91 664872.59 476799.83 664876.22 476797.56 664884.22 476792.55 664887.44 476773.57 664886.47 476758.13</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>las</ot:rodzaj>
+			<ot:kategoria>liściasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_3303EA7F-CFD0-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA7F-CFD0-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_703</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-5204476f-fd62-4b09-b0d5-3e7cf6d1e606-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>663597.38 475984.11 663630.68 475948.21 663643.32 475952.84 663648.85 475970.77 663656.11 475975.16 663657.28 475975.83 663659.82 475977.35 663665.15 475978.89 663665.88 475973.42 663670.09 475948.16 663673.14 475929.41 663676.47 475908.74 663676.96 475905.73 663678.71 475890.95 663679.36 475880.22 663678.27 475872.78 663676.93 475869.72 663674.88 475865.05 663665.79 475843.87 663650.20 475806.36 663642.46 475787.74 663634.87 475791.13 663617.54 475801.01 663619.89 475806.12 663604.48 475815.33 663593.19 475825.73 663585.05 475835.88 663571.04 475865.02 663591.72 475902.91 663594.94 475910.42 663557.97 475929.72 663549.04 475927.10 663546.08 475947.00 663529.99 475949.54 663525.55 475971.97 663519.27 475984.20 663521.53 475988.19 663527.03 475987.21 663531.47 475982.77 663541.21 475967.10 663550.95 475971.34 663552.59 475982.82 663556.08 475981.23 663557.55 475980.21 663561.37 475975.84 663565.92 475971.50 663568.57 475970.44 663571.11 475970.97 663576.30 475977.75 663581.06 475983.77 663584.34 475990.33 663585.40 475993.09 663585.08 475995.76 663587.85 475994.49 663597.38 475984.11</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>las</ot:rodzaj>
+			<ot:kategoria>liściasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_746b0d26-de37-4db7-b039-554b10576e27_2023-12-31T120000">
+			<ot:lokalnyId>746b0d26-de37-4db7-b039-554b10576e27</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_704</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-cd215897-a37f-4d25-bc08-e32a57ac3e37-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>663627.63 476066.49 663631.09 476055.17 663632.90 476051.50 663638.00 476041.05 663642.76 476029.94 663639.60 476028.52 663623.52 476038.17 663605.23 476034.84 663602.09 476036.14 663598.39 476039.93 663594.95 476045.67 663592.65 476050.78 663593.45 476056.25 663604.83 476055.54 663612.42 476063.92 663613.59 476060.77 663627.63 476066.49</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>las</ot:rodzaj>
+			<ot:kategoria>iglasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_3303EA7F-CF98-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA7F-CF98-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_703</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-32f784b6-60ae-4cf6-92ed-f1e8c1ed2917-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>664070.92 476390.59 664080.61 476388.77 664090.06 476389.52 664093.28 476380.62 664103.20 476357.29 664104.34 476355.24 664100.98 476346.30 664096.80 476338.74 664096.00 476331.34 664092.30 476320.08 664080.07 476311.39 664064.47 476306.73 664054.66 476306.73 664042.92 476309.30 664036.81 476318.63 664033.72 476326.89 664032.46 476330.27 664031.02 476338.09 664030.38 476351.28 664034.72 476365.76 664044.21 476373.64 664059.32 476384.21 664070.92 476390.59</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+					<gml:interior>
+						<gml:LinearRing>
+							<gml:posList>664059.79 476322.83 664063.66 476320.78 664068.52 476321.25 664072.14 476323.52 664083.36 476341.62 664085.29 476348.42 664079.01 476361.10 664075.24 476363.25 664071.75 476363.38 664051.84 476353.17 664048.97 476351.69 664048.41 476347.95 664057.25 476326.96 664059.79 476322.83</gml:posList>
+						</gml:LinearRing>
+					</gml:interior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>las</ot:rodzaj>
+			<ot:kategoria>liściasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_3303EA7F-C1DA-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA7F-C1DA-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_706</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-2bc9b9f4-d1cc-4757-b185-4a545e9fdc65-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>664989.18 476384.57 664996.37 476379.98 665006.18 476375.04 665015.35 476370.08 665020.73 476368.16 665024.55 476366.85 665030.56 476365.89 665037.70 476365.46 665044.89 476365.90 665048.64 476366.07 665058.38 476367.46 665077.18 476371.47 665095.89 476375.04 665115.38 476377.40 665123.97 476377.34 665130.43 476374.47 665135.06 476371.95 665145.65 476369.16 665151.23 476367.71 665154.56 476366.83 665147.96 476353.46 665139.23 476334.90 665118.08 476343.80 665092.11 476353.36 665080.43 476356.97 665066.63 476361.82 665056.28 476346.88 665043.89 476326.71 664987.72 476365.80 664979.44 476380.04 664966.94 476381.94 664963.33 476375.20 664947.39 476369.02 664963.35 476335.75 664973.51 476314.67 664940.30 476306.58 664934.39 476304.92 664932.13 476311.05 664931.25 476324.28 664928.60 476333.63 664925.43 476336.10 664911.14 476325.87 664899.32 476324.81 664868.67 476357.41 664874.32 476360.05 664880.67 476363.80 664886.68 476367.71 664890.33 476371.37 664899.38 476379.04 664904.14 476382.99 664908.85 476388.41 664913.43 476393.70 664924.30 476400.99 664928.07 476402.23 664934.66 476403.83 664941.45 476405.64 664951.68 476405.58 664959.58 476403.28 664968.53 476401.20 664976.37 476396.36 664978.82 476394.22 664984.46 476389.45 664989.18 476384.57</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>zadrzewienie</ot:rodzaj>
+			<ot:kategoria>liściasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_8e266252-89cf-4341-8a2a-57ff5a5b9cc9_2023-12-31T120000">
+			<ot:lokalnyId>8e266252-89cf-4341-8a2a-57ff5a5b9cc9</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_705</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-f42c085d-3ca5-4681-859a-41487ca216e1-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>663319.66 476293.18 663333.58 476287.26 663343.33 476281.51 663348.38 476275.59 663351.16 476267.06 663354.64 476252.08 663356.38 476244.25 663365.34 476231.26 663371.52 476223.79 663374.19 476220.48 663356.91 476200.57 663338.91 476182.08 663324.03 476169.47 663313.98 476162.38 663307.38 476157.59 663299.24 476151.67 663284.09 476141.48 663262.21 476126.47 663229.95 476105.57 663169.76 476066.60 663092.97 476115.66 663044.92 476152.55 663031.15 476166.72 663023.54 476169.44 663014.84 476174.34 662995.27 476193.37 662979.51 476200.99 662973.88 476193.58 662974.07 476185.21 662928.61 476192.56 662831.58 476188.20 662805.78 476182.35 662792.47 476222.01 662771.96 476293.40 662767.96 476307.32 662776.12 476305.76 662787.37 476296.84 662796.72 476279.85 662808.83 476270.72 662827.94 476266.47 662843.45 476267.96 662849.82 476273.05 662855.13 476274.54 662864.90 476274.54 662879.77 476269.87 662896.12 476266.68 662904.62 476260.73 662912.05 476255.85 662919.49 476254.79 662926.07 476258.61 662931.35 476269.52 662929.76 476272.50 662927.86 476283.38 662928.67 476293.17 662937.88 476299.30 662942.41 476285.02 662946.59 476270.57 662951.46 476256.81 662958.25 476244.62 662969.19 476226.37 662975.92 476222.50 662981.50 476217.35 662986.21 476213.91 662991.19 476211.52 662996.48 476208.70 663000.72 476206.29 663009.52 476205.60 663020.38 476205.51 663037.79 476216.00 663052.66 476226.95 663069.39 476240.77 663082.97 476251.74 663091.21 476258.44 663099.93 476249.39 663109.79 476247.43 663125.20 476253.47 663145.05 476298.89 663148.31 476308.13 663145.13 476315.69 663149.40 476324.72 663161.67 476327.35 663165.86 476332.34 663166.94 476336.02 663165.43 476343.42 663172.77 476342.99 663184.43 476341.24 663196.61 476337.59 663202.88 476334.28 663210.86 476329.55 663223.89 476325.51 663242.23 476319.78 663262.50 476314.42 663278.34 476309.34 663297.38 476301.71 663319.66 476293.18</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>las</ot:rodzaj>
+			<ot:kategoria>mieszany</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_3d4e008b-b48b-11ee-89c2-44e5174962da_2023-12-31T120000">
+			<ot:lokalnyId>3d4e008b-b48b-11ee-89c2-44e5174962da</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_705</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-c399e341-691e-467c-b5d5-7b04a2e5dd4c-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>663449.07 476066.23 663472.49 476061.90 663476.36 476076.84 663504.15 476073.01 663485.75 476039.17 663471.38 476018.82 663465.86 476011.00 663440.05 475970.59 663460.04 475922.38 663477.06 475909.64 663492.11 475900.05 663509.04 475889.61 663521.32 475881.15 663530.07 475867.50 663550.26 475848.50 663557.10 475844.57 663570.61 475840.73 663572.64 475825.68 663572.33 475820.57 663569.43 475807.79 663579.98 475796.18 663581.73 475790.75 663581.87 475784.88 663577.09 475778.90 663561.59 475789.95 663548.28 475774.67 663546.31 475769.68 663522.27 475732.65 663523.09 475726.41 663529.79 475718.75 663591.74 475684.63 663597.38 475681.91 663584.37 475656.00 663593.45 475651.22 663626.62 475633.89 663644.47 475668.10 663660.67 475698.85 663620.83 475718.35 663615.20 475720.90 663620.05 475733.06 663642.46 475787.74 663650.20 475806.36 663654.81 475804.44 663655.20 475804.25 663702.57 475781.81 663711.21 475799.32 663714.86 475806.43 663716.49 475810.05 663732.17 475782.32 663761.17 475741.11 663808.11 475678.53 663847.79 475633.12 663879.85 475597.25 663900.07 475580.46 663931.37 475565.19 663938.23 475557.18 663943.58 475546.11 663956.28 475499.88 663853.58 475327.44 663777.78 475200.04 663751.73 475182.63 663704.66 475163.92 663693.50 475164.08 663683.66 475168.55 663679.83 475170.79 663671.87 475196.48 663663.37 475208.62 663653.93 475222.10 663636.12 475214.96 663623.83 475234.20 663620.79 475236.02 663572.09 475202.28 663559.22 475194.33 663553.54 475194.33 663548.06 475197.74 663546.35 475200.76 663545.97 475203.03 663554.30 475209.28 663563.01 475214.58 663566.21 475220.60 663556.99 475222.06 663530.75 475244.26 663524.75 475252.33 663523.61 475259.90 663527.24 475267.15 663532.20 475272.88 663540.97 475278.98 663542.64 475279.73 663546.51 475281.46 663555.67 475283.37 663566.92 475287.38 663576.27 475293.87 663580.85 475299.02 663587.34 475303.98 663597.07 475309.32 663629.82 475336.94 663625.50 475344.24 663621.11 475346.72 663615.77 475350.15 663607.37 475355.30 663602.22 475358.74 663594.78 475358.93 663588.29 475358.17 663583.33 475354.35 663578.18 475347.10 663559.96 475334.50 663533.09 475300.44 663506.45 475319.90 663460.28 475353.12 663425.87 475378.03 663417.63 475382.24 663410.36 475368.03 663406.17 475360.21 663394.55 475342.19 663392.22 475344.32 663388.14 475348.06 663347.29 475392.00 663328.87 475414.29 663338.07 475426.27 663374.08 475453.51 663369.92 475459.89 663382.08 475467.48 663378.97 475487.05 663395.94 475496.13 663387.60 475513.56 663391.22 475521.61 663383.97 475533.08 663378.98 475540.39 663338.02 475529.16 663329.73 475526.88 663300.30 475508.43 663284.71 475497.86 663311.87 475467.05 663293.59 475456.59 663320.43 475424.21 663267.86 475385.89 663264.80 475383.66 663246.49 475372.35 663209.84 475414.63 663218.56 475419.54 663224.28 475423.90 663229.11 475428.24 663232.41 475433.63 663232.68 475437.86 663230.71 475441.32 663228.34 475444.72 663226.48 475447.42 663223.13 475448.46 663218.49 475448.18 663204.39 475441.43 663190.22 475431.81 663186.43 475428.41 663186.13 475425.51 663181.29 475432.35 663172.29 475426.90 663161.62 475438.79 663155.06 475446.09 663118.97 475486.31 663111.25 475492.63 663091.06 475506.12 663086.85 475509.74 663078.68 475514.52 663092.56 475525.79 663138.16 475556.32 663205.32 475600.40 663253.21 475630.73 663269.24 475639.70 663280.12 475649.62 663293.85 475658.97 663306.83 475668.13 663318.85 475675.76 663324.00 475678.43 663334.11 475678.43 663343.46 475674.62 663352.43 475666.41 663358.54 475660.69 663364.45 475653.82 663366.17 475648.86 663365.40 475643.33 663358.35 475636.27 663345.18 475628.25 663311.23 475605.41 663310.48 475604.92 663245.84 475563.36 663248.13 475552.34 663256.30 475545.31 663263.23 475544.78 663292.27 475563.08 663332.97 475590.02 663332.32 475591.84 663334.59 475594.49 663373.76 475621.18 663377.74 475622.50 663382.47 475620.23 663395.96 475602.01 663401.22 475604.74 663403.22 475609.85 663402.93 475624.08 663384.35 475649.65 663383.38 475658.26 663359.41 475682.43 663349.45 475690.18 663345.98 475692.88 663318.04 475714.62 663310.98 475722.68 663304.24 475730.39 663298.77 475734.12 663276.77 475744.29 663261.77 475746.82 663239.44 475749.01 663216.23 475752.07 663197.63 475758.64 663183.18 475766.96 663153.18 475786.24 663130.85 475797.84 663116.85 475803.77 663057.28 475834.29 663042.40 475840.80 663030.46 475845.86 663010.48 475856.37 662983.92 475869.26 662958.78 475881.91 662940.33 475891.14 663088.49 475989.69 663273.51 476109.50 663284.04 476116.72 663320.36 476141.88 663325.65 476146.35 663330.80 476150.70 663344.63 476156.41 663353.24 476156.60 663378.35 476155.01 663404.00 476151.98 663402.80 476144.23 663395.70 476116.28 663393.19 476107.66 663391.30 476102.07 663390.71 476097.26 663404.27 476092.67 663407.14 476091.38 663402.82 476075.45 663406.21 476074.87 663419.67 476072.54 663449.07 476066.23</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+					<gml:interior>
+						<gml:LinearRing>
+							<gml:posList>663420.92 475549.53 663424.18 475536.48 663425.72 475530.25 663430.56 475522.45 663446.08 475507.40 663464.03 475519.27 663481.99 475531.14 663500.79 475542.47 663503.44 475542.53 663505.59 475541.89 663508.76 475539.70 663519.59 475555.05 663533.94 475577.35 663525.28 475580.10 663522.61 475580.66 663516.91 475580.82 663508.54 475580.90 663503.31 475582.13 663489.28 475587.23 663420.92 475549.53</gml:posList>
+						</gml:LinearRing>
+					</gml:interior>
+					<gml:interior>
+						<gml:LinearRing>
+							<gml:posList>663535.52 475509.19 663514.33 475465.24 663564.97 475433.64 663588.39 475482.04 663536.67 475511.57 663535.52 475509.19</gml:posList>
+						</gml:LinearRing>
+					</gml:interior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>las</ot:rodzaj>
+			<ot:kategoria>mieszany</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_7e67ed91-e8b5-418b-b821-111c74314d25_2023-12-31T120000">
+			<ot:lokalnyId>7e67ed91-e8b5-418b-b821-111c74314d25</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_706</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-4c2b972f-85c4-4f23-ba0d-03824c530f34-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>663589.95 476212.22 663595.56 476204.93 663599.35 476199.16 663589.59 476201.13 663568.85 476206.10 663559.90 476208.24 663535.17 476209.11 663520.74 476208.15 663518.36 476208.00 663469.18 476204.02 663469.18 476203.62 663469.18 476203.22 663473.52 476190.76 663474.18 476180.04 663475.05 476175.66 663475.49 476169.31 663477.02 476162.31 663482.64 476151.46 663484.78 476147.33 663487.20 476142.65 663474.52 476145.38 663471.80 476145.68 663462.70 476146.69 663449.47 476147.79 663432.40 476149.54 663428.31 476150.23 663404.00 476151.98 663378.35 476155.01 663353.24 476156.60 663344.63 476156.41 663348.70 476165.13 663372.30 476188.36 663377.68 476193.66 663389.26 476207.89 663398.07 476202.18 663404.63 476198.79 663410.43 476197.57 663417.72 476196.29 663423.04 476197.58 663432.09 476200.89 663440.97 476205.43 663455.59 476213.26 663462.38 476217.36 663469.16 476221.45 663481.17 476225.80 663495.61 476229.46 663513.02 476230.15 663517.33 476230.19 663531.29 476230.33 663553.74 476229.11 663564.40 476227.62 663568.71 476227.02 663573.94 476225.46 663582.29 476220.58 663589.95 476212.22</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>zadrzewienie</ot:rodzaj>
+			<ot:kategoria>liściasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_3303EA7F-C140-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA7F-C140-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_706</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-df6e73a1-2237-46ca-8f9b-0d822d90188a-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>664119.73 476449.02 664098.92 476423.49 664097.45 476430.11 664098.14 476441.29 664098.49 476448.43 664100.23 476454.53 664103.45 476462.10 664109.89 476471.42 664120.24 476481.95 664132.76 476492.84 664139.12 476497.97 664150.69 476503.02 664160.09 476505.64 664168.96 476506.85 664180.36 476506.94 664191.33 476505.03 664200.55 476502.68 664209.95 476498.41 664221.61 476492.66 664167.36 476490.19 664149.66 476480.66 664145.69 476477.45 664133.11 476465.17 664119.73 476449.02</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>zadrzewienie</ot:rodzaj>
+			<ot:kategoria>liściasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_3303EA7F-C053-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA7F-C053-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_703</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-d74b3943-8387-4b2a-810b-2ff650b0acc8-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>664774.31 476669.17 664769.65 476683.64 664764.64 476689.78 664760.32 476701.98 664755.24 476706.68 664749.54 476709.86 664747.29 476716.45 664749.22 476728.52 664752.44 476735.59 664762.57 476755.22 664765.33 476765.76 664763.66 476769.01 664760.81 476772.85 664756.94 476775.32 664726.22 476780.15 664704.87 476782.33 664699.64 476781.95 664696.61 476779.06 664693.25 476774.68 664688.94 476773.08 664683.93 476772.48 664680.11 476773.76 664674.11 476779.02 664673.31 476784.25 664673.00 476789.14 664675.96 476792.92 664682.80 476799.77 664687.75 476801.57 664689.15 476803.13 664689.17 476805.08 664688.56 476807.41 664687.37 476809.11 664684.68 476810.34 664644.20 476817.78 664573.75 476848.98 664650.47 476863.46 664675.88 476869.25 664698.56 476877.61 664723.01 476890.96 664738.93 476903.02 664786.21 476889.19 664772.38 476839.98 664799.50 476823.10 664796.47 476821.71 664795.08 476817.68 664796.72 476814.77 664797.73 476813.45 664775.52 476810.81 664772.99 476807.93 664771.88 476810.11 664770.87 476814.65 664771.00 476819.19 664772.89 476822.85 664776.42 476826.63 664776.55 476829.03 664774.15 476830.16 664768.35 476828.02 664764.95 476825.75 664763.56 476822.09 664763.31 476817.17 664763.31 476810.49 664765.83 476804.81 664769.61 476799.01 664774.53 476794.09 664776.04 476790.68 664776.29 476787.02 664777.43 476783.11 664780.20 476781.34 664782.85 476780.97 664785.37 476783.24 664786.63 476786.64 664786.52 476787.04 664786.41 476787.44 664794.21 476785.44 664795.93 476784.28 664796.34 476782.62 664791.61 476774.20 664787.55 476761.79 664778.80 476751.94 664775.44 476746.66 664767.88 476724.34 664768.68 476716.29 664780.26 476712.43 664787.66 476704.55 664794.26 476690.72 664794.74 476672.71 664787.07 476671.60 664774.31 476669.17</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+					<gml:interior>
+						<gml:LinearRing>
+							<gml:posList>664742.90 476849.16 664745.39 476847.13 664758.02 476844.57 664762.70 476845.60 664764.95 476850.73 664769.92 476875.92 664768.84 476880.65 664765.91 476882.84 664753.59 476885.43 664750.43 476884.42 664748.21 476881.06 664741.88 476852.88 664742.90 476849.16</gml:posList>
+						</gml:LinearRing>
+					</gml:interior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>las</ot:rodzaj>
+			<ot:kategoria>liściasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_3303EA7F-D19E-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA7F-D19E-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_704</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-314cb5d2-fcf9-4874-8dcc-3fca4e29cfcd-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>664152.60 476309.26 664149.34 476309.12 664142.98 476371.31 664133.11 476465.17 664145.69 476477.45 664149.66 476480.66 664167.36 476490.19 664173.26 476455.44 664186.31 476310.76 664152.60 476309.26</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>las</ot:rodzaj>
+			<ot:kategoria>iglasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_3303EA7F-CF9C-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA7F-CF9C-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_703</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-3cae8ac0-c5bc-411f-ad1f-4bdf3371b03d-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>662674.55 476315.59 662683.86 476301.71 662689.08 476291.44 662691.35 476282.91 662695.67 476273.13 662694.85 476266.11 662690.16 476261.04 662681.75 476259.60 662665.97 476255.52 662649.81 476251.63 662639.68 476252.37 662624.50 476256.22 662612.87 476261.04 662604.41 476264.38 662586.81 476275.01 662574.88 476284.94 662559.06 476299.05 662554.90 476305.75 662553.76 476310.71 662552.88 476314.99 662570.80 476312.03 662590.49 476309.29 662639.61 476309.30 662674.55 476315.59</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>las</ot:rodzaj>
+			<ot:kategoria>liściasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_b6e14641-e5f1-11ee-81fb-44e5174962da_2023-12-31T120000">
+			<ot:lokalnyId>b6e14641-e5f1-11ee-81fb-44e5174962da</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_703</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-0492c92f-9fea-4340-ab4c-6327b52974f9-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>664140.70 477239.24 664165.10 477228.31 664177.50 477248.28 664189.99 477269.71 664190.47 477270.91 664190.63 477270.81 664224.54 477250.77 664260.08 477227.62 664225.50 477171.47 664247.32 477161.17 664269.14 477150.87 664280.05 477144.10 664293.50 477148.05 664304.89 477151.28 664322.52 477157.39 664338.39 477162.66 664352.73 477175.07 664360.17 477172.53 664361.03 477172.53 664362.42 477172.67 664363.61 477172.80 664364.67 477173.19 664366.90 477174.60 664368.38 477175.03 664371.87 477175.45 664376.32 477175.66 664383.30 477175.34 664391.74 477175.69 664387.05 477141.70 664369.16 477105.90 664360.64 477100.33 664351.53 477088.02 664334.82 477072.52 664319.97 477066.11 664261.80 477063.33 664252.90 477063.85 664224.76 477065.48 664196.46 477002.37 664183.87 476971.54 664171.98 476959.84 664170.88 476951.29 664256.00 476926.02 664260.46 476939.66 664278.31 476986.88 664292.18 477020.10 664302.84 477039.94 664306.26 477045.16 664312.70 477055.00 664336.06 477042.59 664413.16 477019.60 664419.44 477017.83 664418.80 477005.74 664408.62 476970.21 664394.80 476973.48 664365.83 476982.89 664362.06 476972.74 664351.63 476944.69 664373.15 476936.74 664354.40 476884.75 664322.66 476894.01 664319.90 476887.53 664316.72 476876.10 664316.12 476875.04 664285.56 476813.08 664281.99 476813.84 664258.69 476816.32 664241.82 476818.09 664219.16 476821.65 664211.60 476823.51 664175.44 476828.55 664174.95 476762.78 664207.56 476757.23 664241.01 476752.05 664252.89 476750.54 664254.48 476743.54 664257.91 476723.76 664258.23 476709.96 664257.30 476691.04 664248.39 476683.97 664194.58 476645.52 664184.42 476646.48 664157.82 476659.06 664135.10 476681.80 664120.59 476703.57 664102.21 476700.67 664062.65 476695.53 664053.85 476690.03 664045.81 476681.28 664044.94 476661.84 664049.50 476646.97 664048.78 476639.71 664041.81 476633.87 664038.11 476632.21 664033.52 476632.67 664015.21 476638.94 664004.18 476635.49 664003.92 476637.77 664003.28 476639.85 664001.61 476641.58 663999.16 476643.41 663993.48 476644.66 663989.17 476644.32 663983.29 476643.06 663977.72 476643.37 663970.69 476647.36 663963.44 476649.04 663955.39 476647.80 663951.32 476647.69 663945.57 476647.51 663936.98 476653.69 663924.21 476668.24 663921.37 476673.44 663962.73 476675.28 663962.46 476675.51 663954.24 476692.45 663956.17 476713.74 663987.60 476768.41 663996.31 476796.47 663993.41 476842.91 663969.71 476859.85 663949.89 476873.88 663947.18 476836.81 663962.03 476829.61 663977.74 476807.94 663975.62 476794.14 663969.25 476780.33 663959.07 476770.83 663946.52 476767.16 663933.21 476767.94 663928.37 476769.23 663926.16 476772.37 663927.54 476778.22 663927.48 476785.13 663924.96 476788.27 663919.46 476788.44 663915.30 476786.07 663910.05 476775.04 663906.62 476771.27 663900.10 476767.92 663876.26 476760.42 663867.19 476762.12 663847.85 476789.21 663819.32 476795.50 663771.83 476798.10 663771.60 476793.97 663770.70 476780.68 663769.13 476764.92 663769.31 476754.53 663769.36 476748.68 663754.94 476750.51 663752.18 476783.17 663747.66 476783.65 663726.16 476785.96 663698.71 476794.97 663689.87 476789.46 663657.45 476776.85 663630.59 476772.04 663627.28 476771.45 663592.38 476769.65 663591.96 476773.87 663591.40 476781.76 663590.43 476806.35 663676.24 476828.02 663700.36 476846.79 663709.55 476874.85 663697.94 476929.03 663690.69 476961.45 663683.92 476985.16 663629.65 476962.38 663616.28 477002.85 663614.96 477009.09 663673.27 477009.30 663683.00 477009.07 663701.63 477009.26 663712.64 477010.28 663715.36 477009.97 663717.66 477009.83 663752.17 477016.99 663835.07 477034.19 663874.37 477042.08 663909.65 477047.97 663951.85 477059.04 663957.82 477060.25 664006.15 477151.98 664017.53 477172.14 664022.43 477178.63 664026.69 477182.51 664036.36 477197.26 664039.43 477202.61 664018.23 477208.29 663977.79 477223.12 663954.99 477231.48 663979.78 477269.79 664015.46 477284.49 664021.45 477287.43 664025.55 477288.80 664029.81 477289.82 664034.90 477290.39 664042.50 477290.52 664049.23 477291.82 664088.26 477301.70 664111.05 477308.18 664115.81 477315.74 664139.09 477302.95 664155.62 477292.91 664141.13 477271.06 664126.53 477247.16 664134.20 477243.18 664140.70 477239.24</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+					<gml:interior>
+						<gml:LinearRing>
+							<gml:posList>663822.21 476930.03 663811.11 476929.12 663799.25 476929.57 663782.82 476927.60 663776.51 476925.77 663770.20 476923.94 663764.12 476918.77 663758.79 476913.75 663756.97 476908.43 663757.58 476905.08 663761.23 476901.27 663767.46 476899.75 663777.05 476899.75 663791.95 476901.88 663806.85 476906.14 663823.43 476911.77 663832.40 476916.95 663837.73 476920.45 663840.16 476924.71 663839.40 476927.90 663836.36 476930.49 663831.34 476930.64 663822.21 476930.03</gml:posList>
+						</gml:LinearRing>
+					</gml:interior>
+					<gml:interior>
+						<gml:LinearRing>
+							<gml:posList>663858.92 476907.76 663828.86 476894.16 663836.47 476879.69 663843.73 476845.58 663848.65 476828.30 663872.74 476847.52 663921.10 476892.75 663911.43 476904.12 663891.60 476915.98 663878.50 476922.51 663867.82 476914.12 663858.92 476907.76</gml:posList>
+						</gml:LinearRing>
+					</gml:interior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>las</ot:rodzaj>
+			<ot:kategoria>liściasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_3303EA7F-C13F-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA7F-C13F-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_706</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-72afb9ac-c232-4369-a1e0-93b3d7e84945-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>663125.20 476253.47 663109.79 476247.43 663099.93 476249.39 663091.21 476258.44 663103.81 476275.62 663118.99 476307.12 663129.09 476326.27 663138.31 476336.54 663144.40 476340.55 663150.67 476342.46 663160.93 476343.68 663165.43 476343.42 663166.94 476336.02 663165.86 476332.34 663161.67 476327.35 663149.40 476324.72 663145.13 476315.69 663148.31 476308.13 663145.05 476298.89 663125.20 476253.47</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>zadrzewienie</ot:rodzaj>
+			<ot:kategoria>liściasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_3303EA7F-C1DB-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA7F-C1DB-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_706</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-1a75a644-407b-419d-ae8f-ff4cf38ecc92-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>664867.82 476418.61 664878.44 476412.49 664908.67 476418.29 664918.07 476423.01 664922.64 476430.30 664933.14 476437.55 664944.84 476441.44 664954.14 476442.19 664963.99 476440.47 664972.51 476435.73 664977.47 476430.78 664983.88 476409.47 664980.29 476411.90 664975.78 476416.50 664970.98 476419.12 664966.54 476421.39 664957.40 476423.61 664956.16 476423.99 664950.07 476423.79 664943.92 476422.93 664938.48 476421.75 664924.19 476417.88 664908.32 476412.26 664901.62 476406.61 664894.30 476400.17 664884.73 476390.76 664868.14 476384.84 664853.39 476386.77 664832.76 476394.81 664811.60 476404.55 664807.72 476409.67 664796.64 476426.22 664789.09 476440.68 664781.83 476455.55 664803.16 476457.53 664823.75 476454.32 664850.77 476431.48 664867.82 476418.61</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>zadrzewienie</ot:rodzaj>
+			<ot:kategoria>liściasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_c4bbd000-1959-4de3-829a-1e1b8d010344_2023-12-31T120000">
+			<ot:lokalnyId>c4bbd000-1959-4de3-829a-1e1b8d010344</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_705</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-2bdaa065-de85-4754-b4f8-3d4878331244-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>663256.21 476606.00 663243.07 476603.70 663221.26 476604.51 663196.60 476600.17 663184.68 476593.27 663162.07 476573.04 663156.60 476562.12 663148.20 476562.05 663133.65 476559.71 663132.73 476564.10 663131.81 476568.48 663117.91 476564.07 663109.74 476560.87 663106.68 476559.67 663090.67 476552.11 663076.25 476546.12 663064.65 476541.66 663056.63 476539.09 663048.60 476536.52 663041.23 476534.47 663043.70 476525.60 663051.56 476491.69 663034.74 476484.68 663011.09 476478.87 663017.47 476451.54 663013.01 476450.48 662977.71 476444.22 662986.20 476410.27 663012.20 476414.75 663020.31 476415.67 663025.68 476416.29 663034.25 476383.22 663089.61 476378.30 663112.56 476375.93 663142.32 476373.91 663150.73 476373.50 663142.62 476365.51 663138.53 476363.26 663130.10 476358.61 663124.71 476354.35 663115.35 476345.56 663107.41 476333.08 663084.44 476310.39 663075.64 476298.76 663066.00 476286.57 663054.94 476272.67 663039.62 476262.17 663028.98 476257.06 663010.69 476255.37 662996.23 476260.76 662986.01 476267.93 662978.36 476279.19 662970.13 476293.09 662962.48 476306.99 662955.89 476317.43 662951.18 476312.75 662947.75 476319.21 662944.64 476324.39 662937.40 476330.46 662929.38 476335.44 662923.80 476338.57 662918.66 476341.05 662921.72 476346.09 662915.11 476351.52 662901.31 476359.19 662885.45 476366.59 662856.72 476374.15 662825.92 476383.46 662811.44 476391.99 662794.50 476405.27 662774.79 476431.17 662760.87 476445.75 662745.50 476452.98 662726.04 476454.40 662722.42 476453.02 662724.90 476462.05 662726.04 476481.14 662726.04 476483.11 662728.33 476483.79 662777.07 476456.55 662819.78 476432.38 662871.82 476399.26 662876.80 476396.45 662885.06 476400.84 662888.36 476402.27 662896.87 476405.20 662903.54 476405.99 662911.70 476406.61 662922.51 476407.41 662929.76 476409.96 662947.88 476415.39 662953.55 476419.30 662957.87 476427.27 662962.05 476431.09 662968.03 476437.69 662973.57 476447.96 662973.18 476461.53 662974.83 476471.66 662977.24 476486.02 662973.00 476488.91 662972.07 476501.51 662998.96 476519.49 663020.59 476533.96 663018.66 476541.64 663124.67 476582.99 663153.03 476592.58 663151.67 476599.07 663154.27 476600.71 663183.52 476618.23 663219.98 476632.71 663243.34 476640.54 663283.38 476674.07 663291.72 476670.04 663291.70 476666.02 663291.69 476663.69 663291.53 476653.45 663276.66 476641.90 663266.50 476627.95 663261.76 476612.91 663256.21 476606.00</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>las</ot:rodzaj>
+			<ot:kategoria>mieszany</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_3303EA7F-D20E-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA7F-D20E-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_704</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-dfd1da9a-6084-426f-81b7-f64f6a4efc23-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>664187.45 475978.54 664191.29 475950.29 664197.28 475914.68 664198.60 475904.48 664183.52 475902.93 664183.46 475902.92 664183.23 475904.57 664174.64 475966.50 664168.89 475965.19 664165.69 475993.00 664167.87 476002.38 664189.76 475986.84 664187.45 475978.54</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>las</ot:rodzaj>
+			<ot:kategoria>iglasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_3d4e0085-b48b-11ee-92c6-44e5174962da_2023-12-31T120000">
+			<ot:lokalnyId>3d4e0085-b48b-11ee-92c6-44e5174962da</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_705</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-b90d6346-7569-4605-9258-4fdd22ec3168-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>664270.05 475662.25 664228.66 475658.03 664227.72 475664.22 664226.49 475677.05 664225.09 475684.78 664219.12 475712.86 664212.26 475731.00 664207.34 475750.16 664205.05 475763.69 664201.89 475784.77 664194.60 475824.58 664193.73 475841.45 664200.22 475844.08 664209.01 475842.68 664220.34 475839.07 664224.74 475836.26 664229.13 475832.75 664236.69 475826.25 664242.84 475816.05 664248.64 475807.97 664251.98 475801.14 664256.62 475785.60 664258.30 475766.67 664263.44 475704.18 664269.62 475665.16 664270.05 475662.25</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>las</ot:rodzaj>
+			<ot:kategoria>mieszany</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_3f0e9a0c-f2f7-44be-a66c-4b161241747f_2023-12-31T120000">
+			<ot:lokalnyId>3f0e9a0c-f2f7-44be-a66c-4b161241747f</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_704</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-cf1bb864-3e4c-4b01-a517-bc7030c25a29-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>662967.52 477084.21 662999.09 477055.84 663040.05 477019.05 663048.21 476951.31 663048.92 476945.53 663051.30 476926.06 663051.70 476919.32 663069.36 476925.56 663106.00 476940.57 663108.55 476941.22 663244.46 476988.20 663338.09 477016.61 663373.58 477024.80 663394.68 477030.28 663406.15 477030.33 663417.34 477028.80 663426.90 477026.85 663457.89 477022.41 663488.64 477019.97 663530.87 477017.78 663532.87 477010.32 663540.19 476986.14 663547.74 476960.53 663590.50 476972.34 663601.96 476934.43 663616.65 476879.62 663537.62 476888.28 663527.09 476883.38 663525.85 476883.46 663512.37 476876.53 663487.31 476863.65 663486.91 476863.44 663482.24 476874.03 663474.25 476888.84 663467.99 476898.66 663461.64 476911.14 663456.42 476921.83 663450.02 476933.20 663445.18 476946.94 663443.16 476957.85 663400.38 476979.31 663391.85 476983.59 663382.41 476972.53 663373.90 476958.15 663365.60 476946.34 663353.58 476927.90 663343.15 476915.12 663335.01 476908.44 663327.19 476901.44 663329.98 476897.03 663343.15 476873.61 663353.23 476851.49 663320.62 476834.65 663320.20 476835.30 663293.48 476874.86 663253.98 476844.14 663236.70 476828.70 663232.62 476826.17 663212.63 476813.78 663176.60 476784.94 663166.26 476774.60 663161.83 476771.57 663157.82 476768.20 663156.23 476762.10 663155.92 476749.53 663157.88 476734.24 663161.19 476717.45 663163.04 476704.54 663163.86 476692.45 663161.76 476688.70 663155.40 476684.82 663147.08 476681.78 663143.41 476680.24 663109.91 476666.16 663087.61 476656.74 663075.69 476651.31 663045.73 476637.65 663002.11 476620.79 662992.36 476617.16 662980.04 476612.04 662978.57 476628.06 662962.68 476628.04 662959.82 476666.04 662920.04 476664.88 662916.97 476657.74 662915.56 476660.01 662905.28 476670.15 662893.74 476680.45 662883.52 476686.65 662861.94 476686.83 662864.68 476706.94 662863.81 476716.60 662864.16 476726.44 662955.71 476733.77 662951.19 476807.39 662947.15 476874.14 662946.69 476882.20 662940.99 476956.44 662953.57 476955.96 662943.41 477067.48 662930.11 477066.55 662927.30 477113.59 662934.65 477109.99 662938.66 477109.44 662942.67 477108.89 662952.41 477097.78 662967.52 477084.21</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>las</ot:rodzaj>
+			<ot:kategoria>iglasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_0fbe2e57-22b9-4e08-807d-3b35aba7e741_2023-12-31T120000">
+			<ot:lokalnyId>0fbe2e57-22b9-4e08-807d-3b35aba7e741</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_703</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-3aac7cfb-65ff-4d30-8b48-a5affd8780cb-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>662703.61 476764.97 662707.71 476746.21 662735.31 476747.93 662760.01 476755.72 662766.24 476757.72 662778.85 476761.73 662784.59 476739.39 662793.84 476742.57 662797.46 476730.74 662784.96 476699.41 662770.23 476673.36 662756.47 476655.65 662754.84 476643.27 662752.52 476618.10 662757.45 476581.17 662740.45 476578.60 662743.07 476557.39 662730.37 476556.11 662730.05 476527.66 662726.01 476491.12 662726.04 476485.07 662706.03 476496.86 662684.36 476509.62 662662.98 476521.91 662651.08 476528.06 662641.71 476530.04 662636.78 476530.66 662628.42 476528.57 662616.39 476524.47 662604.87 476519.74 662587.71 476511.97 662583.30 476522.87 662606.94 476532.66 662590.40 476562.83 662603.36 476570.68 662612.43 476578.20 662596.45 476596.70 662587.48 476605.67 662580.94 476615.72 662583.72 476623.11 662599.49 476644.24 662617.38 476663.11 662642.03 476682.25 662634.15 476717.68 662683.16 476736.64 662671.48 476764.95 662657.94 476797.58 662654.70 476802.26 662667.55 476803.49 662699.04 476805.90 662699.29 476799.31 662699.15 476794.25 662699.68 476784.40 662703.61 476764.97</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>las</ot:rodzaj>
+			<ot:kategoria>liściasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_881b45f5-084c-4f14-9d34-c64704ac1bc2_2023-12-31T120000">
+			<ot:lokalnyId>881b45f5-084c-4f14-9d34-c64704ac1bc2</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_704</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-c8e0b18d-a0f8-49b4-8fb2-0a20b2209632-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>662452.66 476419.50 662461.85 476418.77 662472.62 476420.74 662480.43 476423.14 662491.45 476426.15 662502.07 476423.14 662506.28 476415.53 662512.77 476403.21 662515.76 476398.68 662518.76 476391.04 662522.48 476380.13 662528.03 476366.44 662532.55 476353.90 662535.16 476344.32 662536.38 476335.09 662536.91 476317.41 662538.65 476307.83 662545.28 476295.91 662555.61 476282.42 662573.24 476269.68 662595.01 476252.74 662618.13 476240.45 662629.84 476236.77 662643.47 476234.63 662653.17 476234.70 662667.44 476238.18 662679.45 476239.75 662688.50 476243.06 662694.94 476247.24 662702.78 476252.45 662707.17 476257.50 662709.18 476263.12 662709.64 476269.45 662708.83 476276.67 662705.73 476284.15 662701.90 476294.42 662694.42 476307.66 662718.85 476305.68 662708.79 476346.20 662704.71 476363.60 662693.30 476373.12 662684.40 476382.80 662686.31 476390.47 662699.90 476394.27 662718.85 476398.41 662729.45 476395.69 662741.75 476384.80 662745.58 476375.40 662752.71 476365.12 662761.94 476356.24 662776.21 476347.88 662786.48 476343.88 662809.80 476339.00 662842.87 476332.56 662875.69 476332.47 662891.70 476328.23 662881.90 476293.74 662816.54 476312.61 662780.40 476316.27 662776.12 476305.76 662767.96 476307.32 662771.96 476293.40 662792.47 476222.01 662805.78 476182.35 662831.58 476188.20 662928.61 476192.56 662974.07 476185.21 662973.88 476193.58 662979.51 476200.99 662995.27 476193.37 663014.84 476174.34 663023.54 476169.44 663031.15 476166.72 663044.92 476152.55 663092.97 476115.66 663169.76 476066.60 663077.31 476006.72 662939.23 475914.79 662887.06 475879.53 662865.27 475865.11 662762.87 475797.25 662746.23 475786.88 662673.99 475739.39 662639.57 475716.76 662636.39 475722.64 662629.53 475730.92 662623.62 475753.86 662600.36 475860.12 662574.45 475866.54 662555.25 475870.53 662545.66 475873.07 662537.61 475874.83 662532.67 475875.07 662530.20 475874.99 662523.63 475873.50 662507.36 475867.62 662498.72 475863.08 662480.42 475854.25 662450.89 475838.41 662449.79 475830.22 662446.09 475829.16 662433.12 475825.44 662367.33 475791.92 662372.29 475745.21 662363.12 475743.79 662352.32 475809.38 662325.71 475808.75 662265.37 475813.50 662223.78 475816.50 662185.54 475823.16 662158.69 475825.79 662131.16 475830.61 662138.90 475774.41 662137.02 475774.74 662112.80 475778.24 662097.54 475780.02 662094.75 475832.52 662061.30 475831.70 662024.93 475831.70 662018.16 475830.77 662011.53 475829.18 661994.62 475822.38 661964.04 475809.20 661947.03 475801.32 661948.87 475821.41 661949.36 475829.16 661951.64 475864.81 661995.62 475852.96 662011.20 475847.93 662021.40 475969.16 662025.72 476042.52 662028.29 476071.08 662025.99 476088.85 662026.36 476114.74 662025.35 476148.18 662034.22 476151.37 662053.23 476161.29 662060.13 476165.50 662060.63 476166.17 662066.19 476171.05 662074.43 476173.75 662083.52 476171.05 662095.13 476167.52 662106.23 476164.83 662113.30 476156.58 662117.00 476143.46 662117.00 476134.88 662118.24 476120.86 662122.22 476112.67 662122.05 476105.26 662118.55 476095.89 662118.14 476093.71 662116.70 476086.13 662119.19 476081.71 662123.73 476074.98 662128.10 476069.26 662134.82 476062.59 662143.92 476056.80 662157.21 476053.10 662171.25 476054.06 662183.58 476056.56 662195.07 476061.85 662215.26 476071.27 662233.27 476083.73 662245.38 476091.63 662256.32 476099.54 662266.02 476106.45 662271.22 476112.83 662275.60 476119.31 662279.86 476128.36 662283.80 476138.77 662285.89 476144.84 662287.35 476153.84 662285.26 476159.27 662281.39 476162.14 662274.15 476172.06 662265.91 476189.39 662259.01 476197.97 662251.61 476205.88 662233.60 476217.32 662227.04 476225.74 662226.71 476226.07 662221.32 476238.19 662218.63 476252.32 662214.25 476264.61 662208.20 476274.36 662205.76 476283.16 662203.95 476298.28 662199.93 476312.74 662197.52 476325.77 662196.72 476333.98 662199.53 476345.00 662208.34 476359.63 662222.57 476370.25 662237.00 476378.66 662250.88 476381.30 662264.05 476384.08 662278.31 476385.95 662290.97 476388.18 662304.42 476392.71 662312.47 476399.44 662320.66 476408.66 662333.58 476416.52 662343.26 476421.49 662353.81 476424.95 662376.85 476427.75 662399.49 476427.35 662419.72 476426.15 662434.35 476424.14 662445.08 476420.11 662452.66 476419.50</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>las</ot:rodzaj>
+			<ot:kategoria>iglasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_e9b48a5f-6471-11ef-b44d-44e5174962da_2023-12-31T120000">
+			<ot:lokalnyId>e9b48a5f-6471-11ef-b44d-44e5174962da</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_705</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-d212bf37-4b36-4d67-ba29-caaf8bfbe382-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>664654.25 475495.21 664679.43 475327.45 664737.90 475334.08 664749.51 475335.40 664751.77 475333.46 664753.21 475326.26 664754.64 475315.05 664754.94 475312.66 664758.28 475310.68 664767.15 475312.66 664774.02 475314.19 664778.06 475316.38 664795.91 475316.90 664799.76 475313.43 664808.95 475291.82 664814.29 475280.38 664832.33 475249.40 664842.72 475235.35 664850.71 475225.99 664854.74 475221.28 664876.52 475217.50 664888.35 475217.48 664895.58 475217.16 664903.95 475219.31 664915.42 475221.04 664928.14 475226.49 664937.36 475226.56 664944.47 475224.13 664948.98 475222.59 664955.78 475219.33 664958.17 475216.84 664961.84 475207.75 664967.59 475203.40 664973.59 475204.51 664984.16 475206.47 664988.63 475212.21 664986.57 475228.35 665013.18 475232.93 665016.05 475240.28 665015.38 475254.28 665017.10 475270.49 665058.23 475295.44 665051.99 475352.65 665048.24 475387.05 665073.04 475390.33 665071.15 475404.10 665089.33 475414.58 665102.62 475413.51 665129.98 475418.72 665163.42 475424.67 665165.27 475432.19 665193.90 475430.38 665193.44 475428.29 665242.38 475418.46 665250.07 475453.65 665265.26 475452.11 665278.52 475453.10 665292.57 475456.38 665298.10 475461.29 665312.60 475474.84 665334.53 475511.61 665334.74 475511.96 665345.61 475530.17 665355.82 475547.32 665361.63 475557.08 665384.41 475585.42 665393.07 475584.36 665408.81 475582.55 665430.94 475578.35 665445.32 475575.46 665460.00 475573.26 665502.30 475566.25 665534.95 475560.11 665560.60 475553.31 665617.58 475543.20 665654.18 475534.43 665680.04 475529.39 665691.86 475529.49 665692.09 475526.49 665693.38 475509.70 665692.47 475501.57 665688.52 475493.76 665681.63 475484.69 665674.04 475475.95 665665.36 475467.81 665615.95 475437.65 665610.84 475434.32 665575.28 475411.13 665571.77 475400.52 665538.90 475359.79 665508.85 475319.26 665506.02 475315.44 665497.09 475303.75 665493.41 475298.28 665512.92 475276.90 665516.61 475255.04 665516.04 475248.93 665514.89 475245.50 665513.75 475241.30 665513.75 475237.68 665514.70 475232.72 665516.42 475227.75 665518.90 475224.13 665523.86 475219.74 665524.14 475212.79 665501.71 475156.62 665489.73 475119.24 665471.23 475069.06 665461.40 475047.29 665458.85 475028.32 665467.97 475009.72 665464.32 474974.34 665474.17 474961.58 665503.34 474936.95 665518.99 474923.73 665516.27 474917.03 665545.46 474902.43 665553.33 474899.27 665557.26 474897.69 665561.19 474896.11 665576.18 474890.67 665592.55 474886.28 665595.27 474885.55 665604.26 474883.59 665613.24 474881.63 665625.29 474881.33 665641.86 474884.35 665645.75 474885.11 665660.24 474887.96 665692.17 474892.18 665700.30 474893.04 665712.05 474894.29 665740.07 474892.18 665753.14 474889.85 665773.81 474886.16 665797.91 474880.43 665817.19 474872.60 665828.94 474865.23 665834.96 474861.45 665846.78 474850.57 665854.84 474844.27 665868.49 474835.79 665873.83 474833.13 665901.93 474819.15 665913.86 474818.77 665916.53 474817.25 665932.94 474807.71 665944.19 474802.94 665952.97 474800.27 665955.32 474789.86 665990.72 474769.52 666001.54 474765.74 666003.67 474765.00 666013.31 474762.89 666022.36 474740.10 666021.61 474734.58 666018.14 474734.88 666035.56 474683.70 666088.53 474674.00 666095.95 474684.51 666103.01 474695.19 666104.82 474703.95 666110.56 474715.43 666116.04 474725.54 666078.84 474744.49 666093.44 474748.18 666113.57 474754.70 666130.62 474760.22 666147.50 474767.46 666165.60 474781.34 666176.27 474794.23 666180.07 474798.83 666185.81 474808.39 666189.11 474817.28 666190.93 474841.66 666190.77 474847.49 666193.35 474863.98 666198.06 474876.09 666201.79 474882.69 666210.23 474897.77 666224.71 474911.64 666248.83 474928.54 666252.43 474931.37 666269.22 474944.55 666288.03 474959.31 666295.21 474964.80 666317.07 474950.01 666333.96 474966.73 666307.82 474984.90 666310.35 474992.50 666320.61 475023.27 666324.22 475054.64 666322.59 475074.63 666321.81 475084.20 666320.99 475090.85 666319.10 475106.23 666317.81 475116.77 666316.38 475143.93 666315.32 475158.20 666314.84 475164.75 666322.58 475158.21 666323.21 475162.02 666323.74 475165.22 666342.88 475175.12 666361.84 475172.65 666386.76 475165.60 666407.35 475161.27 666424.02 475157.83 666434.23 475164.53 666435.27 475169.21 666428.51 475180.27 666429.03 475188.02 666435.51 475194.03 666441.92 475192.49 666465.93 475176.80 666480.75 475166.78 666486.06 475166.29 666490.77 475168.86 666495.51 475175.57 666498.76 475179.58 666503.53 475180.53 666513.26 475178.43 666523.18 475174.04 666527.18 475169.66 666527.18 475165.84 666521.78 475158.95 666518.59 475146.99 666525.13 475141.25 666538.52 475139.34 666543.94 475139.65 666547.13 475144.12 666547.93 475153.85 666536.39 475157.01 666534.09 475183.09 666531.76 475185.30 666528.52 475189.69 666526.80 475193.32 666524.89 475198.09 666523.18 475200.95 666519.17 475203.81 666516.69 475203.81 666510.97 475203.43 666507.33 475205.70 666493.39 475222.74 666486.20 475224.12 666481.75 475219.87 666471.59 475196.75 666467.88 475193.61 666463.41 475194.03 666447.72 475204.62 666440.37 475222.13 666438.46 475238.53 666442.66 475259.52 666446.86 475270.78 666451.44 475283.95 666456.02 475295.58 666459.07 475300.54 666463.65 475304.36 666469.94 475303.98 666485.97 475290.05 666495.13 475278.03 666500.66 475270.21 666505.05 475266.96 666507.90 475265.72 666503.04 475243.40 666523.22 475228.16 666528.78 475248.28 666531.00 475248.46 666535.20 475246.93 666538.63 475243.30 666543.21 475237.01 666547.22 475233.76 666553.71 475229.95 666560.96 475227.85 666567.82 475228.61 666575.65 475229.38 666582.33 475227.47 666590.53 475223.65 666596.64 475218.12 666603.12 475208.58 666602.93 475201.90 666601.21 475193.32 666599.31 475182.44 666568.18 475137.42 666572.67 475129.00 666578.07 475125.94 666585.56 475128.20 666594.92 475137.98 666607.89 475165.08 666621.44 475191.60 666626.02 475198.28 666629.64 475201.90 666634.99 475204.57 666640.77 475206.50 666645.71 475216.57 666648.12 475221.41 666657.68 475215.03 666668.98 475201.88 666681.76 475182.45 666690.76 475165.85 666689.68 475164.03 666676.34 475149.78 666629.02 475143.65 666613.39 475120.92 666595.99 475127.55 666560.45 475064.39 666552.98 475050.76 666531.43 475063.08 666512.93 475075.87 666478.10 475010.95 666482.64 475006.60 666500.52 474984.59 666509.56 474972.23 666513.48 474967.39 666518.51 474964.09 666539.22 474960.08 666516.28 474943.19 666490.12 474915.44 666458.55 474885.78 666444.63 474865.53 666406.00 474890.07 666400.55 474881.28 666366.24 474828.62 666351.42 474805.60 666331.17 474770.12 666329.58 474767.58 666311.08 474737.97 666321.73 474733.51 666332.69 474727.47 666338.13 474724.69 666354.46 474715.78 666333.39 474677.17 666303.27 474612.72 666300.17 474607.49 666301.64 474605.22 666304.39 474600.98 666306.17 474594.82 666306.62 474589.20 666306.61 474582.48 666305.73 474575.53 666299.41 474556.14 666290.41 474528.53 666285.73 474514.16 666280.39 474503.05 666276.39 474496.82 666279.06 474480.15 666287.63 474456.57 666285.72 474448.88 666276.28 474421.63 666275.32 474420.55 666274.74 474419.89 666261.75 474405.29 666246.33 474389.72 666216.48 474383.00 666212.90 474382.20 666211.78 474379.55 666207.00 474356.15 666206.04 474353.86 666204.13 474350.04 666202.42 474347.94 666198.98 474345.84 666195.74 474345.08 666190.97 474344.89 666187.72 474343.36 666185.63 474340.69 666184.67 474337.64 666185.63 474331.72 666187.81 474322.84 666170.68 474330.60 666177.31 474320.03 666181.84 474314.11 666184.31 474308.22 666190.44 474305.15 666188.71 474299.22 666179.50 474290.71 666183.44 474281.52 666188.46 474271.11 666187.55 474263.56 666208.30 474251.64 666216.88 474238.99 666220.86 474221.61 666219.40 474212.76 666200.93 474182.06 666195.83 474175.84 666177.21 474164.19 666154.05 474175.52 666136.43 474179.46 666114.62 474189.46 666113.96 474174.84 666112.54 474168.82 666159.42 474148.44 666156.20 474129.71 666153.73 474130.39 666149.10 474131.27 666124.98 474141.31 666122.47 474141.55 666120.28 474139.26 666119.32 474137.35 666117.21 474134.22 666114.23 474127.58 666110.40 474129.35 666099.91 474134.20 666095.28 474126.66 666094.52 474123.04 666094.33 474118.65 666094.41 474112.13 666097.17 474108.60 666112.85 474102.05 666317.84 474012.28 666315.43 474003.10 666313.51 473998.95 666310.16 473997.52 666306.04 473997.20 666110.34 474083.23 666106.13 474083.52 666102.05 474081.42 666099.83 474078.48 666097.92 474075.45 666097.44 474072.42 666096.84 474069.20 666094.71 474067.51 666090.89 474065.61 666087.08 474064.08 666083.45 474064.08 666076.58 474065.99 666066.66 474065.99 666055.12 474064.06 666046.73 474061.74 666029.74 474063.60 666016.51 474058.95 665991.87 474065.89 665974.97 474064.93 665961.57 474061.74 665939.57 474056.64 665935.10 474053.77 665888.22 474016.77 665849.31 473994.76 665832.72 473987.75 665814.54 473983.60 665791.58 473986.15 665774.04 473990.62 665764.72 473993.26 665759.96 473982.91 665760.66 473968.09 665771.95 473958.92 665809.35 473946.22 665854.75 473929.78 665858.58 473929.06 665876.10 473929.38 665888.22 473934.80 665894.28 473940.23 665918.83 473955.22 665931.34 473957.63 665974.43 473942.45 666026.24 473919.60 666117.61 473876.41 666122.64 473872.50 666134.49 473867.66 666196.58 473842.29 666285.70 473801.05 666309.72 473791.26 666389.01 473758.93 666383.43 473753.61 666365.01 473736.05 666300.56 473761.05 666293.83 473763.66 666279.53 473731.06 666222.04 473756.07 666219.93 473751.10 666214.45 473737.65 666096.81 473787.21 666087.57 473769.44 666078.22 473745.44 666075.29 473737.91 666062.19 473720.64 666054.02 473717.50 666033.45 473701.87 666025.51 473705.50 665998.86 473716.97 665969.74 473729.01 665945.64 473738.98 665934.38 473743.30 665921.09 473748.20 665916.60 473740.20 665909.71 473741.45 665901.95 473743.54 665894.61 473749.30 665880.87 473760.50 665877.78 473756.34 665858.70 473690.39 665846.27 473693.24 665833.84 473696.08 665821.08 473698.00 665783.45 473688.43 665748.44 473665.50 665676.92 473652.71 665662.25 473634.21 665660.98 473627.83 665664.17 473613.16 665671.18 473604.23 665678.84 473599.76 665697.97 473608.06 665712.64 473615.07 665719.66 473608.06 665718.70 473600.88 665712.64 473591.47 665712.01 473584.46 665706.90 473572.34 665694.15 473555.75 665682.03 473538.53 665676.29 473525.13 665679.47 473517.48 665693.51 473511.10 665710.73 473509.19 665733.06 473508.55 665744.48 473503.98 665751.89 473499.89 665775.13 473464.66 665800.20 473435.12 665824.15 473420.63 665824.41 473420.38 665866.60 473379.62 665907.35 473356.99 665899.99 473335.11 665919.43 473319.20 665948.95 473291.89 665972.35 473284.64 666006.03 473277.46 666014.40 473275.15 666026.60 473271.46 666016.43 473254.55 666003.03 473231.95 665989.35 473206.71 666000.52 473203.43 666050.12 473201.76 666058.39 473202.33 666062.29 473213.04 666084.80 473241.09 666111.89 473262.65 666116.47 473269.33 666122.58 473280.59 666128.88 473292.99 666134.79 473298.14 666140.71 473298.71 666154.25 473295.28 666158.78 473293.85 666171.57 473289.82 666180.63 473285.21 666423.58 473203.26 666434.68 473199.11 666439.93 473197.48 666472.68 473187.34 666537.53 473167.26 666524.41 473187.33 666515.84 473198.60 666505.20 473210.50 666498.54 473216.22 666483.58 473222.50 666454.09 473231.46 666448.86 473233.31 666455.07 473250.46 666456.34 473257.71 666461.17 473281.76 666466.26 473315.21 666335.74 473361.43 666329.12 473366.92 666324.82 473375.06 666315.63 473385.42 666309.35 473409.66 666284.43 473430.57 666271.40 473445.06 666251.62 473455.27 666254.17 473479.03 666256.09 473488.28 666262.62 473500.08 666292.92 473488.92 666305.84 473484.13 666341.82 473469.04 666432.65 473435.59 666481.71 473416.32 666486.86 473437.83 666490.31 473449.21 666493.72 473461.63 666411.82 473497.06 666366.04 473516.16 666295.91 473547.20 666251.32 473567.73 666250.52 473579.80 666264.49 473580.43 666278.78 473579.48 666283.84 473575.71 666303.47 473566.78 666324.64 473558.14 666385.82 473531.17 666390.96 473542.27 666389.78 473550.34 666386.77 473554.44 666291.94 473587.49 666266.31 473605.33 666263.57 473617.34 666260.77 473632.37 666270.93 473643.85 666279.84 473654.00 666363.20 473613.84 666358.70 473604.52 666361.06 473603.47 666376.56 473596.38 666411.17 473582.02 666418.01 473579.27 666469.05 473558.72 666482.29 473589.68 666524.71 473572.54 666525.88 473576.50 666531.78 473593.06 666535.36 473603.10 666545.18 473630.65 666546.76 473634.87 666566.44 473634.86 666605.06 473622.00 666616.18 473630.89 666637.46 473638.75 666650.88 473632.82 666664.53 473665.15 666667.41 473676.39 666675.01 473673.06 666674.00 473660.32 666675.76 473653.97 666682.99 473653.26 666694.28 473652.03 666707.34 473645.85 666719.06 473631.58 666738.96 473624.80 666744.38 473623.99 666751.96 473615.86 666756.30 473605.57 666759.27 473597.03 666739.40 473559.54 666734.94 473544.59 666720.06 473527.80 666700.06 473512.64 666694.11 473499.95 666692.96 473491.55 666690.55 473479.87 666690.80 473471.86 666695.25 473456.72 666696.78 473438.02 666696.27 473426.83 666696.95 473414.37 666703.36 473393.95 666701.45 473387.08 666695.60 473376.90 666695.38 473368.12 666693.82 473356.79 666695.16 473347.01 666699.60 473336.11 666711.89 473313.70 666714.46 473306.24 666716.80 473297.63 666718.66 473280.80 666728.83 473269.73 666740.37 473260.17 666750.22 473257.59 666784.41 473246.72 666762.45 473203.50 666761.56 473186.45 666759.39 473174.49 666750.74 473160.19 666745.02 473141.49 666746.72 473131.79 666739.39 473124.90 666722.50 473106.10 666677.10 473086.47 666645.85 473072.03 666633.60 473065.09 666624.04 473059.30 666567.36 472999.50 666544.47 472975.93 666542.25 472971.26 666542.47 472966.82 666544.25 472964.15 666572.92 472946.70 666596.68 472932.36 666640.77 472905.74 666645.30 472909.95 666667.23 472929.25 666688.15 472951.78 666695.16 472965.83 666697.62 472959.78 666699.32 472955.80 666701.53 472946.71 666700.04 472944.99 666699.05 472943.40 666698.34 472941.13 666697.73 472937.76 666696.78 472934.71 666695.76 472932.77 666694.11 472931.56 666693.27 472930.95 666692.36 472930.89 666691.26 472931.37 666690.32 472931.24 666689.75 472930.68 666689.43 472929.79 666689.29 472928.92 666689.82 472927.65 666689.85 472926.60 666689.15 472925.77 666688.00 472925.33 666686.86 472925.42 666686.06 472925.04 666684.98 472923.23 666684.85 472921.51 666685.71 472919.79 666687.37 472917.53 666692.49 472911.36 666697.42 472907.07 666699.98 472902.76 666701.86 472898.58 666707.01 472897.08 666713.00 472898.00 666726.31 472908.20 666747.39 472903.38 666778.05 472891.27 666798.86 472885.22 666806.06 472882.57 666813.25 472883.70 666816.60 472886.16 666821.01 472889.38 666828.95 472891.84 666837.08 472895.18 666847.38 472886.82 666846.81 472881.44 666830.39 472861.05 666832.94 472854.82 666841.43 472851.42 666855.51 472853.52 666870.78 472833.93 666885.16 472816.33 666890.44 472808.30 666897.58 472806.04 666918.10 472806.65 666939.20 472787.48 666960.66 472783.45 666977.24 472769.17 667006.27 472769.51 667047.74 472765.36 667067.79 472762.94 667085.11 472780.48 667149.70 472735.16 667155.08 472726.10 667148.06 472704.72 667154.41 472690.70 667149.91 472683.55 667137.71 472676.50 667135.94 472678.68 667133.98 472681.09 667132.99 472679.37 667131.01 472661.24 667135.25 472645.67 667142.05 472614.69 667142.36 472603.71 667150.89 472596.09 667159.89 472590.28 667166.99 472600.51 667158.51 472604.63 667183.22 472628.57 667296.09 472582.27 667298.24 472579.35 667297.05 472575.27 667282.13 472560.50 667248.80 472576.64 667244.02 472577.36 667233.59 472566.82 667229.51 472565.47 667226.16 472565.47 667217.28 472564.88 667192.07 472575.37 667187.36 472570.37 667197.22 472561.04 667216.42 472550.37 667238.44 472544.74 667262.36 472544.11 667266.12 472539.77 667264.91 472534.54 667259.17 472517.95 667260.76 472514.13 667267.05 472509.98 667285.37 472501.68 667317.86 472477.13 667324.13 472472.68 667347.02 472482.54 667386.73 472446.68 667383.50 472443.64 667385.57 472437.99 667387.81 472431.89 667391.54 472407.17 667390.77 472380.17 667388.79 472364.02 667386.60 472346.90 667386.24 472311.07 667457.67 472316.44 667455.61 472301.99 667445.25 472285.04 667418.08 472265.24 667394.10 472261.43 667395.70 472245.42 667395.41 472225.88 667395.08 472202.97 667396.27 472187.36 667400.15 472136.68 667393.45 472137.15 667360.58 472139.46 667274.87 472136.00 667222.33 472131.16 667215.42 472124.25 667220.26 472114.56 667236.85 472121.48 667270.03 472124.94 667272.79 472114.56 667258.28 472109.03 667236.16 472103.50 667220.95 472086.90 667212.66 472066.15 667202.29 472062.00 667182.93 472070.99 667163.58 472082.06 667141.46 472102.81 667127.64 472122.86 667117.27 472119.40 667118.65 472104.19 667135.24 472087.59 667142.15 472069.61 667126.25 472053.70 667118.65 472048.86 667113.81 472041.95 667115.36 472026.89 667129.72 472018.43 667169.81 472017.74 667193.31 472008.75 667234.78 472002.52 667274.95 471999.92 667301.83 472038.18 667347.70 472040.89 667357.80 472052.32 667372.32 472055.09 667383.38 472062.70 667390.29 472069.61 667404.05 472069.30 667406.00 472069.26 667407.89 472051.16 667409.75 472033.53 667410.07 472027.12 667442.82 472010.09 667463.23 472006.90 667483.64 472008.18 667507.88 471998.61 667537.22 471987.45 667550.30 471973.09 667558.94 471958.98 667565.83 471953.46 667583.47 471952.04 667599.73 471948.22 667613.13 471946.62 667623.79 471940.36 667626.18 471939.25 667633.59 471931.73 667635.03 471929.44 667637.35 471927.37 667676.65 471917.24 667687.94 471915.06 667722.94 471905.00 667782.91 471881.50 667855.80 471865.32 667890.62 471852.52 667903.93 471845.86 667913.40 471839.46 667932.17 471823.27 667954.67 471824.92 667956.48 471825.00 667966.34 471825.45 668010.43 471805.41 668080.41 471765.28 668104.60 471756.29 668131.21 471744.19 668144.69 471741.42 668159.90 471744.19 668185.13 471735.89 668218.31 471725.17 668252.87 471714.10 668256.80 471713.06 668281.55 471706.49 668302.98 471692.66 668326.48 471677.45 668335.89 471670.95 668334.68 471668.73 668345.76 471662.48 668375.28 471628.12 668397.50 471627.91 668479.99 471628.00 668489.66 471627.56 668478.81 471597.90 668471.42 471583.88 668465.32 471561.56 668459.82 471551.70 668440.62 471535.45 668424.34 471525.41 668399.16 471516.71 668371.20 471504.19 668343.51 471491.78 668293.12 471469.26 668281.23 471463.94 668254.23 471451.89 668178.25 471421.17 668155.73 471417.59 668130.64 471408.37 668107.14 471398.64 668105.29 471397.88 668083.53 471386.36 668079.57 471384.54 668076.00 471382.91 668036.32 471421.66 667996.38 471400.35 668043.51 471386.24 668048.99 471373.46 668036.33 471369.58 668029.10 471373.49 668015.31 471377.46 668006.09 471379.25 667993.81 471380.79 667978.45 471378.74 667906.00 471360.05 667899.60 471358.26 667875.79 471352.37 667831.76 471349.81 667794.13 471349.30 667758.80 471353.14 667745.23 471356.47 667708.73 471358.35 667699.64 471355.54 667698.88 471344.66 667703.63 471327.68 667707.85 471307.83 667715.79 471290.42 667716.72 471287.85 667725.52 471263.54 667729.58 471250.96 667679.58 471246.71 667657.44 471234.99 667631.07 471225.78 667601.63 471221.42 667576.65 471222.29 667555.34 471213.80 667550.28 471211.78 667540.62 471207.93 667522.20 471196.01 667513.85 471184.43 667511.68 471171.15 667515.16 471157.80 667523.02 471143.98 667530.60 471131.51 667558.91 471101.30 667586.01 471070.01 667584.10 471066.07 667553.63 471050.49 667541.94 471063.04 667502.16 471105.77 667478.24 471085.20 667448.61 471113.74 667434.42 471119.60 667348.60 471102.89 667316.84 471097.11 667299.56 471094.22 667279.45 471091.96 667260.82 471090.70 667253.17 471089.38 667246.13 471088.17 667235.57 471082.48 667230.42 471078.14 667229.07 471069.20 667240.17 471051.04 667201.48 471002.41 667143.78 471047.78 667148.25 471052.82 667205.36 471117.12 667210.56 471123.02 667215.89 471129.76 667220.80 471136.36 667227.40 471145.56 667233.30 471154.97 667239.73 471165.52 667332.45 471186.49 667315.35 471239.18 667260.33 471219.95 667174.91 471198.97 667102.38 471187.76 667088.05 471186.15 667072.81 471182.45 667062.88 471175.98 667055.26 471160.03 667065.40 471140.62 667049.08 471128.29 667047.02 471126.32 667014.83 471159.52 666973.33 471198.38 666898.37 471266.08 666874.79 471286.76 666872.03 471319.03 666786.20 471389.07 666765.47 471407.48 666746.53 471421.17 666710.09 471447.16 666683.86 471466.06 666658.18 471485.52 666634.10 471504.89 666603.57 471530.89 666444.52 471647.85 666441.58 471650.01 666410.16 471676.14 666388.01 471685.40 666311.28 471762.13 666276.04 471786.94 666273.04 471795.28 666277.98 471801.02 666192.04 471863.92 666026.16 471991.75 666050.67 472022.48 666003.52 472055.18 665992.00 472066.07 665988.27 472067.38 665982.32 472070.78 665951.99 472044.90 665949.96 472042.91 665944.86 472037.90 665910.57 472065.14 665843.95 472117.55 665817.59 472138.64 665818.87 472140.11 665823.44 472145.33 665842.22 472166.78 665852.26 472179.15 665868.09 472198.66 665879.15 472212.26 665907.17 472246.65 665918.09 472260.05 665928.99 472273.42 665941.02 472288.18 665942.25 472289.69 665949.82 472298.98 665899.02 472341.19 665890.77 472348.05 665882.24 472349.55 665876.05 472348.91 665867.94 472344.85 665860.90 472339.52 665849.75 472334.31 665844.25 472332.05 665831.87 472330.98 665819.22 472334.28 665817.36 472336.31 665807.75 472344.21 665793.46 472351.25 665784.92 472353.17 665772.55 472345.40 665760.59 472326.28 665751.27 472312.97 665742.50 472311.21 665732.85 472313.48 665726.66 472317.11 665724.95 472323.94 665720.57 472330.77 665712.36 472335.25 665702.33 472336.74 665692.94 472331.19 665678.21 472312.73 665663.17 472324.59 665633.18 472358.37 665630.13 472362.58 665651.59 472389.39 665660.33 472400.73 665710.73 472466.15 665717.70 472475.19 665722.03 472471.86 665736.84 472490.71 665794.39 472445.66 665807.18 472460.11 665815.07 472454.19 665817.96 472459.41 665819.88 472467.14 665823.85 472475.27 665889.06 472550.35 665965.25 472647.58 665912.87 472684.31 665885.45 472714.89 665936.32 472779.40 665932.92 472782.04 665855.80 472842.00 665755.09 472715.85 665726.73 472681.11 665691.44 472634.41 665689.94 472632.42 665675.80 472615.68 665656.26 472591.53 665656.26 472589.00 665657.52 472587.73 665664.28 472581.90 665686.09 472565.12 665687.16 472563.69 665680.02 472555.39 665669.57 472542.04 665684.77 472531.09 665675.53 472520.28 665670.35 472517.00 665664.34 472517.00 665658.61 472516.18 665652.55 472513.87 665646.44 472509.48 665581.52 472430.56 665580.33 472432.08 665576.63 472436.86 665556.11 472462.64 665535.83 472435.78 665491.95 472469.35 665497.41 472475.86 665522.47 472507.53 665520.28 472510.34 665569.94 472574.57 665587.65 472595.76 665593.50 472603.81 665599.59 472610.24 665618.98 472633.24 665610.07 472639.97 665623.31 472654.94 665640.82 472676.74 665684.74 472725.71 665689.42 472744.06 665703.66 472763.06 665702.43 472764.24 665691.61 472772.68 665683.26 472762.36 665662.25 472736.41 665651.94 472746.61 665670.91 472771.07 665697.82 472806.77 665682.25 472834.38 665675.54 472846.26 665671.27 472853.82 665701.63 472888.79 665699.63 472895.65 665695.33 472904.64 665678.81 472938.58 665672.80 472959.88 665667.90 472977.27 665661.56 472974.65 665660.99 472965.30 665660.22 472962.65 665659.28 472959.39 665642.48 472938.59 665629.81 472924.23 665626.65 472920.65 665619.59 472915.50 665603.37 472897.00 665574.45 472861.17 665502.89 472769.29 665500.88 472822.06 665500.74 472824.48 665504.08 472828.06 665544.77 472881.07 665606.93 472959.20 665630.57 472988.57 665634.66 472993.66 665642.20 472999.63 665653.68 473012.33 665653.68 473018.09 665653.68 473025.89 665682.12 473055.99 665754.88 473143.96 665746.15 473174.06 665716.90 473138.90 665658.31 473064.58 665644.36 473062.65 665622.18 473060.35 665568.07 473064.79 665544.66 473074.44 665542.35 473081.00 665540.06 473088.35 665544.34 473095.38 665617.79 473178.09 665621.33 473252.84 665621.46 473255.69 665618.82 473266.94 665614.60 473284.97 665608.57 473292.82 665571.87 473295.53 665563.13 473297.65 665556.70 473299.23 665550.66 473300.71 665544.60 473302.19 665539.11 473303.55 665531.85 473305.33 665517.68 473286.15 665503.70 473280.90 665492.66 473280.66 665495.23 473271.05 665498.09 473265.32 665501.91 473261.32 665508.20 473258.84 665517.55 473255.02 665521.94 473248.34 665521.56 473239.37 665519.27 473226.78 665513.74 473215.71 665503.24 473205.41 665489.12 473201.79 665485.50 473204.65 665483.21 473210.37 665471.95 473214.00 665462.98 473210.18 665454.02 473202.93 665445.24 473203.50 665439.32 473208.66 665434.94 473214.38 665430.55 473217.81 665423.87 473219.72 665413.95 473221.06 665406.51 473223.73 665400.78 473227.16 665397.73 473231.74 665397.16 473235.56 665398.88 473238.42 665421.20 473272.76 665422.47 473279.59 665419.62 473288.67 665419.79 473293.05 665425.85 473301.52 665442.94 473325.57 665452.33 473338.35 665441.41 473343.27 665435.68 473333.16 665424.87 473329.77 665401.27 473331.52 665379.70 473337.26 665374.73 473341.33 665369.59 473345.53 665357.04 473345.46 665310.79 473348.22 665293.68 473354.39 665284.57 473340.58 665277.11 473326.68 665262.05 473329.13 665237.08 473336.11 665223.34 473335.73 665216.47 473331.53 665210.18 473323.67 665159.39 473257.03 665124.99 473210.06 665108.59 473225.13 664961.48 473019.96 664952.59 473015.60 664923.14 473010.61 664922.18 473030.54 664902.53 473046.06 664896.98 473051.78 664884.40 473071.53 664899.90 473095.65 664905.63 473106.65 664910.20 473115.43 664915.95 473133.37 664921.14 473145.19 664927.00 473154.00 664945.98 473179.62 664961.37 473194.73 664963.93 473197.24 664973.17 473205.10 664985.07 473219.09 664990.64 473232.01 664995.24 473241.59 665003.91 473259.63 665012.55 473278.16 665023.03 473298.70 664948.60 473342.09 664946.29 473338.79 664932.93 473347.07 664935.31 473352.03 664939.16 473357.01 665048.09 473528.50 665027.71 473552.47 664903.44 473369.90 664874.46 473386.17 664874.86 473408.40 664865.34 473435.78 664848.67 473452.85 664922.09 473566.75 664928.46 473566.83 664955.03 473550.88 664989.96 473548.49 664994.35 473560.67 664985.36 473562.88 664980.40 473564.60 664974.30 473568.80 664970.67 473572.99 664968.96 473576.43 664968.57 473581.01 664971.24 473586.54 664975.82 473590.93 664981.93 473597.42 664983.07 473601.04 664983.27 473603.71 664981.93 473606.96 664966.19 473624.36 664963.23 473630.62 664959.80 473633.86 664954.26 473635.00 664944.34 473633.67 664938.62 473632.33 664932.13 473632.33 664926.98 473633.86 664924.50 473636.34 664923.93 473643.59 664927.17 473653.13 664933.47 473664.96 664962.85 473704.65 664973.34 473717.43 664980.98 473729.83 664987.08 473738.80 664991.66 473746.62 665007.08 473775.03 665018.27 473775.98 665061.04 473777.05 665063.88 473777.26 665067.02 473777.50 665076.76 473778.24 665118.90 473790.29 665138.82 473795.98 665151.74 473799.57 665154.56 473800.36 665155.22 473805.98 665156.77 473815.77 665159.46 473832.60 665159.96 473835.75 665161.63 473846.20 665170.57 473902.26 665174.30 473925.64 665174.65 473927.79 665179.47 473958.05 665186.11 474000.63 665186.89 474006.54 665173.87 474021.66 665153.21 474040.79 665143.33 474046.85 665121.53 474064.64 665119.93 474069.93 665120.24 474075.00 665135.79 474095.94 665136.04 474099.59 665133.27 474104.24 665127.16 474105.58 665123.35 474107.68 665120.87 474109.20 665118.96 474111.49 665117.24 474115.12 665115.14 474119.32 665112.85 474123.13 665109.12 474126.47 665117.89 474140.32 665198.36 474267.36 665227.84 474313.65 665231.16 474327.25 665230.34 474337.74 665237.30 474353.96 665240.26 474360.85 665249.07 474375.02 665263.87 474392.35 665274.40 474406.46 665264.63 474411.67 665253.57 474416.82 665249.94 474418.35 665244.03 474416.63 665237.16 474411.48 665232.39 474405.76 665226.28 474397.93 665222.09 474393.93 665216.74 474392.40 665213.50 474392.59 665208.54 474395.83 665206.44 474400.60 665209.49 474410.14 665217.89 474419.68 665228.19 474432.28 665242.12 474450.21 665249.75 474466.05 665258.91 474475.21 665265.78 474480.36 665291.73 474490.28 665299.55 474490.85 665306.61 474488.75 665328.57 474485.90 665334.71 474495.33 665360.84 474537.54 665368.51 474553.62 665365.63 474555.14 665358.39 474549.04 665301.33 474515.50 665237.42 474488.73 665213.17 474483.06 665187.66 474483.69 665162.79 474480.85 665150.69 474476.11 665148.86 474480.57 665145.67 474485.06 665140.88 474487.94 665133.52 474489.54 665060.17 474477.81 665053.72 474476.42 665048.50 474474.81 665038.16 474470.70 665029.94 474468.42 665025.16 474468.03 665020.59 474468.21 665011.82 474469.25 665001.48 474471.54 664995.99 474471.94 664991.03 474471.76 664981.54 474470.16 664974.36 474468.43 664954.74 474462.35 664939.91 474457.76 664929.93 474454.93 664911.68 474449.75 664900.67 474448.31 664888.12 474447.97 664869.45 474449.75 664848.10 474451.71 664835.66 474452.86 664827.54 474452.98 664819.43 474453.11 664804.14 474452.69 664743.40 474452.57 664706.58 474449.14 664678.06 474447.58 664618.28 474441.59 664576.93 474437.81 664539.76 474435.83 664524.69 474397.98 664506.08 474359.98 664460.70 474308.72 664434.43 474323.66 664411.92 474287.32 664398.51 474264.30 664417.91 474254.54 664409.33 474239.35 664402.64 474242.14 664388.93 474247.85 664365.30 474245.96 664362.44 474245.58 664359.76 474244.24 664357.09 474242.91 664351.75 474242.14 664348.70 474242.53 664344.12 474244.43 664339.35 474243.48 664336.30 474241.38 664331.72 474238.71 664325.61 474238.90 664321.22 474240.62 664310.85 474247.38 664294.11 474224.56 664279.56 474219.26 664247.86 474228.63 664249.36 474230.97 664257.82 474245.29 664254.59 474246.05 664250.26 474247.07 664221.01 474258.23 664215.38 474260.38 664193.25 474268.83 664175.79 474275.49 664172.92 474276.59 664170.19 474277.63 664114.44 474298.91 664092.57 474266.56 663994.02 474149.16 663991.43 474138.16 663989.52 474134.53 663983.60 474127.09 663961.09 474101.14 663938.15 474069.87 663928.75 474058.77 663904.32 474068.42 663893.48 474072.70 663900.52 474084.22 663904.67 474093.47 663908.75 474113.52 663890.95 474128.78 663879.85 474116.17 663864.92 474118.26 663843.84 474131.29 663837.07 474142.03 663844.88 474149.20 663843.39 474161.03 663840.92 474171.83 663818.13 474153.08 663810.84 474146.52 663799.06 474164.09 663838.21 474193.20 663839.17 474197.02 663838.98 474202.17 663835.16 474206.56 663830.96 474212.67 663826.19 474219.53 663816.46 474233.46 663811.50 474247.58 663808.26 474257.89 663806.73 474265.14 663805.97 474272.00 663803.87 474279.83 663799.48 474283.45 663793.76 474283.26 663783.26 474279.83 663778.30 474276.01 663768.95 474269.33 663761.89 474263.99 663751.97 474258.08 663747.20 474255.40 663739.57 474253.69 663733.24 474257.87 663731.88 474263.70 663732.45 474268.25 663749.38 474281.31 663766.00 474282.68 663772.17 474292.60 663780.11 474301.86 663796.20 474307.38 663814.95 474307.60 663817.80 474337.69 663818.25 474342.43 663822.88 474355.66 663828.62 474363.60 663823.77 474373.96 663808.33 474380.36 663795.32 474386.09 663780.21 474388.49 663774.37 474413.52 663796.13 474418.06 663811.30 474421.50 663842.97 474421.28 663850.90 474452.84 663826.47 474450.59 663816.93 474450.02 663804.72 474449.07 663793.65 474447.54 663783.35 474445.82 663777.38 474445.82 663774.19 474447.85 663770.56 474451.17 663767.88 474458.24 663765.26 474461.08 663762.36 474462.64 663749.19 474463.12 663745.61 474462.08 663742.66 474460.72 663741.30 474457.93 663741.18 474455.66 663743.73 474449.60 663746.76 474443.22 663749.83 474438.48 663731.56 474434.18 663719.49 474426.16 663711.84 474424.09 663702.11 474425.52 663693.18 474423.13 663684.25 474419.14 663678.02 474418.04 663674.88 474418.34 663669.26 474421.22 663665.59 474426.00 663660.71 474432.56 663657.70 474434.61 663653.86 474435.01 663633.93 474430.86 663631.67 474434.27 663627.64 474439.93 663622.86 474445.74 663614.78 474454.43 663601.48 474467.99 663598.26 474471.23 663596.73 474472.76 663592.37 474477.16 663589.70 474479.50 663583.84 474483.91 663567.72 474492.70 663550.35 474502.10 663545.96 474504.00 663548.38 474508.12 663551.78 474510.58 663565.60 474513.99 663586.79 474513.99 663599.70 474513.00 663602.60 474516.43 663609.18 474519.70 663757.43 474557.95 663755.97 474571.89 663758.05 474580.60 663765.20 474582.32 663761.27 474598.20 663765.52 474604.33 663770.78 474607.68 663777.65 474608.84 663779.34 474602.95 663793.13 474606.42 663825.62 474614.60 663824.42 474621.37 663845.85 474626.02 663849.36 474627.77 663852.23 474630.32 663852.07 474636.86 663851.27 474647.54 663848.14 474651.67 663843.78 474653.45 663834.09 474647.15 663821.02 474643.32 663818.46 474641.91 663785.76 474632.73 663771.80 474629.30 663680.04 474606.73 663655.31 474600.64 663646.40 474637.47 663653.51 474639.10 663656.23 474639.78 663657.05 474651.68 663657.69 474656.94 663659.79 474660.62 663661.71 474662.53 663665.82 474664.92 663668.22 474666.35 663669.65 474671.45 663668.54 474680.23 663671.65 474684.49 663691.53 474689.21 663702.37 474694.08 663762.46 474707.33 663763.42 474710.05 663764.10 474713.97 663760.97 474720.69 663757.34 474726.79 663753.14 474730.42 663748.56 474733.28 663740.55 474735.38 663734.44 474736.14 663729.87 474736.14 663720.90 474732.90 663713.84 474729.27 663703.34 474728.89 663698.19 474730.61 663688.97 474734.88 663681.22 474746.08 663677.47 474747.52 663672.46 474747.86 663618.84 474729.88 663611.92 474734.44 663610.49 474738.75 663611.47 474742.32 663735.12 474790.81 663740.30 474789.30 663748.33 474770.51 663754.01 474767.29 663760.50 474765.92 663775.36 474768.31 663825.64 474788.84 663831.10 474800.63 663844.39 474806.92 663857.62 474816.81 663871.82 474829.73 663874.20 474841.37 663874.85 474853.96 663868.98 474861.56 663864.82 474863.29 663861.16 474864.81 663858.11 474864.81 663854.48 474861.75 663851.84 474858.17 663851.24 474857.36 663847.42 474853.93 663840.17 474853.17 663824.91 474856.22 663818.42 474859.27 663816.46 474861.14 663814.22 474863.28 663814.99 474871.29 663817.66 474876.44 663821.66 474881.40 663822.68 474884.73 663823.19 474886.37 663824.23 474889.86 663824.72 474891.52 663821.90 474903.10 663836.36 474910.81 663831.56 474916.65 663832.00 474919.52 663832.25 474921.20 663836.37 474923.29 663855.51 474933.02 663944.89 474984.02 663935.15 475004.44 663939.32 475007.25 663940.00 475007.71 663940.00 475011.22 663936.49 475017.12 663936.33 475017.17 663931.87 475018.71 663919.11 475011.06 663875.42 474991.28 663859.47 474982.83 663851.18 474980.92 663845.75 474980.60 663842.09 474981.40 663836.87 474983.68 663833.55 474989.83 663844.72 474995.91 663905.51 475025.59 663921.91 475034.06 663923.97 475037.29 663924.23 475040.62 663910.01 475054.43 663902.28 475065.42 663893.97 475076.42 663883.34 475091.20 663876.54 475099.38 663864.64 475113.67 663864.27 475114.12 663861.17 475117.85 663849.32 475131.51 663834.63 475142.53 663823.94 475148.04 663808.42 475155.55 663784.57 475167.90 663896.05 475362.36 663970.18 475496.44 663984.16 475499.32 663991.51 475500.83 663996.24 475501.81 663999.98 475490.65 664008.11 475466.44 664022.48 475461.01 664026.16 475459.62 664035.01 475456.29 664048.53 475452.95 664050.92 475452.37 664071.18 475451.73 664093.64 475448.44 664111.44 475443.86 664145.51 475434.84 664154.62 475437.18 664158.16 475443.56 664154.72 475467.29 664149.68 475492.45 664132.16 475629.13 664182.16 475634.74 664200.92 475636.85 664201.45 475632.86 664214.02 475552.11 664250.04 475556.15 664232.30 475639.93 664272.88 475643.04 664303.49 475435.43 664304.46 475419.09 664307.19 475401.86 664310.36 475398.14 664313.87 475397.82 664317.69 475399.73 664324.42 475404.59 664332.52 475405.79 664337.33 475405.05 664360.79 475407.19 664366.39 475369.16 664371.24 475340.26 664406.92 475342.17 664407.86 475335.72 664416.42 475336.46 664510.66 475340.03 664518.19 475341.26 664537.78 475344.47 664554.22 475344.47 664567.56 475340.91 664580.11 475336.21 664567.26 475445.41 664571.61 475446.06 664581.42 475447.52 664590.37 475406.93 664611.33 475410.58 664610.37 475415.03 664604.04 475450.88 664568.44 475668.78 664576.26 475674.90 664577.81 475676.11 664583.11 475671.31 664595.60 475664.29 664611.38 475658.78 664630.42 475653.91 664654.25 475495.21</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+					<gml:interior>
+						<gml:LinearRing>
+							<gml:posList>664239.70 475399.19 664237.75 475421.43 664256.93 475441.27 664268.62 475443.70 664273.69 475418.56 664283.42 475421.10 664281.92 475452.98 664278.46 475457.62 664273.53 475459.36 664267.99 475459.05 664233.81 475456.53 664227.39 475491.76 664203.18 475488.99 664210.17 475414.59 664223.13 475399.73 664236.97 475399.28 664239.70 475399.19</gml:posList>
+						</gml:LinearRing>
+					</gml:interior>
+					<gml:interior>
+						<gml:LinearRing>
+							<gml:posList>664776.35 475171.10 664753.12 475142.30 664728.19 475126.63 664701.84 475131.61 664681.90 475146.57 664674.10 475161.61 664647.66 475147.97 664640.93 475144.50 664577.59 475114.97 664587.63 475106.17 664604.80 475093.77 664619.11 475087.47 664645.25 475075.83 664657.36 475065.63 664667.14 475055.84 664675.14 475038.94 664682.70 475018.49 664689.89 475002.52 664695.59 474993.13 664716.04 474975.37 664739.03 474956.96 664763.55 474943.99 664793.03 474929.77 664797.08 474928.62 664858.19 474911.17 664889.30 474901.28 664914.29 474897.08 664931.04 474893.50 664950.70 474942.87 664974.74 474984.47 664984.50 474998.53 664906.60 475024.39 664881.95 475023.30 664868.51 475015.52 664860.67 475004.83 664854.26 474987.74 664839.30 474974.21 664823.63 474973.49 664812.95 474977.06 664778.76 474985.60 664767.37 474994.15 664747.42 475009.82 664742.44 475026.91 664743.15 475048.28 664747.42 475063.95 664761.67 475072.50 664788.73 475060.39 664810.81 475049.70 664820.07 475043.29 664834.32 475045.43 664854.26 475058.25 664865.66 475086.03 664852.24 475127.67 664841.24 475135.30 664831.46 475144.64 664818.57 475158.42 664802.57 475165.98 664776.35 475171.10</gml:posList>
+						</gml:LinearRing>
+					</gml:interior>
+					<gml:interior>
+						<gml:LinearRing>
+							<gml:posList>664782.64 474918.75 664779.70 474919.88 664772.48 474918.37 664765.25 474914.16 664755.31 474907.53 664732.42 474889.45 664715.02 474877.47 664709.15 474872.05 664708.09 474869.18 664708.85 474866.77 664711.41 474866.02 664718.18 474867.38 664725.87 474870.54 664738.67 474879.43 664763.06 474896.60 664781.14 474911.97 664783.24 474915.59 664782.64 474918.75</gml:posList>
+						</gml:LinearRing>
+					</gml:interior>
+					<gml:interior>
+						<gml:LinearRing>
+							<gml:posList>664181.46 474911.73 664173.06 474923.30 664115.87 474895.04 664085.76 474881.29 664074.49 474876.15 664049.74 474875.14 664017.77 474850.25 664012.81 474818.56 664015.02 474820.76 664017.97 474821.62 664021.60 474820.95 664025.89 474817.14 664031.04 474811.41 664070.18 474834.20 664083.72 474811.72 664086.38 474807.30 664090.25 474800.91 664091.78 474798.29 664052.73 474777.18 664072.38 474742.67 664111.04 474765.35 664131.71 474730.00 664096.14 474708.92 664092.74 474706.91 664107.59 474680.82 664112.78 474671.52 664132.48 474636.23 664168.32 474653.28 664168.67 474650.22 664171.42 474644.98 664220.74 474551.07 664216.29 474543.17 664214.65 474536.82 664255.22 474527.18 664248.85 474512.48 664245.42 474507.14 664239.69 474497.60 664237.40 474485.39 664237.02 474469.36 664235.49 474457.92 664232.44 474448.76 664223.28 474442.65 664214.89 474439.22 664205.35 474439.22 664196.19 474435.02 664194.28 474430.06 664196.29 474416.03 664223.19 474414.41 664268.35 474418.33 664291.97 474421.57 664341.67 474423.00 664382.22 474428.44 664419.56 474433.59 664432.11 474433.21 664444.90 474431.97 664459.49 474432.16 664478.38 474433.78 664491.14 474433.33 664497.27 474472.03 664498.51 474485.57 664518.45 474491.73 664563.35 474499.73 664565.96 474518.97 664563.29 474533.09 664562.14 474542.25 664561.38 474548.74 664559.47 474553.70 664554.51 474557.89 664544.97 474562.09 664538.10 474565.53 664533.91 474573.92 664533.14 474589.57 664533.52 474598.34 664537.34 474610.56 664539.63 474622.00 664544.97 474634.60 664550.70 474645.28 664554.13 474649.86 664559.09 474658.64 664564.21 474681.38 664568.89 474716.30 664535.70 474714.29 664490.12 474689.67 664462.82 474671.39 664444.95 474663.71 664427.80 474657.56 664410.66 474652.14 664396.04 474647.51 664388.69 474645.97 664390.50 474635.03 664379.63 474639.20 664356.53 474638.76 664323.59 474638.46 664305.71 474640.39 664281.29 474642.99 664270.99 474642.48 664263.09 474638.90 664261.30 474632.65 664267.71 474625.79 664280.97 474619.98 664300.35 474613.27 664318.82 474609.10 664351.00 474608.37 664374.11 474614.46 664387.63 474615.67 664343.49 474574.68 664335.86 474555.99 664325.93 474544.92 664320.59 474541.49 664311.05 474539.20 664263.40 474562.04 664237.03 474573.73 664245.37 474587.37 664251.26 474605.60 664253.03 474623.22 664256.14 474633.89 664262.99 474647.00 664267.92 474658.12 664230.73 474700.77 664274.35 474725.02 664264.62 474741.51 664240.17 474789.51 664219.91 474831.88 664202.65 474866.40 664181.46 474911.73</gml:posList>
+						</gml:LinearRing>
+					</gml:interior>
+					<gml:interior>
+						<gml:LinearRing>
+							<gml:posList>664675.13 474718.28 664690.80 474699.77 664697.92 474686.23 664697.92 474676.26 664701.13 474660.95 664736.38 474635.31 664758.46 474620.35 664767.72 474614.30 664775.91 474616.43 664786.24 474622.13 664799.77 474626.40 664809.75 474627.47 664822.92 474619.28 664834.32 474606.82 664844.11 474590.66 664848.92 474586.03 664858.81 474582.35 664855.85 474559.70 664832.00 474555.31 664811.35 474552.11 664788.20 474549.26 664768.61 474545.34 664733.36 474529.31 664672.81 474511.51 664663.91 474502.96 664664.98 474489.07 664669.61 474478.74 664673.17 474474.11 664685.28 474473.40 664709.50 474479.10 664748.31 474495.48 664785.35 474515.43 664801.73 474526.82 664814.20 474531.45 664838.06 474534.66 664850.72 474541.60 664869.58 474537.02 664890.23 474538.80 664897.00 474545.56 664898.78 474549.48 664904.56 474559.40 664911.95 474564.08 664927.98 474571.56 664940.80 474573.70 664955.40 474573.70 664965.71 474566.52 664965.15 474600.29 664914.13 474629.78 664860.16 474664.33 664825.21 474686.71 664750.63 474751.28 664716.54 474748.90 664668.75 474738.25 664651.32 474734.64 664675.13 474718.28</gml:posList>
+						</gml:LinearRing>
+					</gml:interior>
+					<gml:interior>
+						<gml:LinearRing>
+							<gml:posList>664132.25 474477.39 664108.97 474482.18 664085.37 474482.18 664062.09 474471.65 664049.49 474456.18 664044.07 474446.30 664044.23 474432.42 664052.52 474419.99 664072.30 474399.89 664084.41 474392.88 664098.70 474391.36 664103.40 474395.51 664119.41 474409.51 664126.17 474413.62 664134.30 474416.85 664143.28 474419.63 664150.97 474421.30 664156.53 474423.06 664159.36 474443.59 664156.49 474463.04 664151.39 474470.70 664132.25 474477.39</gml:posList>
+						</gml:LinearRing>
+					</gml:interior>
+					<gml:interior>
+						<gml:LinearRing>
+							<gml:posList>663974.54 474477.55 663966.57 474496.05 663947.43 474504.02 663930.53 474509.13 663917.13 474507.85 663910.44 474499.88 663905.65 474490.63 663906.29 474472.13 663918.84 474419.40 663988.01 474412.63 663979.33 474453.63 663974.54 474477.55</gml:posList>
+						</gml:LinearRing>
+					</gml:interior>
+					<gml:interior>
+						<gml:LinearRing>
+							<gml:posList>663731.81 474469.33 663731.78 474472.08 663708.82 474465.12 663684.76 474458.70 663685.49 474451.77 663686.01 474447.85 663687.98 474445.16 663690.67 474442.70 663697.93 474441.03 663706.62 474441.91 663717.58 474445.30 663720.93 474448.17 663722.80 474449.96 663726.23 474455.14 663730.30 474461.28 663731.93 474467.78 663731.81 474469.33</gml:posList>
+						</gml:LinearRing>
+					</gml:interior>
+					<gml:interior>
+						<gml:LinearRing>
+							<gml:posList>664042.16 474508.81 664075.96 474506.90 664109.13 474512.00 664118.06 474514.55 664121.25 474524.76 664116.79 474535.60 664086.17 474556.01 664053.64 474563.03 664008.99 474565.58 663958.60 474558.56 663947.11 474554.42 663943.92 474548.36 663947.27 474537.67 663955.57 474532.25 663979.64 474521.57 664008.35 474516.46 664042.16 474508.81</gml:posList>
+						</gml:LinearRing>
+					</gml:interior>
+					<gml:interior>
+						<gml:LinearRing>
+							<gml:posList>663961.07 474569.77 664006.63 474576.44 664013.13 474577.24 664041.37 474580.68 664059.45 474580.29 664062.48 474580.23 664100.03 474573.80 664108.03 474572.80 664110.59 474579.70 664105.17 474588.13 664048.01 474676.97 663995.36 474670.43 663987.13 474628.50 663977.58 474601.38 663970.02 474590.49 663956.11 474572.47 663952.93 474568.36 663961.07 474569.77</gml:posList>
+						</gml:LinearRing>
+					</gml:interior>
+					<gml:interior>
+						<gml:LinearRing>
+							<gml:posList>665852.50 474070.03 665856.64 474068.77 665876.34 474076.96 665892.04 474085.98 665898.77 474093.94 665898.77 474101.22 665898.77 474108.49 665892.04 474111.81 665872.11 474111.01 665856.04 474120.92 665842.29 474119.79 665834.48 474117.39 665830.65 474113.89 665829.67 474109.09 665842.93 474077.85 665846.76 474073.06 665852.50 474070.03</gml:posList>
+						</gml:LinearRing>
+					</gml:interior>
+					<gml:interior>
+						<gml:LinearRing>
+							<gml:posList>666011.11 473838.90 666076.46 473809.62 666080.38 473818.20 666106.73 473806.82 666126.21 473849.51 666117.63 473853.27 666031.86 473887.79 666024.76 473872.61 666011.11 473838.90</gml:posList>
+						</gml:LinearRing>
+					</gml:interior>
+					<gml:interior>
+						<gml:LinearRing>
+							<gml:posList>665276.01 473579.20 665254.24 473549.13 665243.36 473509.82 665238.75 473474.49 665230.01 473430.57 665230.36 473412.15 665230.57 473400.68 665232.82 473382.07 665239.03 473377.56 665274.49 473372.13 665291.84 473370.26 665300.99 473367.40 665304.62 473367.40 665306.91 473370.26 665309.39 473377.89 665326.75 473467.00 665334.00 473510.31 665333.62 473522.33 665332.86 473552.10 665339.15 473590.26 665339.54 473596.74 665338.96 473600.94 665337.25 473606.85 665334.38 473611.82 665331.33 473614.68 665327.52 473616.59 665321.98 473618.88 665314.73 473619.26 665311.68 473618.68 665299.50 473607.89 665287.63 473594.15 665276.01 473579.20</gml:posList>
+						</gml:LinearRing>
+					</gml:interior>
+					<gml:interior>
+						<gml:LinearRing>
+							<gml:posList>665073.78 473503.85 665072.04 473503.86 665070.71 473503.15 665069.42 473502.08 665064.97 473495.09 665060.43 473488.19 665056.06 473481.51 665053.57 473476.97 665051.99 473469.91 665052.62 473466.85 665054.99 473463.44 665057.51 473462.24 665061.62 473461.93 665065.15 473464.19 665067.02 473466.56 665069.03 473473.18 665070.18 473475.92 665072.27 473476.44 665074.94 473475.49 665075.22 473474.05 665075.56 473471.18 665074.50 473467.28 665069.61 473457.49 665068.81 473452.48 665070.25 473450.08 665073.50 473447.98 665076.27 473447.68 665079.54 473448.85 665082.86 473452.59 665086.89 473460.65 665090.92 473469.87 665092.98 473475.17 665092.74 473477.77 665090.52 473482.94 665082.86 473493.71 665079.43 473498.74 665076.99 473502.03 665075.07 473503.23 665073.78 473503.85</gml:posList>
+						</gml:LinearRing>
+					</gml:interior>
+					<gml:interior>
+						<gml:LinearRing>
+							<gml:posList>665891.31 473191.77 665858.20 473154.95 665876.34 473137.02 665895.12 473121.44 665927.77 473165.19 665909.18 473179.20 665891.31 473191.77</gml:posList>
+						</gml:LinearRing>
+					</gml:interior>
+					<gml:interior>
+						<gml:LinearRing>
+							<gml:posList>665950.14 472615.68 665979.03 472597.52 665983.49 472604.33 665994.25 472620.76 665967.32 472638.92 665950.14 472615.68</gml:posList>
+						</gml:LinearRing>
+					</gml:interior>
+					<gml:interior>
+						<gml:LinearRing>
+							<gml:posList>665733.27 472371.74 665750.99 472363.42 665757.27 472364.80 665765.86 472376.91 665768.66 472382.54 665770.47 472391.48 665768.49 472398.03 665740.15 472423.20 665729.00 472429.36 665720.89 472431.07 665707.02 472424.03 665695.28 472412.08 665691.32 472401.39 665691.02 472394.15 665693.79 472390.74 665698.27 472387.96 665711.08 472380.70 665720.68 472373.66 665733.27 472371.74</gml:posList>
+						</gml:LinearRing>
+					</gml:interior>
+					<gml:interior>
+						<gml:LinearRing>
+							<gml:posList>667213.16 471457.29 667305.40 471440.70 667320.21 471461.28 667327.79 471473.70 667326.41 471488.53 667326.76 471505.77 667328.14 471518.53 667318.49 471526.80 667310.56 471526.80 667304.36 471516.46 667294.71 471506.46 667276.78 471503.70 667275.06 471497.84 667279.54 471489.22 667275.40 471485.77 667264.03 471489.90 667252.66 471494.73 667240.94 471493.35 667223.70 471498.53 667207.50 471507.15 667187.17 471517.15 667174.76 471525.77 667159.60 471535.08 667149.95 471534.39 667145.47 471528.18 667137.88 471518.87 667129.27 471512.32 667115.48 471506.80 667100.31 471505.42 667093.42 471500.94 667094.46 471495.08 667098.94 471488.18 667121.40 471475.16 667147.97 471471.83 667213.16 471457.29</gml:posList>
+						</gml:LinearRing>
+					</gml:interior>
+					<gml:interior>
+						<gml:LinearRing>
+							<gml:posList>667462.53 471444.73 667432.20 471433.00 667409.45 471429.21 667383.61 471428.86 667366.03 471423.69 667359.48 471418.86 667358.79 471411.96 667363.61 471405.76 667372.92 471398.52 667377.75 471391.73 667395.86 471383.79 667446.45 471367.61 667469.09 471360.68 667480.41 471359.99 667500.58 471424.82 667499.07 471437.14 667495.97 471443.35 667490.80 471447.83 667484.25 471449.90 667462.53 471444.73</gml:posList>
+						</gml:LinearRing>
+					</gml:interior>
+					<gml:interior>
+						<gml:LinearRing>
+							<gml:posList>666465.24 473370.60 666389.53 473397.75 666381.72 473380.28 666461.31 473351.01 666471.43 473347.29 666474.07 473367.43 666465.24 473370.60</gml:posList>
+						</gml:LinearRing>
+					</gml:interior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>las</ot:rodzaj>
+			<ot:kategoria>mieszany</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_51f7cdd8-8a52-11ee-b1d0-44e5174962da_2023-12-31T120000">
+			<ot:lokalnyId>51f7cdd8-8a52-11ee-b1d0-44e5174962da</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_704</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-f803bdae-58d7-45f4-961c-d503df480472-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>662881.66 475735.37 662813.41 475687.36 662784.69 475667.16 662798.15 475628.80 662790.81 475627.86 662785.02 475627.77 662782.80 475627.88 662780.64 475629.89 662775.36 475638.82 662769.21 475648.27 662758.67 475658.60 662746.15 475669.58 662730.39 475679.49 662687.90 475725.52 662763.05 475775.84 662773.58 475760.41 662775.56 475754.62 662773.44 475751.23 662768.36 475750.39 662764.55 475748.83 662763.42 475744.74 662769.35 475733.88 662773.44 475729.50 662778.66 475727.24 662785.75 475726.73 662790.18 475730.64 662792.46 475733.69 662790.18 475736.99 662784.09 475738.51 662780.98 475743.20 662781.55 475751.19 662782.90 475758.63 662781.04 475762.08 662778.25 475765.55 662775.22 475770.34 662774.90 475773.61 662775.20 475774.82 662770.24 475780.66 662777.95 475785.82 662839.93 475825.67 662856.71 475797.93 662884.05 475748.33 662877.47 475743.72 662881.66 475735.37</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>las</ot:rodzaj>
+			<ot:kategoria>iglasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_PTLZ_A gml:id="PL.PZGiK.330.BDOT10k_775e36ff-769c-46d3-be00-cc246f5bb095_2023-12-31T120000">
+			<ot:lokalnyId>775e36ff-769c-46d3-be00-cc246f5bb095</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_703</ot:kodKarto10k>
+			<ot:geometria>
+				<gml:Polygon gml:id="id-9f7b535c-2e95-4b36-b581-8b87fe267454-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>663482.24 476874.03 663486.91 476863.44 663487.31 476863.65 663497.52 476840.65 663472.14 476833.58 663492.22 476786.72 663509.31 476793.23 663519.17 476780.80 663479.41 476762.25 663441.06 476744.37 663441.70 476743.03 663455.33 476707.96 663470.42 476669.80 663478.83 476671.81 663481.60 476672.86 663482.78 476667.89 663482.24 476664.00 663481.26 476662.44 663478.56 476661.63 663476.41 476661.09 663469.71 476661.09 663460.42 476663.14 663447.85 476665.00 663435.93 476666.90 663425.35 476663.84 663420.22 476655.52 663415.23 476648.80 663412.76 476655.73 663408.31 476652.87 663401.64 476650.65 663390.37 476650.49 663373.86 476647.79 663352.85 476647.29 663350.92 476647.53 663344.25 476648.66 663337.58 476649.78 663325.87 476652.98 663315.85 476656.62 663303.79 476662.65 663302.07 476665.95 663323.44 476682.26 663325.65 476679.90 663327.65 476678.91 663329.82 476678.91 663333.45 476680.36 663347.41 476688.90 663368.05 476655.74 663422.62 476688.81 663394.52 476724.37 663393.00 476726.60 663354.90 476782.72 663386.51 476796.65 663397.15 476802.70 663445.31 476822.80 663431.40 476852.59 663477.18 476871.85 663482.24 476874.03</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ot:geometria>
+			<ot:rodzaj>las</ot:rodzaj>
+			<ot:kategoria>liściasty</ot:kategoria>
+		</ot:OT_PTLZ_A>
+	</gml:featureMember>
+	</gml:FeatureCollection>

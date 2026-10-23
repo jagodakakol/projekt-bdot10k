@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gml:FeatureCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ot="urn:gugik:specyfikacje:gmlas:bazaDanychObiektowTopograficznych10k:2.0" gml:id="GUGiK_OT_ADMS_P" xsi:schemaLocation="urn:gugik:specyfikacje:gmlas:bazaDanychObiektowTopograficznych10k:2.0 ../XSD/BDOT10k_BDOO.xsd">
+	<gml:featureMember>
+		<ot:OT_ADMS_P gml:id="PL.PZGiK.330.BDOT10k_3303EA7D-E8A4-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA7D-E8A4-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:nazwa>Wola Karczewska</ot:nazwa>
+			<ot:identyfikatorSIMC>0010145</ot:identyfikatorSIMC>
+			<ot:identyfikatorTERC>1417082</ot:identyfikatorTERC>
+			<ot:rodzaj>wieś</ot:rodzaj>
+			<ot:liczbaMieszkancow>343</ot:liczbaMieszkancow>
+			<ot:identyfikatorPRNG>150039</ot:identyfikatorPRNG>
+			<ot:geometria>
+				<gml:Point gml:id="id-a6befec1-612e-4225-9a21-2b77eeec8070-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:pos>663647.12 476125.76</gml:pos>
+				</gml:Point>
+			</ot:geometria>
+		</ot:OT_ADMS_P>
+	</gml:featureMember>
+	</gml:FeatureCollection>

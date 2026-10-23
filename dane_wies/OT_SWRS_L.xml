@@ -1,0 +1,1219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gml:FeatureCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ot="urn:gugik:specyfikacje:gmlas:bazaDanychObiektowTopograficznych10k:2.0" gml:id="GUGiK_OT_SWRS_L" xsi:schemaLocation="urn:gugik:specyfikacje:gmlas:bazaDanychObiektowTopograficznych10k:2.0 ../XSD/BDOT10k_BDOO.xsd">
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F797-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F797-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:geometria>
+				<gml:Curve gml:id="id-ec2f79de-bcd2-4164-8276-b85dd8fea8f3-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>663533.40 476067.69 663530.93 476083.76</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+			<ot:cechaGeometrii>sztuczny łącznik</ot:cechaGeometrii>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F79A-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F79A-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_606</ot:kodKarto10k>
+			<ot:polozenie>na powierzchni</ot:polozenie>
+			<ot:szerokosc uom="m">1.0</ot:szerokosc>
+			<ot:geometria>
+				<gml:Curve gml:id="id-df2007e2-7234-46b8-a7af-1ca8dbd9f90e-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>663530.93 476083.76 663529.77 476086.50 663525.19 476092.22 663521.98 476096.81 663519.82 476102.26 663519.26 476105.73 663518.69 476109.19 663518.35 476113.61 663518.18 476121.11 663518.07 476126.33 663516.62 476128.80 663502.73 476131.47 663494.52 476134.27 663492.42 476135.35 663487.20 476142.65 663484.78 476147.33 663482.64 476151.46 663477.02 476162.31 663475.49 476169.31 663475.05 476175.66 663474.18 476180.04 663473.52 476190.76 663469.18 476203.22 663469.18 476203.62 663469.18 476204.02 663469.15 476217.17 663469.16 476221.45</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F76B-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F76B-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_606</ot:kodKarto10k>
+			<ot:polozenie>na powierzchni</ot:polozenie>
+			<ot:szerokosc uom="m">1.0</ot:szerokosc>
+			<ot:geometria>
+				<gml:Curve gml:id="id-a7aa6df7-7073-4e1e-a5b8-ee1b30535870-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>662489.12 476841.89 662518.22 476844.08 662545.14 476847.58 662562.21 476850.21 662577.96 476854.58 662587.84 476857.87 662590.64 476858.47 662594.14 476858.59 662598.50 476858.41 662600.72 476857.87 662603.11 476856.63 662614.94 476847.80 662628.72 476831.88 662650.94 476807.05 662654.70 476802.26 662657.94 476797.58 662671.48 476764.95 662673.52 476759.80 662683.16 476736.64 662686.82 476727.85 662711.30 476659.36 662721.73 476635.97 662729.83 476615.62 662731.36 476569.67 662730.37 476556.11 662730.05 476527.66 662726.01 476491.12 662726.04 476485.08 662726.04 476481.14 662724.90 476462.05 662722.42 476453.02 662717.32 476439.03</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F883-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F883-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:uwagi>statusEksploatacji:tymczasowy brak danych - do weryfikacji</ot:uwagi>
+			<ot:identyfikatorPRNG>137671</ot:identyfikatorPRNG>
+			<ot:polozenie>na powierzchni</ot:polozenie>
+			<ot:szerokosc uom="m">19.0</ot:szerokosc>
+			<ot:nazwa>Świder</ot:nazwa>
+			<ot:geometria>
+				<gml:Curve gml:id="id-8618058f-7386-4447-adc0-caf30842d08f-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>662716.13 476430.63 662706.14 476431.54 662698.61 476430.78 662691.65 476430.08 662682.95 476424.51 662671.63 476413.71 662661.48 476403.40 662656.57 476394.05 662654.70 476382.05 662655.48 476364.28 662658.58 476353.45 662663.10 476342.13 662670.62 476328.98 662681.76 476312.61 662691.16 476298.86 662696.38 476288.41 662697.25 476281.79 662697.78 476272.39 662696.02 476264.97 662692.36 476258.18 662686.27 476252.08 662676.52 476246.86 662661.90 476242.85 662645.37 476240.76 662641.41 476243.35</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>rzeka</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+			<ot:identyfikatorMPHP>256</ot:identyfikatorMPHP>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F7F0-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F7F0-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_606</ot:kodKarto10k>
+			<ot:polozenie>na powierzchni</ot:polozenie>
+			<ot:szerokosc uom="m">1.0</ot:szerokosc>
+			<ot:geometria>
+				<gml:Curve gml:id="id-9cdd3460-4407-42be-85b1-0dea475cf782-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>663346.25 476350.78 663342.39 476345.69 663338.19 476338.30 663334.18 476329.57 663319.44 476317.84 663317.92 476309.33</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F79C-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F79C-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_606</ot:kodKarto10k>
+			<ot:polozenie>na powierzchni</ot:polozenie>
+			<ot:szerokosc uom="m">1.0</ot:szerokosc>
+			<ot:geometria>
+				<gml:Curve gml:id="id-620f58e9-2591-4c65-b01a-11953e228a43-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>663521.30 476680.84 663514.30 476651.85 663508.83 476635.18 663507.05 476627.68 663507.68 476622.84 663509.72 476618.14 663534.40 476589.14 663553.60 476568.27 663561.15 476560.81 663571.85 476557.38 663580.20 476551.13 663589.21 476542.86 663592.61 476535.33 663594.39 476529.83 663595.27 476517.05 663593.60 476449.16</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F888-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F888-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:uwagi>statusEksploatacji:tymczasowy brak danych - do weryfikacji</ot:uwagi>
+			<ot:identyfikatorPRNG>137671</ot:identyfikatorPRNG>
+			<ot:polozenie>na powierzchni</ot:polozenie>
+			<ot:szerokosc uom="m">14.0</ot:szerokosc>
+			<ot:nazwa>Świder</ot:nazwa>
+			<ot:geometria>
+				<gml:Curve gml:id="id-f3729756-00ef-4cf1-b2b6-87fcf0417c92-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>662799.21 476348.16 662789.24 476350.40 662780.19 476353.71 662772.18 476358.41 662764.52 476364.33 662756.69 476372.69 662751.99 476379.48 662748.69 476386.97 662745.90 476394.28 662743.99 476401.77 662741.72 476405.08 662737.96 476411.76 662730.57 476425.54 662716.13 476430.63</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>rzeka</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+			<ot:identyfikatorMPHP>256</ot:identyfikatorMPHP>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F79D-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F79D-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_606</ot:kodKarto10k>
+			<ot:polozenie>na powierzchni</ot:polozenie>
+			<ot:szerokosc uom="m">1.0</ot:szerokosc>
+			<ot:geometria>
+				<gml:Curve gml:id="id-f6ad767c-c369-44b0-8406-57185f1db837-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>663593.60 476449.16 663593.23 476413.84 663592.08 476404.73 663591.24 476399.28 663588.00 476395.68 663580.91 476383.26 663563.79 476369.78 663550.14 476362.01 663546.65 476359.66 663531.07 476355.40 663509.79 476353.19 663478.39 476352.29 663465.55 476339.70 663461.47 476339.10 663457.64 476338.54 663442.03 476337.48 663427.66 476338.37 663410.10 476343.16 663379.76 476361.19 663372.46 476362.55 663363.45 476362.27 663355.51 476359.05 663350.57 476357.05 663346.25 476350.78</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F76E-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F76E-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_606</ot:kodKarto10k>
+			<ot:polozenie>na powierzchni</ot:polozenie>
+			<ot:szerokosc uom="m">1.0</ot:szerokosc>
+			<ot:geometria>
+				<gml:Curve gml:id="id-16d7c710-9c07-4624-b05b-94054c5d1b37-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>663797.23 475297.36 663816.38 475336.75 663817.48 475339.02 663819.17 475342.06 663826.99 475356.46 663833.12 475364.34 663858.06 475391.92 663914.07 475452.33 663919.76 475458.89 663934.31 475499.05</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F76D-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F76D-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_606</ot:kodKarto10k>
+			<ot:polozenie>na powierzchni</ot:polozenie>
+			<ot:szerokosc uom="m">1.0</ot:szerokosc>
+			<ot:geometria>
+				<gml:Curve gml:id="id-145cc033-8eed-48cc-b049-914e2f43e07e-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>663426.98 476379.80 663412.53 476382.87 663398.01 476385.02 663385.06 476387.31 663362.59 476389.24 663350.66 476388.65 663344.27 476386.17 663340.02 476381.55 663337.89 476376.76 663337.53 476370.55 663338.95 476364.34 663342.32 476360.26 663344.81 476356.89 663345.69 476352.98 663346.25 476350.78</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F7BA-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F7BA-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_606</ot:kodKarto10k>
+			<ot:polozenie>na powierzchni</ot:polozenie>
+			<ot:szerokosc uom="m">1.0</ot:szerokosc>
+			<ot:geometria>
+				<gml:Curve gml:id="id-dc67cc4b-270d-4a2f-8128-c747c0937073-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>663751.52 476612.00 663735.14 476621.55 663727.19 476628.06 663716.79 476638.52 663703.55 476643.57 663692.62 476649.52 663679.27 476652.13 663672.51 476656.15 663667.84 476659.01 663663.96 476663.95 663658.62 476667.54 663651.29 476675.28 663643.43 476681.70 663635.77 476688.12 663630.18 476689.22 663620.91 476688.34 663612.31 476688.61 663600.16 476686.48 663585.62 476682.40 663575.28 476680.31 663567.50 476680.75 663561.06 476683.55 663544.40 476684.01 663521.30 476680.84</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F7BD-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F7BD-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_606</ot:kodKarto10k>
+			<ot:polozenie>na powierzchni</ot:polozenie>
+			<ot:szerokosc uom="m">1.0</ot:szerokosc>
+			<ot:geometria>
+				<gml:Curve gml:id="id-4d24479f-15f5-4537-843e-92054872825d-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>663944.73 476634.52 663908.74 476615.66 663902.92 476613.16 663900.72 476611.60 663890.77 476606.26 663878.65 476599.55 663872.80 476597.59 663867.48 476596.17 663863.67 476596.44 663857.88 476598.59 663849.85 476604.53 663845.69 476605.91 663832.72 476608.16 663831.41 476608.31 663821.31 476608.02 663816.69 476603.86 663808.80 476589.39 663806.75 476585.72 663804.16 476583.35 663800.38 476582.92 663794.66 476583.78 663784.83 476588.45 663779.66 476592.42 663773.36 476600.01 663765.41 476603.52 663754.02 476609.74 663751.52 476612.00</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F768-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F768-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_606</ot:kodKarto10k>
+			<ot:polozenie>na powierzchni</ot:polozenie>
+			<ot:szerokosc uom="m">1.0</ot:szerokosc>
+			<ot:geometria>
+				<gml:Curve gml:id="id-14bcf45f-adee-4595-ae15-fe54e64295e4-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>663100.05 476946.69 663105.52 476943.17 663108.55 476941.22 663117.37 476934.67 663142.10 476917.06 663151.29 476913.12 663156.32 476907.43 663173.17 476894.74 663195.49 476870.67 663213.22 476858.19 663229.41 476842.22 663234.86 476831.08 663236.70 476828.70 663238.53 476826.33 663242.93 476820.65 663267.48 476783.38 663270.66 476774.97 663271.82 476768.93 663272.67 476763.08 663275.09 476751.94 663277.36 476733.38 663277.81 476726.11 663277.97 476720.92 663278.12 476716.18 663278.27 476711.57 663278.95 476695.88 663280.42 476684.52 663283.38 476674.07 663286.68 476665.84</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F7B8-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F7B8-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_606</ot:kodKarto10k>
+			<ot:polozenie>na powierzchni</ot:polozenie>
+			<ot:szerokosc uom="m">1.0</ot:szerokosc>
+			<ot:geometria>
+				<gml:Curve gml:id="id-d80379ac-4032-4027-8b19-52b98b49dc8a-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>663689.30 476466.05 663675.71 476484.33 663673.41 476485.75 663668.92 476487.83 663644.31 476484.44 663638.29 476482.03 663628.44 476477.76 663615.83 476470.85 663610.42 476466.91 663601.29 476458.68 663597.83 476455.56 663593.60 476449.16</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F7B9-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F7B9-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_606</ot:kodKarto10k>
+			<ot:polozenie>na powierzchni</ot:polozenie>
+			<ot:szerokosc uom="m">1.0</ot:szerokosc>
+			<ot:geometria>
+				<gml:Curve gml:id="id-156b34e7-fd6f-4bb8-9700-415ba85cd61e-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>663554.24 476769.89 663539.23 476732.49 663521.30 476680.84</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F799-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F799-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_606</ot:kodKarto10k>
+			<ot:polozenie>na powierzchni</ot:polozenie>
+			<ot:szerokosc uom="m">1.0</ot:szerokosc>
+			<ot:geometria>
+				<gml:Curve gml:id="id-f334119a-2925-4665-8973-1c536d6f8624-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>663534.94 476064.97 663533.40 476067.69</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_709050f3-b24e-45fe-95d4-a62cf83e5f29_2023-12-31T120000">
+			<ot:lokalnyId>709050f3-b24e-45fe-95d4-a62cf83e5f29</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_606</ot:kodKarto10k>
+			<ot:polozenie>na powierzchni</ot:polozenie>
+			<ot:szerokosc uom="m">1.5</ot:szerokosc>
+			<ot:geometria>
+				<gml:Curve gml:id="id-05caf7b1-5441-4710-8b2f-e95b4dd06bd7-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>662888.01 475467.29 662887.43 475472.05 662859.49 475512.17 662844.40 475537.60 662841.19 475540.56</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F880-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F880-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:uwagi>statusEksploatacji:tymczasowy brak danych - do weryfikacji</ot:uwagi>
+			<ot:identyfikatorPRNG>137671</ot:identyfikatorPRNG>
+			<ot:polozenie>na powierzchni</ot:polozenie>
+			<ot:szerokosc uom="m">22.0</ot:szerokosc>
+			<ot:nazwa>Świder</ot:nazwa>
+			<ot:geometria>
+				<gml:Curve gml:id="id-b69435b0-6ed7-46cc-88d2-f0c23f5e8f95-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>665359.14 476385.73 665333.49 476386.46 665315.56 476390.99 665297.37 476392.73 665283.62 476392.56 665266.91 476391.34 665252.11 476387.33 665235.93 476380.37 665219.04 476371.66 665211.38 476369.22 665200.94 476368.35 665183.36 476369.22 665165.08 476373.57 665146.98 476381.41 665139.37 476383.50 665128.58 476384.02 665108.04 476382.63 665078.10 476378.45 665055.87 476373.75 665040.20 476372.01 665032.37 476372.36 665024.71 476374.10 665018.44 476376.88 665012.53 476380.89 665004.40 476389.13 665001.39 476390.74 664994.86 476392.11 664977.59 476403.75 664968.30 476407.86 664957.00 476413.32 664949.52 476413.25 664937.30 476411.49 664921.19 476407.36 664907.14 476400.92 664898.09 476392.56 664886.25 476377.75 664873.55 476366.78 664868.85 476364.17 664862.55 476360.18 664847.20 476353.24 664837.30 476350.47 664827.50 476348.69 664817.29 476348.89 664804.62 476353.24 664794.62 476366.02 664782.04 476391.77 664765.36 476424.80 664758.05 476438.03 664753.32 476449.80 664749.16 476454.85 664743.99 476458.66 664734.51 476463.27 664724.38 476467.04 664714.79 476469.54 664703.81 476470.70 664695.09 476472.77 664685.49 476478.52 664676.87 476485.78 664665.86 476497.68 664658.20 476511.26 664643.64 476539.91 664637.02 476554.20 664635.91 476555.76 664630.93 476562.73 664625.97 476571.51 664618.84 476578.04 664611.21 476583.19 664603.29 476586.56 664591.90 476587.25 664579.33 476585.37 664566.25 476571.61 664558.73 476557.05 664548.77 476537.82 664543.21 476527.72 664537.21 476513.44 664534.06 476501.13 664533.27 476491.47 664531.20 476485.85 664526.94 476480.89 664517.33 476473.27 664502.88 476466.44 664454.31 476440.65 664442.38 476435.16 664432.46 476432.54 664422.88 476432.02 664410.00 476432.02 664387.55 476433.76 664370.67 476437.25 664363.01 476438.12 664341.77 476440.73 664324.06 476444.56 664311.88 476448.92 664296.56 476456.40 664270.98 476469.81 664255.53 476481.66 664233.95 476493.67 664210.28 476506.21 664197.74 476512.13 664187.20 476514.31 664172.75 476514.49 664159.35 476513.09 664145.60 476508.92 664133.59 476502.12 664117.75 476490.11 664102.96 476475.13 664096.86 476466.42 664093.90 476460.15 664091.64 476451.97 664091.12 476445.35 664090.08 476436.64 664090.66 476426.11 664094.14 476411.65 664101.28 476390.06 664108.07 476375.08 664115.38 476358.93 664122.16 476346.39 664124.95 476337.51 664125.12 476331.06 664125.12 476326.54 664122.66 476314.77 664118.83 476306.41 664110.83 476297.53 664099.69 476290.91 664085.93 476285.34 664074.97 476282.90 664057.74 476282.55 664045.55 476283.77 664033.02 476286.73 664022.75 476290.56 664007.26 476297.70 663990.38 476308.50 663975.57 476320.97 663965.85 476323.56 663958.29 476323.35 663952.25 476320.54 663946.63 476314.06 663944.04 476306.07 663941.88 476291.60 663943.39 476278.00 663944.51 476267.94 663944.91 476253.38 663942.75 476237.83 663938.43 476228.11 663932.38 476219.69 663920.00 476212.64 663902.80 476206.79 663873.21 476198.04 663845.03 476187.68 663821.06 476178.61 663796.79 476170.84 663780.35 476167.48 663758.76 476163.71 663751.85 476160.36 663746.02 476160.57 663737.59 476162.95 663729.71 476163.38 663712.33 476166.94 663690.95 476169.21 663679.36 476169.84 663658.13 476175.42 663650.91 476178.05 663636.29 476184.84 663620.80 476192.86 663612.61 476198.08 663606.35 476203.83 663598.69 476212.19 663589.99 476221.24 663582.33 476227.34 663576.93 476230.65 663570.67 476233.08 663560.75 476235.17 663551.69 476236.22 663534.55 476237.09 663516.45 476237.09 663502.88 476236.22 663489.30 476233.61 663478.07 476230.40 663468.54 476226.47</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>rzeka</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+			<ot:identyfikatorMPHP>256</ot:identyfikatorMPHP>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F7B7-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F7B7-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_606</ot:kodKarto10k>
+			<ot:polozenie>na powierzchni</ot:polozenie>
+			<ot:szerokosc uom="m">1.0</ot:szerokosc>
+			<ot:geometria>
+				<gml:Curve gml:id="id-97c457fb-801b-4fd2-ba3f-09078d1cf6ef-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>663521.30 476680.84 663514.05 476680.45 663503.58 476678.76 663498.69 476677.95 663492.32 476676.90 663487.77 476675.19 663484.45 476673.94 663481.60 476672.86 663478.83 476671.81 663470.42 476669.80 663466.25 476669.45 663462.35 476670.07 663456.85 476671.93 663447.90 476677.87 663443.50 476680.27 663437.83 476681.69 663432.95 476681.96 663427.36 476681.33 663422.04 476679.12 663417.25 476676.62 663417.03 476676.54 663414.98 476672.87 663413.87 476667.63 663414.66 476660.17 663412.76 476655.73 663408.31 476652.87 663401.64 476650.65 663390.37 476650.49 663373.86 476647.79 663352.85 476647.29 663350.92 476647.53 663344.25 476648.66 663337.58 476649.78 663325.87 476652.98 663315.85 476656.62 663303.79 476662.65 663291.70 476666.02 663286.68 476665.84</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F889-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F889-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:uwagi>statusEksploatacji:tymczasowy brak danych - do weryfikacji</ot:uwagi>
+			<ot:identyfikatorPRNG>137671</ot:identyfikatorPRNG>
+			<ot:polozenie>na powierzchni</ot:polozenie>
+			<ot:szerokosc uom="m">15.0</ot:szerokosc>
+			<ot:nazwa>Świder</ot:nazwa>
+			<ot:geometria>
+				<gml:Curve gml:id="id-ab5e64fd-f331-406f-8d4a-c5f6e47a7c9a-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>663314.28 476302.31 663302.10 476306.49 663281.60 476314.97 663255.23 476322.47 663232.43 476328.05 663203.42 476339.93 663190.36 476345.50 663178.35 476348.99 663167.04 476350.03 663155.72 476349.68 663144.06 476347.59 663135.71 476342.89 663129.27 476336.80 663122.13 476328.61 663115.17 476314.33 663106.64 476298.66 663097.41 476284.73 663089.49 476273.48 663080.09 476262.16 663071.39 476253.45 663060.42 476244.75 663051.20 476237.08 663040.75 476230.29 663030.31 476222.63 663022.13 476216.88 663013.60 476213.75 663009.13 476213.13 663001.30 476212.96 662995.38 476214.18 662989.64 476217.84 662983.89 476223.23 662975.02 476235.25 662965.44 476250.40 662956.91 476266.25 662951.17 476278.79 662947.69 476287.15 662945.01 476300.51 662942.85 476309.25 662938.94 476317.61 662932.48 476322.86 662926.98 476327.61 662920.61 476330.74 662909.92 476334.63 662884.11 476341.00 662865.32 476343.48 662832.85 476341.75 662809.18 476345.93 662799.21 476348.16</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>rzeka</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+			<ot:identyfikatorMPHP>256</ot:identyfikatorMPHP>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F7BB-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F7BB-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_606</ot:kodKarto10k>
+			<ot:polozenie>na powierzchni</ot:polozenie>
+			<ot:szerokosc uom="m">1.0</ot:szerokosc>
+			<ot:geometria>
+				<gml:Curve gml:id="id-c703e478-3152-445d-8cba-ee27f6487aee-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>664044.11 476647.64 664015.21 476638.94 664004.18 476635.49</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F7BE-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F7BE-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_606</ot:kodKarto10k>
+			<ot:polozenie>na powierzchni</ot:polozenie>
+			<ot:szerokosc uom="m">1.0</ot:szerokosc>
+			<ot:geometria>
+				<gml:Curve gml:id="id-07b00881-f98d-47ac-9b5c-599736bd95e7-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>663848.65 476828.30 663857.88 476798.84 663876.26 476760.42 663881.64 476749.16 663907.54 476698.76 663913.56 476687.75 663921.28 476673.60 663924.21 476668.24 663936.98 476653.69 663945.57 476647.51</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F87F-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F87F-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:uwagi>statusEksploatacji:tymczasowy brak danych - do weryfikacji</ot:uwagi>
+			<ot:identyfikatorPRNG>137671</ot:identyfikatorPRNG>
+			<ot:polozenie>na powierzchni</ot:polozenie>
+			<ot:szerokosc uom="m">21.0</ot:szerokosc>
+			<ot:nazwa>Świder</ot:nazwa>
+			<ot:geometria>
+				<gml:Curve gml:id="id-e3ad20dd-f258-492d-9b93-d978b113b557-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>662514.93 476419.84 662512.18 476421.04 662505.48 476430.36 662498.27 476434.76 662490.85 476434.96 662474.65 476428.98 662463.60 476426.55 662450.38 476428.15 662435.28 476432.19 662418.52 476437.57 662404.50 476437.37 662388.07 476438.37 662364.83 476436.77 662335.37 476428.95 662304.30 476413.82 662281.88 476401.90 662254.43 476392.89 662237.60 476387.88 662222.37 476380.67 662203.53 476368.04 662200.13 476362.63 662190.31 476350.81 662188.11 476342.20 662188.71 476330.98 662189.71 476321.96 662193.73 476296.35 662196.42 476280.09 662201.30 476261.41 662208.53 476242.06 662220.48 476220.86 662229.73 476210.09 662247.24 476192.44 662251.72 476187.64 662265.10 476171.04 662270.80 476160.63 662276.85 476147.83 662276.17 476138.58 662264.96 476119.53 662246.39 476103.92 662198.98 476073.38 662176.90 476064.38 662154.36 476063.14 662137.06 476070.41 662130.12 476078.34 662125.92 476089.62 662130.29 476116.54 662126.64 476133.63 662124.91 476154.73 662122.89 476162.47 662117.34 476168.87 662111.48 476173.99 662099.57 476176.80 662079.81 476181.99 662069.55 476181.65 662061.47 476178.62 662047.13 476168.32 662026.36 476154.79 662011.89 476150.31 661997.70 476142.62 661985.01 476126.88 661976.95 476117.92 661966.58 476103.71 661952.63 476096.42 661936.76 476090.91 661925.24 476091.81 661908.68 476092.99</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>rzeka</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+			<ot:identyfikatorMPHP>256</ot:identyfikatorMPHP>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_1376cd34-2e16-4ee2-86e2-b7627611a9d8_2023-12-31T120000">
+			<ot:lokalnyId>1376cd34-2e16-4ee2-86e2-b7627611a9d8</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:geometria>
+				<gml:Curve gml:id="id-b2d995e5-715d-4b1f-8ff2-500fa8e4fb0e-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>662841.19 475540.56 662836.05 475542.87 662825.64 475545.70 662816.64 475553.41 662807.64 475563.82 662799.03 475577.70 662789.13 475596.73 662785.15 475613.05</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+			<ot:cechaGeometrii>sztuczny łącznik</ot:cechaGeometrii>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F87E-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F87E-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_606</ot:kodKarto10k>
+			<ot:polozenie>na powierzchni</ot:polozenie>
+			<ot:szerokosc uom="m">1.0</ot:szerokosc>
+			<ot:geometria>
+				<gml:Curve gml:id="id-858ac2e5-d602-482f-8bd2-3857cb4ded5c-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>662460.21 476620.87 662506.08 476618.58 662510.05 476618.37 662539.43 476616.83 662543.61 476616.61 662570.30 476615.08 662580.94 476615.72 662587.48 476605.67 662596.45 476596.70 662612.43 476578.20 662618.01 476571.97 662628.51 476561.79 662640.66 476544.51 662643.47 476537.56 662643.30 476533.23 662641.71 476530.04 662640.03 476526.67 662627.55 476511.24 662604.87 476494.44 662587.20 476482.83 662585.53 476481.74 662563.49 476467.25 662534.86 476446.61 662517.70 476434.42</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F793-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F793-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_606</ot:kodKarto10k>
+			<ot:polozenie>na powierzchni</ot:polozenie>
+			<ot:szerokosc uom="m">1.0</ot:szerokosc>
+			<ot:geometria>
+				<gml:Curve gml:id="id-b9063f7b-c698-46b8-8452-5bcb6c972ee1-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>664028.83 475358.09 663984.20 475443.01 663978.07 475462.73 663973.70 475471.03 663968.01 475477.39 663958.82 475484.83 663949.95 475489.40 663934.31 475499.05</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_4d5d1d4f-577b-4772-9f9b-3dcd888ca18c_2023-12-31T120000">
+			<ot:lokalnyId>4d5d1d4f-577b-4772-9f9b-3dcd888ca18c</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_606</ot:kodKarto10k>
+			<ot:polozenie>na powierzchni</ot:polozenie>
+			<ot:szerokosc uom="m">1.5</ot:szerokosc>
+			<ot:geometria>
+				<gml:Curve gml:id="id-7a27a67d-433b-4fec-9aef-caccc00be8be-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>662785.15 475613.05 662786.62 475617.24 662788.77 475621.32 662790.29 475625.14 662790.81 475627.86 662791.00 475628.89 662791.44 475634.75 662786.37 475643.63 662782.56 475648.95 662775.97 475674.07 662770.64 475685.74 662768.87 475702.48 662773.43 475712.88 662776.98 475720.24 662783.58 475724.81 662790.18 475730.64 662792.46 475733.69 662790.18 475736.99 662784.09 475738.51 662780.98 475743.20 662781.55 475751.19 662782.90 475758.63 662781.04 475762.08 662778.25 475765.55 662775.22 475770.34 662774.90 475773.61 662777.95 475785.82 662769.41 475792.47 662762.87 475797.25 662761.16 475807.13 662764.55 475813.19 662770.66 475816.81 662776.38 475823.87 662776.57 475828.45 662767.99 475830.36 662764.93 475836.27 662768.94 475845.62 662780.39 475851.54 662786.65 475867.85 662792.47 475876.40 662798.99 475885.99 662805.30 475892.94 662806.86 475898.12 662809.60 475908.46 662809.33 475918.15 662807.94 475926.66 662803.84 475930.54 662798.83 475932.86 662797.76 475937.20 662793.88 475945.74 662792.58 475949.89 662791.33 475955.84 662794.63 475960.11 662798.69 475964.41 662800.48 475966.88 662800.99 475970.75 662801.35 475972.79 662800.46 475975.87 662793.55 475977.95 662788.00 475979.31 662785.64 475982.10 662780.49 475989.55 662780.92 475994.50 662782.36 475997.21 662785.32 475996.91 662794.75 475996.04 662798.49 475998.05 662799.06 476002.46 662798.03 476007.54 662795.04 476012.40 662791.42 476012.67 662786.29 476012.53 662775.81 476013.37 662773.45 476016.15 662770.84 476021.02 662769.79 476031.44 662767.34 476037.07 662769.27 476042.83 662776.84 476044.00 662783.85 476044.77 662790.22 476047.45 662794.37 476053.74 662797.24 476060.90 662797.24 476070.92 662793.23 476077.93 662784.50 476083.37 662776.77 476083.65 662769.62 476082.97 662765.97 476081.94 662763.89 476080.50 662763.35 476078.29 662761.45 476070.55 662760.71 476063.11 662756.31 476057.48 662749.57 476053.67 662745.20 476053.74 662732.25 476059.34 662722.16 476066.87 662716.59 476074.53 662715.13 476082.30 662715.13 476084.73 662715.42 476086.52 662715.78 476087.87 662715.71 476089.63 662715.56 476092.92 662715.28 476095.78 662714.42 476097.60 662713.63 476098.89 662712.24 476101.15 662710.05 476102.61 662706.90 476103.01 662703.43 476103.26 662699.96 476102.22 662697.96 476098.28 662696.45 476097.14 662694.85 476096.60 662692.49 476096.69 662688.48 476100.28 662687.17 476110.12 662689.62 476117.81 662690.32 476122.35 662687.31 476126.59 662682.12 476128.30 662680.28 476127.83 662673.55 476125.58 662666.90 476128.07 662663.05 476133.10 662656.35 476151.23 662646.04 476166.37 662643.59 476173.09 662639.86 476181.01 662641.42 476191.35 662643.99 476198.52 662647.06 476217.03 662646.04 476224.00 662645.24 476226.76 662643.47 476234.63</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_dcb34801-e5f1-11ee-8371-44e5174962da_2023-12-31T120000">
+			<ot:lokalnyId>dcb34801-e5f1-11ee-8371-44e5174962da</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_606</ot:kodKarto10k>
+			<ot:polozenie>na powierzchni</ot:polozenie>
+			<ot:szerokosc uom="m">1.0</ot:szerokosc>
+			<ot:geometria>
+				<gml:Curve gml:id="id-f55d0671-3683-429c-af3b-e3f99abc3332-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>663934.31 475499.05 663918.77 475514.59 663912.65 475523.78 663904.33 475539.10 663893.39 475552.23 663845.26 475607.39 663835.19 475620.53 663833.65 475623.74 663831.81 475630.66 663822.06 475641.54 663810.25 475647.67 663800.62 475652.05 663792.31 475658.18 663786.19 475669.56 663757.89 475717.91 663755.24 475722.43 663739.48 475746.72 663730.15 475766.33 663717.80 475786.74 663711.21 475799.32 663705.63 475808.99 663700.56 475819.06 663691.47 475839.17 663683.15 475852.06 663678.74 475861.92 663674.88 475865.05 663669.20 475870.25 663666.18 475871.69 663639.73 475904.50 663621.07 475929.07 663610.34 475943.80 663587.14 475967.36 663576.30 475977.75</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F8BA-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F8BA-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:geometria>
+				<gml:Curve gml:id="id-556552a0-c018-4315-9874-bfa445845c93-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>663317.92 476309.33 663314.28 476302.31</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+			<ot:cechaGeometrii>sztuczny łącznik</ot:cechaGeometrii>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_aeec39e2-e5f1-11ee-b953-44e5174962da_2023-12-31T120000">
+			<ot:lokalnyId>aeec39e2-e5f1-11ee-b953-44e5174962da</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_606</ot:kodKarto10k>
+			<ot:polozenie>na powierzchni</ot:polozenie>
+			<ot:szerokosc uom="m">1.0</ot:szerokosc>
+			<ot:geometria>
+				<gml:Curve gml:id="id-d903a9c1-bbab-4b63-8711-d17e48b57a78-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>662633.72 474549.51 662638.26 474553.54 662643.76 474558.43 662649.37 474563.41 662654.84 474568.28 662662.13 474574.76 662671.52 474583.11 662678.76 474589.54 662687.71 474597.49 662695.78 474604.67 662700.49 474608.86 662705.45 474613.27 662722.83 474629.59 662730.91 474636.77 662733.95 474639.48 662737.22 474645.30 662738.72 474650.95 662738.46 474654.50 662738.37 474655.71 662730.95 474682.89 662728.48 474692.07 662725.83 474696.13 662712.54 474711.06 662700.86 474721.63 662689.85 474726.31 662688.60 474726.84 662685.98 474730.14 662684.14 474732.46 662680.39 474737.16 662679.40 474738.39 662677.04 474741.31 662676.42 474744.13 662678.62 474747.31 662687.30 474754.87 662702.26 474767.92 662710.43 474771.46 662719.66 474773.54 662744.68 474776.08 662750.93 474778.31 662755.23 474783.02 662769.44 474803.57 662770.04 474804.44 662770.22 474804.70 662770.94 474805.55 662786.67 474824.12 662827.10 474855.59 662847.80 474870.17 662871.51 474893.74 662883.48 474905.64 662909.31 474935.42 662917.51 474945.01 662919.59 474947.45 662931.74 474966.50 662943.89 474985.55 662947.06 474991.50 662960.09 475015.99 662964.25 475028.25 662965.12 475036.79 662966.41 475054.77 662966.64 475058.03 662966.84 475060.75 662967.22 475066.17 662967.31 475067.45 662979.75 475137.06 662988.98 475188.74 662988.76 475190.92 662987.23 475193.11 662984.16 475195.30 662977.40 475196.91 662956.59 475201.87 662954.62 475205.16 662951.34 475218.94 662950.24 475223.55 662937.52 475271.18 662928.02 475306.78 662922.88 475326.02 662921.49 475331.78 662920.88 475334.32 662902.96 475408.55 662892.62 475457.21 662888.01 475467.29</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F794-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F794-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:geometria>
+				<gml:Curve gml:id="id-3a846697-5e5b-4711-9f0b-7d1fb531000d-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>663541.22 476028.43 663538.60 476035.23 663536.89 476040.52 663536.37 476045.54 663536.46 476049.61 663537.09 476053.34</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+			<ot:cechaGeometrii>sztuczny łącznik</ot:cechaGeometrii>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_dcbda845-e5f1-11ee-a07e-44e5174962da_2023-12-31T120000">
+			<ot:lokalnyId>dcbda845-e5f1-11ee-a07e-44e5174962da</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:geometria>
+				<gml:Curve gml:id="id-bcc4c9c0-d1be-4a1c-b95c-acdb70793557-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>663576.30 475977.75 663570.52 475983.29 663561.70 475992.43 663557.98 475996.28</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+			<ot:cechaGeometrii>sztuczny łącznik</ot:cechaGeometrii>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F6F2-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F6F2-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_606</ot:kodKarto10k>
+			<ot:polozenie>na powierzchni</ot:polozenie>
+			<ot:szerokosc uom="m">1.0</ot:szerokosc>
+			<ot:geometria>
+				<gml:Curve gml:id="id-786e775d-693b-4529-8eb4-eb9576ca5b16-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>663537.09 476053.34 663537.86 476057.54</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F769-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F769-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:geometria>
+				<gml:Curve gml:id="id-f62e6428-6949-4485-adfd-8df1459a02d4-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>662801.88 476355.47 662799.21 476348.16</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+			<ot:cechaGeometrii>sztuczny łącznik</ot:cechaGeometrii>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F767-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F767-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:geometria>
+				<gml:Curve gml:id="id-47e1ed7c-a33f-4a37-a8db-9501ef308b6b-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>662517.70 476434.42 662516.03 476430.49 662514.93 476419.84</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+			<ot:cechaGeometrii>sztuczny łącznik</ot:cechaGeometrii>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F798-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F798-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:geometria>
+				<gml:Curve gml:id="id-713748d4-2875-47c7-924e-3b346a1a0067-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>663537.86 476057.54 663537.91 476058.62 663536.96 476061.21 663534.94 476064.97</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+			<ot:cechaGeometrii>sztuczny łącznik</ot:cechaGeometrii>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F76A-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F76A-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:geometria>
+				<gml:Curve gml:id="id-461ecad0-3c1e-4133-b857-e9f7da211ea0-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>662717.32 476439.03 662716.13 476430.63</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+			<ot:cechaGeometrii>sztuczny łącznik</ot:cechaGeometrii>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F7D5-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F7D5-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:geometria>
+				<gml:Curve gml:id="id-0de77db5-d1b9-448f-aad6-2daccaa8eb4f-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>663776.51 476925.77 663778.00 476922.17 663778.45 476915.73 663778.64 476909.20 663777.05 476899.75</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+			<ot:cechaGeometrii>sztuczny łącznik</ot:cechaGeometrii>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F741-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F741-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_606</ot:kodKarto10k>
+			<ot:polozenie>na powierzchni</ot:polozenie>
+			<ot:szerokosc uom="m">1.5</ot:szerokosc>
+			<ot:geometria>
+				<gml:Curve gml:id="id-a47358b5-fc9f-454f-96d9-236398b3ea74-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>663018.55 475380.96 662995.65 475399.47 662978.22 475415.36 662961.52 475429.85 662941.43 475448.72 662918.68 475456.35 662899.38 475462.11 662894.06 475466.72 662888.01 475467.29</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F76C-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F76C-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_606</ot:kodKarto10k>
+			<ot:polozenie>na powierzchni</ot:polozenie>
+			<ot:szerokosc uom="m">1.0</ot:szerokosc>
+			<ot:geometria>
+				<gml:Curve gml:id="id-3c253ddf-e49b-4429-963a-9f2521a21a15-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>663286.68 476665.84 663282.69 476664.42 663276.92 476659.10 663259.54 476640.56 663246.06 476627.78 663239.53 476622.95 663230.66 476617.89 663223.71 476615.81 663217.80 476614.08 663206.10 476613.10 663195.46 476611.86 663188.45 476609.20 663183.84 476606.54 663176.66 476601.48 663166.86 476591.93 663158.23 476583.70 663153.64 476579.33 663145.13 476572.68 663139.55 476570.10 663131.81 476568.48 663117.91 476564.07 663109.74 476560.87 663106.68 476559.67 663090.67 476552.11 663076.25 476546.12 663064.65 476541.66 663056.63 476539.09 663048.60 476536.52 663041.23 476534.47 663025.00 476529.96 663015.74 476525.46 663011.04 476521.11 663006.96 476515.43 663001.91 476507.63 662994.79 476503.51 662988.35 476502.22 662981.98 476499.43 662977.97 476493.35 662977.24 476486.02 662974.83 476471.66 662973.18 476461.53 662973.57 476447.96 662968.03 476437.69 662962.05 476431.09 662957.87 476427.27 662953.55 476419.30 662947.88 476415.39 662929.76 476409.96 662922.51 476407.41 662911.70 476406.61 662903.54 476405.99 662896.87 476405.20 662888.36 476402.27 662885.06 476400.84 662876.80 476396.45 662871.13 476393.62 662865.41 476385.54 662862.49 476382.80 662858.35 476381.12 662852.90 476380.51 662846.35 476381.52 662836.34 476385.62 662832.44 476385.95 662825.92 476383.46 662819.85 476380.16 662812.05 476373.64 662806.61 476368.49 662804.46 476362.98 662801.88 476355.47</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_dcbda843-e5f1-11ee-9223-44e5174962da_2023-12-31T120000">
+			<ot:lokalnyId>dcbda843-e5f1-11ee-9223-44e5174962da</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_606</ot:kodKarto10k>
+			<ot:polozenie>na powierzchni</ot:polozenie>
+			<ot:szerokosc uom="m">1.0</ot:szerokosc>
+			<ot:geometria>
+				<gml:Curve gml:id="id-7b4ef358-aa0b-4ae9-8097-6cbb48b29d75-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>663557.98 475996.28 663551.23 476005.63 663544.99 476018.97 663541.22 476028.43</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F7BF-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F7BF-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:geometria>
+				<gml:Curve gml:id="id-0152cbe1-2acc-47e6-babb-bf87843945d4-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>663945.57 476647.51 663958.82 476642.11</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+			<ot:cechaGeometrii>sztuczny łącznik</ot:cechaGeometrii>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F7C0-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F7C0-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:geometria>
+				<gml:Curve gml:id="id-d9657666-b322-4302-bf96-50b74fcb331e-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>664004.18 476635.49 663992.68 476633.62 663979.91 476633.26 663968.17 476640.01 663958.82 476642.11</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+			<ot:cechaGeometrii>sztuczny łącznik</ot:cechaGeometrii>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F770-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F770-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:geometria>
+				<gml:Curve gml:id="id-3134dd79-d324-4b69-b061-50c5d834c2f7-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>663469.16 476221.45 663468.54 476226.47</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+			<ot:cechaGeometrii>sztuczny łącznik</ot:cechaGeometrii>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F7BC-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F7BC-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:geometria>
+				<gml:Curve gml:id="id-83e601d9-f8d3-42ad-9d31-f8c092535a05-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>663958.82 476642.11 663952.96 476639.83 663944.73 476634.52</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+			<ot:cechaGeometrii>sztuczny łącznik</ot:cechaGeometrii>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F720-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F720-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:geometria>
+				<gml:Curve gml:id="id-4ef2f2dc-8180-4b3c-9332-5f8a4675c13e-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>662643.47 476234.63 662641.41 476243.35</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+			<ot:cechaGeometrii>sztuczny łącznik</ot:cechaGeometrii>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F796-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F796-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:kodKarto10k>0010_606</ot:kodKarto10k>
+			<ot:polozenie>na powierzchni</ot:polozenie>
+			<ot:szerokosc uom="m">1.0</ot:szerokosc>
+			<ot:geometria>
+				<gml:Curve gml:id="id-1d19d20e-56e0-4d39-a3b8-cda7708200db-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>663777.05 476899.75 663776.25 476876.21 663776.17 476872.64 663776.11 476868.25 663771.83 476798.10 663771.60 476793.97 663770.70 476780.68 663769.13 476764.92 663769.31 476754.53 663769.36 476748.68 663764.97 476663.75 663762.76 476634.95 663758.41 476625.81 663755.97 476619.53 663751.52 476612.00</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>strumień, potok lub struga</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F85D-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F85D-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:uwagi>statusEksploatacji:tymczasowy brak danych - do weryfikacji</ot:uwagi>
+			<ot:identyfikatorPRNG>137671</ot:identyfikatorPRNG>
+			<ot:polozenie>na powierzchni</ot:polozenie>
+			<ot:szerokosc uom="m">13.0</ot:szerokosc>
+			<ot:nazwa>Świder</ot:nazwa>
+			<ot:geometria>
+				<gml:Curve gml:id="id-5fe002fd-5dcb-492e-a8e7-909b1053e71c-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>662641.41 476243.35 662627.59 476247.87 662615.88 476251.40 662595.79 476261.84 662582.29 476270.53 662567.43 476280.38 662560.32 476289.40 662552.97 476296.78 662549.68 476302.49 662544.31 476314.08 662543.10 476327.67 662542.05 476340.03 662540.83 476348.31 662537.00 476359.80 662532.30 476374.26 662527.48 476388.86 662520.94 476410.87 662518.48 476416.51 662514.93 476419.84</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>rzeka</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+			<ot:identyfikatorMPHP>256</ot:identyfikatorMPHP>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	<gml:featureMember>
+		<ot:OT_SWRS_L gml:id="PL.PZGiK.330.BDOT10k_3303EA80-F85E-33C1-E053-CA2BA8C02B7D_2023-12-31T120000">
+			<ot:lokalnyId>3303EA80-F85E-33C1-E053-CA2BA8C02B7D</ot:lokalnyId>
+			<ot:przestrzenNazw>PL.PZGiK.330.BDOT10k</ot:przestrzenNazw>
+			<ot:wersja>2023-12-31T12:00:00</ot:wersja>
+			<ot:poczatekWersjiObiektu>2023-12-31T12:00:00</ot:poczatekWersjiObiektu>
+			<ot:oznaczenieZmiany>GI-TOPO.600.116.2023</ot:oznaczenieZmiany>
+			<ot:zrodloDanychGeometrycznych>ortofotomapa</ot:zrodloDanychGeometrycznych>
+			<ot:uwagi>statusEksploatacji:tymczasowy brak danych - do weryfikacji</ot:uwagi>
+			<ot:identyfikatorPRNG>137671</ot:identyfikatorPRNG>
+			<ot:polozenie>na powierzchni</ot:polozenie>
+			<ot:szerokosc uom="m">15.0</ot:szerokosc>
+			<ot:nazwa>Świder</ot:nazwa>
+			<ot:geometria>
+				<gml:Curve gml:id="id-a5eecb2e-735d-4d9f-9437-4b99b6eff8c0-0" srsName="EPSG:2180" srsDimension="2">
+					<gml:segments>
+						<gml:LineStringSegment>
+							<gml:posList>663468.54 476226.47 663463.54 476224.38 663449.96 476216.54 663435.51 476209.05 663424.55 476205.22 663417.76 476204.17 663409.75 476204.35 663402.27 476205.74 663393.83 476209.14 663383.30 476216.37 663378.17 476221.51 663372.42 476230.91 663366.16 476244.49 663360.41 476261.91 663356.06 476274.62 663352.93 476280.19 663347.36 476287.16 663340.22 476292.04 663326.47 476298.13 663314.28 476302.31</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</ot:geometria>
+			<ot:rodzaj>rzeka</ot:rodzaj>
+			<ot:statusEksploatacji>nieżeglowny</ot:statusEksploatacji>
+			<ot:przebieg>ciek główny</ot:przebieg>
+			<ot:identyfikatorMPHP>256</ot:identyfikatorMPHP>
+		</ot:OT_SWRS_L>
+	</gml:featureMember>
+	</gml:FeatureCollection>

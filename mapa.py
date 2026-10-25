@@ -3,6 +3,7 @@
 #
 # Krok 1: wczytanie plików GML z folderu dane_wies.
 # Krok 2: okienko i rysowanie mapy (przeliczanie współrzędnych teren -> ekran).
+# Krok 3: nawigacja – zoom kółkiem, przesuwanie myszą, przyciski i pasek ze współrzędnymi.
 
 import os
 import xml.etree.ElementTree as ET
@@ -104,6 +105,8 @@ def wczytaj_klase(klasa):
         obiekt = {"klasa": klasa, "typ": typ, "geometria": geometria, "atrybuty": atrybuty}
         # prostokąt otaczający liczymy raz, przy wczytywaniu – przyda się przy rysowaniu
         obiekt["prostokat"] = prostokat_otaczajacy(wszystkie_punkty(obiekt))
+        if typ == "poligon":
+            obiekt["sciezka"] = sciezka_z_dziurami(geometria)   # też liczymy raz, przy wczytywaniu
         obiekty.append(obiekt)
     return obiekty
 
@@ -117,6 +120,34 @@ def wszystkie_punkty(obiekt):
     if obiekt["typ"] == "poligon":
         return obiekt["geometria"][0]             # do zasięgu wystarczy obwód
     return []
+
+
+def sciezka_z_dziurami(pierscienie):
+    """Łączy obwód poligonu i jego dziury w jedną ścieżkę do wypełnienia (sztuczka z "mostkami").
+    Każdą dziurę doczepiamy do NAJBLIŻSZEGO wierzchołka obwodu, żeby mostki były jak najkrótsze:
+    idziemy po obwodzie, w tym wierzchołku skaczemy do dziury, obchodzimy ją i wracamy."""
+    obwod = pierscienie[0]
+    doczepione = {}          # numer wierzchołka obwodu -> lista dziur doczepionych w tym miejscu
+    for dziura in pierscienie[1:]:
+        dx, dy = dziura[0]                        # pierwszy punkt dziury
+        najblizszy = 0
+        najmniejsza = None
+        for i in range(len(obwod)):
+            x, y = obwod[i]
+            odleglosc = (x - dx) ** 2 + (y - dy) ** 2   # kwadrat odległości – do porównań wystarczy
+            if najmniejsza is None or odleglosc < najmniejsza:
+                najmniejsza = odleglosc
+                najblizszy = i
+        if najblizszy not in doczepione:
+            doczepione[najblizszy] = []
+        doczepione[najblizszy].append(dziura)
+    sciezka = []
+    for i in range(len(obwod)):
+        sciezka.append(obwod[i])
+        if i in doczepione:
+            for dziura in doczepione[i]:
+                sciezka = sciezka + list(dziura) + [obwod[i]]   # tam (mostek), dookoła dziury, z powrotem
+    return sciezka
 
 
 def prostokat_otaczajacy(punkty):
@@ -206,18 +237,13 @@ def lista_pikseli(punkty):
 
 def rysuj_poligon(obiekt, styl):
     pierscienie = obiekt["geometria"]
-    obwod = pierscienie[0]
-    dziury = pierscienie[1:]
     if styl["wypelnienie"] != "":
-        # Wypełnienie z dziurami: tkinter nie zna dziur, więc robimy sztuczkę z "mostkiem".
-        # Idziemy po obwodzie, skaczemy do dziury, obchodzimy ją i wracamy do początku obwodu.
-        # Tkinter wypełnia według reguły parzystości: punkt jest w środku, jeśli linia od niego
-        # w bok przecina brzeg nieparzystą liczbę razy. W dziurze przecina parzyście, więc zostaje pusta,
-        # a mostek przechodzimy dwa razy (tam i z powrotem), więc nic nie psuje.
-        punkty = list(obwod)
-        for dziura in dziury:
-            punkty = punkty + list(dziura) + [obwod[0]]
-        piksele = lista_pikseli(punkty)
+        # Wypełnienie z dziurami: tkinter nie zna dziur, więc rysujemy jedną ścieżkę z "mostkami"
+        # (patrz sciezka_z_dziurami). Tkinter wypełnia według reguły parzystości: punkt jest w środku,
+        # jeśli linia poprowadzona od niego w bok przecina brzeg nieparzystą liczbę razy.
+        # Z wnętrza dziury przecina parzyście, więc dziura zostaje pusta, a każdy mostek
+        # przechodzimy dwa razy (tam i z powrotem), więc się znosi.
+        piksele = lista_pikseli(obiekt["sciezka"])
         if len(piksele) >= 6:                     # poligon potrzebuje co najmniej 3 punktów
             canvas.create_polygon(piksele, fill=styl["wypelnienie"], outline="")
     # kontury rysujemy osobno liniami, żeby nie było widać mostków
@@ -271,6 +297,93 @@ def rysuj():
     print(f"Narysowano {narysowane} obiektów w {time.time() - start:.2f} s")
 
 
+# --- NAWIGACJA ---
+
+def zoom(x_ekr, y_ekr, mnoznik):
+    """Przybliża (mnoznik > 1) albo oddala (mnoznik < 1) mapę tak,
+    żeby punkt terenu pod kursorem został w tym samym miejscu ekranu."""
+    nowa_skala = widok["skala"] * mnoznik
+    if nowa_skala < 0.02 or nowa_skala > 50:      # nie pozwalamy oddalić/przybliżyć w nieskończoność
+        return
+    x, y = ekran_na_teren(x_ekr, y_ekr)           # jaki punkt terenu jest teraz pod kursorem
+    widok["skala"] = nowa_skala
+    # przesuwamy widok tak, żeby ten sam punkt terenu wypadł znowu pod kursorem
+    # (to po prostu wzór teren_na_ekran rozwiązany względem x0 i y0)
+    widok["x0"] = x - x_ekr / widok["skala"]
+    widok["y0"] = y + y_ekr / widok["skala"]
+    rysuj()
+    pokaz_status(x_ekr, y_ekr)
+
+
+def kolko_myszy(event):
+    # Windows podaje event.delta (+120 / -120), Linux – przyciski 4 i 5
+    if event.delta > 0 or event.num == 4:
+        zoom(event.x, event.y, 1.25)
+    else:
+        zoom(event.x, event.y, 0.8)
+
+
+# gdzie ostatnio była myszka podczas przeciągania
+przeciaganie = {"x": 0, "y": 0}
+
+
+def wcisniecie(event):
+    przeciaganie["x"] = event.x
+    przeciaganie["y"] = event.y
+
+
+def ciagniecie(event):
+    dx = event.x - przeciaganie["x"]              # o ile pikseli przesunęła się myszka
+    dy = event.y - przeciaganie["y"]
+    canvas.move("all", dx, dy)                    # szybko przesuwamy to, co już jest narysowane
+    widok["x0"] = widok["x0"] - dx / widok["skala"]   # mapa w prawo = patrzymy bardziej na zachód
+    widok["y0"] = widok["y0"] + dy / widok["skala"]   # mapa w dół = patrzymy bardziej na północ
+    przeciaganie["x"] = event.x
+    przeciaganie["y"] = event.y
+    pokaz_status(event.x, event.y)
+
+
+def puszczenie(event):
+    rysuj()     # po puszczeniu rysujemy od nowa, żeby dorysować to, co wjechało na ekran
+
+
+def skala_mapy():
+    """Mianownik skali mapy (np. 10000 dla skali 1:10 000).
+    Skala mówi, ile metrów w terenie przypada na 1 metr na ekranie."""
+    piksele_na_metr_ekranu = canvas.winfo_fpixels("1m") * 1000   # "1m" w tkinterze to 1 milimetr
+    return piksele_na_metr_ekranu / widok["skala"]
+
+
+def pokaz_status(x_ekr, y_ekr):
+    """Wypisuje na dole okna współrzędne punktu pod kursorem i skalę mapy."""
+    x, y = ekran_na_teren(x_ekr, y_ekr)
+    # jak Geoportal i QGIS: najpierw X geodezyjne (północ), potem Y (wschód)
+    tekst = f"PUWG 1992:   X = {y:,.1f} m (północ)    Y = {x:,.1f} m (wschód)        skala 1:{skala_mapy():,.0f}"
+    pasek.config(text=tekst.replace(",", " "))
+
+
+def ruch_myszy(event):
+    pokaz_status(event.x, event.y)
+
+
+def pokaz_wies():
+    pokaz_prostokat(WIES)
+    rysuj()
+
+
+def pokaz_calosc():
+    pokaz_prostokat(zasieg(wszystkie))
+    rysuj()
+
+
+def przybliz():
+    zoom(SZEROKOSC / 2, WYSOKOSC / 2, 1.5)        # zoom względem środka okna
+
+
+def oddal():
+    zoom(SZEROKOSC / 2, WYSOKOSC / 2, 1 / 1.5)
+
+
 # --- PROGRAM ---
 
 wszystkie = []
@@ -280,11 +393,31 @@ for klasa in KLASY:
     print(f"{klasa}: {len(obiekty)} obiektów")
 print("Razem:", len(wszystkie), "obiektów")
 
-# okienko z mapą
+# okienko: u góry przyciski, w środku mapa, na dole pasek ze współrzędnymi
 okno = tk.Tk()
 okno.title("Wola Karczewska – BDOT10k")
+
+przyciski = tk.Frame(okno)
+przyciski.pack(fill="x")
+tk.Button(przyciski, text="Pokaż wieś", command=pokaz_wies).pack(side="left", padx=2, pady=2)
+tk.Button(przyciski, text="Pokaż całość", command=pokaz_calosc).pack(side="left", padx=2, pady=2)
+tk.Button(przyciski, text="Przybliż +", command=przybliz).pack(side="left", padx=2, pady=2)
+tk.Button(przyciski, text="Oddal −", command=oddal).pack(side="left", padx=2, pady=2)
+
 canvas = tk.Canvas(okno, width=SZEROKOSC, height=WYSOKOSC, bg="white")
 canvas.pack()
+
+pasek = tk.Label(okno, text="Najedź myszką na mapę", anchor="w")
+pasek.pack(fill="x")
+
+# podpinamy funkcje pod zdarzenia myszy
+canvas.bind("<MouseWheel>", kolko_myszy)          # kółko na Windowsie
+canvas.bind("<Button-4>", kolko_myszy)            # kółko na Linuksie (do góry)
+canvas.bind("<Button-5>", kolko_myszy)            # kółko na Linuksie (w dół)
+canvas.bind("<ButtonPress-1>", wcisniecie)
+canvas.bind("<B1-Motion>", ciagniecie)
+canvas.bind("<ButtonRelease-1>", puszczenie)
+canvas.bind("<Motion>", ruch_myszy)
 
 pokaz_prostokat(WIES)
 print("Rysuję mapę...")

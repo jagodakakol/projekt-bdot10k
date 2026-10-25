@@ -27,7 +27,7 @@ Y_MIN = 475400
 Y_MAX = 476900
 
 # klasy obiektów, które bierzemy do projektu
-KLASY = ["PTLZ_A", "PTWP_A", "TCRZ_A", "BUBD_A", "SKDR_L", "SWRS_L", "ADMS_P"]
+KLASY = ["PTLZ_A", "PTWP_A", "TCRZ_A", "BUBD_A", "SKJZ_L", "SWRS_L", "ADMS_P"]
 
 
 # --- FUNKCJE ---
@@ -67,6 +67,15 @@ def wytnij_klase(klasa):
     """Czyta plik jednej klasy dla powiatu i zapisuje tylko obiekty z prostokąta wsi."""
     sciezka_we = os.path.join(FOLDER_POWIAT, PRZEDROSTEK + "OT_" + klasa + ".xml")
     sciezka_wy = os.path.join(FOLDER_WIES, "OT_" + klasa + ".xml")
+
+    # klasę już wyciętą pomijamy, żeby nie czytać znowu dużego pliku powiatu
+    # (żeby wyciąć ją jeszcze raz, np. po zmianie prostokąta wsi, usuń jej plik z folderu dane_wies)
+    if os.path.exists(sciezka_wy):
+        print(f"{klasa}: już wycięta, pomijam")
+        return
+
+    # flush=True – napis pojawia się od razu, a nie dopiero po wczytaniu pliku
+    print(f"{klasa}: wycinam... (duży plik czyta się chwilę, nie przerywaj)", flush=True)
 
     # utf-8-sig, bo pliki z Geoportalu zaczynają się niewidocznym znakiem BOM
     with open(sciezka_we, encoding="utf-8-sig") as plik:

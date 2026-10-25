@@ -1,0 +1,20 @@
+Znaki umowne (style QGIS, pliki .qml) skopiowane z repozytorium wtyczki GUGiK "BDOT10k_GML_SHP":
+https://github.com/GlownyUrzadGeodezjiIKartografii/BDOT10k_GML_SHP  (folder BDOT10k_QML)
+Wersja wtyczki 2.1.1 (commit 72404e3 z 06.10.2026), pobrane 25.10.2026.
+Autor: Główny Urząd Geodezji i Kartografii (Marcin Lebiecki).
+Licencja: GNU GPL v3 - pełny tekst w pliku LICENSE w tym folderze.
+
+Liczba w nawiasie kwadratowym w nazwie pliku to poziom rysowania:
+0 = na samym spodzie mapy, im większa liczba, tym wyżej (wtyczka rysuje warstwy właśnie w tej kolejności).
+
+Pliki używane w projekcie:
+  OT_PTLZ_A [0].qml      - lasy i zadrzewienia (poziom 0)
+  OT_SWRS_L [12].qml     - rzeki i strumienie (poziom 12)
+  OT_PTWP_A [13].qml     - wody powierzchniowe (poziom 13)
+  OT_TCRZ_A [23].qml     - rezerwaty przyrody, granica z ząbkami (poziom 23)
+  OT_SKJZ_L [31].qml     - drogi gruntowe (poziom 31)
+  OT_SKJZ_L [33-38].qml  - jezdnie dróg o nawierzchni twardej i utwardzonej (poziomy 33-38)
+  OT_BUBD_A [42].qml     - budynki (poziom 42)
+
+Każdy styl przypisuje znak umowny według pola KOD10K = kodKarto10k z danych BDOT10k,
+czyli według zasady "kod obiektu -> znak umowny".

@@ -4,6 +4,8 @@
 # Krok 1: wczytanie plików GML z folderu dane_wies.
 # Krok 2: okienko i rysowanie mapy (przeliczanie współrzędnych teren -> ekran).
 # Krok 3: nawigacja – zoom kółkiem, przesuwanie myszą, przyciski i pasek ze współrzędnymi.
+# Krok 4a: drogi rysujemy z jezdni (OT_SKJZ_L), a nie z dróg (OT_SKDR_L), bo to jezdniom
+#          BDOT10k przypisuje kody znaków umownych (kodKarto10k) – tak robi też wtyczka GUGiK.
 
 import os
 import xml.etree.ElementTree as ET
@@ -23,7 +25,7 @@ NS = {
 }
 
 # klasy w kolejności rysowania: najpierw poligony, potem linie, na końcu punkty
-KLASY = ["PTLZ_A", "PTWP_A", "TCRZ_A", "BUBD_A", "SKDR_L", "SWRS_L", "ADMS_P"]
+KLASY = ["PTLZ_A", "PTWP_A", "TCRZ_A", "BUBD_A", "SKJZ_L", "SWRS_L", "ADMS_P"]
 
 # rozmiar okienka z mapą (w pikselach)
 SZEROKOSC = 1000
@@ -38,7 +40,7 @@ STYL = {
     "PTWP_A": {"wypelnienie": "#a9d2ea", "kontur": "#2a7ab8"},   # wody
     "TCRZ_A": {"wypelnienie": "",        "kontur": "#2f9e44"},   # rezerwat – sam kontur
     "BUBD_A": {"wypelnienie": "#f6b26b", "kontur": "#a0522d"},   # budynki
-    "SKDR_L": {"kolor": "#7b3fa0", "grubosc": 2},                # drogi
+    "SKJZ_L": {"kolor": "#7b3fa0", "grubosc": 2},                # drogi (jezdnie)
     "SWRS_L": {"kolor": "#2a7ab8", "grubosc": 2},                # rzeki
     "ADMS_P": {"kolor": "#d62728", "promien": 5},                # miejscowości
 }

@@ -9,6 +9,8 @@
 #          obiekty mniejsze niż piksel jako kropka, okno o zmiennym rozmiarze.
 # Krok B1: indeks przestrzenny – siatka regularna (plik indeks.py), przełącznik "z indeksem / bez",
 #          w pasku stanu czas wyboru obiektów, liczba sprawdzonych i narysowanych obiektów.
+# Krok B2: panel warstw po lewej – klasy pogrupowane według kategorii (SW, SK, BU, PT…),
+#          włączanie i wyłączanie, zmiana koloru i grubości linii.
 
 import os
 import sys
@@ -17,6 +19,7 @@ import time
 import xml.etree.ElementTree as ET
 import tkinter as tk
 from tkinter import filedialog
+from tkinter import colorchooser
 
 import gml          # nasz plik gml.py – wczytywanie danych
 import indeks       # nasz plik indeks.py – indeks przestrzenny (siatka regularna)
@@ -40,7 +43,7 @@ PLIKI_ZNAKOW = [
 ]
 
 # rozmiar mapy w pikselach (zmienia się razem z rozmiarem okna – patrz zmiana_rozmiaru)
-SZEROKOSC = 1000
+SZEROKOSC = 900
 WYSOKOSC = 650
 
 # nazwy końcówek linii w QGIS -> nazwy w tkinterze
@@ -436,7 +439,8 @@ def rysuj_obiekt_prosto(obiekt, ust):
     else:
         for x, y in obiekt["czesci"]:
             x_ekr, y_ekr = teren_na_ekran(x, y)
-            canvas.create_oval(x_ekr - 2, y_ekr - 2, x_ekr + 2, y_ekr + 2, fill=ust["kolor"], outline=ust["obrys"])
+            r = 1 + ust["grubosc"]                 # promień kropki rośnie razem z "grubością" z panelu
+            canvas.create_oval(x_ekr - r, y_ekr - r, x_ekr + r, y_ekr + r, fill=ust["kolor"], outline=ust["obrys"])
 
 
 def rysuj_klase_prosto(klasa, ekran):
@@ -692,11 +696,21 @@ def zoom(x_ekr, y_ekr, mnoznik):
 
 
 def kolko_myszy(event):
-    # Windows podaje event.delta (+120 / -120), Linux – przyciski 4 i 5
-    if event.delta > 0 or event.num == 4:
-        zoom(event.x, event.y, 1.25)
-    else:
-        zoom(event.x, event.y, 0.8)
+    """Kółko myszy: nad mapą przybliża i oddala, nad panelem warstw przewija listę.
+    Windows podaje event.delta (+120 / -120), Linux – przyciski 4 i 5."""
+    do_gory = event.delta > 0 or event.num == 4
+    if event.widget == canvas:
+        if do_gory:
+            zoom(event.x, event.y, 1.25)
+        else:
+            zoom(event.x, event.y, 0.8)
+    elif str(event.widget).startswith(str(panel)):
+        # nazwa widżetu w tkinterze to ścieżka jak w folderach, np. ".!frame2.!canvas.!frame.!checkbutton3";
+        # jeśli zaczyna się od nazwy panelu, to myszka jest nad panelem
+        if do_gory:
+            panel_canvas.yview_scroll(-2, "units")
+        else:
+            panel_canvas.yview_scroll(2, "units")
 
 
 # gdzie ostatnio była myszka podczas przeciągania
@@ -768,6 +782,101 @@ def zmiana_rozmiaru(event):
     rysuj()
 
 
+# --- PANEL WARSTW (wariant rozszerzony) ---
+
+zmienne_warstw = {}         # klasa -> BooleanVar: czy warstwa jest widoczna
+zmienne_kategorii = {}      # kategoria -> BooleanVar: włącza/wyłącza wszystkie klasy kategorii
+zmienne_grubosci = {}       # klasa -> IntVar: grubość linii
+przyciski_kolorow = {}      # klasa -> przycisk pokazujący kolor warstwy
+
+
+def zmien_widocznosc(klasa):
+    warstwy[klasa]["widoczna"] = zmienne_warstw[klasa].get()
+    rysuj()
+
+
+def zmien_kategorie(kategoria):
+    """Włącza albo wyłącza wszystkie klasy jednej kategorii naraz."""
+    widoczna = zmienne_kategorii[kategoria].get()
+    for klasa in warstwy:
+        if klasa[:2] == kategoria:
+            warstwy[klasa]["widoczna"] = widoczna
+            zmienne_warstw[klasa].set(widoczna)
+    rysuj()
+
+
+def zmien_kolor(klasa):
+    """Okno wyboru koloru; askcolor zwraca ((r, g, b), "#rrggbb") albo (None, None), gdy anulujemy."""
+    wynik = colorchooser.askcolor(color=warstwy[klasa]["kolor"], parent=okno, title="Kolor warstwy " + klasa)
+    if wynik[1] is None:
+        return
+    kolor = wynik[1]
+    warstwy[klasa]["kolor"] = kolor
+    if warstwy[klasa]["wypelnij"] or klasa.endswith("_P"):
+        warstwy[klasa]["obrys"] = ciemniejszy(kolor)
+    else:
+        warstwy[klasa]["obrys"] = kolor
+    przyciski_kolorow[klasa].config(bg=kolor)
+    rysuj()
+
+
+def zmien_grubosc(klasa):
+    try:
+        grubosc = zmienne_grubosci[klasa].get()
+    except tk.TclError:          # w polu jest coś, co nie jest liczbą
+        return
+    warstwy[klasa]["grubosc"] = max(1, min(grubosc, 10))
+    rysuj()
+
+
+def zbuduj_panel_warstw():
+    """Lista warstw po lewej: klasy pogrupowane według kategorii (SW, SK, BU, PT…).
+    W każdym wierszu: kolor (kliknięcie otwiera wybór koloru), grubość linii i włącz/wyłącz.
+    Kolor i grubość działają w prostych kolorach; przy znakach umownych wygląd bierzemy ze stylów."""
+    for element in lista_warstw.winfo_children():          # usuwamy listę poprzedniego powiatu
+        element.destroy()
+    zmienne_warstw.clear()
+    zmienne_kategorii.clear()
+    zmienne_grubosci.clear()
+    przyciski_kolorow.clear()
+    # "lambda k=klasa: ..." zapamiętuje, której klasy dotyczy dany przycisk
+    # (bez k=klasa wszystkie przyciski wskazywałyby ostatnią klasę z pętli)
+    for kategoria in gml.KATEGORIE:
+        klasy = []
+        for klasa in sorted(dane):
+            if klasa[:2] == kategoria:
+                klasy.append(klasa)
+        if len(klasy) == 0:
+            continue
+        zmienne_kategorii[kategoria] = tk.BooleanVar(value=True)
+        tk.Checkbutton(lista_warstw, text=f"{kategoria} – {gml.KATEGORIE[kategoria]}", font=("Arial", 9, "bold"),
+                       variable=zmienne_kategorii[kategoria],
+                       command=lambda k=kategoria: zmien_kategorie(k)).pack(anchor="w", pady=(6, 0))
+        for klasa in klasy:
+            wiersz = tk.Frame(lista_warstw)
+            wiersz.pack(fill="x", padx=(18, 0))
+            # kwadracik z kolorem warstwy; kliknięcie (<Button-1>) otwiera okno wyboru koloru
+            przycisk = tk.Label(wiersz, width=2, bg=warstwy[klasa]["kolor"], relief="solid", bd=1, cursor="hand2")
+            przycisk.bind("<Button-1>", lambda event, k=klasa: zmien_kolor(k))
+            przycisk.pack(side="left")
+            przyciski_kolorow[klasa] = przycisk
+            zmienne_grubosci[klasa] = tk.IntVar(value=warstwy[klasa]["grubosc"])
+            pole = tk.Spinbox(wiersz, from_=1, to=10, width=3, textvariable=zmienne_grubosci[klasa],
+                              command=lambda k=klasa: zmien_grubosc(k))
+            pole.bind("<Return>", lambda event, k=klasa: zmien_grubosc(k))
+            pole.pack(side="left", padx=3)
+            zmienne_warstw[klasa] = tk.BooleanVar(value=warstwy[klasa]["widoczna"])
+            opis = f"{klasa} {gml.nazwa_klasy(klasa)} ({len(dane[klasa]):,})".replace(",", " ")
+            tk.Checkbutton(wiersz, text=opis, font=("Arial", 8), variable=zmienne_warstw[klasa],
+                           command=lambda k=klasa: zmien_widocznosc(k)).pack(side="left")
+    panel_canvas.yview_moveto(0)
+
+
+def odswiez_przewijanie(event):
+    """Lista zmieniła rozmiar – ustawiamy, jak daleko da się ją przewinąć."""
+    panel_canvas.configure(scrollregion=panel_canvas.bbox("all"))
+
+
 # --- WCZYTYWANIE DANYCH (folder albo ZIP) ---
 
 dane = {}               # klasa (np. "BUBD_A") -> lista obiektów
@@ -811,6 +920,7 @@ def otworz_dane(sciezka):
     kolejnosc_klas = sorted(dane, key=miejsce_w_kolejnosci)
     kolejka_znakow = przygotuj_kolejke_znakow()
     zasieg = nowy_zasieg
+    zbuduj_panel_warstw()
     okno.title("BDOT10k – " + os.path.basename(sciezka.rstrip("/\\")))
     print(opis)
     pokaz_calosc()                                # pierwszy widok: cały powiat
@@ -871,13 +981,31 @@ pasek.pack(side="top", fill="x")
 pasek_rysowania = tk.Label(dol, text="", anchor="w", fg="#444444")
 pasek_rysowania.pack(side="top", fill="x")
 
-canvas = tk.Canvas(okno, width=SZEROKOSC, height=WYSOKOSC, bg="white", highlightthickness=0)
-canvas.pack(fill="both", expand=True)
+# środek okna: po lewej panel warstw, po prawej mapa
+srodek = tk.Frame(okno)
+srodek.pack(fill="both", expand=True)
 
-# podpinamy funkcje pod zdarzenia myszy i zmianę rozmiaru okna
-canvas.bind("<MouseWheel>", kolko_myszy)          # kółko na Windowsie
-canvas.bind("<Button-4>", kolko_myszy)            # kółko na Linuksie (do góry)
-canvas.bind("<Button-5>", kolko_myszy)            # kółko na Linuksie (w dół)
+# panel warstw: przewijana lista (Canvas z ramką w środku + pasek przewijania)
+panel = tk.Frame(srodek)
+panel.pack(side="left", fill="y")
+tk.Label(panel, text="Warstwy", font=("Arial", 10, "bold")).pack(anchor="w", padx=4)
+panel_canvas = tk.Canvas(panel, width=360, highlightthickness=0)
+przewijanie = tk.Scrollbar(panel, orient="vertical", command=panel_canvas.yview)
+panel_canvas.configure(yscrollcommand=przewijanie.set)
+przewijanie.pack(side="right", fill="y")
+panel_canvas.pack(side="left", fill="both", expand=True)
+lista_warstw = tk.Frame(panel_canvas)
+panel_canvas.create_window((0, 0), window=lista_warstw, anchor="nw")
+lista_warstw.bind("<Configure>", odswiez_przewijanie)
+
+canvas = tk.Canvas(srodek, width=SZEROKOSC, height=WYSOKOSC, bg="white", highlightthickness=0)
+canvas.pack(side="left", fill="both", expand=True)
+
+# podpinamy funkcje pod zdarzenia myszy i zmianę rozmiaru okna;
+# kółko podpinamy do całego okna (bind_all), a kolko_myszy sprawdza, czy jesteśmy nad mapą czy nad panelem
+okno.bind_all("<MouseWheel>", kolko_myszy)        # kółko na Windowsie
+okno.bind_all("<Button-4>", kolko_myszy)          # kółko na Linuksie (do góry)
+okno.bind_all("<Button-5>", kolko_myszy)          # kółko na Linuksie (w dół)
 canvas.bind("<ButtonPress-1>", wcisniecie)
 canvas.bind("<B1-Motion>", ciagniecie)
 canvas.bind("<ButtonRelease-1>", puszczenie)

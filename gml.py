@@ -39,6 +39,74 @@ KATEGORIE = {
 }
 
 
+# nazwy klas BDOT10k (według "Vademecum użytkownika BDOT10k 2024", WODGiK w Zielonej Górze)
+NAZWY_KLAS = {
+    "SWRS": "rzeka i strumień",
+    "SWKN": "kanał",
+    "SWRM": "rów melioracyjny",
+    "SKJZ": "jezdnia",
+    "SKDR": "droga",
+    "SKRW": "rondo lub węzeł drogowy",
+    "SKRP": "ciąg ruchu pieszego lub rowerowego",
+    "SKTR": "tor lub zespół torów",
+    "SKPP": "przeprawa",
+    "SULN": "linia elektroenergetyczna",
+    "SUPR": "przewód rurowy",
+    "PTWP": "woda powierzchniowa",
+    "PTZB": "zabudowa",
+    "PTLZ": "teren leśny lub zadrzewiony",
+    "PTRK": "roślinność krzewiasta",
+    "PTUT": "uprawa trwała",
+    "PTTR": "roślinność trawiasta i uprawa rolna",
+    "PTKM": "teren komunikacyjny",
+    "PTGN": "grunt nieużytkowany",
+    "PTPL": "plac",
+    "PTSO": "składowisko odpadów",
+    "PTWZ": "wyrobisko i zwałowisko",
+    "PTNZ": "inny teren niezabudowany",
+    "BUBD": "budynek",
+    "BUIN": "budowla inżynierska",
+    "BUHD": "budowla hydrotechniczna",
+    "BUSP": "budowla sportowa",
+    "BUWT": "wysoka budowla techniczna",
+    "BUZT": "zbiornik techniczny",
+    "BUUO": "umocnienie drogowe, kolejowe i wodne",
+    "BUZM": "budowla ziemna",
+    "BUTR": "urządzenie transportowe",
+    "BUIT": "inne urządzenie techniczne",
+    "BUIB": "inna budowla",
+    "KUMN": "osiedle mieszkaniowe",
+    "KUPG": "kompleks przemysłowo-gospodarczy",
+    "KUKO": "kompleks komunikacyjny",
+    "KUSK": "kompleks sportowy i rekreacyjny",
+    "KUHO": "kompleks usług hotelarskich",
+    "KUHU": "bazar lub targowisko",
+    "KUOS": "kompleks oświatowy",
+    "KUOZ": "kompleks ochrony zdrowia i opieki społecznej",
+    "KUZA": "kompleks zabytkowo-historyczny",
+    "KUSC": "kompleks sakralny i cmentarz",
+    "KUPW": "poligon wojskowy",
+    "ADJA": "jednostka podziału administracyjnego",
+    "ADMS": "miejscowość",
+    "TCON": "obszar Natura 2000",
+    "TCPK": "park krajobrazowy",
+    "TCPN": "park narodowy",
+    "TCRZ": "rezerwat",
+    "OIPR": "obiekt przyrodniczy",
+    "OIKM": "obiekt związany z komunikacją",
+    "OIOR": "obiekt o znaczeniu orientacyjnym",
+    "OIMK": "mokradło",
+    "OISZ": "szuwary",
+    "RTLW": "linia wysokościowa",
+    "RTPW": "punkt wysokościowy",
+}
+
+
+def nazwa_klasy(klasa):
+    """"BUBD_A" -> "budynek" (pusty napis, jeśli klasy nie ma w słowniku)."""
+    return NAZWY_KLAS.get(klasa[:4], "")
+
+
 def klasa_z_nazwy(nazwa_pliku):
     """"PL.PZGiK.330.1417__OT_BUBD_A.xml" -> "BUBD_A". Dla innych plików zwraca None."""
     wynik = WZOR_NAZWY.search(nazwa_pliku)

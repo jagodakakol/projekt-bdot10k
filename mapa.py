@@ -7,6 +7,8 @@
 # Krok A1 (według kryteriów z PDF): cały powiat – wszystkie pliki GML z wybranego folderu albo ZIP
 #          (wczytywanie strumieniowe w pliku gml.py), proste kolory warstw, start na całym powiecie,
 #          obiekty mniejsze niż piksel jako kropka, okno o zmiennym rozmiarze.
+# Krok B1: indeks przestrzenny – siatka regularna (plik indeks.py), przełącznik "z indeksem / bez",
+#          w pasku stanu czas wyboru obiektów, liczba sprawdzonych i narysowanych obiektów.
 
 import os
 import sys
@@ -17,6 +19,7 @@ import tkinter as tk
 from tkinter import filedialog
 
 import gml          # nasz plik gml.py – wczytywanie danych
+import indeks       # nasz plik indeks.py – indeks przestrzenny (siatka regularna)
 
 # --- USTAWIENIA ---
 
@@ -374,6 +377,25 @@ def linie_obiektu(obiekt):
     return linie
 
 
+def wybierz_widoczne(klasa, ekran, licz=True):
+    """Obiekty klasy, których prostokąt otaczający nachodzi na widoczny fragment mapy.
+    Z indeksem sprawdzamy tylko kandydatów z komórek siatki, które przecina okienko;
+    bez indeksu – po kolei wszystkie obiekty klasy. Czas i liczbę sprawdzeń zapisujemy w statystyce."""
+    start = time.time()
+    if uzyj_indeksu.get():
+        do_sprawdzenia = indeks.kandydaci(indeks_przestrzenny[klasa], ekran)
+    else:
+        do_sprawdzenia = dane[klasa]
+    widoczne = []
+    for obiekt in do_sprawdzenia:
+        if prostokaty_nachodza(obiekt["prostokat"], ekran):
+            widoczne.append(obiekt)
+    if licz:
+        statystyka["sprawdzone"] += len(do_sprawdzenia)
+        statystyka["czas_wyboru"] += time.time() - start
+    return widoczne
+
+
 def rysuj_jako_piksel(obiekt, kolor, zajete):
     """Obiekt mniejszy niż piksel rysujemy jako kropkę w miejscu jego prostokąta,
     a w jednym pikselu tylko raz – setki budynków w jednym miejscu dałyby i tak tę samą kropkę."""
@@ -423,12 +445,9 @@ def rysuj_klase_prosto(klasa, ekran):
     skala = widok["skala"]
     punkty_jako_kropki = skala_mapy() > 50000      # przy małych skalach punkty to tylko kropki
     zajete = set()                     # piksele zajęte już przez małe obiekty tej klasy
-    narysowane = 0
-    for obiekt in dane[klasa]:
+    widoczne = wybierz_widoczne(klasa, ekran)
+    for obiekt in widoczne:
         p = obiekt["prostokat"]
-        if not prostokaty_nachodza(p, ekran):
-            continue                   # obiekt poza okienkiem – szkoda czasu
-        narysowane += 1
         if obiekt["typ"] == "punkt":
             if punkty_jako_kropki:
                 rysuj_jako_piksel(obiekt, ust["kolor"], zajete)
@@ -438,7 +457,7 @@ def rysuj_klase_prosto(klasa, ekran):
             rysuj_jako_piksel(obiekt, ust["kolor"], zajete)      # obiekt mniejszy niż piksel
         else:
             rysuj_obiekt_prosto(obiekt, ust)
-    return narysowane
+    return len(widoczne)
 
 
 def rysuj_prosto(ekran):
@@ -585,13 +604,11 @@ def rysuj_znakami(ekran, skala_teraz):
         # wybieramy obiekty: widoczne w okienku i z kodem, który jest w tym stylu
         do_rysowania = []
         zajete = set()
-        for obiekt in dane[klasa]:
+        for obiekt in wybierz_widoczne(klasa, ekran):
             kod = obiekt["atrybuty"].get(styl["pole"])
             if kod not in styl["znaki"]:
                 continue
             p = obiekt["prostokat"]
-            if not prostokaty_nachodza(p, ekran):
-                continue
             if obiekt["typ"] != "punkt" and (p[2] - p[0]) * skala < 1 and (p[3] - p[1]) * skala < 1:
                 rysuj_jako_piksel(obiekt, kolor_glowny(styl["znaki"][kod]), zajete)
                 narysowane += 1
@@ -614,9 +631,9 @@ def rysuj_nazwy_miejscowosci(ekran, skala_teraz):
     bo przy całym powiecie 250 napisów zlałoby się w jedną plamę."""
     if "ADMS_P" not in dane or not warstwy["ADMS_P"]["widoczna"] or skala_teraz > 60000:
         return
-    for obiekt in dane["ADMS_P"]:
+    for obiekt in wybierz_widoczne("ADMS_P", ekran, licz=False):     # napisów nie liczymy w statystyce
         nazwa = obiekt["atrybuty"].get("nazwa")
-        if nazwa and prostokaty_nachodza(obiekt["prostokat"], ekran):
+        if nazwa:
             x, y = obiekt["czesci"][0]
             x_ekr, y_ekr = teren_na_ekran(x, y)
             canvas.create_text(x_ekr, y_ekr - 10, text=nazwa, font=("Arial", 10, "bold"))
@@ -631,9 +648,12 @@ def widoczny_prostokat():
 
 def rysuj():
     """Czyści okienko i rysuje mapę: prostymi kolorami albo znakami umownymi (przełącznik u góry).
-    Czas rysowania i liczbę obiektów pokazujemy w prawym dolnym rogu okna."""
+    W prawym dolnym rogu pokazujemy: ile obiektów sprawdzono i w jakim czasie (tu widać działanie
+    indeksu), ile narysowano i ile trwało całe rysowanie."""
     if wczytywanie["trwa"] or len(dane) == 0:
         return
+    statystyka["sprawdzone"] = 0
+    statystyka["czas_wyboru"] = 0.0
     start = time.time()
     canvas.delete("all")
     ekran = widoczny_prostokat()
@@ -644,7 +664,13 @@ def rysuj():
         narysowane = rysuj_prosto(ekran)
     rysuj_nazwy_miejscowosci(ekran, skala_teraz)
     czas = time.time() - start
-    pasek_rysowania.config(text=f"narysowano {narysowane:,} obiektów w {czas:.2f} s".replace(",", " "))
+    if uzyj_indeksu.get():
+        sposob = "z indeksem"
+    else:
+        sposob = "bez indeksu"
+    tekst = (f"{sposob}: sprawdzono {statystyka['sprawdzone']:,} obiektów ({statystyka['czas_wyboru']:.3f} s),"
+             f" narysowano {narysowane:,} obiektów w {czas:.2f} s")
+    pasek_rysowania.config(text=tekst.replace(",", " "))
 
 
 # --- NAWIGACJA ---
@@ -749,7 +775,9 @@ warstwy = {}            # klasa -> ustawienia warstwy (kolor, widoczność...)
 kolejnosc_klas = []     # kolejność rysowania prostymi kolorami
 kolejka_znakow = []     # kolejność rysowania znakami umownymi
 zasieg = None           # prostokąt całego powiatu
+indeks_przestrzenny = {}            # klasa -> siatka (indeks.py)
 wczytywanie = {"trwa": False}
+statystyka = {"sprawdzone": 0, "czas_wyboru": 0.0}   # liczone na nowo przy każdym rysowaniu
 
 
 def pokaz_postep(tekst):
@@ -760,21 +788,29 @@ def pokaz_postep(tekst):
 
 def otworz_dane(sciezka):
     """Wczytuje powiat z folderu albo pliku ZIP i pokazuje go w całości."""
-    global dane, warstwy, kolejnosc_klas, kolejka_znakow, zasieg
+    global dane, warstwy, kolejnosc_klas, kolejka_znakow, zasieg, indeks_przestrzenny
     wczytywanie["trwa"] = True
     canvas.delete("all")
     nowe_dane, opis = gml.wczytaj_dane(sciezka, pokaz_postep)
-    wczytywanie["trwa"] = False
     if len(nowe_dane) == 0:
+        wczytywanie["trwa"] = False
         pasek.config(text="Nie znaleziono plików BDOT10k (OT_xxxx_A/L/P.xml) w: " + sciezka)
         return
+    # indeks budujemy raz, zaraz po wczytaniu – potem przy każdym rysowaniu tylko z niego korzystamy
+    pokaz_postep("Buduję indeks przestrzenny...")
+    start = time.time()
+    nowy_zasieg = gml.zasieg_danych(nowe_dane)
+    indeks_przestrzenny = indeks.zbuduj_indeks(nowe_dane, nowy_zasieg)
+    opis = opis + f", indeks zbudowany w {time.time() - start:.1f} s"
+    print(indeks.opis_indeksu(indeks_przestrzenny))
+    wczytywanie["trwa"] = False
     dane = nowe_dane
     warstwy = {}
     for klasa in dane:
         warstwy[klasa] = ustawienia_domyslne(klasa)
     kolejnosc_klas = sorted(dane, key=miejsce_w_kolejnosci)
     kolejka_znakow = przygotuj_kolejke_znakow()
-    zasieg = gml.zasieg_danych(dane)
+    zasieg = nowy_zasieg
     okno.title("BDOT10k – " + os.path.basename(sciezka.rstrip("/\\")))
     print(opis)
     pokaz_calosc()                                # pierwszy widok: cały powiat
@@ -822,14 +858,18 @@ tk.Button(przyciski, text="Oddal −", command=oddal).pack(side="left", padx=2, 
 znaki_umowne = tk.BooleanVar(value=False)
 tk.Checkbutton(przyciski, text="Znaki umowne GUGiK", variable=znaki_umowne,
                command=rysuj).pack(side="left", padx=12)
+uzyj_indeksu = tk.BooleanVar(value=True)
+tk.Checkbutton(przyciski, text="Indeks przestrzenny", variable=uzyj_indeksu,
+               command=rysuj).pack(side="left")
 
-# pasek na dole pakujemy przed mapą, żeby zawsze był widoczny, nawet w małym oknie
+# pasek na dole pakujemy przed mapą, żeby zawsze był widoczny, nawet w małym oknie;
+# ma dwa wiersze: współrzędne i skala, a pod nimi statystyka rysowania
 dol = tk.Frame(okno)
 dol.pack(side="bottom", fill="x")
 pasek = tk.Label(dol, text="Wybierz folder z danymi powiatu", anchor="w")
-pasek.pack(side="left", fill="x", expand=True)
-pasek_rysowania = tk.Label(dol, text="", anchor="e")
-pasek_rysowania.pack(side="right", padx=6)
+pasek.pack(side="top", fill="x")
+pasek_rysowania = tk.Label(dol, text="", anchor="w", fg="#444444")
+pasek_rysowania.pack(side="top", fill="x")
 
 canvas = tk.Canvas(okno, width=SZEROKOSC, height=WYSOKOSC, bg="white", highlightthickness=0)
 canvas.pack(fill="both", expand=True)

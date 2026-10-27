@@ -11,6 +11,8 @@
 #          w pasku stanu czas wyboru obiektów, liczba sprawdzonych i narysowanych obiektów.
 # Krok B2: panel warstw po lewej – klasy pogrupowane według kategorii (SW, SK, BU, PT…),
 #          włączanie i wyłączanie, zmiana koloru i grubości linii.
+# Krok B3: identyfikacja obiektu kliknięciem (algorytmy w pliku geometria.py): punkt w wielokącie
+#          metodą półprostej, odległość punktu od odcinka z tolerancją w pikselach; okno z atrybutami.
 
 import os
 import sys
@@ -23,6 +25,7 @@ from tkinter import colorchooser
 
 import gml          # nasz plik gml.py – wczytywanie danych
 import indeks       # nasz plik indeks.py – indeks przestrzenny (siatka regularna)
+import geometria    # nasz plik geometria.py – punkt w wielokącie, odległość od odcinka
 
 # --- USTAWIENIA ---
 
@@ -45,6 +48,10 @@ PLIKI_ZNAKOW = [
 # rozmiar mapy w pikselach (zmienia się razem z rozmiarem okna – patrz zmiana_rozmiaru)
 SZEROKOSC = 900
 WYSOKOSC = 650
+
+# identyfikacja: kliknięcie trafia w linię albo punkt, jeśli jest bliżej niż tyle pikseli
+TOLERANCJA_PIKSELI = 5
+KOLOR_ZAZNACZENIA = "#ff00ff"
 
 # nazwy końcówek linii w QGIS -> nazwy w tkinterze
 KONCOWKI = {"flat": "butt", "round": "round", "square": "projecting"}
@@ -667,6 +674,7 @@ def rysuj():
     else:
         narysowane = rysuj_prosto(ekran)
     rysuj_nazwy_miejscowosci(ekran, skala_teraz)
+    rysuj_zaznaczenie()
     czas = time.time() - start
     if uzyj_indeksu.get():
         sposob = "z indeksem"
@@ -714,12 +722,14 @@ def kolko_myszy(event):
 
 
 # gdzie ostatnio była myszka podczas przeciągania
-przeciaganie = {"x": 0, "y": 0}
+przeciaganie = {"x": 0, "y": 0, "start_x": 0, "start_y": 0}
 
 
 def wcisniecie(event):
     przeciaganie["x"] = event.x
     przeciaganie["y"] = event.y
+    przeciaganie["start_x"] = event.x             # gdzie przycisk został wciśnięty
+    przeciaganie["start_y"] = event.y
 
 
 def ciagniecie(event):
@@ -734,7 +744,13 @@ def ciagniecie(event):
 
 
 def puszczenie(event):
-    rysuj()     # po puszczeniu rysujemy od nowa, żeby dorysować to, co wjechało na ekran
+    """Puszczenie przycisku: jeśli myszka prawie się nie ruszyła, to było kliknięcie – identyfikujemy obiekt;
+    jeśli była przeciągana – rysujemy mapę od nowa, żeby dorysować to, co wjechało na ekran."""
+    przesuniecie = abs(event.x - przeciaganie["start_x"]) + abs(event.y - przeciaganie["start_y"])
+    if przesuniecie > 0:
+        rysuj()
+    if przesuniecie < 3:
+        identyfikuj(event.x, event.y)
 
 
 def skala_mapy():
@@ -780,6 +796,148 @@ def zmiana_rozmiaru(event):
     SZEROKOSC = event.width
     WYSOKOSC = event.height
     rysuj()
+
+
+# --- IDENTYFIKACJA OBIEKTU KLIKNIĘCIEM (wariant rozszerzony) ---
+
+zaznaczenie = {"obiekt": None}      # obiekt wskazany ostatnio kliknięciem (podświetlamy go na mapie)
+okno_info = {"okno": None, "tekst": None}
+
+
+def trafiony(obiekt, x, y, tolerancja):
+    """Czy kliknięcie w punkcie terenu (x, y) trafia w obiekt.
+    punkt   – odległość od punktu nie większa niż tolerancja,
+    linia   – odległość od łamanej (od najbliższego odcinka) nie większa niż tolerancja,
+    poligon – punkt w wielokącie (metoda półprostej) albo blisko brzegu; dla warstw rysowanych samym
+              obrysem (gminy, rezerwaty, kompleksy) tylko blisko brzegu – środek jest przecież pusty."""
+    if obiekt["typ"] == "punkt":
+        for px, py in obiekt["czesci"]:
+            if math.sqrt((px - x) ** 2 + (py - y) ** 2) <= tolerancja:
+                return True
+        return False
+    if obiekt["typ"] == "linia":
+        for wsp in obiekt["czesci"]:
+            if geometria.odleglosc_od_lamanej(x, y, wsp) <= tolerancja:
+                return True
+        return False
+    for pierscienie in obiekt["czesci"]:
+        if warstwy[obiekt["klasa"]]["wypelnij"] and geometria.punkt_w_wielokacie(x, y, pierscienie):
+            return True
+        for pierscien in pierscienie:
+            if geometria.odleglosc_od_lamanej(x, y, pierscien) <= tolerancja:
+                return True
+    return False
+
+
+def klasy_od_gory():
+    """Klasy w kolejności od tej rysowanej na wierzchu do tej na samym spodzie –
+    kliknięcie powinno najpierw trafić w to, co widać na górze (punkty, linie, budynki)."""
+    if znaki_umowne.get():
+        kolejnosc = []
+        for poziom, klasa, styl in kolejka_znakow:
+            if klasa not in kolejnosc:
+                kolejnosc.append(klasa)
+    else:
+        kolejnosc = list(kolejnosc_klas)
+    kolejnosc.reverse()
+    return kolejnosc
+
+
+def identyfikuj(x_ekr, y_ekr):
+    """Szuka obiektów pod kursorem i pokazuje ich klasę i atrybuty w osobnym okienku."""
+    if wczytywanie["trwa"] or len(dane) == 0:
+        return
+    start = time.time()
+    x, y = ekran_na_teren(x_ekr, y_ekr)
+    tolerancja = TOLERANCJA_PIKSELI / widok["skala"]      # tolerancja w pikselach zamieniona na metry
+    wokol = (x - tolerancja, y - tolerancja, x + tolerancja, y + tolerancja)
+    trafienia = []
+    sprawdzone = 0
+    for klasa in klasy_od_gory():
+        if not warstwy[klasa]["widoczna"]:
+            continue                                      # niewidocznej warstwy nie da się kliknąć
+        if uzyj_indeksu.get():
+            kandydaci = indeks.kandydaci(indeks_przestrzenny[klasa], wokol)
+        else:
+            kandydaci = dane[klasa]
+        sprawdzone += len(kandydaci)
+        for obiekt in kandydaci:
+            if prostokaty_nachodza(obiekt["prostokat"], wokol) and trafiony(obiekt, x, y, tolerancja):
+                trafienia.append(obiekt)
+        if len(trafienia) >= 10:
+            break
+    czas = time.time() - start
+
+    canvas.delete("zaznaczenie")
+    if len(trafienia) > 0:
+        zaznaczenie["obiekt"] = trafienia[0]
+    else:
+        zaznaczenie["obiekt"] = None
+    rysuj_zaznaczenie()
+    pokaz_atrybuty(trafienia, x, y)
+    pasek_rysowania.config(text=f"identyfikacja: znaleziono {len(trafienia)} obiektów, sprawdzono "
+                                f"{sprawdzone:,} kandydatów w {czas:.3f} s".replace(",", " "))
+
+
+def rysuj_zaznaczenie():
+    """Podświetla wskazany obiekt grubą różową linią (rysujemy ją na wierzchu, z etykietą "zaznaczenie")."""
+    obiekt = zaznaczenie["obiekt"]
+    if obiekt is None:
+        return
+    if obiekt["typ"] == "punkt":
+        for px, py in obiekt["czesci"]:
+            x_ekr, y_ekr = teren_na_ekran(px, py)
+            canvas.create_oval(x_ekr - 7, y_ekr - 7, x_ekr + 7, y_ekr + 7, outline=KOLOR_ZAZNACZENIA,
+                               width=3, tags="zaznaczenie")
+        return
+    for wsp in linie_obiektu(obiekt):
+        piksele = lista_pikseli(wsp)
+        if len(piksele) >= 4:
+            canvas.create_line(piksele, fill=KOLOR_ZAZNACZENIA, width=3, tags="zaznaczenie")
+
+
+def opis_geometrii(obiekt):
+    """Krótki opis geometrii: typ, liczba części i punktów."""
+    punkty = 0
+    if obiekt["typ"] == "punkt":
+        punkty = len(obiekt["czesci"])
+    else:
+        for wsp in linie_obiektu(obiekt):
+            punkty += len(wsp) // 2
+    return f"{obiekt['typ']}, części: {len(obiekt['czesci'])}, punktów: {punkty}"
+
+
+def pokaz_atrybuty(trafienia, x, y):
+    """Okienko z wynikiem identyfikacji. Najpierw obiekt z wierzchu (podświetlony), pod nim te leżące niżej."""
+    if okno_info["okno"] is None or not okno_info["okno"].winfo_exists():
+        nowe = tk.Toplevel(okno)
+        nowe.title("Identyfikacja obiektu")
+        nowe.geometry("430x520")
+        tekst = tk.Text(nowe, wrap="word", font=("Arial", 9))
+        suwak = tk.Scrollbar(nowe, command=tekst.yview)
+        tekst.configure(yscrollcommand=suwak.set)
+        suwak.pack(side="right", fill="y")
+        tekst.pack(side="left", fill="both", expand=True)
+        tekst.tag_configure("naglowek", font=("Arial", 10, "bold"))
+        okno_info["okno"] = nowe
+        okno_info["tekst"] = tekst
+    tekst = okno_info["tekst"]
+    tekst.configure(state="normal")
+    tekst.delete("1.0", "end")
+    tekst.insert("end", f"Punkt: X = {y:,.1f} m, Y = {x:,.1f} m\n\n".replace(",", " "))
+    if len(trafienia) == 0:
+        tekst.insert("end", "Nie trafiono w żaden obiekt.")
+    numer = 0
+    for obiekt in trafienia:
+        numer += 1
+        klasa = obiekt["klasa"]
+        tekst.insert("end", f"{numer}. OT_{klasa} – {gml.nazwa_klasy(klasa)}\n", "naglowek")
+        tekst.insert("end", f"   geometria: {opis_geometrii(obiekt)}\n")
+        for nazwa in obiekt["atrybuty"]:
+            tekst.insert("end", f"   {nazwa}: {obiekt['atrybuty'][nazwa]}\n")
+        tekst.insert("end", "\n")
+    tekst.configure(state="disabled")              # tylko do czytania
+    okno_info["okno"].lift()
 
 
 # --- PANEL WARSTW (wariant rozszerzony) ---
@@ -920,6 +1078,7 @@ def otworz_dane(sciezka):
     kolejnosc_klas = sorted(dane, key=miejsce_w_kolejnosci)
     kolejka_znakow = przygotuj_kolejke_znakow()
     zasieg = nowy_zasieg
+    zaznaczenie["obiekt"] = None
     zbuduj_panel_warstw()
     okno.title("BDOT10k – " + os.path.basename(sciezka.rstrip("/\\")))
     print(opis)

@@ -1,36 +1,28 @@
-# mapa.py – przeglądarka danych BDOT10k (Wola Karczewska)
+# mapa.py – przeglądarka danych BDOT10k całego powiatu
 # Projekt z Geometrii obliczeniowej, dr hab. inż. Waldemar Izdebski
 #
-# Krok 1: wczytanie plików GML z folderu dane_wies.
-# Krok 2: okienko i rysowanie mapy (przeliczanie współrzędnych teren -> ekran).
-# Krok 3: nawigacja – zoom kółkiem, przesuwanie myszą, przyciski i pasek ze współrzędnymi.
-# Krok 4a: drogi rysujemy z jezdni (OT_SKJZ_L), a nie z dróg (OT_SKDR_L), bo to jezdniom
-#          BDOT10k przypisuje kody znaków umownych (kodKarto10k) – tak robi też wtyczka GUGiK.
-# Krok 4b: znaki umowne z plików stylu QGIS (.qml) z repozytorium GUGiK (folder znaki):
-#          kod obiektu -> znak umowny, warstwy w kolejności poziomów, usuwanie nieaktualnych wersji obiektów.
-# Krok 4c: ząbki na granicy rezerwatu – znaczki stawiane co 40 m wzdłuż linii.
+# Historia kroków:
+# Kroki 1–3: odczyt GML, okienko z mapą (przeliczanie współrzędnych teren -> ekran), nawigacja.
+# Kroki 4a–4c: znaki umowne z plików stylu QML wtyczki GUGiK (na razie dla 7 klas), ząbki na granicy rezerwatu.
+# Krok A1 (według kryteriów z PDF): cały powiat – wszystkie pliki GML z wybranego folderu albo ZIP
+#          (wczytywanie strumieniowe w pliku gml.py), proste kolory warstw, start na całym powiecie,
+#          obiekty mniejsze niż piksel jako kropka, okno o zmiennym rozmiarze.
 
 import os
+import sys
 import math
+import time
 import xml.etree.ElementTree as ET
 import tkinter as tk
-import time
+from tkinter import filedialog
+
+import gml          # nasz plik gml.py – wczytywanie danych
 
 # --- USTAWIENIA ---
 
-# folder projektu, folder z wyciętymi danymi (zrobionymi przez wytnij_wies.py) i folder ze znakami umownymi
 FOLDER_PROJEKTU = os.path.dirname(os.path.abspath(__file__))
-FOLDER_DANYCH = os.path.join(FOLDER_PROJEKTU, "dane_wies")
+FOLDER_DANYCH = os.path.join(FOLDER_PROJEKTU, "dane")      # tu otwiera się okno wyboru folderu
 FOLDER_ZNAKOW = os.path.join(FOLDER_PROJEKTU, "znaki")
-
-# przestrzenie nazw z nagłówka plików GML – to one stoją za przedrostkami "gml:" i "ot:"
-NS = {
-    "gml": "http://www.opengis.net/gml/3.2",
-    "ot": "urn:gugik:specyfikacje:gmlas:bazaDanychObiektowTopograficznych10k:2.0",
-}
-
-# klasy, które wczytujemy (kolejność rysowania ustalają teraz poziomy ze stylów – patrz niżej)
-KLASY = ["PTLZ_A", "PTWP_A", "TCRZ_A", "BUBD_A", "SKJZ_L", "SWRS_L", "ADMS_P"]
 
 # znaki umowne: która klasa jest rysowana którym plikiem stylu z repozytorium GUGiK
 # (jezdnie mają dwa pliki: drogi gruntowe [31] i drogi o nawierzchni twardej [33-38])
@@ -44,162 +36,90 @@ PLIKI_ZNAKOW = [
     ("BUBD_A", "OT_BUBD_A [42].qml"),
 ]
 
-# rozmiar okienka z mapą (w pikselach)
+# rozmiar mapy w pikselach (zmienia się razem z rozmiarem okna – patrz zmiana_rozmiaru)
 SZEROKOSC = 1000
 WYSOKOSC = 650
-
-# prostokąt wsi (x_min, y_min, x_max, y_max) – ten obszar pokazujemy na starcie
-WIES = (662400, 475400, 664900, 476900)
 
 # nazwy końcówek linii w QGIS -> nazwy w tkinterze
 KONCOWKI = {"flat": "butt", "round": "round", "square": "projecting"}
 
-
-# --- WCZYTYWANIE DANYCH ---
-
-def tekst_na_punkty(tekst):
-    """Zamienia napis "x1 y1 x2 y2 ..." na listę punktów [(x1, y1), (x2, y2), ...]."""
-    liczby = tekst.split()
-    punkty = []
-    for i in range(0, len(liczby) - 1, 2):
-        punkty.append((float(liczby[i]), float(liczby[i + 1])))
-    return punkty
-
-
-def wczytaj_geometrie(element):
-    """Sprawdza, jaka geometria siedzi w znaczniku <ot:geometria>, i zwraca (typ, współrzędne).
-    punkt   -> (x, y)
-    linia   -> [(x, y), (x, y), ...]
-    poligon -> [obwód, dziura1, dziura2, ...], a każdy z nich to lista punktów"""
-    punkt = element.find("gml:Point", NS)
-    if punkt is not None:
-        tekst = punkt.find("gml:pos", NS).text
-        return "punkt", tekst_na_punkty(tekst)[0]
-
-    linia = element.find("gml:Curve", NS)
-    if linia is not None:
-        punkty = []
-        # linia może mieć kilka odcinków (LineStringSegment) – sklejamy je po kolei
-        for poslist in linia.findall(".//gml:posList", NS):
-            punkty = punkty + tekst_na_punkty(poslist.text)
-        return "linia", punkty
-
-    poligon = element.find("gml:Polygon", NS)
-    if poligon is not None:
-        pierscienie = []
-        obwod = poligon.find("gml:exterior//gml:posList", NS)
-        pierscienie.append(tekst_na_punkty(obwod.text))
-        for dziura in poligon.findall("gml:interior//gml:posList", NS):
-            pierscienie.append(tekst_na_punkty(dziura.text))
-        return "poligon", pierscienie
-
-    return None, None   # inna geometria – na razie jej nie obsługujemy
+# --- PROSTE KOLORY (wariant podstawowy: każda warstwa ma stały kolor) ---
+KOLORY_KATEGORII = {
+    "PT": "#d9ead3",   # pokrycie terenu – jasna zieleń (niektóre klasy mają swój kolor, niżej)
+    "SW": "#1f78b4",   # sieć wodna – niebieski
+    "SK": "#8c564b",   # sieć komunikacyjna – brązowy
+    "SU": "#9467bd",   # sieć uzbrojenia terenu – fioletowy
+    "BU": "#d62728",   # budynki i budowle – czerwony
+    "KU": "#ff7f0e",   # kompleksy użytkowania terenu – pomarańczowy
+    "TC": "#2ca02c",   # tereny chronione – zielony
+    "AD": "#444444",   # podział administracyjny – ciemnoszary
+    "OI": "#7f7f7f",   # inne obiekty – szary
+    "RT": "#a0522d",   # rzeźba terenu – brązowy
+}
+KOLORY_KLAS = {        # wyjątki w pokryciu terenu, żeby las był zielony, a woda niebieska
+    "PTLZ_A": "#8fc98f",   # lasy
+    "PTWP_A": "#9ecae1",   # wody powierzchniowe
+    "PTTR_A": "#e5f2d5",   # roślinność trawiasta
+    "PTZB_A": "#ead9d9",   # zabudowa
+    "PTUT_A": "#f0eac0",   # uprawy trwałe
+    "PTRK_A": "#c7e0b4",   # roślinność krzewiasta
+    "PTKM_A": "#dddddd",   # tereny pod drogami i torami
+    "PTPL_A": "#e6e6e6",   # place
+    "OIMK_A": "#b8d8d0",   # bagna i tereny podmokłe
+    "OISZ_A": "#c9e0a8",   # szuwary
+    "OIPR_P": "#4f8f3a",   # drzewa, źródła (obiekty przyrodnicze)
+    "OIPR_L": "#4f8f3a",   # rzędy drzew, linie oddziałowe w lesie
+}
+# obszary, które nakładają się na pokrycie terenu (gminy, rezerwaty, kompleksy) – tylko obrys,
+# żeby nie zakryły reszty mapy
+TYLKO_OBRYS = ["AD", "TC", "KU"]
+# kolejność kategorii przy rysowaniu prostymi kolorami (pokrycie terenu na samym dole)
+KOLEJNOSC_KATEGORII = ["PT", "KU", "TC", "AD", "RT", "SW", "SK", "SU", "BU", "OI"]
 
 
-def wczytaj_klase(klasa):
-    """Czyta jeden plik GML i zwraca listę obiektów. Każdy obiekt to słownik:
-    {"klasa": ..., "typ": ..., "geometria": ..., "atrybuty": {...}}"""
-    sciezka = os.path.join(FOLDER_DANYCH, "OT_" + klasa + ".xml")
-    korzen = ET.parse(sciezka).getroot()          # <gml:FeatureCollection>
-    obiekty = []
-    usuniete = 0
-    for pudelko in korzen.findall("gml:featureMember", NS):
-        element = pudelko[0]                      # np. <ot:OT_BUBD_A>
-        atrybuty = {}
-        typ = None
-        geometria = None
-        for dziecko in element:
-            nazwa = dziecko.tag.split("}")[1]     # "{urn:...}nazwa" -> "nazwa"
-            if nazwa == "geometria":
-                typ, geometria = wczytaj_geometrie(dziecko)
-            else:
-                atrybuty[nazwa] = dziecko.text
-        # "Usuwamy dane" nieaktualne: BDOT10k przechowuje też stare wersje obiektów – mają wpisaną
-        # datę koniecWersjiObiektu. Wtyczka GUGiK pokazuje tylko obiekty aktualne, więc my też.
-        if atrybuty.get("koniecWersjiObiektu"):
-            usuniete += 1
-            continue
-        obiekt = {"klasa": klasa, "typ": typ, "geometria": geometria, "atrybuty": atrybuty}
-        # prostokąt otaczający liczymy raz, przy wczytywaniu – przyda się przy rysowaniu
-        obiekt["prostokat"] = prostokat_otaczajacy(wszystkie_punkty(obiekt))
-        if typ == "poligon":
-            obiekt["sciezka"] = sciezka_z_dziurami(geometria)   # też liczymy raz, przy wczytywaniu
-        obiekty.append(obiekt)
-    print(f"{klasa}: {len(obiekty)} obiektów (usunięte nieaktualne wersje: {usuniete})")
-    return obiekty
+def ciemniejszy(kolor):
+    """"#8fc98f" -> ten sam kolor, ale ciemniejszy (na obrys). Składowe R, G, B mnożymy przez 0,6."""
+    r = int(kolor[1:3], 16)                       # dwa znaki szesnastkowe -> liczba 0–255
+    g = int(kolor[3:5], 16)
+    b = int(kolor[5:7], 16)
+    return f"#{int(r * 0.6):02x}{int(g * 0.6):02x}{int(b * 0.6):02x}"
 
 
-def wszystkie_punkty(obiekt):
-    """Zwraca płaską listę wszystkich punktów obiektu (przyda się do liczenia zasięgu)."""
-    if obiekt["typ"] == "punkt":
-        return [obiekt["geometria"]]
-    if obiekt["typ"] == "linia":
-        return obiekt["geometria"]
-    if obiekt["typ"] == "poligon":
-        return obiekt["geometria"][0]             # do zasięgu wystarczy obwód
-    return []
+def ustawienia_domyslne(klasa):
+    """Ustawienia warstwy (klasy) do rysowania prostymi kolorami. W kroku B2 będzie można je zmieniać."""
+    kategoria = klasa[:2]
+    kolor = KOLORY_KLAS.get(klasa, KOLORY_KATEGORII.get(kategoria, "#888888"))
+    wypelnij = klasa.endswith("_A") and kategoria not in TYLKO_OBRYS
+    obrys = kolor
+    if wypelnij or klasa.endswith("_P"):
+        obrys = ciemniejszy(kolor)
+    return {"widoczna": True, "kolor": kolor, "obrys": obrys, "wypelnij": wypelnij, "grubosc": 1}
 
 
-def sciezka_z_dziurami(pierscienie):
-    """Łączy obwód poligonu i jego dziury w jedną ścieżkę do wypełnienia (sztuczka z "mostkami").
-    Każdą dziurę doczepiamy do NAJBLIŻSZEGO wierzchołka obwodu, żeby mostki były jak najkrótsze:
-    idziemy po obwodzie, w tym wierzchołku skaczemy do dziury, obchodzimy ją i wracamy."""
-    obwod = pierscienie[0]
-    doczepione = {}          # numer wierzchołka obwodu -> lista dziur doczepionych w tym miejscu
-    for dziura in pierscienie[1:]:
-        dx, dy = dziura[0]                        # pierwszy punkt dziury
-        najblizszy = 0
-        najmniejsza = None
-        for i in range(len(obwod)):
-            x, y = obwod[i]
-            odleglosc = (x - dx) ** 2 + (y - dy) ** 2   # kwadrat odległości – do porównań wystarczy
-            if najmniejsza is None or odleglosc < najmniejsza:
-                najmniejsza = odleglosc
-                najblizszy = i
-        if najblizszy not in doczepione:
-            doczepione[najblizszy] = []
-        doczepione[najblizszy].append(dziura)
-    sciezka = []
-    for i in range(len(obwod)):
-        sciezka.append(obwod[i])
-        if i in doczepione:
-            for dziura in doczepione[i]:
-                sciezka = sciezka + list(dziura) + [obwod[i]]   # tam (mostek), dookoła dziury, z powrotem
-    return sciezka
-
-
-def prostokat_otaczajacy(punkty):
-    """Zwraca (x_min, y_min, x_max, y_max), czyli najmniejszy prostokąt,
-    w którym mieszczą się wszystkie punkty (ta sama funkcja co w wytnij_wies.py)."""
-    xs = [p[0] for p in punkty]
-    ys = [p[1] for p in punkty]
-    return min(xs), min(ys), max(xs), max(ys)
-
-
-def prostokaty_nachodza(a, b):
-    """Sprawdza, czy dwa prostokąty mają część wspólną (ta sama funkcja co w wytnij_wies.py)."""
-    if a[2] < b[0] or a[0] > b[2]:   # a całkiem na lewo albo na prawo od b
-        return False
-    if a[3] < b[1] or a[1] > b[3]:   # a całkiem pod albo nad b
-        return False
-    return True
-
-
-def zasieg(obiekty):
-    """Zasięg danych: najmniejszy prostokąt (x_min, y_min, x_max, y_max), w którym mieszczą się wszystkie obiekty."""
-    xs = []
-    ys = []
-    for obiekt in obiekty:
-        for x, y in wszystkie_punkty(obiekt):
-            xs.append(x)
-            ys.append(y)
-    return min(xs), min(ys), max(xs), max(ys)
+def miejsce_w_kolejnosci(klasa):
+    """Klucz sortowania klas przy prostych kolorach: najpierw wypełnione poligony, potem obrysy,
+    linie i punkty, a w każdej grupie według kategorii. Python porównuje takie trójki po kolei."""
+    if klasa.endswith("_P"):
+        grupa = 3
+    elif klasa.endswith("_L"):
+        grupa = 2
+    elif warstwy[klasa]["wypelnij"]:
+        grupa = 0
+    else:
+        grupa = 1
+    kategoria = klasa[:2]
+    if kategoria in KOLEJNOSC_KATEGORII:
+        numer = KOLEJNOSC_KATEGORII.index(kategoria)
+    else:
+        numer = len(KOLEJNOSC_KATEGORII)
+    return (grupa, numer, klasa)
 
 
 # --- ZNAKI UMOWNE (odczyt plików stylu QML z repozytorium GUGiK) ---
 # Plik .qml to zwykły XML, więc czytamy go tak samo jak GML – biblioteką ElementTree.
 # Najważniejsza część to <renderer-v2 type="categorizedSymbol">: lista kategorii "kod -> numer symbolu"
 # i lista symboli. Symbol składa się z warstw (np. brązowa szeroka linia + biała węższa = jezdnia).
+# (W kroku C1 te reguły zapiszemy we własnym pliku JSON, jak każe PDF.)
 
 def kolor_qgis(tekst):
     """QGIS zapisuje kolor jako "R,G,B,A", np. "204,100,21,255".
@@ -248,11 +168,11 @@ def wzor_grubosci(warstwa, pola):
 
 def wczytaj_warstwe_znaku(warstwa, pola):
     """Zamienia jedną warstwę symbolu z pliku QML na prosty słownik.
-    Na razie rozumiemy wypełnienie (SimpleFill) i linię (SimpleLine); resztę zapamiętujemy tylko z nazwy."""
+    Rozumiemy wypełnienie (SimpleFill), linię (SimpleLine) i znaczki wzdłuż linii (MarkerLine)."""
     rodzaj = warstwa.get("class")                       # np. "SimpleFill", "SimpleLine", "MarkerLine"
     u = ustawienia_warstwy(warstwa)
     w = {"rodzaj": rodzaj,
-         "przebieg": int(warstwa.get("pass")),          # kolejność rysowania warstw (opis w rysuj())
+         "przebieg": int(warstwa.get("pass")),          # kolejność rysowania warstw (opis w rysuj_znakami())
          "wlaczona": warstwa.get("enabled") == "1"}
     if rodzaj == "SimpleFill":
         w["wypelnienie"] = ""
@@ -316,14 +236,14 @@ def wczytaj_znaki(plik):
     symbole = {}
     przebiegi = []
     for symbol in renderer.findall("symbols/symbol"):
-        warstwy = []
+        warstwy_symbolu = []
         for warstwa in symbol.findall("layer"):
             w = wczytaj_warstwe_znaku(warstwa, pola)
             if w["wlaczona"]:
-                warstwy.append(w)
+                warstwy_symbolu.append(w)
                 if w["przebieg"] not in przebiegi:
                     przebiegi.append(w["przebieg"])
-        symbole[symbol.get("name")] = warstwy
+        symbole[symbol.get("name")] = warstwy_symbolu
 
     # kategorie: kod znaku umownego -> numer symbolu
     znaki = {}
@@ -336,9 +256,38 @@ def wczytaj_znaki(plik):
             "przebiegi": przebiegi, "znaki": znaki}
 
 
-def poziom_stylu(styl):
-    """Pomocnicza funkcja do sortowania stylów według poziomu rysowania."""
-    return styl["poziom"]
+def poziom_bez_stylu(klasa):
+    """Klasy, dla których nie mamy jeszcze stylu w folderze znaki, rysujemy prostym kolorem
+    na zastępczym poziomie: obszary na dole, linie w środku, punkty na wierzchu (do kroku C1)."""
+    if klasa.endswith("_P"):
+        return 60
+    if klasa.endswith("_L"):
+        return 30
+    if klasa[:2] == "BU":
+        return 41
+    if klasa[:2] in TYLKO_OBRYS:
+        return 22
+    return -1
+
+
+def poziom_pozycji(pozycja):
+    """Pomocnicza funkcja do sortowania kolejki rysowania według poziomu."""
+    return pozycja[0]
+
+
+def przygotuj_kolejke_znakow():
+    """Kolejka rysowania znakami umownymi: (poziom, klasa, styl albo None), od spodu do góry."""
+    kolejka = []
+    klasy_ze_stylem = []
+    for styl in style:
+        klasy_ze_stylem.append(styl["klasa"])
+        if styl["klasa"] in dane:
+            kolejka.append((styl["poziom"], styl["klasa"], styl))
+    for klasa in dane:
+        if klasa not in klasy_ze_stylem:
+            kolejka.append((poziom_bez_stylu(klasa), klasa, None))
+    kolejka.sort(key=poziom_pozycji)
+    return kolejka
 
 
 # --- PRZELICZANIE WSPÓŁRZĘDNYCH ---
@@ -364,10 +313,11 @@ def ekran_na_teren(x_ekr, y_ekr):
 
 
 def pokaz_prostokat(prostokat):
-    """Ustawia widok tak, żeby podany prostokąt (x_min, y_min, x_max, y_max) zmieścił się w okienku."""
+    """Ustawia widok tak, żeby podany prostokąt (x_min, y_min, x_max, y_max) zmieścił się w okienku.
+    Skala jest jedna dla obu osi, więc mapa nie jest rozciągnięta."""
     x_min, y_min, x_max, y_max = prostokat
-    skala_x = SZEROKOSC / (x_max - x_min)
-    skala_y = WYSOKOSC / (y_max - y_min)
+    skala_x = SZEROKOSC / max(x_max - x_min, 1)
+    skala_y = WYSOKOSC / max(y_max - y_min, 1)
     widok["skala"] = min(skala_x, skala_y)        # mniejsza skala, żeby zmieściło się w obu kierunkach
     # środek prostokąta ma wypaść na środku okienka
     srodek_x = (x_min + x_max) / 2
@@ -376,26 +326,128 @@ def pokaz_prostokat(prostokat):
     widok["y0"] = srodek_y + (WYSOKOSC / 2) / widok["skala"]
 
 
+def prostokaty_nachodza(a, b):
+    """Sprawdza, czy dwa prostokąty (x_min, y_min, x_max, y_max) mają część wspólną.
+    Nie nachodzą tylko wtedy, gdy jeden leży całkiem na lewo, na prawo, pod albo nad drugim."""
+    if a[2] < b[0] or a[0] > b[2]:   # a całkiem na lewo albo na prawo od b
+        return False
+    if a[3] < b[1] or a[1] > b[3]:   # a całkiem pod albo nad b
+        return False
+    return True
+
+
 # --- RYSOWANIE ---
 
-def lista_pikseli(punkty):
-    """Zamienia listę punktów terenowych na płaską listę pikseli [x1, y1, x2, y2, ...] dla tkintera.
+def lista_pikseli(wsp):
+    """Zamienia współrzędne terenowe [x1, y1, x2, y2, ...] na płaską listę pikseli dla tkintera.
     Prosta generalizacja: pomija punkty, które na ekranie wypadłyby bliżej niż 1 piksel
     od poprzedniego (i tak nie byłoby ich widać, a rysowanie idzie dużo szybciej).
-    Ostatni punkt zostawiamy zawsze, żeby pierścienie poligonów były domknięte."""
+    Ostatni punkt zostawiamy zawsze, żeby pierścienie poligonów były domknięte.
+    Wzór z teren_na_ekran wpisujemy tu bezpośrednio, bo ta funkcja liczy miliony punktów."""
+    x0 = widok["x0"]
+    y0 = widok["y0"]
+    skala = widok["skala"]
     wynik = []
     ostatni_x = None
     ostatni_y = None
-    for i in range(len(punkty)):
-        x, y = punkty[i]
-        x_ekr, y_ekr = teren_na_ekran(x, y)
-        czy_ostatni = (i == len(punkty) - 1)
-        if ostatni_x is None or czy_ostatni or abs(x_ekr - ostatni_x) >= 1 or abs(y_ekr - ostatni_y) >= 1:
+    n = len(wsp)
+    for i in range(0, n, 2):
+        x_ekr = (wsp[i] - x0) * skala
+        y_ekr = (y0 - wsp[i + 1]) * skala
+        if ostatni_x is None or i == n - 2 or abs(x_ekr - ostatni_x) >= 1 or abs(y_ekr - ostatni_y) >= 1:
             wynik.append(x_ekr)
             wynik.append(y_ekr)
             ostatni_x = x_ekr
             ostatni_y = y_ekr
     return wynik
+
+
+def linie_obiektu(obiekt):
+    """Łamane, po których rysujemy linię: dla linii jej części, dla poligonu wszystkie pierścienie."""
+    if obiekt["typ"] == "linia":
+        return obiekt["czesci"]
+    linie = []
+    if obiekt["typ"] == "poligon":
+        for pierscienie in obiekt["czesci"]:
+            for pierscien in pierscienie:
+                linie.append(pierscien)
+    return linie
+
+
+def rysuj_jako_piksel(obiekt, kolor, zajete):
+    """Obiekt mniejszy niż piksel rysujemy jako kropkę w miejscu jego prostokąta,
+    a w jednym pikselu tylko raz – setki budynków w jednym miejscu dałyby i tak tę samą kropkę."""
+    p = obiekt["prostokat"]
+    x_ekr, y_ekr = teren_na_ekran(p[0], p[1])
+    piksel = (int(x_ekr), int(y_ekr))
+    if piksel in zajete:
+        return
+    zajete.add(piksel)
+    canvas.create_rectangle(piksel[0], piksel[1], piksel[0] + 2, piksel[1] + 2, fill=kolor, outline="")
+
+
+def rysuj_obiekt_prosto(obiekt, ust):
+    """Wariant podstawowy: punkty jako kropki, linie jako linie, poligony jako wypełnione wielokąty z obrysem."""
+    if obiekt["typ"] == "poligon":
+        for i in range(len(obiekt["czesci"])):
+            pierscienie = obiekt["czesci"][i]
+            if ust["wypelnij"] and len(pierscienie) == 1:
+                # poligon bez dziur: wypełnienie i obrys jednym wielokątem (najszybciej)
+                piksele = lista_pikseli(pierscienie[0])
+                if len(piksele) >= 6:
+                    canvas.create_polygon(piksele, fill=ust["kolor"], outline=ust["obrys"], width=ust["grubosc"])
+                continue
+            if ust["wypelnij"]:
+                # poligon z dziurami: wypełniamy ścieżkę z mostkami (gml.sciezka_z_dziurami), bez obrysu
+                piksele = lista_pikseli(obiekt["sciezki"][i])
+                if len(piksele) >= 6:
+                    canvas.create_polygon(piksele, fill=ust["kolor"], outline="")
+            for pierscien in pierscienie:          # obrysy osobno liniami, żeby nie było widać mostków
+                piksele = lista_pikseli(pierscien)
+                if len(piksele) >= 4:
+                    canvas.create_line(piksele, fill=ust["obrys"], width=ust["grubosc"])
+    elif obiekt["typ"] == "linia":
+        for wsp in obiekt["czesci"]:
+            piksele = lista_pikseli(wsp)
+            if len(piksele) >= 4:
+                canvas.create_line(piksele, fill=ust["kolor"], width=ust["grubosc"])
+    else:
+        for x, y in obiekt["czesci"]:
+            x_ekr, y_ekr = teren_na_ekran(x, y)
+            canvas.create_oval(x_ekr - 2, y_ekr - 2, x_ekr + 2, y_ekr + 2, fill=ust["kolor"], outline=ust["obrys"])
+
+
+def rysuj_klase_prosto(klasa, ekran):
+    """Rysuje wszystkie widoczne obiekty jednej klasy jej stałym kolorem. Zwraca, ile obiektów narysowała."""
+    ust = warstwy[klasa]
+    skala = widok["skala"]
+    punkty_jako_kropki = skala_mapy() > 50000      # przy małych skalach punkty to tylko kropki
+    zajete = set()                     # piksele zajęte już przez małe obiekty tej klasy
+    narysowane = 0
+    for obiekt in dane[klasa]:
+        p = obiekt["prostokat"]
+        if not prostokaty_nachodza(p, ekran):
+            continue                   # obiekt poza okienkiem – szkoda czasu
+        narysowane += 1
+        if obiekt["typ"] == "punkt":
+            if punkty_jako_kropki:
+                rysuj_jako_piksel(obiekt, ust["kolor"], zajete)
+            else:
+                rysuj_obiekt_prosto(obiekt, ust)
+        elif (p[2] - p[0]) * skala < 1 and (p[3] - p[1]) * skala < 1:
+            rysuj_jako_piksel(obiekt, ust["kolor"], zajete)      # obiekt mniejszy niż piksel
+        else:
+            rysuj_obiekt_prosto(obiekt, ust)
+    return narysowane
+
+
+def rysuj_prosto(ekran):
+    """Wariant podstawowy: każda warstwa jednym kolorem, w kolejności: poligony, obrysy, linie, punkty."""
+    narysowane = 0
+    for klasa in kolejnosc_klas:
+        if warstwy[klasa]["widoczna"]:
+            narysowane += rysuj_klase_prosto(klasa, ekran)
+    return narysowane
 
 
 def na_piksele(wartosc, jednostka):
@@ -411,17 +463,18 @@ def rysuj_wypelnienie(obiekt, w):
     """Warstwa SimpleFill: wypełnienie poligonu i jego kontur."""
     if w["wypelnienie"] != "":
         # Wypełnienie z dziurami: tkinter nie zna dziur, więc rysujemy jedną ścieżkę z "mostkami"
-        # (patrz sciezka_z_dziurami). Tkinter wypełnia według reguły parzystości: punkt jest w środku,
+        # (patrz gml.sciezka_z_dziurami). Tkinter wypełnia według reguły parzystości: punkt jest w środku,
         # jeśli linia poprowadzona od niego w bok przecina brzeg nieparzystą liczbę razy.
         # Z wnętrza dziury przecina parzyście, więc dziura zostaje pusta, a każdy mostek
         # przechodzimy dwa razy (tam i z powrotem), więc się znosi.
-        piksele = lista_pikseli(obiekt["sciezka"])
-        if len(piksele) >= 6:                     # poligon potrzebuje co najmniej 3 punktów
-            canvas.create_polygon(piksele, fill=w["wypelnienie"], outline="")
+        for sciezka in obiekt["sciezki"]:
+            piksele = lista_pikseli(sciezka)
+            if len(piksele) >= 6:                 # poligon potrzebuje co najmniej 3 punktów
+                canvas.create_polygon(piksele, fill=w["wypelnienie"], outline="")
     if w["kontur"] != "":
         # kontury rysujemy osobno liniami, żeby nie było widać mostków
         grubosc = na_piksele(w["grubosc"], w["jednostka"])
-        for pierscien in obiekt["geometria"]:
+        for pierscien in linie_obiektu(obiekt):
             piksele = lista_pikseli(pierscien)
             if len(piksele) >= 4:                 # linia potrzebuje co najmniej 2 punktów
                 canvas.create_line(piksele, fill=w["kontur"], width=grubosc)
@@ -444,27 +497,23 @@ def rysuj_linie_znaku(obiekt, w):
         for dlugosc in w["kreski"]:
             kreski.append(max(1, round(na_piksele(dlugosc, w["jednostka"]))))
 
-    if obiekt["typ"] == "linia":
-        linie = [obiekt["geometria"]]
-    elif obiekt["typ"] == "poligon":
-        linie = obiekt["geometria"]               # obwód i dziury
-    else:
-        return
-    for punkty in linie:
-        piksele = lista_pikseli(punkty)
+    for wsp in linie_obiektu(obiekt):
+        piksele = lista_pikseli(wsp)
         if len(piksele) >= 4:
             canvas.create_line(piksele, fill=w["kolor"], width=grubosc, dash=kreski,
                                capstyle=w["koncowki"], joinstyle=w["narozniki"])
 
 
-def punkty_co_odstep(punkty, odstep):
-    """Wyznacza punkty co `odstep` metrów wzdłuż łamanej – w nich stawiamy znaczki.
+def punkty_co_odstep(wsp, odstep):
+    """Wyznacza punkty co `odstep` metrów wzdłuż łamanej [x1, y1, x2, y2, ...] – w nich stawiamy znaczki.
     Zwraca listę (x, y, kx, ky): punkt i kierunek odcinka, na którym leży (wektor o długości 1)."""
     wynik = []
     pozycja = 0.0             # odległość następnego znaczka od początku bieżącego odcinka
-    for i in range(len(punkty) - 1):
-        x1, y1 = punkty[i]
-        x2, y2 = punkty[i + 1]
+    for i in range(0, len(wsp) - 2, 2):
+        x1 = wsp[i]
+        y1 = wsp[i + 1]
+        x2 = wsp[i + 2]
+        y2 = wsp[i + 3]
         dlugosc = math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)      # twierdzenie Pitagorasa
         if dlugosc == 0:
             continue
@@ -487,14 +536,8 @@ def rysuj_zabki(obiekt, w):
     od = w["przesuniecie"] - w["rozmiar"] / 2        # kreska zaczyna się tyle metrów od linii...
     do = w["przesuniecie"] + w["rozmiar"] / 2        # ...a kończy tyle (u nas od 1 m do 6 m)
     ekran = widoczny_prostokat()
-    if obiekt["typ"] == "linia":
-        linie = [obiekt["geometria"]]
-    elif obiekt["typ"] == "poligon":
-        linie = obiekt["geometria"]
-    else:
-        return
-    for punkty in linie:
-        for x, y, kx, ky in punkty_co_odstep(punkty, w["odstep"]):
+    for wsp in linie_obiektu(obiekt):
+        for x, y, kx, ky in punkty_co_odstep(wsp, w["odstep"]):
             if x < ekran[0] or x > ekran[2] or y < ekran[1] or y > ekran[3]:
                 continue                                # ten ząbek jest poza okienkiem
             # wektor prostopadły "w prawo" od kierunku linii to (ky, -kx);
@@ -513,43 +556,46 @@ def rysuj_warstwe_znaku(obiekt, w):
         rysuj_linie_znaku(obiekt, w)
     elif w["rodzaj"] == "MarkerLine" and w["rozmieszczenie"] == "interval" and w["ksztalt"] == "line":
         rysuj_zabki(obiekt, w)
-    # wzór z drzewek w lesie i znaki punktowe z plików SVG dorobimy w następnym kroku
+    # wzór z drzewek w lesie i znaki punktowe z plików SVG dorobimy w krokach C2–C3
 
 
-def rysuj_miejscowosc(obiekt):
-    """Miejscowości nie mają znaku w folderze znaki (we wtyczce to tylko napis).
-    Na razie kropka z nazwą – prawdziwe napisy zrobimy w kroku 4d."""
-    x, y = obiekt["geometria"]
-    x_ekr, y_ekr = teren_na_ekran(x, y)
-    canvas.create_oval(x_ekr - 4, y_ekr - 4, x_ekr + 4, y_ekr + 4, fill="black")
-    nazwa = obiekt["atrybuty"].get("nazwa")
-    if nazwa:
-        canvas.create_text(x_ekr, y_ekr - 12, text=nazwa, font=("Arial", 11, "bold"))
+def kolor_glowny(warstwy_znaku):
+    """Najważniejszy kolor znaku (pierwsze wypełnienie albo linia) – nim rysujemy kropkę,
+    gdy obiekt jest mniejszy niż piksel."""
+    for w in warstwy_znaku:
+        for nazwa in ("wypelnienie", "kolor", "kontur"):
+            if w.get(nazwa):
+                return w[nazwa]
+    return "#000000"
 
 
-def widoczny_prostokat():
-    """Prostokąt terenu, który aktualnie widać w okienku (x_min, y_min, x_max, y_max)."""
-    x_min, y_max = ekran_na_teren(0, 0)                    # lewy górny róg okienka
-    x_max, y_min = ekran_na_teren(SZEROKOSC, WYSOKOSC)     # prawy dolny róg okienka
-    return x_min, y_min, x_max, y_max
-
-
-def rysuj():
-    """Czyści okienko i rysuje mapę znakami umownymi, styl po stylu od najniższego poziomu.
-    Rysujemy tylko obiekty widoczne w okienku i tylko te, którym styl przypisuje znak."""
-    start = time.time()
-    canvas.delete("all")
-    ekran = widoczny_prostokat()
-    skala_teraz = skala_mapy()
+def rysuj_znakami(ekran, skala_teraz):
+    """Rysuje mapę znakami umownymi, styl po stylu od najniższego poziomu.
+    Klasy bez stylu w folderze znaki rysujemy na razie prostymi kolorami."""
+    skala = widok["skala"]
     narysowane = 0
-    for styl in style:                            # posortowane według poziomu (od spodu do góry)
+    for poziom, klasa, styl in kolejka_znakow:
+        if not warstwy[klasa]["widoczna"]:
+            continue
+        if styl is None:
+            narysowane += rysuj_klase_prosto(klasa, ekran)
+            continue
         if styl["min_skala"] is not None and skala_teraz > styl["min_skala"]:
             continue                              # w tej skali tej warstwy nie pokazujemy (jak QGIS)
         # wybieramy obiekty: widoczne w okienku i z kodem, który jest w tym stylu
         do_rysowania = []
-        for obiekt in dane[styl["klasa"]]:
+        zajete = set()
+        for obiekt in dane[klasa]:
             kod = obiekt["atrybuty"].get(styl["pole"])
-            if kod in styl["znaki"] and prostokaty_nachodza(obiekt["prostokat"], ekran):
+            if kod not in styl["znaki"]:
+                continue
+            p = obiekt["prostokat"]
+            if not prostokaty_nachodza(p, ekran):
+                continue
+            if obiekt["typ"] != "punkt" and (p[2] - p[0]) * skala < 1 and (p[3] - p[1]) * skala < 1:
+                rysuj_jako_piksel(obiekt, kolor_glowny(styl["znaki"][kod]), zajete)
+                narysowane += 1
+            else:
                 do_rysowania.append(obiekt)
         # Rysujemy "przebiegami" (w QGIS: poziomy symboli): najpierw warstwy z przebiegu 0
         # wszystkich obiektów, potem z przebiegu 1 itd. Dzięki temu brązowe obwódki wszystkich
@@ -560,9 +606,45 @@ def rysuj():
                     if w["przebieg"] == przebieg:
                         rysuj_warstwe_znaku(obiekt, w)
         narysowane += len(do_rysowania)
-    for obiekt in dane["ADMS_P"]:                 # miejscowości na samym wierzchu
-        rysuj_miejscowosc(obiekt)
-    print(f"Narysowano {narysowane} obiektów w {time.time() - start:.2f} s (skala 1:{skala_teraz:,.0f})".replace(",", " "))
+    return narysowane
+
+
+def rysuj_nazwy_miejscowosci(ekran, skala_teraz):
+    """Nazwy miejscowości (klasa OT_ADMS_P) – tylko w skalach większych niż 1:60 000,
+    bo przy całym powiecie 250 napisów zlałoby się w jedną plamę."""
+    if "ADMS_P" not in dane or not warstwy["ADMS_P"]["widoczna"] or skala_teraz > 60000:
+        return
+    for obiekt in dane["ADMS_P"]:
+        nazwa = obiekt["atrybuty"].get("nazwa")
+        if nazwa and prostokaty_nachodza(obiekt["prostokat"], ekran):
+            x, y = obiekt["czesci"][0]
+            x_ekr, y_ekr = teren_na_ekran(x, y)
+            canvas.create_text(x_ekr, y_ekr - 10, text=nazwa, font=("Arial", 10, "bold"))
+
+
+def widoczny_prostokat():
+    """Prostokąt terenu, który aktualnie widać w okienku (x_min, y_min, x_max, y_max)."""
+    x_min, y_max = ekran_na_teren(0, 0)                    # lewy górny róg okienka
+    x_max, y_min = ekran_na_teren(SZEROKOSC, WYSOKOSC)     # prawy dolny róg okienka
+    return x_min, y_min, x_max, y_max
+
+
+def rysuj():
+    """Czyści okienko i rysuje mapę: prostymi kolorami albo znakami umownymi (przełącznik u góry).
+    Czas rysowania i liczbę obiektów pokazujemy w prawym dolnym rogu okna."""
+    if wczytywanie["trwa"] or len(dane) == 0:
+        return
+    start = time.time()
+    canvas.delete("all")
+    ekran = widoczny_prostokat()
+    skala_teraz = skala_mapy()
+    if znaki_umowne.get():
+        narysowane = rysuj_znakami(ekran, skala_teraz)
+    else:
+        narysowane = rysuj_prosto(ekran)
+    rysuj_nazwy_miejscowosci(ekran, skala_teraz)
+    czas = time.time() - start
+    pasek_rysowania.config(text=f"narysowano {narysowane:,} obiektów w {czas:.2f} s".replace(",", " "))
 
 
 # --- NAWIGACJA ---
@@ -571,7 +653,7 @@ def zoom(x_ekr, y_ekr, mnoznik):
     """Przybliża (mnoznik > 1) albo oddala (mnoznik < 1) mapę tak,
     żeby punkt terenu pod kursorem został w tym samym miejscu ekranu."""
     nowa_skala = widok["skala"] * mnoznik
-    if nowa_skala < 0.02 or nowa_skala > 50:      # nie pozwalamy oddalić/przybliżyć w nieskończoność
+    if nowa_skala < 0.002 or nowa_skala > 50:     # nie pozwalamy oddalić/przybliżyć w nieskończoność
         return
     x, y = ekran_na_teren(x_ekr, y_ekr)           # jaki punkt terenu jest teraz pod kursorem
     widok["skala"] = nowa_skala
@@ -631,17 +713,15 @@ def pokaz_status(x_ekr, y_ekr):
 
 
 def ruch_myszy(event):
-    pokaz_status(event.x, event.y)
-
-
-def pokaz_wies():
-    pokaz_prostokat(WIES)
-    rysuj()
+    if not wczytywanie["trwa"]:                   # w trakcie wczytywania pasek pokazuje postęp
+        pokaz_status(event.x, event.y)
 
 
 def pokaz_calosc():
-    pokaz_prostokat(zasieg(wszystkie))
-    rysuj()
+    """Powrót do widoku całego powiatu."""
+    if zasieg is not None:
+        pokaz_prostokat(zasieg)
+        rysuj()
 
 
 def przybliz():
@@ -652,43 +732,109 @@ def oddal():
     zoom(SZEROKOSC / 2, WYSOKOSC / 2, 1 / 1.5)
 
 
+def zmiana_rozmiaru(event):
+    """Okno zmieniło rozmiar (np. po maksymalizacji) – mapa wypełnia teraz całe okno."""
+    global SZEROKOSC, WYSOKOSC
+    if event.width == SZEROKOSC and event.height == WYSOKOSC:
+        return
+    SZEROKOSC = event.width
+    WYSOKOSC = event.height
+    rysuj()
+
+
+# --- WCZYTYWANIE DANYCH (folder albo ZIP) ---
+
+dane = {}               # klasa (np. "BUBD_A") -> lista obiektów
+warstwy = {}            # klasa -> ustawienia warstwy (kolor, widoczność...)
+kolejnosc_klas = []     # kolejność rysowania prostymi kolorami
+kolejka_znakow = []     # kolejność rysowania znakami umownymi
+zasieg = None           # prostokąt całego powiatu
+wczytywanie = {"trwa": False}
+
+
+def pokaz_postep(tekst):
+    """Napis o postępie wczytywania w pasku na dole. okno.update() odświeża okno w trakcie długiej pracy."""
+    pasek.config(text=tekst)
+    okno.update()
+
+
+def otworz_dane(sciezka):
+    """Wczytuje powiat z folderu albo pliku ZIP i pokazuje go w całości."""
+    global dane, warstwy, kolejnosc_klas, kolejka_znakow, zasieg
+    wczytywanie["trwa"] = True
+    canvas.delete("all")
+    nowe_dane, opis = gml.wczytaj_dane(sciezka, pokaz_postep)
+    wczytywanie["trwa"] = False
+    if len(nowe_dane) == 0:
+        pasek.config(text="Nie znaleziono plików BDOT10k (OT_xxxx_A/L/P.xml) w: " + sciezka)
+        return
+    dane = nowe_dane
+    warstwy = {}
+    for klasa in dane:
+        warstwy[klasa] = ustawienia_domyslne(klasa)
+    kolejnosc_klas = sorted(dane, key=miejsce_w_kolejnosci)
+    kolejka_znakow = przygotuj_kolejke_znakow()
+    zasieg = gml.zasieg_danych(dane)
+    okno.title("BDOT10k – " + os.path.basename(sciezka.rstrip("/\\")))
+    print(opis)
+    pokaz_calosc()                                # pierwszy widok: cały powiat
+    pasek.config(text=opis)
+
+
+def otworz_folder():
+    if wczytywanie["trwa"]:
+        return
+    sciezka = filedialog.askdirectory(parent=okno, title="Wybierz folder z paczką BDOT10k powiatu",
+                                      initialdir=FOLDER_DANYCH)
+    if sciezka:
+        otworz_dane(sciezka)
+
+
+def otworz_zip():
+    if wczytywanie["trwa"]:
+        return
+    sciezka = filedialog.askopenfilename(parent=okno, title="Wybierz plik ZIP z paczką BDOT10k powiatu",
+                                         initialdir=FOLDER_DANYCH, filetypes=[("Paczka BDOT10k", "*.zip")])
+    if sciezka:
+        otworz_dane(sciezka)
+
+
 # --- PROGRAM ---
 
-dane = {}           # klasa -> lista obiektów
-wszystkie = []      # wszystkie obiekty razem (do przycisku "Pokaż całość")
-for klasa in KLASY:
-    obiekty = wczytaj_klase(klasa)
-    dane[klasa] = obiekty
-    wszystkie = wszystkie + obiekty
-print("Razem:", len(wszystkie), "obiektów")
-
-# znaki umowne: czytamy style i układamy je według poziomu rysowania (od spodu do góry)
+# znaki umowne: czytamy style (na razie 7 plików z folderu znaki)
 style = []
-for klasa, plik in PLIKI_ZNAKOW:
-    styl = wczytaj_znaki(plik)
-    styl["klasa"] = klasa
-    style.append(styl)
-    print(f"{plik}: {len(styl['znaki'])} znaków, kod w polu {styl['pole']}")
-style.sort(key=poziom_stylu)
+for klasa_stylu, plik_stylu in PLIKI_ZNAKOW:
+    styl_klasy = wczytaj_znaki(plik_stylu)
+    styl_klasy["klasa"] = klasa_stylu
+    style.append(styl_klasy)
 
-# okienko: u góry przyciski, w środku mapa, na dole pasek ze współrzędnymi
+# okienko: u góry przyciski, w środku mapa, na dole pasek ze współrzędnymi i czasem rysowania
 okno = tk.Tk()
-okno.title("Wola Karczewska – BDOT10k")
+okno.title("BDOT10k – przeglądarka")
 
 przyciski = tk.Frame(okno)
 przyciski.pack(fill="x")
-tk.Button(przyciski, text="Pokaż wieś", command=pokaz_wies).pack(side="left", padx=2, pady=2)
-tk.Button(przyciski, text="Pokaż całość", command=pokaz_calosc).pack(side="left", padx=2, pady=2)
+tk.Button(przyciski, text="Otwórz folder…", command=otworz_folder).pack(side="left", padx=2, pady=2)
+tk.Button(przyciski, text="Otwórz ZIP…", command=otworz_zip).pack(side="left", padx=2, pady=2)
+tk.Button(przyciski, text="Pokaż całość", command=pokaz_calosc).pack(side="left", padx=(12, 2), pady=2)
 tk.Button(przyciski, text="Przybliż +", command=przybliz).pack(side="left", padx=2, pady=2)
 tk.Button(przyciski, text="Oddal −", command=oddal).pack(side="left", padx=2, pady=2)
+znaki_umowne = tk.BooleanVar(value=False)
+tk.Checkbutton(przyciski, text="Znaki umowne GUGiK", variable=znaki_umowne,
+               command=rysuj).pack(side="left", padx=12)
 
-canvas = tk.Canvas(okno, width=SZEROKOSC, height=WYSOKOSC, bg="white")
-canvas.pack()
+# pasek na dole pakujemy przed mapą, żeby zawsze był widoczny, nawet w małym oknie
+dol = tk.Frame(okno)
+dol.pack(side="bottom", fill="x")
+pasek = tk.Label(dol, text="Wybierz folder z danymi powiatu", anchor="w")
+pasek.pack(side="left", fill="x", expand=True)
+pasek_rysowania = tk.Label(dol, text="", anchor="e")
+pasek_rysowania.pack(side="right", padx=6)
 
-pasek = tk.Label(okno, text="Najedź myszką na mapę", anchor="w")
-pasek.pack(fill="x")
+canvas = tk.Canvas(okno, width=SZEROKOSC, height=WYSOKOSC, bg="white", highlightthickness=0)
+canvas.pack(fill="both", expand=True)
 
-# podpinamy funkcje pod zdarzenia myszy
+# podpinamy funkcje pod zdarzenia myszy i zmianę rozmiaru okna
 canvas.bind("<MouseWheel>", kolko_myszy)          # kółko na Windowsie
 canvas.bind("<Button-4>", kolko_myszy)            # kółko na Linuksie (do góry)
 canvas.bind("<Button-5>", kolko_myszy)            # kółko na Linuksie (w dół)
@@ -696,11 +842,13 @@ canvas.bind("<ButtonPress-1>", wcisniecie)
 canvas.bind("<B1-Motion>", ciagniecie)
 canvas.bind("<ButtonRelease-1>", puszczenie)
 canvas.bind("<Motion>", ruch_myszy)
+canvas.bind("<Configure>", zmiana_rozmiaru)
 
-pokaz_prostokat(WIES)
-print("Rysuję mapę...")
-rysuj()
-print(f"Skala: {widok['skala']:.3f} piksela na metr, lewy górny róg: {widok['x0']:.0f}, {widok['y0']:.0f}")
+# na start: folder podany przy uruchomieniu (python mapa.py <folder>) albo okno wyboru folderu
+if len(sys.argv) > 1:
+    okno.after(100, otworz_dane, sys.argv[1])
+else:
+    okno.after(100, otworz_folder)
 
 # na Windowsie okienko lubi otworzyć się pod VS Code – na chwilę stawiamy je na wierzchu
 okno.attributes("-topmost", True)

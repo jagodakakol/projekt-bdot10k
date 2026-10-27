@@ -8,8 +8,10 @@
 #          BDOT10k przypisuje kody znaków umownych (kodKarto10k) – tak robi też wtyczka GUGiK.
 # Krok 4b: znaki umowne z plików stylu QGIS (.qml) z repozytorium GUGiK (folder znaki):
 #          kod obiektu -> znak umowny, warstwy w kolejności poziomów, usuwanie nieaktualnych wersji obiektów.
+# Krok 4c: ząbki na granicy rezerwatu – znaczki stawiane co 40 m wzdłuż linii.
 
 import os
+import math
 import xml.etree.ElementTree as ET
 import tkinter as tk
 import time
@@ -273,6 +275,18 @@ def wczytaj_warstwe_znaku(warstwa, pola):
             for liczba in u["customdash"].split(";"):   # "3;4" -> [3.0, 4.0]
                 w["kreski"].append(float(liczba))
         w["wzor"] = wzor_grubosci(warstwa, pola)
+    elif rodzaj == "MarkerLine":
+        # znaczki powtarzane wzdłuż linii, np. ząbki na granicy rezerwatu co 40 m;
+        # sam znaczek jest opisany w środku jako osobny mały symbol (zwykle SimpleMarker)
+        w["rozmieszczenie"] = u.get("placement")        # "interval" = co stały odstęp
+        w["odstep"] = float(u.get("interval", "0"))
+        w["jednostka"] = u.get("interval_unit")
+        zu = ustawienia_warstwy(warstwa.find("symbol/layer"))
+        w["ksztalt"] = zu.get("name")                   # "line" = kreska, którą obracamy w poprzek linii
+        w["rozmiar"] = float(zu.get("size", "0"))       # długość kreski (m)
+        w["przesuniecie"] = float(zu.get("offset", "0,0").split(",")[1])   # odsunięcie w bok od linii (m)
+        w["kolor"] = kolor_qgis(zu.get("outline_color", "0,0,0,255"))
+        w["grubosc"] = float(zu.get("outline_width", "0"))
     return w
 
 
@@ -443,13 +457,63 @@ def rysuj_linie_znaku(obiekt, w):
                                capstyle=w["koncowki"], joinstyle=w["narozniki"])
 
 
+def punkty_co_odstep(punkty, odstep):
+    """Wyznacza punkty co `odstep` metrów wzdłuż łamanej – w nich stawiamy znaczki.
+    Zwraca listę (x, y, kx, ky): punkt i kierunek odcinka, na którym leży (wektor o długości 1)."""
+    wynik = []
+    pozycja = 0.0             # odległość następnego znaczka od początku bieżącego odcinka
+    for i in range(len(punkty) - 1):
+        x1, y1 = punkty[i]
+        x2, y2 = punkty[i + 1]
+        dlugosc = math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)      # twierdzenie Pitagorasa
+        if dlugosc == 0:
+            continue
+        kx = (x2 - x1) / dlugosc          # wektor kierunku odcinka o długości 1
+        ky = (y2 - y1) / dlugosc
+        while pozycja <= dlugosc:         # wszystkie znaczki, które wypadają na tym odcinku
+            wynik.append((x1 + kx * pozycja, y1 + ky * pozycja, kx, ky))
+            pozycja = pozycja + odstep
+        pozycja = pozycja - dlugosc       # to, co zostało do następnego znaczka, przechodzi na kolejny odcinek
+    return wynik
+
+
+def rysuj_zabki(obiekt, w):
+    """Warstwa MarkerLine z kreską: krótkie kreski prostopadłe do linii co stały odstęp,
+    odsunięte w bok od linii – tak wyglądają ząbki na granicy rezerwatu."""
+    odstep_px = na_piksele(w["odstep"], w["jednostka"])
+    if odstep_px < 4:
+        return      # ząbki byłyby gęściej niż co 4 piksele i zlałyby się w plamę, więc ich nie rysujemy
+    grubosc = na_piksele(w["grubosc"], w["jednostka"])
+    od = w["przesuniecie"] - w["rozmiar"] / 2        # kreska zaczyna się tyle metrów od linii...
+    do = w["przesuniecie"] + w["rozmiar"] / 2        # ...a kończy tyle (u nas od 1 m do 6 m)
+    ekran = widoczny_prostokat()
+    if obiekt["typ"] == "linia":
+        linie = [obiekt["geometria"]]
+    elif obiekt["typ"] == "poligon":
+        linie = obiekt["geometria"]
+    else:
+        return
+    for punkty in linie:
+        for x, y, kx, ky in punkty_co_odstep(punkty, w["odstep"]):
+            if x < ekran[0] or x > ekran[2] or y < ekran[1] or y > ekran[3]:
+                continue                                # ten ząbek jest poza okienkiem
+            # wektor prostopadły "w prawo" od kierunku linii to (ky, -kx);
+            # obwody poligonów w BDOT10k biegną zgodnie z ruchem wskazówek zegara,
+            # więc "w prawo" oznacza do środka rezerwatu
+            x1, y1 = teren_na_ekran(x + ky * od, y - kx * od)
+            x2, y2 = teren_na_ekran(x + ky * do, y - kx * do)
+            canvas.create_line(x1, y1, x2, y2, fill=w["kolor"], width=grubosc, capstyle="butt")
+
+
 def rysuj_warstwe_znaku(obiekt, w):
     """Rysuje jedną warstwę znaku umownego dla jednego obiektu."""
     if w["rodzaj"] == "SimpleFill" and obiekt["typ"] == "poligon":
         rysuj_wypelnienie(obiekt, w)
     elif w["rodzaj"] == "SimpleLine":
         rysuj_linie_znaku(obiekt, w)
-    # inne rodzaje warstw (wzór z drzewek w lesie, ząbki na granicy rezerwatu) dorobimy w kroku 4c
+    elif w["rodzaj"] == "MarkerLine" and w["rozmieszczenie"] == "interval" and w["ksztalt"] == "line":
+        rysuj_zabki(obiekt, w)
+    # wzór z drzewek w lesie i znaki punktowe z plików SVG dorobimy w następnym kroku
 
 
 def rysuj_miejscowosc(obiekt):

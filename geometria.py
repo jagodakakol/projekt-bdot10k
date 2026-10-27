@@ -53,3 +53,85 @@ def punkt_w_wielokacie(px, py, pierscienie):
                 if x_przeciecia > px:              # przecięcie leży na półprostej w prawo od P
                     w_srodku = not w_srodku
     return w_srodku
+
+
+def punkty_co_odstep(wsp, odstep, poczatek=0.0):
+    """Wyznacza punkty co `odstep` wzdłuż łamanej [x1, y1, x2, y2, ...] – w nich stawiamy znaczki.
+    Pierwszy punkt wypada `poczatek` od początku łamanej. Zwraca listę (x, y, kx, ky):
+    punkt i kierunek odcinka, na którym leży (wektor o długości 1)."""
+    wynik = []
+    if odstep <= 0:
+        return wynik
+    pozycja = poczatek        # odległość następnego znaczka od początku bieżącego odcinka
+    for i in range(0, len(wsp) - 2, 2):
+        x1 = wsp[i]
+        y1 = wsp[i + 1]
+        x2 = wsp[i + 2]
+        y2 = wsp[i + 3]
+        dlugosc = math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)      # twierdzenie Pitagorasa
+        if dlugosc == 0:
+            continue
+        kx = (x2 - x1) / dlugosc          # wektor kierunku odcinka o długości 1
+        ky = (y2 - y1) / dlugosc
+        while pozycja <= dlugosc:         # wszystkie znaczki, które wypadają na tym odcinku
+            wynik.append((x1 + kx * pozycja, y1 + ky * pozycja, kx, ky))
+            pozycja = pozycja + odstep
+        pozycja = pozycja - dlugosc       # to, co zostało do następnego znaczka, przechodzi na kolejny odcinek
+    return wynik
+
+
+def normalna_w_prawo(x1, y1, x2, y2):
+    """Wektor o długości 1 prostopadły do odcinka, skierowany w prawo patrząc wzdłuż odcinka
+    (we współrzędnych ekranu, gdzie y rośnie w dół). Dla odcinka zerowej długości – None."""
+    dx = x2 - x1
+    dy = y2 - y1
+    dlugosc = math.sqrt(dx * dx + dy * dy)
+    if dlugosc == 0:
+        return None
+    return -dy / dlugosc, dx / dlugosc
+
+
+def przesun_lamana(piksele, d):
+    """Linia równoległa do łamanej (w pikselach ekranu), odsunięta o d w prawo (d < 0 – w lewo).
+    Każdy wierzchołek przesuwamy wzdłuż dwusiecznej kąta między sąsiednimi odcinkami (tzw. miter):
+    n = n1 + n2 (suma normalnych obu odcinków, znormalizowana), a długość przesunięcia to d / cos(α/2),
+    gdzie cos(α/2) = n · n1. Przy bardzo ostrych kątach ograniczamy ją, żeby nie powstały długie szpice.
+    Dla zamkniętego pierścienia (ostatni punkt = pierwszy) pierwszy wierzchołek też ma dwóch sąsiadów."""
+    n = len(piksele) // 2
+    if n < 2:
+        return piksele
+    zamkniety = piksele[0] == piksele[-2] and piksele[1] == piksele[-1]
+    wynik = []
+    for i in range(n):
+        x = piksele[2 * i]
+        y = piksele[2 * i + 1]
+        n1 = None                                     # normalna odcinka przed wierzchołkiem
+        n2 = None                                     # normalna odcinka za wierzchołkiem
+        if i > 0:
+            n1 = normalna_w_prawo(piksele[2 * i - 2], piksele[2 * i - 1], x, y)
+        elif zamkniety:
+            n1 = normalna_w_prawo(piksele[-4], piksele[-3], x, y)
+        if i < n - 1:
+            n2 = normalna_w_prawo(x, y, piksele[2 * i + 2], piksele[2 * i + 3])
+        elif zamkniety:
+            n2 = normalna_w_prawo(x, y, piksele[2], piksele[3])
+        if n1 is None:
+            n1 = n2
+        if n2 is None:
+            n2 = n1
+        if n1 is None:                                # oba odcinki zerowe – zostawiamy punkt
+            wynik.append(x)
+            wynik.append(y)
+            continue
+        mx = n1[0] + n2[0]
+        my = n1[1] + n2[1]
+        dlugosc = math.sqrt(mx * mx + my * my)
+        if dlugosc < 1e-9:                            # zawrót o 180° – bierzemy normalną pierwszego odcinka
+            mx, my = n1
+        else:
+            mx = mx / dlugosc
+            my = my / dlugosc
+        cos_polowy = max(mx * n1[0] + my * n1[1], 0.25)   # ograniczenie szpic przy ostrych kątach
+        wynik.append(x + mx * d / cos_polowy)
+        wynik.append(y + my * d / cos_polowy)
+    return wynik

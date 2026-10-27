@@ -13,12 +13,15 @@
 #          włączanie i wyłączanie, zmiana koloru i grubości linii.
 # Krok B3: identyfikacja obiektu kliknięciem (algorytmy w pliku geometria.py): punkt w wielokącie
 #          metodą półprostej, odległość punktu od odcinka z tolerancją w pikselach; okno z atrybutami.
+# Krok C1: znaki umowne dla wszystkich klas z naszego pliku znaki/znaki.json (robi go qml_na_json.py
+#          ze stylów wtyczki GUGiK); wielkości w mm mapy przeliczane na piksele według skali widoku,
+#          linie przesunięte w bok, znaczki na liniach i w punktach (kształty proste; SVG w kroku C2).
 
 import os
 import sys
 import math
 import time
-import xml.etree.ElementTree as ET
+import json
 import tkinter as tk
 from tkinter import filedialog
 from tkinter import colorchooser
@@ -33,17 +36,8 @@ FOLDER_PROJEKTU = os.path.dirname(os.path.abspath(__file__))
 FOLDER_DANYCH = os.path.join(FOLDER_PROJEKTU, "dane")      # tu otwiera się okno wyboru folderu
 FOLDER_ZNAKOW = os.path.join(FOLDER_PROJEKTU, "znaki")
 
-# znaki umowne: która klasa jest rysowana którym plikiem stylu z repozytorium GUGiK
-# (jezdnie mają dwa pliki: drogi gruntowe [31] i drogi o nawierzchni twardej [33-38])
-PLIKI_ZNAKOW = [
-    ("PTLZ_A", "OT_PTLZ_A [0].qml"),
-    ("SWRS_L", "OT_SWRS_L [12].qml"),
-    ("PTWP_A", "OT_PTWP_A [13].qml"),
-    ("TCRZ_A", "OT_TCRZ_A [23].qml"),
-    ("SKJZ_L", "OT_SKJZ_L [31].qml"),
-    ("SKJZ_L", "OT_SKJZ_L [33-38].qml"),
-    ("BUBD_A", "OT_BUBD_A [42].qml"),
-]
+# znaki umowne – nasz plik JSON zrobiony skryptem qml_na_json.py ze stylów wtyczki GUGiK
+PLIK_ZNAKOW = os.path.join(FOLDER_ZNAKOW, "znaki.json")
 
 # rozmiar mapy w pikselach (zmienia się razem z rozmiarem okna – patrz zmiana_rozmiaru)
 SZEROKOSC = 900
@@ -52,9 +46,6 @@ WYSOKOSC = 650
 # identyfikacja: kliknięcie trafia w linię albo punkt, jeśli jest bliżej niż tyle pikseli
 TOLERANCJA_PIKSELI = 5
 KOLOR_ZAZNACZENIA = "#ff00ff"
-
-# nazwy końcówek linii w QGIS -> nazwy w tkinterze
-KONCOWKI = {"flat": "butt", "round": "round", "square": "projecting"}
 
 # --- PROSTE KOLORY (wariant podstawowy: każda warstwa ma stały kolor) ---
 KOLORY_KATEGORII = {
@@ -128,179 +119,48 @@ def miejsce_w_kolejnosci(klasa):
     return (grupa, numer, klasa)
 
 
-# --- ZNAKI UMOWNE (odczyt plików stylu QML z repozytorium GUGiK) ---
-# Plik .qml to zwykły XML, więc czytamy go tak samo jak GML – biblioteką ElementTree.
-# Najważniejsza część to <renderer-v2 type="categorizedSymbol">: lista kategorii "kod -> numer symbolu"
-# i lista symboli. Symbol składa się z warstw (np. brązowa szeroka linia + biała węższa = jezdnia).
-# (W kroku C1 te reguły zapiszemy we własnym pliku JSON, jak każe PDF.)
+# --- ZNAKI UMOWNE (plik znaki.json) ---
+# Plik robi skrypt qml_na_json.py ze stylów QML wtyczki GUGiK. Najważniejsza jest lista "warstwy":
+# warstwy mapy od spodu do wierzchu; każda ma klasę, pole z kodem (kodKarto10k), filtr, skalę,
+# przy której znika, i słownik "znaki": kod obiektu -> znak umowny złożony z warstw (wypełnienie, linia,
+# znaczki...). Wszystkie wielkości są w milimetrach mapy w skali 1:10 000.
 
-def kolor_qgis(tekst):
-    """QGIS zapisuje kolor jako "R,G,B,A", np. "204,100,21,255".
-    tkinter chce zapis szesnastkowy "#cc6415" (przezroczystość A pomijamy – tkinter jej nie zna)."""
-    czesci = tekst.split(",")
-    r = int(czesci[0])
-    g = int(czesci[1])
-    b = int(czesci[2])
-    return f"#{r:02x}{g:02x}{b:02x}"          # :02x = liczba szesnastkowo, zawsze 2 znaki
+def wczytaj_plik_znakow():
+    """Czyta znaki.json. Jeśli pliku nie ma, zwraca None (wtedy działają tylko proste kolory)."""
+    if not os.path.exists(PLIK_ZNAKOW):
+        return None
+    with open(PLIK_ZNAKOW, encoding="utf-8") as plik:
+        return json.load(plik)
 
 
-def ustawienia_warstwy(warstwa):
-    """Ustawienia warstwy symbolu są zapisane jako <prop k="nazwa" v="wartość"/>. Zbieramy je w słownik."""
-    ustawienia = {}
-    for prop in warstwa.findall("prop"):
-        ustawienia[prop.get("k")] = prop.get("v")
-    return ustawienia
+def pasuje_do_filtra(obiekt, filtr):
+    """Filtr warstwy, np. {"pole": "polozenie", "wartosci": ["na powierzchni gruntu"]}:
+    obiekt pasuje, gdy wartość jego pola jest na liście. Brak filtra – pasuje każdy obiekt."""
+    if filtr is None:
+        return True
+    return obiekt["atrybuty"].get(filtr["pole"]) in filtr["wartosci"]
 
 
-def wzor_grubosci(warstwa, pola):
-    """Niektóre grubości nie są stałe, tylko liczone z atrybutu obiektu (w QGIS: "data defined").
-    Dla jezdni "w skali" styl GUGiK ma wzór "SZERNAWIE"*0.9 + 2: grubość zależy od szerokości jezdni.
-    Obsługujemy tylko taki prosty wzór "POLE"*liczba + liczba. Zwraca (pole, mnożnik, dodatek) albo None."""
-    for wlasciwosc in warstwa.iter("Option"):
-        if wlasciwosc.get("name") != "outlineWidth":
-            continue
-        aktywna = False
-        wyrazenie = ""
-        for opcja in wlasciwosc:
-            if opcja.get("name") == "active":
-                aktywna = (opcja.get("value") == "true")
-            if opcja.get("name") == "expression":
-                wyrazenie = opcja.get("value")
-        if not aktywna or not wyrazenie.startswith('"'):
-            return None          # np. wzór CASE dla rzek – go nie obsługujemy, zostaje stała grubość
-        tekst = wyrazenie.replace(" ", "")              # '"SZERNAWIE"*0.9+2'
-        czesci = tekst.split("+")                       # ['"SZERNAWIE"*0.9', '2']
-        pole, mnoznik = czesci[0].split("*")            # '"SZERNAWIE"', '0.9'
-        pole = pole.strip('"')
-        dodatek = 0.0
-        if len(czesci) > 1:
-            dodatek = float(czesci[1])
-        return pola.get(pole, pole), float(mnoznik), dodatek    # SZERNAWIE -> szerokoscNawierzchni
-    return None
+def znak_obiektu(warstwa_mapy, obiekt):
+    """Znak umowny dla obiektu według jego kodu (np. kodKarto10k = "0010_318_1"); None, jeśli kodu
+    nie ma w tej warstwie. Warstwa bez pola kodu ma jeden znak "*" dla wszystkich obiektów."""
+    if warstwa_mapy["pole"] is None:
+        return warstwa_mapy["znaki"]["*"]
+    return warstwa_mapy["znaki"].get(obiekt["atrybuty"].get(warstwa_mapy["pole"]))
 
 
-def wczytaj_warstwe_znaku(warstwa, pola):
-    """Zamienia jedną warstwę symbolu z pliku QML na prosty słownik.
-    Rozumiemy wypełnienie (SimpleFill), linię (SimpleLine) i znaczki wzdłuż linii (MarkerLine)."""
-    rodzaj = warstwa.get("class")                       # np. "SimpleFill", "SimpleLine", "MarkerLine"
-    u = ustawienia_warstwy(warstwa)
-    w = {"rodzaj": rodzaj,
-         "przebieg": int(warstwa.get("pass")),          # kolejność rysowania warstw (opis w rysuj_znakami())
-         "wlaczona": warstwa.get("enabled") == "1"}
-    if rodzaj == "SimpleFill":
-        w["wypelnienie"] = ""
-        if u.get("style") != "no":
-            w["wypelnienie"] = kolor_qgis(u["color"])
-        w["kontur"] = ""
-        if u.get("outline_style") != "no":
-            w["kontur"] = kolor_qgis(u["outline_color"])
-        w["grubosc"] = float(u["outline_width"])
-        w["jednostka"] = u.get("outline_width_unit")
-    elif rodzaj == "SimpleLine":
-        w["kolor"] = kolor_qgis(u["line_color"])
-        w["grubosc"] = float(u["line_width"])
-        w["jednostka"] = u.get("line_width_unit")
-        w["koncowki"] = KONCOWKI.get(u.get("capstyle"), "round")
-        w["narozniki"] = u.get("joinstyle", "round")    # miter / round / bevel – tak samo w tkinterze
-        w["kreski"] = None                              # linia przerywana: długości kresek i przerw
-        if u.get("use_custom_dash") == "1":
-            w["kreski"] = []
-            for liczba in u["customdash"].split(";"):   # "3;4" -> [3.0, 4.0]
-                w["kreski"].append(float(liczba))
-        w["wzor"] = wzor_grubosci(warstwa, pola)
-    elif rodzaj == "MarkerLine":
-        # znaczki powtarzane wzdłuż linii, np. ząbki na granicy rezerwatu co 40 m;
-        # sam znaczek jest opisany w środku jako osobny mały symbol (zwykle SimpleMarker)
-        w["rozmieszczenie"] = u.get("placement")        # "interval" = co stały odstęp
-        w["odstep"] = float(u.get("interval", "0"))
-        w["jednostka"] = u.get("interval_unit")
-        zu = ustawienia_warstwy(warstwa.find("symbol/layer"))
-        w["ksztalt"] = zu.get("name")                   # "line" = kreska, którą obracamy w poprzek linii
-        w["rozmiar"] = float(zu.get("size", "0"))       # długość kreski (m)
-        w["przesuniecie"] = float(zu.get("offset", "0,0").split(",")[1])   # odsunięcie w bok od linii (m)
-        w["kolor"] = kolor_qgis(zu.get("outline_color", "0,0,0,255"))
-        w["grubosc"] = float(zu.get("outline_width", "0"))
-    return w
-
-
-def wczytaj_znaki(plik):
-    """Czyta plik stylu QGIS (.qml) z folderu znaki. Zwraca słownik:
-    {"poziom": 42, "pole": "kodKarto10k", "min_skala": ..., "przebiegi": [...], "znaki": {kod: [warstwy]}}"""
-    korzen = ET.parse(os.path.join(FOLDER_ZNAKOW, plik)).getroot()      # <qgis>
-
-    # poziom rysowania z nazwy pliku: "OT_BUBD_A [42].qml" -> 42, "OT_SKJZ_L [33-38].qml" -> 33
-    poziom = int(plik.split("[")[1].split("]")[0].split("-")[0])
-
-    # Pola wirtualne: style są zrobione też dla plików SHP, gdzie pola mają krótkie nazwy.
-    # W pliku jest "tłumaczenie", np. KOD10K = "kodKarto10k", SZERNAWIE = "szerokoscNawierzchni".
-    pola = {}
-    for pole in korzen.findall("expressionfields/field"):
-        pola[pole.get("name")] = pole.get("expression").strip().strip('"')
-
-    renderer = korzen.find("renderer-v2")              # categorizedSymbol = znak zależy od wartości pola
-    pole_kodu = pola.get(renderer.get("attr"), renderer.get("attr"))   # KOD10K -> kodKarto10k
-
-    # widoczność zależna od skali, np. drogi gruntowe tylko w skalach większych niż 1:25 000
-    min_skala = None
-    if korzen.get("hasScaleBasedVisibilityFlag") == "1" and float(korzen.get("minScale")) > 0:
-        min_skala = float(korzen.get("minScale"))
-
-    # symbole: numer -> lista warstw
-    symbole = {}
-    przebiegi = []
-    for symbol in renderer.findall("symbols/symbol"):
-        warstwy_symbolu = []
-        for warstwa in symbol.findall("layer"):
-            w = wczytaj_warstwe_znaku(warstwa, pola)
-            if w["wlaczona"]:
-                warstwy_symbolu.append(w)
-                if w["przebieg"] not in przebiegi:
-                    przebiegi.append(w["przebieg"])
-        symbole[symbol.get("name")] = warstwy_symbolu
-
-    # kategorie: kod znaku umownego -> numer symbolu
-    znaki = {}
-    for kategoria in renderer.findall("categories/category"):
-        if kategoria.get("render") == "true":
-            znaki[kategoria.get("value")] = symbole[kategoria.get("symbol")]
-
-    przebiegi.sort()
-    return {"plik": plik, "poziom": poziom, "pole": pole_kodu, "min_skala": min_skala,
-            "przebiegi": przebiegi, "znaki": znaki}
-
-
-def poziom_bez_stylu(klasa):
-    """Klasy, dla których nie mamy jeszcze stylu w folderze znaki, rysujemy prostym kolorem
-    na zastępczym poziomie: obszary na dole, linie w środku, punkty na wierzchu (do kroku C1)."""
-    if klasa.endswith("_P"):
-        return 60
-    if klasa.endswith("_L"):
-        return 30
-    if klasa[:2] == "BU":
-        return 41
-    if klasa[:2] in TYLKO_OBRYS:
-        return 22
-    return -1
-
-
-def poziom_pozycji(pozycja):
-    """Pomocnicza funkcja do sortowania kolejki rysowania według poziomu."""
-    return pozycja[0]
-
-
-def przygotuj_kolejke_znakow():
-    """Kolejka rysowania znakami umownymi: (poziom, klasa, styl albo None), od spodu do góry."""
-    kolejka = []
-    klasy_ze_stylem = []
-    for styl in style:
-        klasy_ze_stylem.append(styl["klasa"])
-        if styl["klasa"] in dane:
-            kolejka.append((styl["poziom"], styl["klasa"], styl))
-    for klasa in dane:
-        if klasa not in klasy_ze_stylem:
-            kolejka.append((poziom_bez_stylu(klasa), klasa, None))
-    kolejka.sort(key=poziom_pozycji)
-    return kolejka
+def wartosc_z_pola(obiekt, wzor, domyslna):
+    """Wielkość liczona z atrybutu obiektu, np. szerokość jezdni: mnożnik · szerokoscNawierzchni + dodatek.
+    Gdy wzoru nie ma albo obiekt nie ma tego atrybutu – wartość domyślna ze stylu."""
+    if wzor is None:
+        return domyslna
+    tekst = obiekt["atrybuty"].get(wzor["pole"])
+    if tekst is None:
+        return domyslna
+    try:
+        return float(tekst) * wzor["mnoznik"] + wzor["dodatek"]
+    except ValueError:
+        return domyslna
 
 
 # --- PRZELICZANIE WSPÓŁRZĘDNYCH ---
@@ -480,157 +340,210 @@ def rysuj_prosto(ekran):
     return narysowane
 
 
-def na_piksele(wartosc, jednostka):
-    """Grubości w stylach GUGiK są zwykle w jednostkach mapy (MapUnit = metry w terenie),
-    więc na ekranie zależą od skali, tak jak na mapie papierowej 1:10 000.
-    Rzadziej są w milimetrach ekranu (MM) – wtedy grubość się nie zmienia przy zoomie."""
-    if jednostka == "MM":
-        return wartosc * canvas.winfo_fpixels("1m")   # "1m" w tkinterze to 1 milimetr
-    return wartosc * widok["skala"]
+# przelicznik milimetrów mapy na piksele – liczony raz na początku każdego rysowania (rysuj())
+przelicznik = {"piksele_na_mm": 1.0}
+
+
+def mm_na_piksele(mm):
+    """Wielkości znaków w znaki.json są w milimetrach mapy w skali 1:10 000. Na ekranie:
+    piksele = mm × (pikseli na 1 mm ekranu) × 10 000 / (mianownik skali widoku).
+    Przy skali 1:10 000 znak ma więc dokładnie swój rozmiar, a przy przybliżaniu rośnie jak na mapie."""
+    return mm * przelicznik["piksele_na_mm"]
 
 
 def rysuj_wypelnienie(obiekt, w):
-    """Warstwa SimpleFill: wypełnienie poligonu i jego kontur."""
-    if w["wypelnienie"] != "":
-        # Wypełnienie z dziurami: tkinter nie zna dziur, więc rysujemy jedną ścieżkę z "mostkami"
-        # (patrz gml.sciezka_z_dziurami). Tkinter wypełnia według reguły parzystości: punkt jest w środku,
-        # jeśli linia poprowadzona od niego w bok przecina brzeg nieparzystą liczbę razy.
-        # Z wnętrza dziury przecina parzyście, więc dziura zostaje pusta, a każdy mostek
-        # przechodzimy dwa razy (tam i z powrotem), więc się znosi.
-        for sciezka in obiekt["sciezki"]:
-            piksele = lista_pikseli(sciezka)
-            if len(piksele) >= 6:                 # poligon potrzebuje co najmniej 3 punktów
-                canvas.create_polygon(piksele, fill=w["wypelnienie"], outline="")
-    if w["kontur"] != "":
-        # kontury rysujemy osobno liniami, żeby nie było widać mostków
-        grubosc = na_piksele(w["grubosc"], w["jednostka"])
-        for pierscien in linie_obiektu(obiekt):
-            piksele = lista_pikseli(pierscien)
-            if len(piksele) >= 4:                 # linia potrzebuje co najmniej 2 punktów
-                canvas.create_line(piksele, fill=w["kontur"], width=grubosc)
+    """Warstwa "wypelnienie": kolor środka poligonu i jego kontur."""
+    grubosc = mm_na_piksele(w["grubosc_konturu"])
+    for i in range(len(obiekt["czesci"])):
+        pierscienie = obiekt["czesci"][i]
+        if w["kolor"] != "" and len(pierscienie) == 1:
+            # poligon bez dziur: wypełnienie i kontur jednym wielokątem (najszybciej)
+            piksele = lista_pikseli(pierscienie[0])
+            if len(piksele) >= 6:
+                canvas.create_polygon(piksele, fill=w["kolor"], outline=w["kontur"], width=grubosc)
+            continue
+        if w["kolor"] != "":
+            # z dziurami: ścieżka z mostkami (gml.sciezka_z_dziurami), tkinter wypełnia regułą parzystości
+            piksele = lista_pikseli(obiekt["sciezki"][i])
+            if len(piksele) >= 6:
+                canvas.create_polygon(piksele, fill=w["kolor"], outline="")
+        if w["kontur"] != "":
+            for pierscien in pierscienie:          # kontury osobno liniami, żeby nie było widać mostków
+                piksele = lista_pikseli(pierscien)
+                if len(piksele) >= 4:
+                    canvas.create_line(piksele, fill=w["kontur"], width=grubosc)
 
 
 def rysuj_linie_znaku(obiekt, w):
-    """Warstwa SimpleLine: linia o kolorze i grubości ze stylu. Dla poligonu (np. rezerwat)
-    rysujemy ją po brzegu."""
-    grubosc = w["grubosc"]
-    if w["wzor"] is not None:                     # grubość liczona z atrybutu, np. szerokości jezdni
-        pole, mnoznik, dodatek = w["wzor"]
-        tekst = obiekt["atrybuty"].get(pole)      # np. "6.0" (metry)
-        if tekst:
-            grubosc = float(tekst) * mnoznik + dodatek
-    grubosc = na_piksele(grubosc, w["jednostka"])
-
+    """Warstwa "linia": kolor, grubość (stała albo z atrybutu, np. szerokości jezdni), przerywanie
+    i przesunięcie w bok (linia równoległa, np. pas wzdłuż granicy gminy). Dla poligonu – po brzegu."""
+    if w["kolor"] == "":
+        return
+    grubosc = mm_na_piksele(wartosc_z_pola(obiekt, w.get("grubosc_z_pola"), w["grubosc"]))
+    przesuniecie = mm_na_piksele(wartosc_z_pola(obiekt, w.get("przesuniecie_z_pola"), w["przesuniecie"]))
     kreski = None
-    if w["kreski"] is not None:                   # tkinter chce długości kresek w całych pikselach
+    if w["kreski"] is not None:                   # tkinter chce długości kresek w całych pikselach 1–255
         kreski = []
         for dlugosc in w["kreski"]:
-            kreski.append(max(1, round(na_piksele(dlugosc, w["jednostka"]))))
-
+            kreski.append(min(255, max(1, round(mm_na_piksele(dlugosc)))))
     for wsp in linie_obiektu(obiekt):
         piksele = lista_pikseli(wsp)
-        if len(piksele) >= 4:
-            canvas.create_line(piksele, fill=w["kolor"], width=grubosc, dash=kreski,
-                               capstyle=w["koncowki"], joinstyle=w["narozniki"])
-
-
-def punkty_co_odstep(wsp, odstep):
-    """Wyznacza punkty co `odstep` metrów wzdłuż łamanej [x1, y1, x2, y2, ...] – w nich stawiamy znaczki.
-    Zwraca listę (x, y, kx, ky): punkt i kierunek odcinka, na którym leży (wektor o długości 1)."""
-    wynik = []
-    pozycja = 0.0             # odległość następnego znaczka od początku bieżącego odcinka
-    for i in range(0, len(wsp) - 2, 2):
-        x1 = wsp[i]
-        y1 = wsp[i + 1]
-        x2 = wsp[i + 2]
-        y2 = wsp[i + 3]
-        dlugosc = math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)      # twierdzenie Pitagorasa
-        if dlugosc == 0:
+        if len(piksele) < 4:
             continue
-        kx = (x2 - x1) / dlugosc          # wektor kierunku odcinka o długości 1
-        ky = (y2 - y1) / dlugosc
-        while pozycja <= dlugosc:         # wszystkie znaczki, które wypadają na tym odcinku
-            wynik.append((x1 + kx * pozycja, y1 + ky * pozycja, kx, ky))
-            pozycja = pozycja + odstep
-        pozycja = pozycja - dlugosc       # to, co zostało do następnego znaczka, przechodzi na kolejny odcinek
-    return wynik
+        if abs(przesuniecie) >= 0.5:              # przesunięcie mniejsze niż pół piksela i tak nie widać
+            piksele = geometria.przesun_lamana(piksele, przesuniecie)
+        canvas.create_line(piksele, fill=w["kolor"], width=grubosc, dash=kreski,
+                           capstyle=w["koncowki"], joinstyle=w["narozniki"])
 
 
-def rysuj_zabki(obiekt, w):
-    """Warstwa MarkerLine z kreską: krótkie kreski prostopadłe do linii co stały odstęp,
-    odsunięte w bok od linii – tak wyglądają ząbki na granicy rezerwatu."""
-    odstep_px = na_piksele(w["odstep"], w["jednostka"])
-    if odstep_px < 4:
-        return      # ząbki byłyby gęściej niż co 4 piksele i zlałyby się w plamę, więc ich nie rysujemy
-    grubosc = na_piksele(w["grubosc"], w["jednostka"])
-    od = w["przesuniecie"] - w["rozmiar"] / 2        # kreska zaczyna się tyle metrów od linii...
-    do = w["przesuniecie"] + w["rozmiar"] / 2        # ...a kończy tyle (u nas od 1 m do 6 m)
+def punkt_znaczka(x, y, u, v, cos_k, sin_k):
+    """Punkt (u, v) zapisany względem środka znaczka (oś v w dół) -> piksel ekranu po obrocie o kąt
+    (cos_k, sin_k): zwykły obrót punktu wokół środka (x, y)."""
+    return x + u * cos_k - v * sin_k, y + u * sin_k + v * cos_k
+
+
+def rysuj_znaczek(x_ekr, y_ekr, kat, z, obiekt):
+    """Rysuje znaczek w punkcie ekranu (x_ekr, y_ekr). kat – obrót w radianach (np. kierunek linii),
+    do którego dodajemy kąt ze stylu. Kształty: kreska (line), kółko (circle), trójkąt (triangle).
+    Symbole SVG dorysujemy w kroku C2 – na razie kółko w ich kolorze."""
+    if z["rodzaj"] not in ("znaczek", "znaczek_svg"):
+        return
+    rozmiar = mm_na_piksele(wartosc_z_pola(obiekt, z.get("rozmiar_z_pola"), z["rozmiar"]))
+    if rozmiar < 1:
+        return                                    # znaczek mniejszy niż piksel – nie rysujemy
+    kat = kat + math.radians(z["kat"])            # w QGIS kąt rośnie zgodnie z ruchem wskazówek zegara
+    cos_k = math.cos(kat)
+    sin_k = math.sin(kat)
+    # przesunięcie znaczka obraca się razem z nim (dzięki temu ząbki są zawsze z tej samej strony linii)
+    x, y = punkt_znaczka(x_ekr, y_ekr, mm_na_piksele(z["przesuniecie"][0]), mm_na_piksele(z["przesuniecie"][1]),
+                         cos_k, sin_k)
+    r = rozmiar / 2
+    if z["rodzaj"] == "znaczek_svg":
+        canvas.create_oval(x - r / 2, y - r / 2, x + r / 2, y + r / 2, fill=z["kolor"], outline="")
+        return
+    kontur = z["kontur"]
+    grubosc = max(1, mm_na_piksele(z["grubosc_konturu"]))
+    if z["ksztalt"] == "line":                    # kreska pionowa w układzie znaczka
+        x1, y1 = punkt_znaczka(x, y, 0, -r, cos_k, sin_k)
+        x2, y2 = punkt_znaczka(x, y, 0, r, cos_k, sin_k)
+        canvas.create_line(x1, y1, x2, y2, fill=kontur or z["kolor"], width=grubosc, capstyle="butt")
+    elif z["ksztalt"] == "triangle":              # trójkąt ostrzem do góry w układzie znaczka
+        wierzcholki = []
+        for u, v in ((0, -r), (-r, r), (r, r)):
+            px, py = punkt_znaczka(x, y, u, v, cos_k, sin_k)
+            wierzcholki.append(px)
+            wierzcholki.append(py)
+        canvas.create_polygon(wierzcholki, fill=z["kolor"], outline=kontur, width=grubosc)
+    else:                                         # circle i inne – kółko
+        canvas.create_oval(x - r, y - r, x + r, y + r, fill=z["kolor"], outline=kontur, width=grubosc)
+
+
+def kat_na_ekranie(kx, ky):
+    """Kierunek (kx, ky) w terenie (oś y w górę) -> kąt na ekranie (oś y w dół), w radianach."""
+    return math.atan2(-ky, kx)
+
+
+def rysuj_znaczki_na_linii(obiekt, w):
+    """Warstwa "znaczki_na_linii": znaczek co stały odstęp (np. ząbki na granicy rezerwatu co 40 m)
+    albo na początku / końcu / w wierzchołkach linii. Znaczek obraca się zgodnie z kierunkiem linii."""
+    odstep_px = mm_na_piksele(w["odstep"])
+    if w["rozmieszczenie"] == "co_odstep" and odstep_px < 4:
+        return                  # znaczki gęściej niż co 4 piksele zlałyby się w plamę – nie rysujemy
     ekran = widoczny_prostokat()
+    z = w["znaczek"]
     for wsp in linie_obiektu(obiekt):
-        for x, y, kx, ky in punkty_co_odstep(wsp, w["odstep"]):
+        if len(wsp) < 4:
+            continue
+        miejsca = []            # (x, y, kx, ky) w terenie
+        if w["rozmieszczenie"] == "co_odstep":
+            # mm mapy w skali 1:10 000 -> metry w terenie: 1 mm = 10 m
+            miejsca = geometria.punkty_co_odstep(wsp, w["odstep"] * 10, w["przesuniecie_wzdluz"] * 10)
+        else:
+            for i in range(0, len(wsp) - 2, 2):
+                if w["rozmieszczenie"] == "na_koncu" and i != len(wsp) - 4:
+                    continue
+                dl = math.sqrt((wsp[i + 2] - wsp[i]) ** 2 + (wsp[i + 3] - wsp[i + 1]) ** 2)
+                if dl == 0:
+                    continue
+                kx = (wsp[i + 2] - wsp[i]) / dl
+                ky = (wsp[i + 3] - wsp[i + 1]) / dl
+                if w["rozmieszczenie"] == "na_koncu":
+                    miejsca.append((wsp[i + 2], wsp[i + 3], kx, ky))
+                else:
+                    miejsca.append((wsp[i], wsp[i + 1], kx, ky))
+                if w["rozmieszczenie"] == "na_poczatku":
+                    break
+        for x, y, kx, ky in miejsca:
             if x < ekran[0] or x > ekran[2] or y < ekran[1] or y > ekran[3]:
-                continue                                # ten ząbek jest poza okienkiem
-            # wektor prostopadły "w prawo" od kierunku linii to (ky, -kx);
-            # obwody poligonów w BDOT10k biegną zgodnie z ruchem wskazówek zegara,
-            # więc "w prawo" oznacza do środka rezerwatu
-            x1, y1 = teren_na_ekran(x + ky * od, y - kx * od)
-            x2, y2 = teren_na_ekran(x + ky * do, y - kx * do)
-            canvas.create_line(x1, y1, x2, y2, fill=w["kolor"], width=grubosc, capstyle="butt")
+                continue                          # ten znaczek jest poza okienkiem
+            kat = 0.0
+            if w["obracaj"]:
+                kat = kat_na_ekranie(kx, ky)
+            x_ekr, y_ekr = teren_na_ekran(x, y)
+            rysuj_znaczek(x_ekr, y_ekr, kat, z, obiekt)
 
 
 def rysuj_warstwe_znaku(obiekt, w):
     """Rysuje jedną warstwę znaku umownego dla jednego obiektu."""
-    if w["rodzaj"] == "SimpleFill" and obiekt["typ"] == "poligon":
+    rodzaj = w["rodzaj"]
+    if rodzaj == "wypelnienie" and obiekt["typ"] == "poligon":
         rysuj_wypelnienie(obiekt, w)
-    elif w["rodzaj"] == "SimpleLine":
+    elif rodzaj == "linia":
         rysuj_linie_znaku(obiekt, w)
-    elif w["rodzaj"] == "MarkerLine" and w["rozmieszczenie"] == "interval" and w["ksztalt"] == "line":
-        rysuj_zabki(obiekt, w)
-    # wzór z drzewek w lesie i znaki punktowe z plików SVG dorobimy w krokach C2–C3
+    elif rodzaj == "znaczki_na_linii":
+        rysuj_znaczki_na_linii(obiekt, w)
+    elif rodzaj in ("znaczek", "znaczek_svg") and obiekt["typ"] == "punkt":
+        for x, y in obiekt["czesci"]:
+            x_ekr, y_ekr = teren_na_ekran(x, y)
+            rysuj_znaczek(x_ekr, y_ekr, 0.0, w, obiekt)
+    # wzór z punktów (np. drzewka w lesie), kreskowanie i znaczek w środku obszaru – w kroku C3
 
 
 def kolor_glowny(warstwy_znaku):
-    """Najważniejszy kolor znaku (pierwsze wypełnienie albo linia) – nim rysujemy kropkę,
-    gdy obiekt jest mniejszy niż piksel."""
+    """Najważniejszy kolor znaku – nim rysujemy kropkę, gdy obiekt jest mniejszy niż piksel."""
     for w in warstwy_znaku:
-        for nazwa in ("wypelnienie", "kolor", "kontur"):
-            if w.get(nazwa):
-                return w[nazwa]
+        if w.get("kolor"):
+            return w["kolor"]
+        if w.get("kontur"):
+            return w["kontur"]
+        if "znaczek" in w and w["znaczek"].get("kolor"):
+            return w["znaczek"]["kolor"]
     return "#000000"
 
 
 def rysuj_znakami(ekran, skala_teraz):
-    """Rysuje mapę znakami umownymi, styl po stylu od najniższego poziomu.
-    Klasy bez stylu w folderze znaki rysujemy na razie prostymi kolorami."""
+    """Rysuje mapę znakami umownymi z pliku znaki.json, warstwa po warstwie od spodu do wierzchu.
+    Klasy, których wtyczka nie rysuje (np. same napisy), tu też nie są rysowane."""
     skala = widok["skala"]
+    punkty_jako_kropki = skala_teraz > 50000
     narysowane = 0
-    for poziom, klasa, styl in kolejka_znakow:
-        if not warstwy[klasa]["widoczna"]:
+    for warstwa_mapy in znaki["warstwy"]:
+        klasa = warstwa_mapy["klasa"]
+        if klasa not in dane or not warstwy[klasa]["widoczna"]:
             continue
-        if styl is None:
-            narysowane += rysuj_klase_prosto(klasa, ekran)
-            continue
-        if styl["min_skala"] is not None and skala_teraz > styl["min_skala"]:
+        if warstwa_mapy["min_skala"] is not None and skala_teraz > warstwa_mapy["min_skala"]:
             continue                              # w tej skali tej warstwy nie pokazujemy (jak QGIS)
-        # wybieramy obiekty: widoczne w okienku i z kodem, który jest w tym stylu
-        do_rysowania = []
+        do_rysowania = []                         # pary (obiekt, warstwy jego znaku)
         zajete = set()
         for obiekt in wybierz_widoczne(klasa, ekran):
-            kod = obiekt["atrybuty"].get(styl["pole"])
-            if kod not in styl["znaki"]:
+            if not pasuje_do_filtra(obiekt, warstwa_mapy["filtr"]):
                 continue
+            znak = znak_obiektu(warstwa_mapy, obiekt)
+            if znak is None:
+                continue                          # obiekt bez kodu z tej warstwy – nie rysujemy
             p = obiekt["prostokat"]
-            if obiekt["typ"] != "punkt" and (p[2] - p[0]) * skala < 1 and (p[3] - p[1]) * skala < 1:
-                rysuj_jako_piksel(obiekt, kolor_glowny(styl["znaki"][kod]), zajete)
+            maly = (p[2] - p[0]) * skala < 1 and (p[3] - p[1]) * skala < 1
+            if (obiekt["typ"] == "punkt" and punkty_jako_kropki) or (obiekt["typ"] != "punkt" and maly):
+                rysuj_jako_piksel(obiekt, kolor_glowny(znak["warstwy"]), zajete)
                 narysowane += 1
             else:
-                do_rysowania.append(obiekt)
+                do_rysowania.append((obiekt, znak["warstwy"]))
         # Rysujemy "przebiegami" (w QGIS: poziomy symboli): najpierw warstwy z przebiegu 0
         # wszystkich obiektów, potem z przebiegu 1 itd. Dzięki temu brązowe obwódki wszystkich
         # jezdni leżą pod białymi środkami i na skrzyżowaniach drogi ładnie się łączą.
-        for przebieg in styl["przebiegi"]:
-            for obiekt in do_rysowania:
-                for w in styl["znaki"][obiekt["atrybuty"].get(styl["pole"])]:
+        for przebieg in warstwa_mapy["przebiegi"]:
+            for obiekt, warstwy_znaku in do_rysowania:
+                for w in warstwy_znaku:
                     if w["przebieg"] == przebieg:
                         rysuj_warstwe_znaku(obiekt, w)
         narysowane += len(do_rysowania)
@@ -669,7 +582,9 @@ def rysuj():
     canvas.delete("all")
     ekran = widoczny_prostokat()
     skala_teraz = skala_mapy()
-    if znaki_umowne.get():
+    if znaki is not None:
+        przelicznik["piksele_na_mm"] = canvas.winfo_fpixels("1m") * znaki["skala_odniesienia"] / skala_teraz
+    if znaki_umowne.get() and znaki is not None:
         narysowane = rysuj_znakami(ekran, skala_teraz)
     else:
         narysowane = rysuj_prosto(ekran)
@@ -832,11 +747,11 @@ def trafiony(obiekt, x, y, tolerancja):
 def klasy_od_gory():
     """Klasy w kolejności od tej rysowanej na wierzchu do tej na samym spodzie –
     kliknięcie powinno najpierw trafić w to, co widać na górze (punkty, linie, budynki)."""
-    if znaki_umowne.get():
+    if znaki_umowne.get() and znaki is not None:
         kolejnosc = []
-        for poziom, klasa, styl in kolejka_znakow:
-            if klasa not in kolejnosc:
-                kolejnosc.append(klasa)
+        for warstwa_mapy in znaki["warstwy"]:
+            if warstwa_mapy["klasa"] in dane and warstwa_mapy["klasa"] not in kolejnosc:
+                kolejnosc.append(warstwa_mapy["klasa"])
     else:
         kolejnosc = list(kolejnosc_klas)
     kolejnosc.reverse()
@@ -1040,7 +955,6 @@ def odswiez_przewijanie(event):
 dane = {}               # klasa (np. "BUBD_A") -> lista obiektów
 warstwy = {}            # klasa -> ustawienia warstwy (kolor, widoczność...)
 kolejnosc_klas = []     # kolejność rysowania prostymi kolorami
-kolejka_znakow = []     # kolejność rysowania znakami umownymi
 zasieg = None           # prostokąt całego powiatu
 indeks_przestrzenny = {}            # klasa -> siatka (indeks.py)
 wczytywanie = {"trwa": False}
@@ -1055,7 +969,7 @@ def pokaz_postep(tekst):
 
 def otworz_dane(sciezka):
     """Wczytuje powiat z folderu albo pliku ZIP i pokazuje go w całości."""
-    global dane, warstwy, kolejnosc_klas, kolejka_znakow, zasieg, indeks_przestrzenny
+    global dane, warstwy, kolejnosc_klas, zasieg, indeks_przestrzenny
     wczytywanie["trwa"] = True
     canvas.delete("all")
     nowe_dane, opis = gml.wczytaj_dane(sciezka, pokaz_postep)
@@ -1076,7 +990,6 @@ def otworz_dane(sciezka):
     for klasa in dane:
         warstwy[klasa] = ustawienia_domyslne(klasa)
     kolejnosc_klas = sorted(dane, key=miejsce_w_kolejnosci)
-    kolejka_znakow = przygotuj_kolejke_znakow()
     zasieg = nowy_zasieg
     zaznaczenie["obiekt"] = None
     zbuduj_panel_warstw()
@@ -1106,12 +1019,12 @@ def otworz_zip():
 
 # --- PROGRAM ---
 
-# znaki umowne: czytamy style (na razie 7 plików z folderu znaki)
-style = []
-for klasa_stylu, plik_stylu in PLIKI_ZNAKOW:
-    styl_klasy = wczytaj_znaki(plik_stylu)
-    styl_klasy["klasa"] = klasa_stylu
-    style.append(styl_klasy)
+# znaki umowne z pliku znaki.json (jeśli go nie ma – trzeba raz uruchomić qml_na_json.py)
+znaki = wczytaj_plik_znakow()
+if znaki is None:
+    print("Brak pliku znaki/znaki.json – uruchom qml_na_json.py; na razie działają tylko proste kolory")
+else:
+    print(f"Znaki umowne: {len(znaki['warstwy'])} warstw z pliku znaki.json")
 
 # okienko: u góry przyciski, w środku mapa, na dole pasek ze współrzędnymi i czasem rysowania
 okno = tk.Tk()
@@ -1125,8 +1038,10 @@ tk.Button(przyciski, text="Pokaż całość", command=pokaz_calosc).pack(side="l
 tk.Button(przyciski, text="Przybliż +", command=przybliz).pack(side="left", padx=2, pady=2)
 tk.Button(przyciski, text="Oddal −", command=oddal).pack(side="left", padx=2, pady=2)
 znaki_umowne = tk.BooleanVar(value=False)
-tk.Checkbutton(przyciski, text="Znaki umowne GUGiK", variable=znaki_umowne,
-               command=rysuj).pack(side="left", padx=12)
+przelacznik_znakow = tk.Checkbutton(przyciski, text="Znaki umowne GUGiK", variable=znaki_umowne, command=rysuj)
+przelacznik_znakow.pack(side="left", padx=12)
+if znaki is None:
+    przelacznik_znakow.config(state="disabled")       # bez znaki.json nie ma czego włączać
 uzyj_indeksu = tk.BooleanVar(value=True)
 tk.Checkbutton(przyciski, text="Indeks przestrzenny", variable=uzyj_indeksu,
                command=rysuj).pack(side="left")

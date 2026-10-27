@@ -1,0 +1,8738 @@
+{
+ "opis": "Znaki umowne BDOT10k zbliżone do mapy topograficznej 1:10 000, odczytane ze stylów QML wtyczki GUGiK BDOT10k_GML_SHP 2.1.1 (licencja GPL-3.0) skryptem qml_na_json.py. Wielkości w milimetrach mapy w skali 1:10 000. Warstwy od spodu do wierzchu.",
+ "skala_odniesienia": 10000,
+ "warstwy": [
+  {
+   "klasa": "TCON_A",
+   "styl": "OT_TCON_A.qml",
+   "pole": null,
+   "filtr": null,
+   "min_skala": 10001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "*": {
+     "nazwa": "",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "",
+       "kontur": "#232323",
+       "grubosc_konturu": 0.026,
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "PTUT_A",
+   "styl": "OT_PTUT_A [0].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": null,
+   "przebiegi": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "znaki": {
+    "0010_718": {
+     "nazwa": "ogród działkowy",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#eef0b9",
+       "kontur": "#6cac55",
+       "grubosc_konturu": 0.12,
+       "przebieg": 1
+      }
+     ]
+    },
+    "0010_719": {
+     "nazwa": "sad",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#edf2ce",
+       "kontur": "#6cac55",
+       "grubosc_konturu": 0.12,
+       "przebieg": 1
+      },
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 0.5,
+       "odstep_y": 0.5,
+       "przesuniecie_rzedow_x": 0.5,
+       "przesuniecie_rzedow_y": 0.5,
+       "przesuniecie_x": 0.0,
+       "przesuniecie_y": 0.0,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "circle",
+        "rozmiar": 0.3,
+        "kolor": "#5c9b4b",
+        "kontur": "#5c9b4b",
+        "grubosc_konturu": 0.0,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 2
+      },
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 0.5,
+       "odstep_y": 0.5,
+       "przesuniecie_rzedow_x": 0.0,
+       "przesuniecie_rzedow_y": 0.0,
+       "przesuniecie_x": 0.0,
+       "przesuniecie_y": 0.0,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "circle",
+        "rozmiar": 0.3,
+        "kolor": "#5c9b4b",
+        "kontur": "#5c9b4b",
+        "grubosc_konturu": 0.0,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_720": {
+     "nazwa": "plantacja",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#edf2d1",
+       "kontur": "#6cac55",
+       "grubosc_konturu": 0.12,
+       "przebieg": 1
+      },
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 3.0,
+       "odstep_y": 3.2,
+       "przesuniecie_rzedow_x": 0.0,
+       "przesuniecie_rzedow_y": 0.0,
+       "przesuniecie_x": 0.0,
+       "przesuniecie_y": 0.0,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.2,
+        "kolor": "#5c9b4b",
+        "kontur": "#5c9b4b",
+        "grubosc_konturu": 0.12,
+        "kat": 0.0,
+        "przesuniecie": [
+         1.5,
+         1.5
+        ]
+       },
+       "przebieg": 2
+      },
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 3.0,
+       "odstep_y": 3.2,
+       "przesuniecie_rzedow_x": 0.0,
+       "przesuniecie_rzedow_y": 0.0,
+       "przesuniecie_x": 0.0,
+       "przesuniecie_y": 0.0,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.2,
+        "kolor": "#5c9b4b",
+        "kontur": "#5c9b4b",
+        "grubosc_konturu": 0.12,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 3
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "PTRK_A",
+   "styl": "OT_PTRK_A [0].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": null,
+   "przebiegi": [
+    1,
+    2
+   ],
+   "znaki": {
+    "0010_713": {
+     "nazwa": "zarośla krzewów",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#e5eac2",
+       "kontur": "#6cac55",
+       "grubosc_konturu": 0.12,
+       "przebieg": 1
+      },
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 3.0,
+       "odstep_y": 3.0,
+       "przesuniecie_rzedow_x": 1.0,
+       "przesuniecie_rzedow_y": 1.0,
+       "przesuniecie_x": 0.0,
+       "przesuniecie_y": 0.0,
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "0010_713",
+        "rozmiar": 0.6,
+        "kolor": "#000000",
+        "kontur": "#5c9b4b",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 2
+      }
+     ]
+    },
+    "0010_714": {
+     "nazwa": "zarośla kosodrzewiny",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#e5eac2",
+       "kontur": "#6cac55",
+       "grubosc_konturu": 0.12,
+       "przebieg": 1
+      },
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 3.0,
+       "odstep_y": 3.0,
+       "przesuniecie_rzedow_x": 1.0,
+       "przesuniecie_rzedow_y": 1.0,
+       "przesuniecie_x": 0.0,
+       "przesuniecie_y": 0.0,
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "0010_714_desen",
+        "rozmiar": 1.0017,
+        "kolor": "#000000",
+        "kontur": "#5c9b4b",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 2
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "PTLZ_A",
+   "styl": "OT_PTLZ_A [0].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": null,
+   "przebiegi": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "znaki": {
+    "0010_703": {
+     "nazwa": "las liściasty",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#d8e9d1",
+       "kontur": "#6cac55",
+       "grubosc_konturu": 0.12,
+       "przebieg": 1
+      },
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 7.0,
+       "odstep_y": 7.0,
+       "przesuniecie_rzedow_x": 3.5,
+       "przesuniecie_rzedow_y": 2.5,
+       "przesuniecie_x": 0.0,
+       "przesuniecie_y": 0.0,
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "0010_703 desen",
+        "rozmiar": 1.6977,
+        "kolor": "#000000",
+        "kontur": "#ffffff",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 2
+      }
+     ]
+    },
+    "0010_704": {
+     "nazwa": "las iglasty",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#d8e9d1",
+       "kontur": "#6cac55",
+       "grubosc_konturu": 0.12,
+       "przebieg": 1
+      },
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 7.0,
+       "odstep_y": 7.0,
+       "przesuniecie_rzedow_x": 3.5,
+       "przesuniecie_rzedow_y": 2.5,
+       "przesuniecie_x": 0.0,
+       "przesuniecie_y": 0.0,
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "0010_704 desen",
+        "rozmiar": 0.9915,
+        "kolor": "#000000",
+        "kontur": "#ffffff",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 2
+      }
+     ]
+    },
+    "0010_705": {
+     "nazwa": "las mieszany",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#d8e9d1",
+       "kontur": "#6cac55",
+       "grubosc_konturu": 0.12,
+       "przebieg": 1
+      },
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 7.0,
+       "odstep_y": 7.0,
+       "przesuniecie_rzedow_x": 3.5,
+       "przesuniecie_rzedow_y": 2.5,
+       "przesuniecie_x": 7.0,
+       "przesuniecie_y": 2.0,
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "0010_704 desen",
+        "rozmiar": 0.9915,
+        "kolor": "#000000",
+        "kontur": "#ffffff",
+        "kat": 0.0,
+        "przesuniecie": [
+         7.0,
+         7.0
+        ]
+       },
+       "przebieg": 2
+      },
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 7.0,
+       "odstep_y": 7.0,
+       "przesuniecie_rzedow_x": 3.5,
+       "przesuniecie_rzedow_y": 2.5,
+       "przesuniecie_x": 0.0,
+       "przesuniecie_y": 0.0,
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "0010_703 desen",
+        "rozmiar": 1.6977,
+        "kolor": "#000000",
+        "kontur": "#ffffff",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 3
+      }
+     ]
+    },
+    "0010_706": {
+     "nazwa": "zadrzewienie",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#d7e6b6",
+       "kontur": "#6cac55",
+       "grubosc_konturu": 0.12,
+       "przebieg": 1
+      }
+     ]
+    },
+    "0010_708": {
+     "nazwa": "zagajnik liściasty",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#e2efde",
+       "kontur": "#6cac55",
+       "grubosc_konturu": 0.12,
+       "przebieg": 1
+      },
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 4.0,
+       "odstep_y": 4.0,
+       "przesuniecie_rzedow_x": 2.5,
+       "przesuniecie_rzedow_y": 1.5,
+       "przesuniecie_x": 0.0,
+       "przesuniecie_y": 0.0,
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "0010_708_desen",
+        "rozmiar": 1.0917,
+        "kolor": "#000000",
+        "kontur": "#ffffff",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 2
+      }
+     ]
+    },
+    "0010_709": {
+     "nazwa": "zagajnik iglasty",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#e2efde",
+       "kontur": "#6cac55",
+       "grubosc_konturu": 0.12,
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 4.0,
+       "odstep_y": 4.0,
+       "przesuniecie_rzedow_x": 2.5,
+       "przesuniecie_rzedow_y": 1.5,
+       "przesuniecie_x": 0.0,
+       "przesuniecie_y": 0.0,
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "0010_709_desen",
+        "rozmiar": 0.6995,
+        "kolor": "#000000",
+        "kontur": "#ffffff",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 1
+      }
+     ]
+    },
+    "0010_710": {
+     "nazwa": "zagajnik mieszany",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#e2efde",
+       "kontur": "#6cac55",
+       "grubosc_konturu": 0.12,
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 5.0,
+       "odstep_y": 3.0,
+       "przesuniecie_rzedow_x": 4.0,
+       "przesuniecie_rzedow_y": 6.0,
+       "przesuniecie_x": 2.5,
+       "przesuniecie_y": 2.0,
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "0010_709_desen",
+        "rozmiar": 0.6995,
+        "kolor": "#000000",
+        "kontur": "#ffffff",
+        "kat": 0.0,
+        "przesuniecie": [
+         6.0,
+         3.3
+        ]
+       },
+       "przebieg": 1
+      },
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 5.0,
+       "odstep_y": 3.0,
+       "przesuniecie_rzedow_x": 4.0,
+       "przesuniecie_rzedow_y": 6.0,
+       "przesuniecie_x": 3.0,
+       "przesuniecie_y": 0.0,
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "0010_708_desen",
+        "rozmiar": 1.0917,
+        "kolor": "#000000",
+        "kontur": "#ffffff",
+        "kat": 0.0,
+        "przesuniecie": [
+         3.0,
+         1.3
+        ]
+       },
+       "przebieg": 2
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "PTTR_A",
+   "styl": "OT_PTTR_A [0].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": null,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_723": {
+     "nazwa": "roślinność trawiasta",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#edfbf4",
+       "kontur": "#6cac55",
+       "grubosc_konturu": 0.12,
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "PTZB_A",
+   "styl": "OT_PTZB_A roslinnosc [0].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": null,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_706": {
+     "nazwa": "zadrzewienie",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#d7e6b6",
+       "kontur": "#6cac55",
+       "grubosc_konturu": 0.12,
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_723": {
+     "nazwa": "roślinność trawiasta",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#edfbf4",
+       "kontur": "#6cac55",
+       "grubosc_konturu": 0.12,
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "PTGN_A",
+   "styl": "OT_PTGN_A [1].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": null,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_736": {
+     "nazwa": "grunt nieużytkowany lub teren zdegradowany",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "",
+       "kontur": "#6cac55",
+       "grubosc_konturu": 0.12,
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 2.5,
+       "odstep_y": 2.5,
+       "przesuniecie_rzedow_x": 0.5,
+       "przesuniecie_rzedow_y": 0.5,
+       "przesuniecie_x": 0.0,
+       "przesuniecie_y": 0.0,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "circle",
+        "rozmiar": 0.25,
+        "kolor": "#5c9b4b",
+        "kontur": "",
+        "grubosc_konturu": 0.0,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_737": {
+     "nazwa": "teren piaszczysty lub żwirowy",
+     "warstwy": [
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 0.7,
+       "odstep_y": 0.7,
+       "przesuniecie_rzedow_x": 0.3,
+       "przesuniecie_rzedow_y": 0.3,
+       "przesuniecie_x": 0.0,
+       "przesuniecie_y": 0.0,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "circle",
+        "rozmiar": 0.25,
+        "kolor": "#9c4b19",
+        "kontur": "#9c4b19",
+        "grubosc_konturu": 0.0,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_738": {
+     "nazwa": "teren kamienisty lub rumowisko skalne",
+     "warstwy": [
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 3.0,
+       "odstep_y": 3.0,
+       "przesuniecie_rzedow_x": 1.0,
+       "przesuniecie_rzedow_y": 1.0,
+       "przesuniecie_x": 0.0,
+       "przesuniecie_y": -1.0,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "triangle",
+        "rozmiar": 0.8,
+        "kolor": "#9c4b19",
+        "kontur": "#9c4b19",
+        "grubosc_konturu": 0.0,
+        "kat": 175.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 3.0,
+       "odstep_y": 3.0,
+       "przesuniecie_rzedow_x": 1.5,
+       "przesuniecie_rzedow_y": 0.5,
+       "przesuniecie_x": 3.5,
+       "przesuniecie_y": 0.0,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "triangle",
+        "rozmiar": 0.6,
+        "kolor": "#9c4b19",
+        "kontur": "#9c4b19",
+        "grubosc_konturu": 0.0,
+        "kat": 130.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 3.0,
+       "odstep_y": 3.0,
+       "przesuniecie_rzedow_x": 1.5,
+       "przesuniecie_rzedow_y": 1.5,
+       "przesuniecie_x": 4.5,
+       "przesuniecie_y": 0.0,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "triangle",
+        "rozmiar": 0.6,
+        "kolor": "#9c4b19",
+        "kontur": "#9c4b19",
+        "grubosc_konturu": 0.0,
+        "kat": 160.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 3.0,
+       "odstep_y": 3.0,
+       "przesuniecie_rzedow_x": 1.5,
+       "przesuniecie_rzedow_y": 1.5,
+       "przesuniecie_x": 1.5,
+       "przesuniecie_y": -0.5,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "triangle",
+        "rozmiar": 0.6,
+        "kolor": "#9c4b19",
+        "kontur": "#9c4b19",
+        "grubosc_konturu": 0.0,
+        "kat": 15.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 3.0,
+       "odstep_y": 3.0,
+       "przesuniecie_rzedow_x": 1.0,
+       "przesuniecie_rzedow_y": 0.8,
+       "przesuniecie_x": 0.0,
+       "przesuniecie_y": 0.0,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "triangle",
+        "rozmiar": 0.8,
+        "kolor": "#9c4b19",
+        "kontur": "#9c4b19",
+        "grubosc_konturu": 0.0,
+        "kat": 75.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "PTWZ_A",
+   "styl": "OT_PTWZ_A [1].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": null,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_736": {
+     "nazwa": "grunt nieużytkowany lub teren zdegradowany",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "",
+       "kontur": "#6cac55",
+       "grubosc_konturu": 0.12,
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 2.5,
+       "odstep_y": 2.5,
+       "przesuniecie_rzedow_x": 0.5,
+       "przesuniecie_rzedow_y": 0.5,
+       "przesuniecie_x": 0.0,
+       "przesuniecie_y": 0.0,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "circle",
+        "rozmiar": 0.25,
+        "kolor": "#5c9b4b",
+        "kontur": "",
+        "grubosc_konturu": 0.0,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_737": {
+     "nazwa": "teren piaszczysty lub żwirowy",
+     "warstwy": [
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 0.7,
+       "odstep_y": 0.7,
+       "przesuniecie_rzedow_x": 0.3,
+       "przesuniecie_rzedow_y": 0.3,
+       "przesuniecie_x": 0.0,
+       "przesuniecie_y": 0.0,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "circle",
+        "rozmiar": 0.25,
+        "kolor": "#9c4b19",
+        "kontur": "#9c4b19",
+        "grubosc_konturu": 0.0,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_738": {
+     "nazwa": "teren kamienisty lub rumowisko skalne",
+     "warstwy": [
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 3.0,
+       "odstep_y": 3.0,
+       "przesuniecie_rzedow_x": 1.0,
+       "przesuniecie_rzedow_y": 1.0,
+       "przesuniecie_x": 0.0,
+       "przesuniecie_y": -1.0,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "triangle",
+        "rozmiar": 0.8,
+        "kolor": "#9c4b19",
+        "kontur": "#9c4b19",
+        "grubosc_konturu": 0.0,
+        "kat": 175.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 3.0,
+       "odstep_y": 3.0,
+       "przesuniecie_rzedow_x": 1.5,
+       "przesuniecie_rzedow_y": 0.5,
+       "przesuniecie_x": 3.5,
+       "przesuniecie_y": 0.0,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "triangle",
+        "rozmiar": 0.6,
+        "kolor": "#9c4b19",
+        "kontur": "#9c4b19",
+        "grubosc_konturu": 0.0,
+        "kat": 130.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 3.0,
+       "odstep_y": 3.0,
+       "przesuniecie_rzedow_x": 1.5,
+       "przesuniecie_rzedow_y": 1.5,
+       "przesuniecie_x": 4.5,
+       "przesuniecie_y": 0.0,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "triangle",
+        "rozmiar": 0.6,
+        "kolor": "#9c4b19",
+        "kontur": "#9c4b19",
+        "grubosc_konturu": 0.0,
+        "kat": 160.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 3.0,
+       "odstep_y": 3.0,
+       "przesuniecie_rzedow_x": 1.5,
+       "przesuniecie_rzedow_y": 1.5,
+       "przesuniecie_x": 1.5,
+       "przesuniecie_y": -0.5,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "triangle",
+        "rozmiar": 0.6,
+        "kolor": "#9c4b19",
+        "kontur": "#9c4b19",
+        "grubosc_konturu": 0.0,
+        "kat": 15.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 3.0,
+       "odstep_y": 3.0,
+       "przesuniecie_rzedow_x": 1.0,
+       "przesuniecie_rzedow_y": 0.8,
+       "przesuniecie_x": 0.0,
+       "przesuniecie_y": 0.0,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "triangle",
+        "rozmiar": 0.8,
+        "kolor": "#9c4b19",
+        "kontur": "#9c4b19",
+        "grubosc_konturu": 0.0,
+        "kat": 75.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "PTWZ_A",
+   "styl": "OT_PTWZ_A skladowisko [3].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": null,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_430": {
+     "nazwa": "składowisko odpadów",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#4e4a96",
+       "grubosc": 0.1,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 1.0,
+       "odstep_y": 1.0,
+       "przesuniecie_rzedow_x": 0.3,
+       "przesuniecie_rzedow_y": 0.3,
+       "przesuniecie_x": 0.0,
+       "przesuniecie_y": 0.0,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "circle",
+        "rozmiar": 0.3,
+        "kolor": "#4e4a96",
+        "kontur": "",
+        "grubosc_konturu": 0.0,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "PTSO_A",
+   "styl": "OT_PTSO_A [3].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": null,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_430": {
+     "nazwa": "składowisko odpadów",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#4e4a96",
+       "grubosc": 0.1,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 1.0,
+       "odstep_y": 1.0,
+       "przesuniecie_rzedow_x": 0.3,
+       "przesuniecie_rzedow_y": 0.3,
+       "przesuniecie_x": 0.0,
+       "przesuniecie_y": 0.0,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "circle",
+        "rozmiar": 0.3,
+        "kolor": "#4e4a96",
+        "kontur": "",
+        "grubosc_konturu": 0.0,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "KUPG_A",
+   "styl": "OT_KUPG_A [4].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 25001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_401": {
+     "nazwa": "teren przemysłowo-składowy",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#e2e0ef",
+       "kontur": "#1a171b",
+       "grubosc_konturu": 0.1,
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "RTLW_L",
+   "styl": "OT_RTLW_L [5-6].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 10001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_807_1": {
+     "nazwa": "skarpa (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 1.4,
+       "przesuniecie_wzdluz": 0.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.4,
+        "kolor": "#87888a",
+        "kontur": "#a7a8aa",
+        "grubosc_konturu": 0.1,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.7,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 1.4,
+       "przesuniecie_wzdluz": 0.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 0.7,
+        "kolor": "#87888a",
+        "kontur": "#a7a8aa",
+        "grubosc_konturu": 0.1,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#a7a8aa",
+       "grubosc": 0.1,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_807_2": {
+     "nazwa": "skarpa (symbol)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#a7a8aa",
+       "grubosc": 0.1,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 0.7,
+       "przesuniecie_wzdluz": 0.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 0.5,
+        "kolor": "#a7a8aa",
+        "kontur": "#a7a8aa",
+        "grubosc_konturu": 0.1,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_814": {
+     "nazwa": "wąwóz",
+     "warstwy": [
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 1.4,
+       "przesuniecie_wzdluz": 0.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.4,
+        "kolor": "#87888a",
+        "kontur": "#a7a8aa",
+        "grubosc_konturu": 0.1,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.7,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 1.4,
+       "przesuniecie_wzdluz": 0.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 0.7,
+        "kolor": "#87888a",
+        "kontur": "#a7a8aa",
+        "grubosc_konturu": 0.1,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#a7a8aa",
+       "grubosc": 0.1,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_802": {
+     "nazwa": "poziomica zasadnicza pogrubiona",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#a7a8aa",
+       "grubosc": 0.3,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_803": {
+     "nazwa": "poziomica zasadnicza",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#a7a8aa",
+       "grubosc": 0.1,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_804": {
+     "nazwa": "poziomica pomocnicza",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#a7a8aa",
+       "grubosc": 0.1,
+       "kreski": [
+        5.0,
+        0.8
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_805": {
+     "nazwa": "poziomica uzupełniająca",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#a7a8aa",
+       "grubosc": 0.1,
+       "kreski": [
+        2.5,
+        0.5
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "BUZM_L",
+   "styl": "OT_BUZM_L [7].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 10001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_808": {
+     "nazwa": "wykop",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#a7a8aa",
+       "grubosc": 0.1,
+       "kreski": null,
+       "przesuniecie": 1.3,
+       "koncowki": "projecting",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#a7a8aa",
+       "grubosc": 0.1,
+       "kreski": null,
+       "przesuniecie": -1.3,
+       "koncowki": "projecting",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 0.7,
+       "przesuniecie_wzdluz": 0.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 0.5,
+        "kolor": "#a7a8aa",
+        "kontur": "#a7a8aa",
+        "grubosc_konturu": 0.1,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         1.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_809_1": {
+     "nazwa": "wał, grobla lub nasyp (korona w skali, stok w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#a7a8aa",
+       "grubosc": 1.4,
+       "kreski": [
+        0.1,
+        1.4
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przesuniecie_z_pola": {
+        "pole": "szerokoscKorony",
+        "mnoznik": 0.05,
+        "dodatek": 0.7
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#a7a8aa",
+       "grubosc": 0.7,
+       "kreski": [
+        0.1,
+        1.4
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przesuniecie_z_pola": {
+        "pole": "szerokoscKorony",
+        "mnoznik": 0.05,
+        "dodatek": 0.35
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#a7a8aa",
+       "grubosc": 1.4,
+       "kreski": [
+        0.1,
+        1.4
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przesuniecie_z_pola": {
+        "pole": "szerokoscKorony",
+        "mnoznik": -0.05,
+        "dodatek": -0.7
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#a7a8aa",
+       "grubosc": 0.7,
+       "kreski": [
+        0.1,
+        1.4
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przesuniecie_z_pola": {
+        "pole": "szerokoscKorony",
+        "mnoznik": -0.05,
+        "dodatek": -0.35
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#a7a8aa",
+       "grubosc": 0.1,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "bevel",
+       "przesuniecie_z_pola": {
+        "pole": "szerokoscKorony",
+        "mnoznik": -0.05,
+        "dodatek": -0.0
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#a7a8aa",
+       "grubosc": 0.1,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "bevel",
+       "przesuniecie_z_pola": {
+        "pole": "szerokoscKorony",
+        "mnoznik": 0.05,
+        "dodatek": 0.0
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_809_2": {
+     "nazwa": "wał, grobla lub nasyp (korona w skali, stok symbol)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#a7a8aa",
+       "grubosc": 0.5,
+       "kreski": [
+        0.1,
+        0.7
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przesuniecie_z_pola": {
+        "pole": "szerokoscKorony",
+        "mnoznik": -0.05,
+        "dodatek": -0.5
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#a7a8aa",
+       "grubosc": 0.5,
+       "kreski": [
+        0.1,
+        0.7
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przesuniecie_z_pola": {
+        "pole": "szerokoscKorony",
+        "mnoznik": 0.05,
+        "dodatek": 0.5
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#a7a8aa",
+       "grubosc": 0.1,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przesuniecie_z_pola": {
+        "pole": "szerokoscKorony",
+        "mnoznik": -0.05,
+        "dodatek": -0.2
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#a7a8aa",
+       "grubosc": 0.1,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przesuniecie_z_pola": {
+        "pole": "szerokoscKorony",
+        "mnoznik": 0.05,
+        "dodatek": 0.2
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_810_1": {
+     "nazwa": "wał, grobla lub nasyp szeroki (stok w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#a7a8aa",
+       "grubosc": 1.0,
+       "kreski": [
+        0.1,
+        1.4
+       ],
+       "przesuniecie": 0.95,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#a7a8aa",
+       "grubosc": 0.5,
+       "kreski": [
+        0.1,
+        1.4
+       ],
+       "przesuniecie": 0.7,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#a7a8aa",
+       "grubosc": 1.0,
+       "kreski": [
+        0.1,
+        1.4
+       ],
+       "przesuniecie": -0.55,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#a7a8aa",
+       "grubosc": 0.5,
+       "kreski": [
+        0.1,
+        1.4
+       ],
+       "przesuniecie": -0.3,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#a7a8aa",
+       "grubosc": 0.1,
+       "kreski": null,
+       "przesuniecie": 0.4,
+       "koncowki": "projecting",
+       "narozniki": "bevel",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#a7a8aa",
+       "grubosc": 0.1,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "bevel",
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_810_2": {
+     "nazwa": "wał, grobla lub nasyp szeroki (stok symbol)",
+     "warstwy": [
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 0.7,
+       "przesuniecie_wzdluz": 0.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 0.5,
+        "kolor": "#a7a8aa",
+        "kontur": "#a7a8aa",
+        "grubosc_konturu": 0.1,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.5
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#a7a8aa",
+       "grubosc": 0.1,
+       "kreski": null,
+       "przesuniecie": 0.2,
+       "koncowki": "projecting",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#a7a8aa",
+       "grubosc": 0.1,
+       "kreski": null,
+       "przesuniecie": -0.2,
+       "koncowki": "projecting",
+       "narozniki": "miter",
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_811_1": {
+     "nazwa": "wał, grobla lub nasyp wąski (stok w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 1.4,
+       "przesuniecie_wzdluz": 0.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 2.01,
+        "kolor": "#87888a",
+        "kontur": "#a7a8aa",
+        "grubosc_konturu": 0.1,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.7,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 1.4,
+       "przesuniecie_wzdluz": 0.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.01,
+        "kolor": "#87888a",
+        "kontur": "#a7a8aa",
+        "grubosc_konturu": 0.1,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#a7a8aa",
+       "grubosc": 0.1,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_811_2": {
+     "nazwa": "wał, grobla lub nasyp wąski (stok symbol)",
+     "warstwy": [
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 0.7,
+       "przesuniecie_wzdluz": 0.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.01,
+        "kolor": "#87888a",
+        "kontur": "#a7a8aa",
+        "grubosc_konturu": 0.1,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#a7a8aa",
+       "grubosc": 0.1,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "OIMK_A",
+   "styl": "OT_OIMK_A [10].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 10001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_725": {
+     "nazwa": "bagno",
+     "warstwy": [
+      {
+       "rodzaj": "kreskowanie",
+       "kat": 45.0,
+       "odstep": 1.6,
+       "linia": {
+        "rodzaj": "linia",
+        "kolor": "#53aedd",
+        "grubosc": 0.1,
+        "kreski": [
+         3.0,
+         0.3
+        ],
+        "przesuniecie": 0.8,
+        "koncowki": "butt",
+        "narozniki": "miter"
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "kreskowanie",
+       "kat": 45.0,
+       "odstep": 1.6,
+       "linia": {
+        "rodzaj": "linia",
+        "kolor": "#53aedd",
+        "grubosc": 0.1,
+        "kreski": [
+         3.0,
+         0.3
+        ],
+        "przesuniecie": 0.0,
+        "koncowki": "butt",
+        "narozniki": "miter"
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_726": {
+     "nazwa": "teren podmokły",
+     "warstwy": [
+      {
+       "rodzaj": "kreskowanie",
+       "kat": 45.0,
+       "odstep": 1.6,
+       "linia": {
+        "rodzaj": "linia",
+        "kolor": "#53aedd",
+        "grubosc": 0.1,
+        "kreski": [
+         2.4,
+         1.4
+        ],
+        "przesuniecie": 0.8,
+        "koncowki": "butt",
+        "narozniki": "miter"
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "kreskowanie",
+       "kat": 45.0,
+       "odstep": 1.6,
+       "linia": {
+        "rodzaj": "linia",
+        "kolor": "#53aedd",
+        "grubosc": 0.1,
+        "kreski": [
+         1.2,
+         0.4
+        ],
+        "przesuniecie": 0.0,
+        "koncowki": "butt",
+        "narozniki": "miter"
+       },
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "PTZB_A",
+   "styl": "OT_PTZB_A plac [11].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": null,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_140": {
+     "nazwa": "plac lub parking",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#ffffff",
+       "kontur": "#691717",
+       "grubosc_konturu": 0.1,
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "PTKM_A",
+   "styl": "OT_PTKM_A [11].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": null,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_140": {
+     "nazwa": "plac lub parking",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#ffffff",
+       "kontur": "#691717",
+       "grubosc_konturu": 0.1,
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "PTPL_A",
+   "styl": "OT_PTPL_A [11].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": null,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_140": {
+     "nazwa": "plac lub parking",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#ffffff",
+       "kontur": "#691717",
+       "grubosc_konturu": 0.1,
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "SWRM_L",
+   "styl": "OT_SWRM_L [12].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 25001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_606": {
+     "nazwa": "ciek wodny",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#53aedd",
+       "grubosc": 0.0,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "SWKN_L",
+   "styl": "OT_SWKN_L [12].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 25001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_606": {
+     "nazwa": "ciek wodny",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#53aedd",
+       "grubosc": 0.0,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "SWRS_L",
+   "styl": "OT_SWRS_L [12].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 25001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_606": {
+     "nazwa": "ciek wodny",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#53aedd",
+       "grubosc": 0.0,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "PTWP_A",
+   "styl": "OT_PTWP_A [13].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": null,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_601": {
+     "nazwa": "woda powierzchniowa",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#d9effa",
+       "kontur": "#53aedd",
+       "grubosc_konturu": 0.1,
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "OISZ_A",
+   "styl": "OT_OISZ_A [15].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 25001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_727": {
+     "nazwa": "szuwary",
+     "warstwy": [
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 4.5,
+       "odstep_y": 3.0,
+       "przesuniecie_rzedow_x": 1.5,
+       "przesuniecie_rzedow_y": 0.0,
+       "przesuniecie_x": 0.0,
+       "przesuniecie_y": 0.0,
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "0010_727",
+        "rozmiar": 0.8,
+        "kolor": "#000000",
+        "kontur": "#ffffff",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "KUSC_A",
+   "styl": "OT_KUSC_A [16].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 25001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_343_1": {
+     "nazwa": "cmentarz chrześcijański (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 3.0,
+       "odstep_y": 6.0,
+       "przesuniecie_rzedow_x": 0.0,
+       "przesuniecie_rzedow_y": 0.0,
+       "przesuniecie_x": 1.5,
+       "przesuniecie_y": 3.0,
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "bez_nazwy",
+        "rozmiar": 0.8,
+        "kolor": "#000000",
+        "kontur": "#232323",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 3.0,
+       "odstep_y": 6.0,
+       "przesuniecie_rzedow_x": 0.0,
+       "przesuniecie_rzedow_y": 0.0,
+       "przesuniecie_x": 0.0,
+       "przesuniecie_y": 0.0,
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "bez_nazwy",
+        "rozmiar": 0.8,
+        "kolor": "#000000",
+        "kontur": "#232323",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "",
+       "kontur": "#232323",
+       "grubosc_konturu": 0.1,
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_344_1": {
+     "nazwa": "cmentarz niechrześcijański (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 3.0,
+       "odstep_y": 6.0,
+       "przesuniecie_rzedow_x": 0.0,
+       "przesuniecie_rzedow_y": 0.0,
+       "przesuniecie_x": 1.5,
+       "przesuniecie_y": 3.0,
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "bez_nazwy",
+        "rozmiar": 0.5,
+        "kolor": "#000000",
+        "kontur": "#232323",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 3.0,
+       "odstep_y": 6.0,
+       "przesuniecie_rzedow_x": 0.0,
+       "przesuniecie_rzedow_y": 0.0,
+       "przesuniecie_x": 0.0,
+       "przesuniecie_y": 0.0,
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "bez_nazwy",
+        "rozmiar": 0.5,
+        "kolor": "#000000",
+        "kontur": "#232323",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "",
+       "kontur": "#232323",
+       "grubosc_konturu": 0.1,
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_345_1": {
+     "nazwa": "cmentarz komunalny (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 3.0,
+       "odstep_y": 6.0,
+       "przesuniecie_rzedow_x": 0.0,
+       "przesuniecie_rzedow_y": 0.0,
+       "przesuniecie_x": 1.5,
+       "przesuniecie_y": 3.0,
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "bez_nazwy",
+        "rozmiar": 0.8,
+        "kolor": "#000000",
+        "kontur": "#232323",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 3.0,
+       "odstep_y": 6.0,
+       "przesuniecie_rzedow_x": 0.0,
+       "przesuniecie_rzedow_y": 0.0,
+       "przesuniecie_x": 0.0,
+       "przesuniecie_y": 0.0,
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "bez_nazwy",
+        "rozmiar": 0.8,
+        "kolor": "#000000",
+        "kontur": "#232323",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "",
+       "kontur": "#232323",
+       "grubosc_konturu": 0.1,
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_346_1": {
+     "nazwa": "cmentarz wojenny (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 3.0,
+       "odstep_y": 6.0,
+       "przesuniecie_rzedow_x": 0.0,
+       "przesuniecie_rzedow_y": 0.0,
+       "przesuniecie_x": 1.5,
+       "przesuniecie_y": 3.0,
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "bez_nazwy",
+        "rozmiar": 0.8,
+        "kolor": "#000000",
+        "kontur": "#232323",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 3.0,
+       "odstep_y": 6.0,
+       "przesuniecie_rzedow_x": 0.0,
+       "przesuniecie_rzedow_y": 0.0,
+       "przesuniecie_x": 0.0,
+       "przesuniecie_y": 0.0,
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "bez_nazwy",
+        "rozmiar": 0.8,
+        "kolor": "#000000",
+        "kontur": "#232323",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "",
+       "kontur": "#232323",
+       "grubosc_konturu": 0.1,
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_347_1": {
+     "nazwa": "cmentarz dla zwierząt (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 3.0,
+       "odstep_y": 6.0,
+       "przesuniecie_rzedow_x": 0.0,
+       "przesuniecie_rzedow_y": 0.0,
+       "przesuniecie_x": 1.5,
+       "przesuniecie_y": 3.0,
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "bez_nazwy",
+        "rozmiar": 0.6,
+        "kolor": "#000000",
+        "kontur": "#232323",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "wzor_z_punktow",
+       "odstep_x": 3.0,
+       "odstep_y": 6.0,
+       "przesuniecie_rzedow_x": 0.0,
+       "przesuniecie_rzedow_y": 0.0,
+       "przesuniecie_x": 0.0,
+       "przesuniecie_y": 0.0,
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "bez_nazwy",
+        "rozmiar": 0.6,
+        "kolor": "#000000",
+        "kontur": "#232323",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "",
+       "kontur": "#232323",
+       "grubosc_konturu": 0.1,
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "OIPR_L",
+   "styl": "OT_OIPR_L [17-18].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 25001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_614": {
+     "nazwa": "wodospad",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#53aedd",
+       "grubosc": 0.3,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_615": {
+     "nazwa": "próg skalny",
+     "warstwy": [
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 1.7,
+       "przesuniecie_wzdluz": 0.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "triangle",
+        "rozmiar": 1.2,
+        "kolor": "#53aedd",
+        "kontur": "",
+        "grubosc_konturu": 0.0,
+        "kat": 270.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_711": {
+     "nazwa": "linia oddziałowa",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#89a27d",
+       "grubosc": 0.5,
+       "kreski": [
+        3.0,
+        0.5
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 0.3,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_729": {
+     "nazwa": "rząd drzew",
+     "warstwy": [
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 2.0,
+       "przesuniecie_wzdluz": 0.0,
+       "obracaj": false,
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "0010_731",
+        "rozmiar": 0.8993,
+        "kolor": "#000000",
+        "kontur": "#ffffff",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_733": {
+     "nazwa": "pas krzewów",
+     "warstwy": [
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 1.6,
+       "przesuniecie_wzdluz": 0.0,
+       "obracaj": false,
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "0010_734",
+        "rozmiar": 0.6,
+        "kolor": "#5c9b4b",
+        "kontur": "#ffffff",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "BUSP_A",
+   "styl": "OT_BUSP_A [19].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 25001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_338": {
+     "nazwa": "stadion",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#ffffff",
+       "kontur": "#1a171b",
+       "grubosc_konturu": 0.1,
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_341_1": {
+     "nazwa": "skocznia narciarska (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#ffffff",
+       "kontur": "#1a171b",
+       "grubosc_konturu": 0.1,
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_611": {
+     "nazwa": "basen kąpielowy",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#d9effa",
+       "kontur": "#696863",
+       "grubosc_konturu": 0.2,
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "BUSP_L",
+   "styl": "OT_BUSP_L [20].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 25001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_339": {
+     "nazwa": "bieżnia lub tor stadionu",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#696863",
+       "grubosc": 0.1,
+       "kreski": null,
+       "przesuniecie": 0.3,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#1a171b",
+       "grubosc": 0.1,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "SKJZ_L",
+   "styl": "OT_SKJZ_L pod gruntem [20].qml",
+   "pole": "kodKarto10k",
+   "filtr": {
+    "pole": "polozenie",
+    "wartosci": [
+     "pod powierzchnią gruntu"
+    ]
+   },
+   "min_skala": 25001.0,
+   "przebiegi": [
+    0,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "znaki": {
+    "0010_102": {
+     "nazwa": "jezdnia autostrady",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.0,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "round",
+       "grubosc_z_pola": {
+        "pole": "szerokoscNawierzchni",
+        "mnoznik": 0.09,
+        "dodatek": 0.2
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#691f68",
+       "grubosc": 0.0,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "round",
+       "grubosc_z_pola": {
+        "pole": "szerokoscNawierzchni",
+        "mnoznik": 0.09,
+        "dodatek": 0.0
+       },
+       "przebieg": 11
+      }
+     ]
+    },
+    "0010_107": {
+     "nazwa": "jezdnia drogi ekspresowej lub głównej ruchu przyspieszonego",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.0,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "round",
+       "narozniki": "round",
+       "grubosc_z_pola": {
+        "pole": "szerokoscNawierzchni",
+        "mnoznik": 0.09,
+        "dodatek": 0.4
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#e95f4e",
+       "grubosc": 0.0,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "round",
+       "narozniki": "round",
+       "grubosc_z_pola": {
+        "pole": "szerokoscNawierzchni",
+        "mnoznik": 0.09,
+        "dodatek": 0.0
+       },
+       "przebieg": 10
+      }
+     ]
+    },
+    "0010_116_1": {
+     "nazwa": "jezdnia drogi głównej (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.0,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "round",
+       "narozniki": "round",
+       "grubosc_z_pola": {
+        "pole": "szerokoscNawierzchni",
+        "mnoznik": 0.09,
+        "dodatek": 0.2
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffd500",
+       "grubosc": 0.0,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "round",
+       "narozniki": "round",
+       "grubosc_z_pola": {
+        "pole": "szerokoscNawierzchni",
+        "mnoznik": 0.09,
+        "dodatek": 0.0
+       },
+       "przebieg": 9
+      }
+     ]
+    },
+    "0010_116_2": {
+     "nazwa": "jezdnia drogi głównej (symbol)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.7,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffd500",
+       "grubosc": 0.5,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przebieg": 8
+      }
+     ]
+    },
+    "0010_120_1": {
+     "nazwa": "jezdnia drogi zbiorczej o nawierzchni twardej (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.0,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "round",
+       "narozniki": "round",
+       "grubosc_z_pola": {
+        "pole": "szerokoscNawierzchni",
+        "mnoznik": 0.09,
+        "dodatek": 0.2
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 0.0,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "round",
+       "narozniki": "round",
+       "grubosc_z_pola": {
+        "pole": "szerokoscNawierzchni",
+        "mnoznik": 0.09,
+        "dodatek": 0.0
+       },
+       "przebieg": 7
+      }
+     ]
+    },
+    "0010_120_2": {
+     "nazwa": "jezdnia drogi zbiorczej o nawierzchni twardej (symbol)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.5,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 0.3,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "round",
+       "narozniki": "round",
+       "przebieg": 6
+      }
+     ]
+    },
+    "0010_122_1": {
+     "nazwa": "jezdnia drogi lokalnej, dojazdowej lub innej o nawierzchni twardej (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.0,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "grubosc_z_pola": {
+        "pole": "szerokoscNawierzchni",
+        "mnoznik": 0.09,
+        "dodatek": 0.2
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 0.0,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "grubosc_z_pola": {
+        "pole": "szerokoscNawierzchni",
+        "mnoznik": 0.09,
+        "dodatek": 0.0
+       },
+       "przebieg": 5
+      }
+     ]
+    },
+    "0010_122_2": {
+     "nazwa": "jezdnia drogi lokalnej, dojazdowej lub innej o nawierzchni twardej (symbol)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.5,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 0.3,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "round",
+       "narozniki": "round",
+       "przebieg": 4
+      }
+     ]
+    },
+    "0010_124": {
+     "nazwa": "jezdnia drogi zbiorczej, lokalnej, dojazdowej lub innej o nawierzchni utwardzonej",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.35,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 0.15,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "round",
+       "narozniki": "round",
+       "przebieg": 3
+      }
+     ]
+    },
+    "0010_126": {
+     "nazwa": "droga lokalna gruntowa",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.25,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_127": {
+     "nazwa": "droga dojazdowa lub wewnętrzna gruntowa",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.15,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "SKTR_L",
+   "styl": "OT_SKTR_L pod gruntem [20].qml",
+   "pole": "kodKarto10k",
+   "filtr": {
+    "pole": "polozenie",
+    "wartosci": [
+     "pod powierzchnią gruntu"
+    ]
+   },
+   "min_skala": 10001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_202": {
+     "nazwa": "linia kolejowa zelektryfikowana wielotorowa",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.5,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 20.0,
+       "przesuniecie_wzdluz": 10.4,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 20.0,
+       "przesuniecie_wzdluz": 10.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.0,
+        "kolor": "#ff0000",
+        "kontur": "#232323",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 20.0,
+       "przesuniecie_wzdluz": 9.6,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_203": {
+     "nazwa": "linia kolejowa zelektryfikowana dwutorowa",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.5,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 20.0,
+       "przesuniecie_wzdluz": 10.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 20.0,
+       "przesuniecie_wzdluz": 10.4,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_204": {
+     "nazwa": "linia kolejowa zelektryfikowana jednotorowa",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.5,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 20.0,
+       "przesuniecie_wzdluz": 10.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_206": {
+     "nazwa": "linia kolejowa niezelektryfikowana wielotorowa",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.5,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 0.3,
+       "kreski": [
+        5.0,
+        15.0
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "bevel",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 20.0,
+       "przesuniecie_wzdluz": 12.5,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 20.0,
+       "przesuniecie_wzdluz": 12.1,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#232323",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 20.0,
+       "przesuniecie_wzdluz": 12.9,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#232323",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_207": {
+     "nazwa": "linia kolejowa niezelektryfikowana dwutorowa",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.5,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 0.3,
+       "kreski": [
+        5.0,
+        15.0
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 20.0,
+       "przesuniecie_wzdluz": 12.7,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 20.0,
+       "przesuniecie_wzdluz": 12.3,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#232323",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_208": {
+     "nazwa": "linia kolejowa niezelektryfikowana jednotorowa",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.5,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 0.3,
+       "kreski": [
+        5.0,
+        15.0
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "bevel",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 20.0,
+       "przesuniecie_wzdluz": 12.5,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_209": {
+     "nazwa": "linia kolejowa w budowie",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.5,
+       "kreski": [
+        6.0,
+        1.0
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "round",
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_211": {
+     "nazwa": "linia kolei wąskotorowej",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.25,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 15.0,
+       "przesuniecie_wzdluz": 7.5,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 0.85,
+        "kolor": "#000000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.15,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_213": {
+     "nazwa": "tor stacyjny",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.2,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "round",
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_217": {
+     "nazwa": "linia tramwajowa dwutorowa",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.2,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 10.0,
+       "przesuniecie_wzdluz": 10.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 0.8,
+        "kolor": "#000000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.1,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_218": {
+     "nazwa": "linia tramwajowa jednotorowa",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.2,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 10.0,
+       "przesuniecie_wzdluz": 10.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 0.8,
+        "kolor": "#ff0000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.1,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "KUPW_A",
+   "styl": "OT_KUPW_A [21].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 250001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_510": {
+     "nazwa": "granica poligonu wojskowego",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#e3005c",
+       "grubosc": 0.3,
+       "kreski": [
+        2.5,
+        0.6
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 3.1,
+       "przesuniecie_wzdluz": 1.25,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "triangle",
+        "rozmiar": 0.7,
+        "kolor": "#e3005c",
+        "kontur": "#e3005c",
+        "grubosc_konturu": 0.0,
+        "kat": 180.0,
+        "przesuniecie": [
+         0.0,
+         -0.5
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "TCPK_A",
+   "styl": "OT_TCPK_A [22].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 250001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_509": {
+     "nazwa": "granica parku krajobrazowego",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#3ea043",
+       "grubosc": 0.2,
+       "kreski": [
+        3.0,
+        1.0
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 4.0,
+       "przesuniecie_wzdluz": 1.6,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 0.5,
+        "kolor": "#3ea043",
+        "kontur": "#3ea043",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.25
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "TCRZ_A",
+   "styl": "OT_TCRZ_A [23].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 250001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_508_1": {
+     "nazwa": "granica rezerwatu przyrody",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#3ea043",
+       "grubosc": 0.25,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 4.0,
+       "przesuniecie_wzdluz": 0.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 0.5,
+        "kolor": "#3ea043",
+        "kontur": "#3ea043",
+        "grubosc_konturu": 0.25,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.35
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "TCPN_A",
+   "styl": "OT_TCPN_A [24].qml",
+   "pole": null,
+   "filtr": null,
+   "min_skala": 250001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "*": {
+     "nazwa": "",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#89ba17",
+       "grubosc": 1.2,
+       "kreski": null,
+       "przesuniecie": -0.45,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#3ea043",
+       "grubosc": 0.3,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 4.0,
+       "przesuniecie_wzdluz": 0.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 0.5,
+        "kolor": "#3ea043",
+        "kontur": "#3ea043",
+        "grubosc_konturu": 0.3,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.35
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "ADJA_A",
+   "styl": "OT_ADJA_A [25-29].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": null,
+   "przebiegi": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "znaki": {
+    "0010_504": {
+     "nazwa": "granica powiatu lub miasta na prawach powiatu",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#fae0eb",
+       "grubosc": 2.2,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#c73187",
+       "grubosc": 0.3,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "miter",
+       "przebieg": 2
+      }
+     ]
+    },
+    "0010_505": {
+     "nazwa": "granica gminy lub miasta na prawach gminy",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#fae0eb",
+       "grubosc": 1.8,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#c73187",
+       "grubosc": 0.2,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "miter",
+       "przebieg": 1
+      }
+     ]
+    },
+    "0010_506": {
+     "nazwa": "granica dzielnicy, delegatury lub miasta stanowiącego część gminy",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#c73187",
+       "grubosc": 0.2,
+       "kreski": [
+        6.0,
+        0.5
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "SKRP_L",
+   "styl": "OT_SKRP_L [30].qml",
+   "pole": "kodKarto10k",
+   "filtr": {
+    "pole": "polozenie",
+    "wartosci": [
+     "na powierzchni gruntu"
+    ]
+   },
+   "min_skala": 25001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_128_1": {
+     "nazwa": "alejka lub pasaż (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#696863",
+       "grubosc": 0.026,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "round",
+       "narozniki": "round",
+       "grubosc_z_pola": {
+        "pole": "szerokosc",
+        "mnoznik": 0.1,
+        "dodatek": 0.2
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 0.026,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "round",
+       "narozniki": "round",
+       "grubosc_z_pola": {
+        "pole": "szerokosc",
+        "mnoznik": 0.1,
+        "dodatek": 0.0
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_128_2": {
+     "nazwa": "alejka lub pasaż (symbol)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#696863",
+       "grubosc": 0.5,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "round",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 0.3,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "round",
+       "narozniki": "round",
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_129": {
+     "nazwa": "ścieżka",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#696863",
+       "grubosc": 0.2,
+       "kreski": [
+        1.5,
+        0.5
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "SKRP_L",
+   "styl": "OT_SKRP_L nad gruntem [47].qml",
+   "pole": "kodKarto10k",
+   "filtr": {
+    "pole": "polozenie",
+    "wartosci": [
+     "ponad powierzchnią gruntu poziom 1",
+     "ponad powierzchnią gruntu poziom 2",
+     "ponad powierzchnią gruntu poziom 3",
+     "ponad powierzchnią gruntu poziom 4"
+    ]
+   },
+   "min_skala": 25001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_128_1": {
+     "nazwa": "alejka lub pasaż (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#696863",
+       "grubosc": 0.026,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "grubosc_z_pola": {
+        "pole": "szerokosc",
+        "mnoznik": 0.1,
+        "dodatek": 0.2
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 0.026,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "grubosc_z_pola": {
+        "pole": "szerokosc",
+        "mnoznik": 0.1,
+        "dodatek": 0.0
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_128_2": {
+     "nazwa": "alejka lub pasaż (symbol)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#696863",
+       "grubosc": 0.5,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 0.3,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_129": {
+     "nazwa": "ścieżka",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#696863",
+       "grubosc": 0.2,
+       "kreski": [
+        1.5,
+        0.5
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "SKJZ_L",
+   "styl": "OT_SKJZ_L [31].qml",
+   "pole": "kodKarto10k",
+   "filtr": {
+    "pole": "polozenie",
+    "wartosci": [
+     "na powierzchni gruntu"
+    ]
+   },
+   "min_skala": 25001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_126": {
+     "nazwa": "droga lokalna gruntowa",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.25,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "round",
+       "narozniki": "miter",
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_127": {
+     "nazwa": "droga dojazdowa lub wewnętrzna gruntowa",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.15,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "round",
+       "narozniki": "miter",
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "SKDR_L",
+   "styl": "OT_SKDR_L [32].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": null,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_103": {
+     "nazwa": "autostrada w budowie",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 2.3,
+       "kreski": [
+        5.0,
+        1.0
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#691f68",
+       "grubosc": 1.9,
+       "kreski": [
+        5.0,
+        1.0
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.7,
+       "kreski": [
+        5.0,
+        1.0
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 0.3,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_108": {
+     "nazwa": "droga ekspresowa lub główna ruchu przyśpieszonego w budowie",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 2.2,
+       "kreski": [
+        5.0,
+        1.0
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#e95f4e",
+       "grubosc": 1.8,
+       "kreski": [
+        5.0,
+        1.0
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.2,
+       "kreski": [
+        5.0,
+        1.0
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "SKJZ_L",
+   "styl": "OT_SKJZ_L [33-38].qml",
+   "pole": "kodKarto10k",
+   "filtr": {
+    "pole": "polozenie",
+    "wartosci": [
+     "na powierzchni gruntu"
+    ]
+   },
+   "min_skala": null,
+   "przebiegi": [
+    0,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "znaki": {
+    "0010_102": {
+     "nazwa": "jezdnia autostrady",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.0,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "grubosc_z_pola": {
+        "pole": "szerokoscNawierzchni",
+        "mnoznik": 0.09,
+        "dodatek": 0.2
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#691f68",
+       "grubosc": 0.0,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "grubosc_z_pola": {
+        "pole": "szerokoscNawierzchni",
+        "mnoznik": 0.09,
+        "dodatek": 0.0
+       },
+       "przebieg": 11
+      }
+     ]
+    },
+    "0010_107": {
+     "nazwa": "jezdnia drogi ekspresowej lub głównej ruchu przyspieszonego",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.0,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "grubosc_z_pola": {
+        "pole": "szerokoscNawierzchni",
+        "mnoznik": 0.09,
+        "dodatek": 0.4
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#e95f4e",
+       "grubosc": 0.0,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "grubosc_z_pola": {
+        "pole": "szerokoscNawierzchni",
+        "mnoznik": 0.09,
+        "dodatek": 0.0
+       },
+       "przebieg": 10
+      }
+     ]
+    },
+    "0010_116_1": {
+     "nazwa": "jezdnia drogi głównej (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.0,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "grubosc_z_pola": {
+        "pole": "szerokoscNawierzchni",
+        "mnoznik": 0.09,
+        "dodatek": 0.2
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffd500",
+       "grubosc": 0.0,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "grubosc_z_pola": {
+        "pole": "szerokoscNawierzchni",
+        "mnoznik": 0.09,
+        "dodatek": 0.0
+       },
+       "przebieg": 9
+      }
+     ]
+    },
+    "0010_116_2": {
+     "nazwa": "jezdnia drogi głównej (symbol)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.7,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffd500",
+       "grubosc": 0.5,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przebieg": 8
+      }
+     ]
+    },
+    "0010_120_1": {
+     "nazwa": "jezdnia drogi zbiorczej o nawierzchni twardej (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.0,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "grubosc_z_pola": {
+        "pole": "szerokoscNawierzchni",
+        "mnoznik": 0.09,
+        "dodatek": 0.2
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 0.0,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "grubosc_z_pola": {
+        "pole": "szerokoscNawierzchni",
+        "mnoznik": 0.09,
+        "dodatek": 0.0
+       },
+       "przebieg": 7
+      }
+     ]
+    },
+    "0010_120_2": {
+     "nazwa": "jezdnia drogi zbiorczej o nawierzchni twardej (symbol)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.5,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 0.3,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "round",
+       "narozniki": "round",
+       "przebieg": 6
+      }
+     ]
+    },
+    "0010_122_1": {
+     "nazwa": "jezdnia drogi lokalnej, dojazdowej lub innej o nawierzchni twardej (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.0,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "grubosc_z_pola": {
+        "pole": "szerokoscNawierzchni",
+        "mnoznik": 0.09,
+        "dodatek": 0.2
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 0.0,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "grubosc_z_pola": {
+        "pole": "szerokoscNawierzchni",
+        "mnoznik": 0.09,
+        "dodatek": 0.0
+       },
+       "przebieg": 5
+      }
+     ]
+    },
+    "0010_122_2": {
+     "nazwa": "jezdnia drogi lokalnej, dojazdowej lub innej o nawierzchni twardej (symbol)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.5,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 0.3,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "round",
+       "narozniki": "round",
+       "przebieg": 4
+      }
+     ]
+    },
+    "0010_124": {
+     "nazwa": "jezdnia drogi lokalnej, dojazdowej lub innej o nawierzchni utwardzonej",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.35,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 0.15,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "round",
+       "narozniki": "round",
+       "przebieg": 3
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "OIKM_L",
+   "styl": "OT_OIKM_L [39].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 10001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_145": {
+     "nazwa": "miejsce poboru opłat",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#1a171b",
+       "grubosc": 0.3,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "SKTR_L",
+   "styl": "OT_SKTR_L [40].qml",
+   "pole": "kodKarto10k",
+   "filtr": {
+    "pole": "polozenie",
+    "wartosci": [
+     "na powierzchni gruntu"
+    ]
+   },
+   "min_skala": 100001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_202": {
+     "nazwa": "linia kolejowa zelektryfikowana wielotorowa",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.5,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 20.0,
+       "przesuniecie_wzdluz": 10.4,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 20.0,
+       "przesuniecie_wzdluz": 10.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.0,
+        "kolor": "#ff0000",
+        "kontur": "#232323",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 20.0,
+       "przesuniecie_wzdluz": 9.6,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_203": {
+     "nazwa": "linia kolejowa zelektryfikowana dwutorowa",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.5,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 20.0,
+       "przesuniecie_wzdluz": 10.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 20.0,
+       "przesuniecie_wzdluz": 10.4,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_204": {
+     "nazwa": "linia kolejowa zelektryfikowana jednotorowa",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.5,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 20.0,
+       "przesuniecie_wzdluz": 10.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_206": {
+     "nazwa": "linia kolejowa niezelektryfikowana wielotorowa",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.5,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 0.3,
+       "kreski": [
+        5.0,
+        15.0
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "bevel",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 20.0,
+       "przesuniecie_wzdluz": 12.5,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 20.0,
+       "przesuniecie_wzdluz": 12.1,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#232323",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 20.0,
+       "przesuniecie_wzdluz": 12.9,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#232323",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_207": {
+     "nazwa": "linia kolejowa niezelektryfikowana dwutorowa",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.5,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 0.3,
+       "kreski": [
+        5.0,
+        15.0
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 20.0,
+       "przesuniecie_wzdluz": 12.7,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 20.0,
+       "przesuniecie_wzdluz": 12.3,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#232323",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_208": {
+     "nazwa": "linia kolejowa niezelektryfikowana jednotorowa",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.5,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 0.3,
+       "kreski": [
+        5.0,
+        15.0
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "bevel",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 20.0,
+       "przesuniecie_wzdluz": 12.5,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_209": {
+     "nazwa": "linia kolejowa w budowie",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.5,
+       "kreski": [
+        6.0,
+        1.0
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "round",
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_211": {
+     "nazwa": "linia kolei wąskotorowej",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.25,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 15.0,
+       "przesuniecie_wzdluz": 7.5,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 0.85,
+        "kolor": "#000000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.15,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_213": {
+     "nazwa": "tor stacyjny",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.2,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "round",
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_217": {
+     "nazwa": "linia tramwajowa dwutorowa",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.2,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 10.0,
+       "przesuniecie_wzdluz": 10.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 0.8,
+        "kolor": "#000000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.1,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_218": {
+     "nazwa": "linia tramwajowa jednotorowa",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.2,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 10.0,
+       "przesuniecie_wzdluz": 10.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 0.8,
+        "kolor": "#ff0000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.1,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "BUIB_L",
+   "styl": "OT_BUIB_L [41].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 25001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_226": {
+     "nazwa": "peron lub rampa kolejowa",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#1a171b",
+       "grubosc": 0.5,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 0.3,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "miter",
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_351_2": {
+     "nazwa": "tężnia (symbol)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#792827",
+       "grubosc": 0.5,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#d2a564",
+       "grubosc": 0.1,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "miter",
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "BUIB_A",
+   "styl": "OT_BUIB_A [41].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 25001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_226": {
+     "nazwa": "peron lub rampa kolejowa",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#ffffff",
+       "kontur": "#1a171b",
+       "grubosc_konturu": 0.1,
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_350": {
+     "nazwa": "amfiteatr",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#ffffff",
+       "kontur": "#1a171b",
+       "grubosc_konturu": 0.1,
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "kreskowanie",
+       "kat": 45.0,
+       "odstep": 1.0,
+       "linia": {
+        "rodzaj": "linia",
+        "kolor": "#1a171b",
+        "grubosc": 0.1,
+        "kreski": null,
+        "przesuniecie": 0.0,
+        "koncowki": "butt",
+        "narozniki": "miter"
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_351_1": {
+     "nazwa": "tężnia (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#d2a564",
+       "kontur": "#792827",
+       "grubosc_konturu": 0.2,
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "OIOR_A",
+   "styl": "OT_OIOR_A [42].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 250001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_325_1": {
+     "nazwa": "budynek gospodarczy (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#bdb9b6",
+       "kontur": "#1a171b",
+       "grubosc_konturu": 0.1,
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_326_1": {
+     "nazwa": "budynek zrujnowany lub ruina zabytkowa (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#ffffff",
+       "kontur": "#ffffff",
+       "grubosc_konturu": 0.0,
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#1a171b",
+       "grubosc": 0.1,
+       "kreski": [
+        0.3,
+        0.4
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_336": {
+     "nazwa": "wiata lub altana",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#ffffff",
+       "kontur": "#ffffff",
+       "grubosc_konturu": 0.26,
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#1a171b",
+       "grubosc": 0.1,
+       "kreski": [
+        1.0,
+        0.5
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_337": {
+     "nazwa": "szklarnia",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#9dc0a4",
+       "kontur": "#1a171b",
+       "grubosc_konturu": 0.1,
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "BUWT_A",
+   "styl": "OT_BUWT_A [42].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 250001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_324": {
+     "nazwa": "budynek przemysłowy wysoki",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#9992bf",
+       "kontur": "#1a171b",
+       "grubosc_konturu": 0.3,
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "BUBD_A",
+   "styl": "OT_BUBD_A [42].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 250001.0,
+   "przebiegi": [
+    0,
+    1
+   ],
+   "znaki": {
+    "0010_317_1": {
+     "nazwa": "budynek mieszkalny wielorodzinny (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#cc6415",
+       "kontur": "#1a171b",
+       "grubosc_konturu": 0.2,
+       "przebieg": 1
+      }
+     ]
+    },
+    "0010_318_1": {
+     "nazwa": "budynek mieszkalny jednorodzinny (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#cc6415",
+       "kontur": "#1a171b",
+       "grubosc_konturu": 0.1,
+       "przebieg": 1
+      }
+     ]
+    },
+    "0010_319": {
+     "nazwa": "budynek mieszkalny wysoki",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#cc6415",
+       "kontur": "#1a171b",
+       "grubosc_konturu": 0.3,
+       "przebieg": 1
+      }
+     ]
+    },
+    "0010_320_1": {
+     "nazwa": "budynek użyteczności publicznej (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#792827",
+       "kontur": "#1a171b",
+       "grubosc_konturu": 0.1,
+       "przebieg": 1
+      }
+     ]
+    },
+    "0010_321": {
+     "nazwa": "budynek użyteczności publicznej wysoki",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#792827",
+       "kontur": "#1a171b",
+       "grubosc_konturu": 0.3,
+       "przebieg": 1
+      }
+     ]
+    },
+    "0010_323_1": {
+     "nazwa": "budynek przemysłowy (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#9992bf",
+       "kontur": "#1a171b",
+       "grubosc_konturu": 0.1,
+       "przebieg": 1
+      }
+     ]
+    },
+    "0010_324": {
+     "nazwa": "budynek przemysłowy wysoki",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#9992bf",
+       "kontur": "#1a171b",
+       "grubosc_konturu": 0.3,
+       "przebieg": 1
+      }
+     ]
+    },
+    "0010_325_1": {
+     "nazwa": "budynek gospodarczy (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#bdb9b6",
+       "kontur": "#1a171b",
+       "grubosc_konturu": 0.1,
+       "przebieg": 1
+      }
+     ]
+    },
+    "0010_326_1": {
+     "nazwa": "budynek zrujnowany lub ruina zabytkowa (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#ffffff",
+       "kontur": "#ffffff",
+       "grubosc_konturu": 0.0,
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#1a171b",
+       "grubosc": 0.1,
+       "kreski": [
+        0.3,
+        0.4
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_327_1": {
+     "nazwa": "świątynia chrześcijańska: kościół lub cerkiew (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#b44187",
+       "kontur": "#1a171b",
+       "grubosc_konturu": 0.1,
+       "przebieg": 1
+      },
+      {
+       "rodzaj": "znaczek_w_srodku",
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "0010_327_1_krzyz",
+        "rozmiar": 0.6676,
+        "kolor": "#ff0000",
+        "kontur": "#232323",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_328_1": {
+     "nazwa": "świątynia niechrześcijańska (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#b44187",
+       "kontur": "#1a171b",
+       "grubosc_konturu": 0.1,
+       "przebieg": 1
+      },
+      {
+       "rodzaj": "znaczek_w_srodku",
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "0010_328_1_krzyz",
+        "rozmiar": 0.6676,
+        "kolor": "#b44187",
+        "kontur": "#232323",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_329_1": {
+     "nazwa": "kaplica (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#b44187",
+       "kontur": "#1a171b",
+       "grubosc_konturu": 0.1,
+       "przebieg": 1
+      },
+      {
+       "rodzaj": "znaczek_w_srodku",
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "0010_329_1_krzyz",
+        "rozmiar": 0.3996,
+        "kolor": "#b44187",
+        "kontur": "#232323",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_337": {
+     "nazwa": "szklarnia",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#9dc0a4",
+       "kontur": "#1a171b",
+       "grubosc_konturu": 0.1,
+       "przebieg": 1
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "BUBD_A",
+   "styl": "OT_BUBD_A symbol [43].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 10001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_327_2": {
+     "nazwa": "świątynia chrześcijańska: kościół lub cerkiew (symbol)",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_w_srodku",
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "0010_327_2",
+        "rozmiar": 1.5039,
+        "kolor": "#000000",
+        "kontur": "#ffffff",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_328_2": {
+     "nazwa": "świątynia niechrześcijańska (symbol)",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_w_srodku",
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "0010_328_2",
+        "rozmiar": 1.5,
+        "kolor": "#000000",
+        "kontur": "#ffffff",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_329_2": {
+     "nazwa": "kaplica (symbol)",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_w_srodku",
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "0010_329_2",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#ffffff",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_630": {
+     "nazwa": "latarnia morska",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_w_srodku",
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "0010_630",
+        "rozmiar": 2.1285,
+        "kolor": "#ff0000",
+        "kontur": "#232323",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "OIOR_L",
+   "styl": "OT_OIOR_L [44].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 25001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_348": {
+     "nazwa": "mur historyczny",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.3,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 2.0,
+       "przesuniecie_wzdluz": 0.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 0.4,
+        "kolor": "#ff0000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.3,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         -0.35
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_629_1": {
+     "nazwa": "pomost lub molo (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#696863",
+       "grubosc": 0.7,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "round",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 0.4,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "bevel",
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_629_2": {
+     "nazwa": "pomost lub molo (symbol)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#696863",
+       "grubosc": 0.5,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "round",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 0.3,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "bevel",
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "BUUO_L",
+   "styl": "OT_BUUO_L [45].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 25001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_349": {
+     "nazwa": "ściana oporowa",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.2,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "bevel",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 1.5,
+       "przesuniecie_wzdluz": 0.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 0.3,
+        "kolor": "#000000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.14,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         -0.4
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_626": {
+     "nazwa": "brzeg umocniony",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.2,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "round",
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_627": {
+     "nazwa": "ostroga brzegowa",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#53aedd",
+       "grubosc": 0.5,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 0.3,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "round",
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_628": {
+     "nazwa": "falochron",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.3,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "bevel",
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "BUIN_L",
+   "styl": "OT_BUIN_L [46].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 25001.0,
+   "przebiegi": [
+    0,
+    1,
+    2,
+    8
+   ],
+   "znaki": {
+    "0010_131_1": {
+     "nazwa": "tunel drogowy (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 0.0,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "grubosc_z_pola": {
+        "pole": "szerokosc",
+        "mnoznik": 0.1,
+        "dodatek": 0.0
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.1,
+       "kreski": [
+        1.0,
+        0.5
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przesuniecie_z_pola": {
+        "pole": "szerokosc",
+        "mnoznik": -0.05,
+        "dodatek": -0.0
+       },
+       "przebieg": 8
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.1,
+       "kreski": [
+        1.0,
+        0.5
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przesuniecie_z_pola": {
+        "pole": "szerokosc",
+        "mnoznik": 0.05,
+        "dodatek": 0.0
+       },
+       "przebieg": 8
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "na_poczatku",
+       "odstep": 1.0,
+       "przesuniecie_wzdluz": 0.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.3,
+        "kolor": "#691717",
+        "kontur": "#691717",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ],
+        "rozmiar_z_pola": {
+         "pole": "szerokosc",
+         "mnoznik": 0.13,
+         "dodatek": 0.0
+        }
+       },
+       "przebieg": 8
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "na_koncu",
+       "odstep": 0.3,
+       "przesuniecie_wzdluz": 0.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.3,
+        "kolor": "#691717",
+        "kontur": "#691717",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ],
+        "rozmiar_z_pola": {
+         "pole": "szerokosc",
+         "mnoznik": 0.13,
+         "dodatek": 0.0
+        }
+       },
+       "przebieg": 8
+      }
+     ]
+    },
+    "0010_131_2": {
+     "nazwa": "tunel drogowy (symbol)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 0.0,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "bevel",
+       "grubosc_z_pola": {
+        "pole": "szerokosc",
+        "mnoznik": 0.1,
+        "dodatek": 0.0
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.1,
+       "kreski": [
+        1.0,
+        0.5
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przesuniecie_z_pola": {
+        "pole": "szerokosc",
+        "mnoznik": -0.05,
+        "dodatek": -0.0
+       },
+       "przebieg": 8
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.1,
+       "kreski": [
+        1.0,
+        0.5
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przesuniecie_z_pola": {
+        "pole": "szerokosc",
+        "mnoznik": 0.05,
+        "dodatek": 0.0
+       },
+       "przebieg": 8
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "na_poczatku",
+       "odstep": 1.0,
+       "przesuniecie_wzdluz": 0.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.3,
+        "kolor": "#691717",
+        "kontur": "#691717",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ],
+        "rozmiar_z_pola": {
+         "pole": "szerokosc",
+         "mnoznik": 0.13,
+         "dodatek": 0.0
+        }
+       },
+       "przebieg": 8
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "na_koncu",
+       "odstep": 0.3,
+       "przesuniecie_wzdluz": 0.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.3,
+        "kolor": "#691717",
+        "kontur": "#691717",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ],
+        "rozmiar_z_pola": {
+         "pole": "szerokosc",
+         "mnoznik": 0.13,
+         "dodatek": 0.0
+        }
+       },
+       "przebieg": 8
+      }
+     ]
+    },
+    "0010_133_1": {
+     "nazwa": "most, wiadukt lub estakada drogowa (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.2,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "bevel",
+       "przebieg": 2
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.2,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "bevel",
+       "przebieg": 2
+      }
+     ]
+    },
+    "0010_133_2": {
+     "nazwa": "most, wiadukt lub estakada drogowa (symbol)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.2,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "bevel",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.2,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "miter",
+       "przebieg": 1
+      }
+     ]
+    },
+    "0010_134_1": {
+     "nazwa": "kładka (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.2,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "bevel",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.2,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "bevel",
+       "przebieg": 1
+      }
+     ]
+    },
+    "0010_134_2": {
+     "nazwa": "kładka (symbol)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.2,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "bevel",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.2,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "bevel",
+       "przebieg": 1
+      }
+     ]
+    },
+    "0010_151_1": {
+     "nazwa": "przejście dla zwierząt",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#64b45a",
+       "grubosc": 1.2,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "bevel",
+       "przebieg": 1
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#f8fbf4",
+       "grubosc": 0.8,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "bevel",
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_219_1": {
+     "nazwa": "tunel kolejowy (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#1a171b",
+       "grubosc": 0.5,
+       "kreski": [
+        1.0,
+        0.5
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "na_poczatku",
+       "odstep": 0.3,
+       "przesuniecie_wzdluz": 0.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.3,
+        "kolor": "#ff0000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.1,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "na_koncu",
+       "odstep": 0.3,
+       "przesuniecie_wzdluz": 0.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.3,
+        "kolor": "#ff0000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.1,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_219_2": {
+     "nazwa": "tunel kolejowy (symbol)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#1a171b",
+       "grubosc": 0.5,
+       "kreski": [
+        1.0,
+        0.5
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "na_poczatku",
+       "odstep": 0.3,
+       "przesuniecie_wzdluz": 0.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.3,
+        "kolor": "#ff0000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.1,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "na_koncu",
+       "odstep": 0.3,
+       "przesuniecie_wzdluz": 0.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.3,
+        "kolor": "#ff0000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.1,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_220_1": {
+     "nazwa": "most, wiadukt lub estakada kolejowa (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.2,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "bevel",
+       "przebieg": 1
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.2,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "bevel",
+       "przebieg": 2
+      }
+     ]
+    },
+    "0010_220_2": {
+     "nazwa": "most, wiadukt lub estakada kolejowa (symbol)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.2,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "bevel",
+       "przebieg": 1
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.2,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "bevel",
+       "przebieg": 2
+      }
+     ]
+    },
+    "0010_638_1": {
+     "nazwa": "akwedukt (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#006eaa",
+       "grubosc": 0.2,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przesuniecie_z_pola": {
+        "pole": "szerokosc",
+        "mnoznik": 0.05,
+        "dodatek": 0.2
+       },
+       "przebieg": 2
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#006eaa",
+       "grubosc": 0.2,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przesuniecie_z_pola": {
+        "pole": "szerokosc",
+        "mnoznik": 0.05,
+        "dodatek": -0.2
+       },
+       "przebieg": 2
+      }
+     ]
+    },
+    "0010_638_2": {
+     "nazwa": "akwedukt (symbol)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#006eaa",
+       "grubosc": 0.2,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przesuniecie_z_pola": {
+        "pole": "szerokosc",
+        "mnoznik": 0.05,
+        "dodatek": 0.2
+       },
+       "przebieg": 2
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#006eaa",
+       "grubosc": 0.2,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przesuniecie_z_pola": {
+        "pole": "szerokosc",
+        "mnoznik": 0.05,
+        "dodatek": -0.2
+       },
+       "przebieg": 2
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "SKJZ_L",
+   "styl": "OT_SKJZ_L nad gruntem [47].qml",
+   "pole": "kodKarto10k",
+   "filtr": {
+    "pole": "polozenie",
+    "wartosci": [
+     "ponad powierzchnią gruntu poziom 1",
+     "ponad powierzchnią gruntu poziom 2",
+     "ponad powierzchnią gruntu poziom 3",
+     "ponad powierzchnią gruntu poziom 4"
+    ]
+   },
+   "min_skala": null,
+   "przebiegi": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    8,
+    9,
+    10,
+    11
+   ],
+   "znaki": {
+    "0010_102": {
+     "nazwa": "jezdnia autostrady",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.0,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "grubosc_z_pola": {
+        "pole": "szerokoscNawierzchni",
+        "mnoznik": 0.09,
+        "dodatek": 0.2
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#691f68",
+       "grubosc": 0.0,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "grubosc_z_pola": {
+        "pole": "szerokoscNawierzchni",
+        "mnoznik": 0.09,
+        "dodatek": 0.0
+       },
+       "przebieg": 11
+      }
+     ]
+    },
+    "0010_107": {
+     "nazwa": "jezdnia drogi ekspresowej lub głównej ruchu przyspieszonego",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.0,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "grubosc_z_pola": {
+        "pole": "szerokoscNawierzchni",
+        "mnoznik": 0.09,
+        "dodatek": 0.4
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#e95f4e",
+       "grubosc": 0.0,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "round",
+       "grubosc_z_pola": {
+        "pole": "szerokoscNawierzchni",
+        "mnoznik": 0.09,
+        "dodatek": 0.0
+       },
+       "przebieg": 10
+      }
+     ]
+    },
+    "0010_116_1": {
+     "nazwa": "jezdnia drogi głównej (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.1,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przebieg": 1
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.1,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przebieg": 1
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffd500",
+       "grubosc": 0.0,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przebieg": 9
+      }
+     ]
+    },
+    "0010_116_2": {
+     "nazwa": "jezdnia drogi głównej (symbol)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.7,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffd500",
+       "grubosc": 0.5,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "round",
+       "narozniki": "round",
+       "przebieg": 8
+      }
+     ]
+    },
+    "0010_120_1": {
+     "nazwa": "jezdnia drogi zbiorczej o nawierzchni twardej (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.026,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przebieg": 2
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 0.026,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przebieg": 3
+      }
+     ]
+    },
+    "0010_120_2": {
+     "nazwa": "jezdnia drogi zbiorczej o nawierzchni twardej (symbol)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.5,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 0.3,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "round",
+       "narozniki": "round",
+       "przebieg": 6
+      }
+     ]
+    },
+    "0010_122_1": {
+     "nazwa": "jezdnia drogi lokalnej, dojazdowej lub innej o nawierzchni twardej (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.0,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "grubosc_z_pola": {
+        "pole": "szerokoscNawierzchni",
+        "mnoznik": 0.09,
+        "dodatek": 0.2
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 0.0,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "round",
+       "narozniki": "round",
+       "grubosc_z_pola": {
+        "pole": "szerokoscNawierzchni",
+        "mnoznik": 0.09,
+        "dodatek": 0.0
+       },
+       "przebieg": 5
+      }
+     ]
+    },
+    "0010_122_2": {
+     "nazwa": "jezdnia drogi lokalnej, dojazdowej lub innej o nawierzchni twardej (symbol)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.5,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 0.3,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "round",
+       "narozniki": "round",
+       "przebieg": 4
+      }
+     ]
+    },
+    "0010_124": {
+     "nazwa": "jezdnia drogi zbiorczej, lokalnej, dojazdowej lub innej o nawierzchni utwardzonej",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.35,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 0.15,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "round",
+       "narozniki": "round",
+       "przebieg": 3
+      }
+     ]
+    },
+    "0010_126": {
+     "nazwa": "droga lokalna gruntowa",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.25,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_127": {
+     "nazwa": "droga dojazdowa lub wewnętrzna gruntowa",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.15,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "SKTR_L",
+   "styl": "OT_SKTR_L nad gruntem [47].qml",
+   "pole": "kodKarto10k",
+   "filtr": {
+    "pole": "polozenie",
+    "wartosci": [
+     "ponad powierzchnią gruntu poziom 1",
+     "ponad powierzchnią gruntu poziom 2",
+     "ponad powierzchnią gruntu poziom 3",
+     "ponad powierzchnią gruntu poziom 4"
+    ]
+   },
+   "min_skala": 10001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_202": {
+     "nazwa": "linia kolejowa zelektryfikowana wielotorowa",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.5,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 20.0,
+       "przesuniecie_wzdluz": 10.4,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 20.0,
+       "przesuniecie_wzdluz": 10.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.0,
+        "kolor": "#ff0000",
+        "kontur": "#232323",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 20.0,
+       "przesuniecie_wzdluz": 9.6,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_203": {
+     "nazwa": "linia kolejowa zelektryfikowana dwutorowa",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.5,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 20.0,
+       "przesuniecie_wzdluz": 10.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 20.0,
+       "przesuniecie_wzdluz": 10.4,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_204": {
+     "nazwa": "linia kolejowa zelektryfikowana jednotorowa",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.5,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 20.0,
+       "przesuniecie_wzdluz": 10.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_206": {
+     "nazwa": "linia kolejowa niezelektryfikowana wielotorowa",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.5,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 0.3,
+       "kreski": [
+        5.0,
+        15.0
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "bevel",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 20.0,
+       "przesuniecie_wzdluz": 12.5,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 20.0,
+       "przesuniecie_wzdluz": 12.1,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#232323",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 20.0,
+       "przesuniecie_wzdluz": 12.9,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#232323",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_207": {
+     "nazwa": "linia kolejowa niezelektryfikowana dwutorowa",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.5,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 0.3,
+       "kreski": [
+        5.0,
+        15.0
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 20.0,
+       "przesuniecie_wzdluz": 12.7,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 20.0,
+       "przesuniecie_wzdluz": 12.3,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#232323",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_208": {
+     "nazwa": "linia kolejowa niezelektryfikowana jednotorowa",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.5,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 0.3,
+       "kreski": [
+        5.0,
+        15.0
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "bevel",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 20.0,
+       "przesuniecie_wzdluz": 12.5,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_209": {
+     "nazwa": "linia kolejowa w budowie",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.5,
+       "kreski": [
+        6.0,
+        1.0
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "round",
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_211": {
+     "nazwa": "linia kolei wąskotorowej",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.25,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 15.0,
+       "przesuniecie_wzdluz": 7.5,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 0.85,
+        "kolor": "#000000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.15,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_213": {
+     "nazwa": "tor stacyjny",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.2,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "round",
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_217": {
+     "nazwa": "linia tramwajowa dwutorowa",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.2,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 10.0,
+       "przesuniecie_wzdluz": 10.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 0.8,
+        "kolor": "#000000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.1,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_218": {
+     "nazwa": "linia tramwajowa jednotorowa",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.2,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 10.0,
+       "przesuniecie_wzdluz": 10.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 0.8,
+        "kolor": "#ff0000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.1,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "BUIN_L",
+   "styl": "OT_BUIN_L zejscie [47].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 25001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_136": {
+     "nazwa": "zejście do przejścia podziemnego",
+     "warstwy": [
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "na_poczatku",
+       "odstep": 0.3,
+       "przesuniecie_wzdluz": 0.0,
+       "obracaj": false,
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "0010_136",
+        "rozmiar": 1.8,
+        "kolor": "#000000",
+        "kontur": "#ffffff",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "SKPP_L",
+   "styl": "OT_SKPP_L [48].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 25001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_137": {
+     "nazwa": "przeprawa promowa lub łodziami, bród",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#691717",
+       "grubosc": 0.3,
+       "kreski": [
+        0.5,
+        0.3
+       ],
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "BUHD_A",
+   "styl": "OT_BUHD_A [49].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 10001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_616": {
+     "nazwa": "zapora",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.5,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.5,
+       "kreski": [
+        0.5,
+        0.4
+       ],
+       "przesuniecie": -0.5,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_617_1": {
+     "nazwa": "śluza (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.2,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "miter",
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "BUHD_L",
+   "styl": "OT_BUHD_L [49].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 10001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_616": {
+     "nazwa": "zapora",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.5,
+       "kreski": null,
+       "przesuniecie": 0.5,
+       "koncowki": "projecting",
+       "narozniki": "bevel",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.5,
+       "kreski": [
+        0.5,
+        0.4
+       ],
+       "przesuniecie": 1.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_620": {
+     "nazwa": "jaz",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.3,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "OIPR_P",
+   "styl": "OT_OIPR_P [50].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 10001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_612": {
+     "nazwa": "źródło",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_svg",
+       "svg": "0010_612",
+       "rozmiar": 1.5,
+       "kolor": "#72d929",
+       "kontur": "#ffffff",
+       "kat": 0.0,
+       "przesuniecie": [
+        0.0,
+        0.0
+       ],
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_728": {
+     "nazwa": "mały las",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_svg",
+       "svg": "0010_728",
+       "rozmiar": 1.3,
+       "kolor": "#5025c8",
+       "kontur": "#ffffff",
+       "kat": 0.0,
+       "przesuniecie": [
+        0.0,
+        0.0
+       ],
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_731": {
+     "nazwa": "pojedyncze drzewo lub grupa drzew",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_svg",
+       "svg": "0010_731",
+       "rozmiar": 0.8993,
+       "kolor": "#e462ed",
+       "kontur": "#ffffff",
+       "kat": 0.0,
+       "przesuniecie": [
+        0.0,
+        0.0
+       ],
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_732": {
+     "nazwa": "drzewo - pomnik przyrody",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_svg",
+       "svg": "0010_732",
+       "rozmiar": 1.8,
+       "kolor": "#e31a1c",
+       "kontur": "#ffffff",
+       "kat": 0.0,
+       "przesuniecie": [
+        0.0,
+        0.0
+       ],
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_734": {
+     "nazwa": "kępa krzewów lub kosodrzewiny",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_svg",
+       "svg": "0010_734",
+       "rozmiar": 0.6,
+       "kolor": "#1fcdc2",
+       "kontur": "#ffffff",
+       "kat": 0.0,
+       "przesuniecie": [
+        0.0,
+        0.0
+       ],
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_815": {
+     "nazwa": "odosobniona skała",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_svg",
+       "svg": "bez_nazwy",
+       "rozmiar": 1.4997,
+       "kolor": "#beb297",
+       "kontur": "#232323",
+       "kat": 0.0,
+       "przesuniecie": [
+        0.0,
+        0.0
+       ],
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_816": {
+     "nazwa": "głaz narzutowy lub grupa głazów",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_svg",
+       "svg": "bez_nazwy",
+       "rozmiar": 1.4,
+       "kolor": "#46d66a",
+       "kontur": "#ffffff",
+       "kat": 0.0,
+       "przesuniecie": [
+        0.0,
+        0.0
+       ],
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_817": {
+     "nazwa": "wejście do jaskini",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_svg",
+       "svg": "bez_nazwy",
+       "rozmiar": 2.2,
+       "kolor": "#276acd",
+       "kontur": "#ffffff",
+       "kat": 0.0,
+       "przesuniecie": [
+        0.0,
+        0.0
+       ],
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "BUTR_L",
+   "styl": "OT_BUTR_L [51].qml",
+   "pole": " kod10k",
+   "filtr": null,
+   "min_skala": 25001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_227": {
+     "nazwa": "kolej liniowa",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.2,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "round",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 8.0,
+       "przesuniecie_wzdluz": 0.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "bez_nazwy",
+        "rozmiar": 0.6,
+        "kolor": "#000000",
+        "kontur": "#ffffff",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_228": {
+     "nazwa": "wyciąg narciarski",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#000000",
+       "grubosc": 0.2,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "bevel",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "w_wierzcholkach",
+       "odstep": 0.3,
+       "przesuniecie_wzdluz": 0.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "bez_nazwy",
+        "rozmiar": 0.6,
+        "kolor": "#000000",
+        "kontur": "#ffffff",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 8.0,
+       "przesuniecie_wzdluz": 1.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "line",
+        "rozmiar": 0.5,
+        "kolor": "#000000",
+        "kontur": "#000000",
+        "grubosc_konturu": 0.2,
+        "kat": 45.0,
+        "przesuniecie": [
+         0.3,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_229": {
+     "nazwa": "pochylnia",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#006eaa",
+       "grubosc": 0.2,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 5.0,
+       "przesuniecie_wzdluz": 0.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "0010_229_slup",
+        "rozmiar": 0.6,
+        "kolor": "#006eaa",
+        "kontur": "#ffffff",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_433_1": {
+     "nazwa": "suwnica (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 1.5,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#4e4a96",
+       "grubosc": 0.1,
+       "kreski": [
+        2.0,
+        0.8
+       ],
+       "przesuniecie": 0.8,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 2.8,
+       "przesuniecie_wzdluz": 2.4,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "circle",
+        "rozmiar": 0.2,
+        "kolor": "#4e4a96",
+        "kontur": "#4e4a96",
+        "grubosc_konturu": 0.0,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#4e4a96",
+       "grubosc": 0.1,
+       "kreski": [
+        2.0,
+        0.8
+       ],
+       "przesuniecie": -0.8,
+       "koncowki": "butt",
+       "narozniki": "bevel",
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_433_2": {
+     "nazwa": "suwnica (symbol)",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#ffffff",
+       "grubosc": 6.0,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "bevel",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#4e4a96",
+       "grubosc": 0.1,
+       "kreski": [
+        2.0,
+        0.8
+       ],
+       "przesuniecie": 0.5,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 2.8,
+       "przesuniecie_wzdluz": 2.4,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "circle",
+        "rozmiar": 0.2,
+        "kolor": "#4e4a96",
+        "kontur": "#4e4a96",
+        "grubosc_konturu": 0.0,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#4e4a96",
+       "grubosc": 0.1,
+       "kreski": [
+        2.0,
+        0.8
+       ],
+       "przesuniecie": -0.5,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_434": {
+     "nazwa": "taśmociąg",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#4e4a96",
+       "grubosc": 0.3,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "SUPR_L",
+   "styl": "OT_SUPR_L [52].qml",
+   "pole": null,
+   "filtr": null,
+   "min_skala": 25001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "*": {
+     "nazwa": "",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#4e4a96",
+       "grubosc": 0.1,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "projecting",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 8.0,
+       "przesuniecie_wzdluz": 0.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek",
+        "ksztalt": "circle",
+        "rozmiar": 0.8,
+        "kolor": "#ffffff",
+        "kontur": "#4e4a96",
+        "grubosc_konturu": 0.2,
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "SULN_L",
+   "styl": "OT_SULN_L [53].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 25001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_444": {
+     "nazwa": "linia elektroenergetyczna najwyższego, wysokiego lub średniego napięcia",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#1a171b",
+       "grubosc": 0.1,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 25.0,
+       "przesuniecie_wzdluz": 20.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "bez_nazwy",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#ffffff",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 25.0,
+       "przesuniecie_wzdluz": 10.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "bez_nazwy",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#ffffff",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_446": {
+     "nazwa": "linia elektroenergetyczna najwyższego, wysokiego lub średniego napięcia na słupach energetycznych",
+     "warstwy": [
+      {
+       "rodzaj": "linia",
+       "kolor": "#1a171b",
+       "grubosc": 0.1,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 25.0,
+       "przesuniecie_wzdluz": 20.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "bez_nazwy",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#ffffff",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczki_na_linii",
+       "rozmieszczenie": "co_odstep",
+       "odstep": 25.0,
+       "przesuniecie_wzdluz": 10.0,
+       "obracaj": true,
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "bez_nazwy",
+        "rozmiar": 1.0,
+        "kolor": "#000000",
+        "kontur": "#ffffff",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "BUTR_P",
+   "styl": "OT_BUTR_P [54].qml",
+   "pole": "kod10k",
+   "filtr": null,
+   "min_skala": null,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_215": {
+     "nazwa": "obrotnica kolejowa",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek",
+       "ksztalt": "circle",
+       "rozmiar": 2.6,
+       "kolor": "#ffffff",
+       "kontur": "#1a171b",
+       "grubosc_konturu": 0.15,
+       "kat": 0.0,
+       "przesuniecie": [
+        0.0,
+        0.0
+       ],
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "BUZT_A",
+   "styl": "OT_BUZT_A [55].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 10001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_414_1": {
+     "nazwa": "zbiornik materiałów (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "kreskowanie",
+       "kat": 45.0,
+       "odstep": 0.8,
+       "linia": {
+        "rodzaj": "linia",
+        "kolor": "#4e4a96",
+        "grubosc": 0.1,
+        "kreski": null,
+        "przesuniecie": 0.0,
+        "koncowki": "butt",
+        "narozniki": "miter"
+       },
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "linia",
+       "kolor": "#4e4a96",
+       "grubosc": 0.1,
+       "kreski": null,
+       "przesuniecie": 0.0,
+       "koncowki": "butt",
+       "narozniki": "miter",
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_431_1": {
+     "nazwa": "osadnik (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#d9effa",
+       "kontur": "#4e4a96",
+       "grubosc_konturu": 0.1,
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_431_2": {
+     "nazwa": "osadnik (symbol)",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_w_srodku",
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "0010_431_2",
+        "rozmiar": 1.5,
+        "kolor": "#ff0000",
+        "kontur": "#232323",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "BUZT_P",
+   "styl": "OT_BUZT_P [56].qml",
+   "pole": null,
+   "filtr": null,
+   "min_skala": 10001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "*": {
+     "nazwa": "",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_svg",
+       "svg": "0010_414_2",
+       "rozmiar": 1.5,
+       "kolor": "#e15989",
+       "kontur": "#232323",
+       "kat": 0.0,
+       "przesuniecie": [
+        0.0,
+        0.0
+       ],
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "BUIT_A",
+   "styl": "OT_BUIT_A [57-58].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 10001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_413": {
+     "nazwa": "stacja paliw",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_w_srodku",
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "0010_413",
+        "rozmiar": 1.403,
+        "kolor": "#ff0000",
+        "kontur": "#232323",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_421_1": {
+     "nazwa": "podstacja elektroenergetyczna (w skali)",
+     "warstwy": [
+      {
+       "rodzaj": "wypelnienie",
+       "kolor": "#ffffff",
+       "kontur": "#1a171b",
+       "grubosc_konturu": 0.1,
+       "przebieg": 0
+      },
+      {
+       "rodzaj": "znaczek_w_srodku",
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "bez_nazwy",
+        "rozmiar": 2.0273,
+        "kolor": "#000000",
+        "kontur": "#ffffff",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "BUIT_P",
+   "styl": "OT_BUIT_P [58].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 10001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_412": {
+     "nazwa": "szyb naftowy lub gazowy",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_svg",
+       "svg": "0010_412",
+       "rozmiar": 1.5012,
+       "kolor": "#e9b186",
+       "kontur": "#000000",
+       "kat": 0.0,
+       "przesuniecie": [
+        0.0,
+        0.0
+       ],
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_413": {
+     "nazwa": "stacja paliw",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_svg",
+       "svg": "0010_413",
+       "rozmiar": 1.403,
+       "kolor": "#3cd331",
+       "kontur": "#000000",
+       "kat": 0.0,
+       "przesuniecie": [
+        0.0,
+        0.0
+       ],
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_422": {
+     "nazwa": "transformator",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_svg",
+       "svg": "0010_422",
+       "rozmiar": 1.0001,
+       "kolor": "#ca27d6",
+       "kontur": "#000000",
+       "kat": 0.0,
+       "przesuniecie": [
+        0.0,
+        0.0
+       ],
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_427": {
+     "nazwa": "stacja meteorologiczna",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_svg",
+       "svg": "0010_427",
+       "rozmiar": 2.2,
+       "kolor": "#2f96e5",
+       "kontur": "#000000",
+       "kat": 0.0,
+       "przesuniecie": [
+        0.0,
+        0.0
+       ],
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_447": {
+     "nazwa": "myjnia samochodowa",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_svg",
+       "svg": "0010_447",
+       "rozmiar": 3.0175,
+       "kolor": "#f3a6b2",
+       "kontur": "#232323",
+       "kat": 0.0,
+       "przesuniecie": [
+        0.0,
+        0.0
+       ],
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_448": {
+     "nazwa": "radar lub radiolatarnia",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_svg",
+       "svg": "0010_448",
+       "rozmiar": 2.4612,
+       "kolor": "#729b6f",
+       "kontur": "#232323",
+       "kat": 0.0,
+       "przesuniecie": [
+        0.0,
+        0.0
+       ],
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "BUWT_P",
+   "styl": "OT_BUWT_P [59].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 10001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_334": {
+     "nazwa": "maszt lub wieża",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_svg",
+       "svg": "0010_334 nowy",
+       "rozmiar": 1.2,
+       "kolor": "#5955da",
+       "kontur": "#000000",
+       "kat": 0.0,
+       "przesuniecie": [
+        0.0,
+        0.0
+       ],
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_411": {
+     "nazwa": "wieża szybu kopalnianego",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_svg",
+       "svg": "0010_411",
+       "rozmiar": 1.804,
+       "kolor": "#e5ab80",
+       "kontur": "#000000",
+       "kat": 0.0,
+       "przesuniecie": [
+        0.0,
+        0.0
+       ],
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_424": {
+     "nazwa": "komin",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_svg",
+       "svg": "bez_nazwy",
+       "rozmiar": 1.2,
+       "kolor": "#aeef88",
+       "kontur": "#000000",
+       "kat": 0.0,
+       "przesuniecie": [
+        0.0,
+        0.0
+       ],
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_425": {
+     "nazwa": "turbina wiatrowa",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_svg",
+       "svg": "0010_425",
+       "rozmiar": 2.0154,
+       "kolor": "#ff9e17",
+       "kontur": "#232323",
+       "kat": 0.0,
+       "przesuniecie": [
+        0.0,
+        0.0
+       ],
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_426": {
+     "nazwa": "maszt lub wieża telekomunikacyjna",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_svg",
+       "svg": "bez_nazwy",
+       "rozmiar": 1.2,
+       "kolor": "#8beadc",
+       "kontur": "#000000",
+       "kat": 0.0,
+       "przesuniecie": [
+        0.0,
+        0.0
+       ],
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_428": {
+     "nazwa": "słup energetyczny lub podpora kolei linowej",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_svg",
+       "svg": "bez_nazwy",
+       "rozmiar": 0.6,
+       "kolor": "#dc6dc2",
+       "kontur": "#000000",
+       "kat": 0.0,
+       "przesuniecie": [
+        0.0,
+        0.0
+       ],
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "OIOR_A",
+   "styl": "OT_OIOR_A wiatrak [60].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 10001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_335": {
+     "nazwa": "wiatrak",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_w_srodku",
+       "znaczek": {
+        "rodzaj": "znaczek_svg",
+        "svg": "0010_335",
+        "rozmiar": 1.9998,
+        "kolor": "#ff0000",
+        "kontur": "#232323",
+        "kat": 0.0,
+        "przesuniecie": [
+         0.0,
+         0.0
+        ]
+       },
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "OIOR_P",
+   "styl": "OT_OIOR_P [60].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 10001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_613": {
+     "nazwa": "studnia głębinowa",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_svg",
+       "svg": "0010_613",
+       "rozmiar": 1.2,
+       "kolor": "#2acca4",
+       "kontur": "#ffffff",
+       "kat": 0.0,
+       "przesuniecie": [
+        0.0,
+        0.0
+       ],
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_330": {
+     "nazwa": "figura, kapliczka lub krzyż",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_svg",
+       "svg": "0010_330",
+       "rozmiar": 1.025,
+       "kolor": "#e56887",
+       "kontur": "#ffffff",
+       "kat": 0.0,
+       "przesuniecie": [
+        0.0,
+        0.0
+       ],
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_331": {
+     "nazwa": "pomnik",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_svg",
+       "svg": "0010_331",
+       "rozmiar": 1.6,
+       "kolor": "#ba7ccf",
+       "kontur": "#ffffff",
+       "kat": 0.0,
+       "przesuniecie": [
+        0.0,
+        0.0
+       ],
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_332": {
+     "nazwa": "odosobniona mogiła",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_svg",
+       "svg": "0010_332",
+       "rozmiar": 1.4,
+       "kolor": "#6480d5",
+       "kontur": "#ffffff",
+       "kat": 0.0,
+       "przesuniecie": [
+        0.0,
+        0.0
+       ],
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_333": {
+     "nazwa": "bunkier lub schron",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_svg",
+       "svg": "0010_333",
+       "rozmiar": 1.2,
+       "kolor": "#81cb66",
+       "kontur": "#ffffff",
+       "kat": 0.0,
+       "przesuniecie": [
+        0.0,
+        0.0
+       ],
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_335": {
+     "nazwa": "wiatrak",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_svg",
+       "svg": "0010_335",
+       "rozmiar": 1.9998,
+       "kolor": "#d6a82a",
+       "kontur": "#ffffff",
+       "kat": 0.0,
+       "przesuniecie": [
+        0.0,
+        0.0
+       ],
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "OIKM_P",
+   "styl": "OT_OIKM_P [61].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 10001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_143": {
+     "nazwa": "przystanek autobusowy, tramwajowy, trolejbusowy",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_svg",
+       "svg": "0010_143",
+       "rozmiar": 1.5,
+       "kolor": "#cb77ba",
+       "kontur": "#ffffff",
+       "kat": 0.0,
+       "przesuniecie": [
+        0.0,
+        0.0
+       ],
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_225": {
+     "nazwa": "wejście do stacji metra",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_svg",
+       "svg": "0010_225",
+       "rozmiar": 1.8,
+       "kolor": "#74d188",
+       "kontur": "#ffffff",
+       "kat": 0.0,
+       "przesuniecie": [
+        0.0,
+        0.0
+       ],
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_631": {
+     "nazwa": "sygnalizator świetlny",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_svg",
+       "svg": "0010_631",
+       "rozmiar": 1.5772,
+       "kolor": "#e0bc61",
+       "kontur": "#ffffff",
+       "kat": 0.0,
+       "przesuniecie": [
+        0.0,
+        0.0
+       ],
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "KUKO_P",
+   "styl": "OT_KUKO_P [61].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 25001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_142": {
+     "nazwa": "dworzec autobusowy",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_svg",
+       "svg": "bez_nazwy",
+       "rozmiar": 2.0,
+       "kolor": "#91e857",
+       "kontur": "#000000",
+       "kat": -5.0,
+       "przesuniecie": [
+        0.0,
+        0.0
+       ],
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "klasa": "RTPW_P",
+   "styl": "OT_RTPW_P [63-64].qml",
+   "pole": "kodKarto10k",
+   "filtr": null,
+   "min_skala": 10001.0,
+   "przebiegi": [
+    0
+   ],
+   "znaki": {
+    "0010_819": {
+     "nazwa": "punkt wysokościowy",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek",
+       "ksztalt": "circle",
+       "rozmiar": 0.5,
+       "kolor": "#000000",
+       "kontur": "",
+       "grubosc_konturu": 0.0,
+       "kat": 0.0,
+       "przesuniecie": [
+        0.0,
+        0.0
+       ],
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_812": {
+     "nazwa": "kopiec lub hałda",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_svg",
+       "svg": "0010_812",
+       "rozmiar": 2.5052,
+       "kolor": "#d2d915",
+       "kontur": "#232323",
+       "kat": 0.0,
+       "przesuniecie": [
+        0.0,
+        0.0
+       ],
+       "przebieg": 0
+      }
+     ]
+    },
+    "0010_813": {
+     "nazwa": "dół",
+     "warstwy": [
+      {
+       "rodzaj": "znaczek_svg",
+       "svg": "0010_813",
+       "rozmiar": 2.0,
+       "kolor": "#4befa5",
+       "kontur": "#232323",
+       "kat": 0.0,
+       "przesuniecie": [
+        0.0,
+        0.0
+       ],
+       "przebieg": 0
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

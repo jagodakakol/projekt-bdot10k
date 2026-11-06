@@ -22,6 +22,9 @@
 # Krok C3: wypełnienia poligonów wzorem – siatka znaczków (drzewka w lesie, krzyżyki na cmentarzu)
 #          i kreskowanie (bagno); znaczek w środku poligonu (krzyż na kościele). Algorytmy w geometria.py:
 #          przecięcia wielokąta z poziomą prostą, środek ciężkości, punkt na powierzchni.
+# Krok C4: widoczność warstw zależna od skali jak w QGIS (min_skala i max_skala ze stylu), w panelu
+#          na szaro klasy nierysowane w obecnej skali; obwódki linii (np. jezdni) zawsze widoczne,
+#          mimo że tkinter rysuje tylko całymi pikselami.
 
 import os
 import sys
@@ -346,6 +349,9 @@ def rysuj_prosto(ekran):
     return narysowane
 
 
+# klasy, które przy obecnej skali są rysowane znakami umownymi (pozostałe panel pokazuje na szaro)
+klasy_w_skali = set()
+
 # przelicznik milimetrów mapy na piksele – liczony raz na początku każdego rysowania (rysuj())
 przelicznik = {"piksele_na_mm": 1.0}
 
@@ -390,12 +396,45 @@ def kreski_w_pikselach(kreski_mm):
     return kreski
 
 
-def rysuj_linie_znaku(obiekt, w):
+def grubosci_linii(obiekt, warstwy_znaku):
+    """Grubości w pikselach warstw liniowych jednego znaku, np. jezdni: szeroka brązowa obwódka pod spodem
+    i węższy biały środek na wierzchu. QGIS rysuje z wygładzaniem (ułamki piksela), a tkinter całymi pikselami,
+    więc w 1:10 000 obwódka 2,5 px i środek 1,7 px dawały po zaokrągleniu "kropkowaną" drogę.
+    Dlatego zaokrąglamy grubości do całych pikseli i pilnujemy, żeby każda szersza linia była o co najmniej
+    2 px szersza od następnej węższej – wtedy z każdej strony zostaje 1 widoczny piksel obwódki.
+    Dotyczy linii leżących na sobie (bez przesunięcia w bok). Zwraca: numer warstwy w znaku -> piksele."""
+    linie = []
+    for i in range(len(warstwy_znaku)):
+        w = warstwy_znaku[i]
+        if w["rodzaj"] == "linia" and w["kolor"] != "" and w["przesuniecie"] == 0 and "przesuniecie_z_pola" not in w:
+            linie.append((mm_na_piksele(wartosc_z_pola(obiekt, w.get("grubosc_z_pola"), w["grubosc"])), i))
+    wynik = {}
+    if len(linie) < 2:
+        return wynik                              # jedna linia – nie ma czego pilnować
+    linie.sort()                                  # od najwęższej do najszerszej
+    poprzednia = None                             # (grubość przed zaokrągleniem, po zaokrągleniu)
+    for grubosc, i in linie:
+        px = max(1, int(grubosc + 0.5))           # zaokrąglenie do całego piksela
+        if poprzednia is not None:
+            if grubosc > poprzednia[0]:
+                px = max(px, poprzednia[1] + 2)   # szersza linia: min. 1 px z każdej strony
+            else:
+                px = poprzednia[1]                # tak samo gruba
+        wynik[i] = px
+        poprzednia = (grubosc, px)
+    return wynik
+
+
+def rysuj_linie_znaku(obiekt, w, grubosc_px=None):
     """Warstwa "linia": kolor, grubość (stała albo z atrybutu, np. szerokości jezdni), przerywanie
-    i przesunięcie w bok (linia równoległa, np. pas wzdłuż granicy gminy). Dla poligonu – po brzegu."""
+    i przesunięcie w bok (linia równoległa, np. pas wzdłuż granicy gminy). Dla poligonu – po brzegu.
+    grubosc_px – grubość wyliczona już przez grubosci_linii (dla linii leżących na sobie)."""
     if w["kolor"] == "":
         return
-    grubosc = mm_na_piksele(wartosc_z_pola(obiekt, w.get("grubosc_z_pola"), w["grubosc"]))
+    if grubosc_px is not None:
+        grubosc = grubosc_px
+    else:
+        grubosc = mm_na_piksele(wartosc_z_pola(obiekt, w.get("grubosc_z_pola"), w["grubosc"]))
     przesuniecie = mm_na_piksele(wartosc_z_pola(obiekt, w.get("przesuniecie_z_pola"), w["przesuniecie"]))
     kreski = kreski_w_pikselach(w["kreski"])
     for wsp in linie_obiektu(obiekt):
@@ -633,13 +672,13 @@ def rysuj_znaczek_w_srodku(obiekt, w):
         rysuj_znaczek(x_ekr, y_ekr, 0.0, w["znaczek"], obiekt)
 
 
-def rysuj_warstwe_znaku(obiekt, w):
+def rysuj_warstwe_znaku(obiekt, w, grubosc_px=None):
     """Rysuje jedną warstwę znaku umownego dla jednego obiektu."""
     rodzaj = w["rodzaj"]
     if rodzaj == "wypelnienie" and obiekt["typ"] == "poligon":
         rysuj_wypelnienie(obiekt, w)
     elif rodzaj == "linia":
-        rysuj_linie_znaku(obiekt, w)
+        rysuj_linie_znaku(obiekt, w, grubosc_px)
     elif rodzaj == "znaczki_na_linii":
         rysuj_znaczki_na_linii(obiekt, w)
     elif rodzaj in ("znaczek", "znaczek_svg") and obiekt["typ"] == "punkt":
@@ -668,6 +707,18 @@ def kolor_glowny(warstwy_znaku):
     return "#000000"
 
 
+def widoczna_w_skali(warstwa_mapy, skala_teraz):
+    """Czy warstwa stylu jest widoczna przy tym mianowniku skali – ta sama zasada co w QGIS:
+    widoczna, gdy max_skala <= mianownik < min_skala (brak wartości = bez ograniczenia).
+    Np. min_skala 25 001: przy oddaleniu do 1:25 001 i dalej warstwa znika (szczegóły byłyby nieczytelne);
+    max_skala 1000: napis znika przy przybliżeniu bardziej niż 1:1000."""
+    if warstwa_mapy["min_skala"] is not None and skala_teraz >= warstwa_mapy["min_skala"]:
+        return False
+    if warstwa_mapy.get("max_skala") is not None and skala_teraz < warstwa_mapy["max_skala"]:
+        return False
+    return True
+
+
 def rysuj_znakami(ekran, skala_teraz):
     """Rysuje mapę znakami umownymi z pliku znaki.json, warstwa po warstwie od spodu do wierzchu.
     Klasy, których wtyczka nie rysuje (np. same napisy), tu też nie są rysowane."""
@@ -676,10 +727,13 @@ def rysuj_znakami(ekran, skala_teraz):
     narysowane = 0
     for warstwa_mapy in znaki["warstwy"]:
         klasa = warstwa_mapy["klasa"]
-        if klasa not in dane or not warstwy[klasa]["widoczna"]:
+        if klasa not in dane:
             continue
-        if warstwa_mapy["min_skala"] is not None and skala_teraz > warstwa_mapy["min_skala"]:
+        if not widoczna_w_skali(warstwa_mapy, skala_teraz):
             continue                              # w tej skali tej warstwy nie pokazujemy (jak QGIS)
+        klasy_w_skali.add(klasa)                  # do panelu warstw: ta klasa jest rysowana w tej skali
+        if not warstwy[klasa]["widoczna"]:
+            continue
         do_rysowania = []                         # pary (obiekt, warstwy jego znaku)
         zajete = set()
         for obiekt in wybierz_widoczne(klasa, ekran):
@@ -694,15 +748,16 @@ def rysuj_znakami(ekran, skala_teraz):
                 rysuj_jako_piksel(obiekt, kolor_glowny(znak["warstwy"]), zajete)
                 narysowane += 1
             else:
-                do_rysowania.append((obiekt, znak["warstwy"]))
+                do_rysowania.append((obiekt, znak["warstwy"], grubosci_linii(obiekt, znak["warstwy"])))
         # Rysujemy "przebiegami" (w QGIS: poziomy symboli): najpierw warstwy z przebiegu 0
         # wszystkich obiektów, potem z przebiegu 1 itd. Dzięki temu brązowe obwódki wszystkich
         # jezdni leżą pod białymi środkami i na skrzyżowaniach drogi ładnie się łączą.
         for przebieg in warstwa_mapy["przebiegi"]:
-            for obiekt, warstwy_znaku in do_rysowania:
-                for w in warstwy_znaku:
+            for obiekt, warstwy_znaku, grubosci in do_rysowania:
+                for i in range(len(warstwy_znaku)):
+                    w = warstwy_znaku[i]
                     if w["przebieg"] == przebieg:
-                        rysuj_warstwe_znaku(obiekt, w)
+                        rysuj_warstwe_znaku(obiekt, w, grubosci.get(i))
         narysowane += len(do_rysowania)
     return narysowane
 
@@ -710,7 +765,10 @@ def rysuj_znakami(ekran, skala_teraz):
 def rysuj_nazwy_miejscowosci(ekran, skala_teraz):
     """Nazwy miejscowości (klasa OT_ADMS_P) – tylko w skalach większych niż 1:60 000,
     bo przy całym powiecie 250 napisów zlałoby się w jedną plamę."""
-    if "ADMS_P" not in dane or not warstwy["ADMS_P"]["widoczna"] or skala_teraz > 60000:
+    if "ADMS_P" not in dane or skala_teraz > 60000:
+        return
+    klasy_w_skali.add("ADMS_P")
+    if not warstwy["ADMS_P"]["widoczna"]:
         return
     for obiekt in wybierz_widoczne("ADMS_P", ekran, licz=False):     # napisów nie liczymy w statystyce
         nazwa = obiekt["atrybuty"].get("nazwa")
@@ -737,6 +795,7 @@ def rysuj():
     statystyka["czas_wyboru"] = 0.0
     start = time.time()
     canvas.delete("all")
+    klasy_w_skali.clear()
     ekran = widoczny_prostokat()
     skala_teraz = skala_mapy()
     if znaki is not None:
@@ -748,6 +807,10 @@ def rysuj():
     rysuj_nazwy_miejscowosci(ekran, skala_teraz)
     rysuj_zaznaczenie()
     czas = time.time() - start
+    if znaki_umowne.get() and znaki is not None:
+        oznacz_warstwy_w_skali(klasy_w_skali)
+    else:
+        oznacz_warstwy_w_skali(None)              # proste kolory: rysujemy wszystkie klasy
     if uzyj_indeksu.get():
         sposob = "z indeksem"
     else:
@@ -1018,6 +1081,21 @@ zmienne_warstw = {}         # klasa -> BooleanVar: czy warstwa jest widoczna
 zmienne_kategorii = {}      # kategoria -> BooleanVar: włącza/wyłącza wszystkie klasy kategorii
 zmienne_grubosci = {}       # klasa -> IntVar: grubość linii
 przyciski_kolorow = {}      # klasa -> przycisk pokazujący kolor warstwy
+napisy_warstw = {}          # klasa -> pole wyboru z nazwą klasy (szare, gdy klasa nie jest rysowana w tej skali)
+kolory_napisow = {}         # klasa -> obecny kolor napisu (żeby nie zmieniać go bez potrzeby)
+
+
+def oznacz_warstwy_w_skali(rysowane):
+    """Szary napis w panelu = tej klasy przy obecnej skali nie rysujemy, bo jej styl ma zakres skal
+    (np. budowle od 1:25 001 znikają). rysowane = zbiór klas rysowanych teraz albo None (wszystkie)."""
+    for klasa in napisy_warstw:
+        if rysowane is None or klasa in rysowane:
+            kolor = "black"
+        else:
+            kolor = "#a0a0a0"
+        if kolory_napisow.get(klasa) != kolor:
+            napisy_warstw[klasa].config(fg=kolor)
+            kolory_napisow[klasa] = kolor
 
 
 def zmien_widocznosc(klasa):
@@ -1069,6 +1147,8 @@ def zbuduj_panel_warstw():
     zmienne_kategorii.clear()
     zmienne_grubosci.clear()
     przyciski_kolorow.clear()
+    napisy_warstw.clear()
+    kolory_napisow.clear()
     # "lambda k=klasa: ..." zapamiętuje, której klasy dotyczy dany przycisk
     # (bez k=klasa wszystkie przyciski wskazywałyby ostatnią klasę z pętli)
     for kategoria in gml.KATEGORIE:
@@ -1097,8 +1177,10 @@ def zbuduj_panel_warstw():
             pole.pack(side="left", padx=3)
             zmienne_warstw[klasa] = tk.BooleanVar(value=warstwy[klasa]["widoczna"])
             opis = f"{klasa} {gml.nazwa_klasy(klasa)} ({len(dane[klasa]):,})".replace(",", " ")
-            tk.Checkbutton(wiersz, text=opis, font=("Arial", 8), variable=zmienne_warstw[klasa],
-                           command=lambda k=klasa: zmien_widocznosc(k)).pack(side="left")
+            napis = tk.Checkbutton(wiersz, text=opis, font=("Arial", 8), variable=zmienne_warstw[klasa],
+                                   command=lambda k=klasa: zmien_widocznosc(k))
+            napis.pack(side="left")
+            napisy_warstw[klasa] = napis
     panel_canvas.yview_moveto(0)
 
 

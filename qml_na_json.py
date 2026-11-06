@@ -626,16 +626,23 @@ def przetworz_styl(pozycja):
         pole_kodu = None                                 # jeden znak dla wszystkich obiektów klasy
         znaki["*"] = {"nazwa": "", "warstwy": symbole["0"]}
 
-    # widoczność zależna od skali: warstwa znika, gdy mianownik skali jest większy niż min_skala
+    # widoczność zależna od skali (zasada z QGIS): warstwa jest widoczna, gdy max_skala <= mianownik < min_skala.
+    # min_skala – przy oddalaniu warstwa znika (np. od 1:25 001 szczegóły byłyby nieczytelne),
+    # max_skala – znika przy bardzo dużym przybliżeniu (np. napisy poniżej 1:1000). Brak = bez ograniczenia.
     min_skala = None
-    if korzen.get("hasScaleBasedVisibilityFlag") == "1" and float(korzen.get("minScale", "0")) > 0:
-        min_skala = float(korzen.get("minScale"))
+    max_skala = None
+    if korzen.get("hasScaleBasedVisibilityFlag") == "1":
+        if float(korzen.get("minScale", "0")) > 0:
+            min_skala = float(korzen.get("minScale"))
+        if float(korzen.get("maxScale", "0")) > 0:
+            max_skala = float(korzen.get("maxScale"))
 
     return {"klasa": pozycja["source"].replace("OT_", ""),
             "styl": plik,
             "pole": pole_kodu,
             "filtr": przetworz_filtr(pozycja.get("xml_filter_without_current")),
             "min_skala": min_skala,
+            "max_skala": max_skala,
             "przebiegi": przebiegi,
             "znaki": znaki}
 

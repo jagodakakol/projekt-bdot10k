@@ -13,7 +13,9 @@
 
 import ast
 import base64
+import hashlib
 import json
+import math
 import os
 import re
 import xml.etree.ElementTree as ET
@@ -21,12 +23,15 @@ import xml.etree.ElementTree as ET
 FOLDER_ZNAKOW = os.path.join(os.path.dirname(os.path.abspath(__file__)), "znaki")
 PLIK_WARSTW = os.path.join(FOLDER_ZNAKOW, "layer_specs.py")
 PLIK_WYNIKOWY = os.path.join(FOLDER_ZNAKOW, "znaki.json")
+FOLDER_SVG = os.path.join(FOLDER_ZNAKOW, "svg")          # symbole SVG, które style wskazują jako pliki
 SKALA_ODNIESIENIA = 10000
 
 KONCOWKI = {"flat": "butt", "round": "round", "square": "projecting"}   # nazwy z QGIS -> nazwy z tkintera
 
 # tu zbieramy, czego nie umiemy zamienić – wypiszemy to na końcu
 nieobslugiwane = {}
+# symbole SVG zamienione na nasze kształty: nazwa -> opis (trafia do znaki.json, sekcja "svg")
+symbole_svg = {}
 
 
 def zapamietaj_brak(opis):
@@ -138,18 +143,289 @@ def wlasciwosc_z_danych(warstwa, nazwa, pola, jednostka):
     return None
 
 
-def nazwa_svg(tekst):
-    """Nazwa symbolu SVG: plik wskazany ścieżką albo SVG wpisany w styl (base64:...), z którego
-    bierzemy nazwę z atrybutu sodipodi:docname, np. "0010_330.svg" -> "0010_330"."""
-    if tekst.startswith("base64:"):
-        svg = base64.b64decode(tekst[7:]).decode("utf-8", "replace")
-        wynik = re.search(r'docname="([^"]+)"', svg)
+# --- SYMBOLE SVG -> nasze kształty (wielokąty i linie) ---
+# tkinter nie umie rysować SVG, więc każdy symbol zamieniamy tu raz na listę wielokątów i linii,
+# zapisanych względem środka symbolu i podzielonych przez jego szerokość (szerokość symbolu = 1).
+# W programie wystarczy je potem przeskalować do wielkości znaczka, obrócić i przesunąć.
+
+def tekst_svg(nazwa_w_stylu):
+    """Treść SVG: wpisana w styl (base64:...) albo z pliku w folderze znaki/svg. None, jeśli nie ma."""
+    if nazwa_w_stylu.startswith("base64:"):
+        return base64.b64decode(nazwa_w_stylu[7:]).decode("utf-8", "replace")
+    plik = nazwa_w_stylu.replace("\\", "/").split("/")[-1]
+    sciezka = os.path.join(FOLDER_SVG, plik)
+    if plik == "" or not os.path.exists(sciezka):
+        return None
+    return open(sciezka, encoding="utf-8").read()
+
+
+def nazwa_svg(nazwa_w_stylu):
+    """Nazwa symbolu SVG: z nazwy pliku albo z atrybutu sodipodi:docname, np. "0010_330.svg" -> "0010_330"."""
+    if nazwa_w_stylu.startswith("base64:"):
+        tekst = tekst_svg(nazwa_w_stylu)
+        wynik = re.search(r'docname="([^"]+)"', tekst)
         if wynik is None:
-            return "bez_nazwy"
+            # symbol bez nazwy: nazwę robimy z "odcisku" treści (skrót MD5) – inne rysunki dają inne nazwy
+            return "svg_" + hashlib.md5(tekst.encode("utf-8")).hexdigest()[:8]
         nazwa = wynik.group(1)
     else:
-        nazwa = tekst.replace("\\", "/").split("/")[-1]
+        nazwa = nazwa_w_stylu.replace("\\", "/").split("/")[-1]
     return nazwa.replace(".svg", "").strip()
+
+
+def kolor_svg(tekst):
+    """Kolor z SVG ("#1a171b", "#fff", "black", "none") -> "#rrggbb" albo "" (brak koloru)."""
+    t = tekst.strip().lower()
+    if t in ("none", "transparent", ""):
+        return ""
+    if t.startswith("#") and len(t) == 4:
+        return "#" + t[1] * 2 + t[2] * 2 + t[3] * 2
+    if t.startswith("#") and len(t) == 7:
+        return t
+    if t.startswith("rgb("):
+        liczby = re.findall(r"[\d.]+", t)
+        return f"#{int(float(liczby[0])):02x}{int(float(liczby[1])):02x}{int(float(liczby[2])):02x}"
+    nazwy = {"black": "#000000", "white": "#ffffff", "red": "#ff0000", "green": "#008000", "blue": "#0000ff",
+             "gray": "#808080", "grey": "#808080"}
+    return nazwy.get(t, "#000000")
+
+
+def styl_elementu(element, styl_rodzica):
+    """Styl w SVG dziedziczy się z elementów nadrzędnych (np. z <g>). Zbieramy fill, stroke, stroke-width...
+    z atrybutów i z atrybutu style="fill:#000;stroke:none"."""
+    styl = dict(styl_rodzica)
+    for nazwa in ("fill", "stroke", "stroke-width", "fill-opacity", "display"):
+        if element.get(nazwa) is not None:
+            styl[nazwa] = element.get(nazwa)
+    for kawalek in (element.get("style") or "").split(";"):
+        if ":" in kawalek:
+            klucz, wartosc = kawalek.split(":", 1)
+            styl[klucz.strip()] = wartosc.strip()
+    return styl
+
+
+def zloz(m1, m2):
+    """Złożenie dwóch przekształceń afinicznych (a, b, c, d, e, f): x' = a·x + c·y + e, y' = b·x + d·y + f.
+    Wynik działa tak, jakby najpierw wykonać m2, a potem m1 (mnożenie macierzy 3×3)."""
+    a1, b1, c1, d1, e1, f1 = m1
+    a2, b2, c2, d2, e2, f2 = m2
+    return (a1 * a2 + c1 * b2, b1 * a2 + d1 * b2,
+            a1 * c2 + c1 * d2, b1 * c2 + d1 * d2,
+            a1 * e2 + c1 * f2 + e1, b1 * e2 + d1 * f2 + f1)
+
+
+def przeksztalcenie(tekst):
+    """Atrybut transform, np. "translate(-36.1,-0.6) rotate(45)" -> jedno przekształcenie afiniczne."""
+    m = (1.0, 0.0, 0.0, 1.0, 0.0, 0.0)              # przekształcenie tożsamościowe
+    for nazwa, argumenty in re.findall(r"(\w+)\s*\(([^)]*)\)", tekst or ""):
+        liczby = [float(x) for x in re.findall(r"[-+]?(?:\d*\.\d+|\d+\.?)(?:[eE][-+]?\d+)?", argumenty)]
+        if nazwa == "translate":
+            nowe = (1, 0, 0, 1, liczby[0], liczby[1] if len(liczby) > 1 else 0)
+        elif nazwa == "scale":
+            sy = liczby[1] if len(liczby) > 1 else liczby[0]
+            nowe = (liczby[0], 0, 0, sy, 0, 0)
+        elif nazwa == "rotate":
+            k = math.radians(liczby[0])
+            nowe = (math.cos(k), math.sin(k), -math.sin(k), math.cos(k), 0, 0)
+            if len(liczby) == 3:                         # obrót wokół punktu (cx, cy)
+                nowe = zloz((1, 0, 0, 1, liczby[1], liczby[2]), zloz(nowe, (1, 0, 0, 1, -liczby[1], -liczby[2])))
+        elif nazwa == "matrix":
+            nowe = tuple(liczby[:6])
+        else:
+            zapamietaj_brak(f"SVG transform {nazwa}")
+            continue
+        m = zloz(m, nowe)
+    return m
+
+
+def punkt_bezier(p0, p1, p2, p3, t):
+    """Punkt krzywej Béziera trzeciego stopnia: (1−t)³·P0 + 3(1−t)²t·P1 + 3(1−t)t²·P2 + t³·P3."""
+    u = 1 - t
+    return (u ** 3 * p0[0] + 3 * u * u * t * p1[0] + 3 * u * t * t * p2[0] + t ** 3 * p3[0],
+            u ** 3 * p0[1] + 3 * u * u * t * p1[1] + 3 * u * t * t * p2[1] + t ** 3 * p3[1])
+
+
+def sciezka_svg(d):
+    """Polecenia ścieżki SVG (atrybut d) -> lista podścieżek [(punkty, czy_zamknieta)].
+    Wielkie litery = współrzędne bezwzględne, małe = względem poprzedniego punktu.
+    M przesuń, L linia, H poziomo, V pionowo, Z zamknij, C krzywa Béziera (przybliżamy 8 odcinkami),
+    A łuk (przybliżamy prostą do końca łuku – w symbolach GUGiK łuki są tylko 4 i małe)."""
+    tokeny = re.findall(r"[A-Za-z]|[-+]?(?:\d*\.\d+|\d+\.?)(?:[eE][-+]?\d+)?", d or "")
+    ile_liczb = {"M": 2, "L": 2, "H": 1, "V": 1, "C": 6, "S": 4, "Q": 4, "T": 2, "A": 7}
+    podsciezki = []
+    punkty = []
+    x = 0.0
+    y = 0.0
+    start = (0.0, 0.0)
+    polecenie = None
+    i = 0
+    while i < len(tokeny):
+        if tokeny[i].isalpha():
+            polecenie = tokeny[i]
+            i += 1
+            if polecenie in "Zz":
+                if len(punkty) > 0:
+                    podsciezki.append((punkty, True))
+                punkty = []
+                x, y = start
+                continue
+        if polecenie is None or polecenie.upper() not in ile_liczb:
+            break
+        n = ile_liczb[polecenie.upper()]
+        if i + n > len(tokeny):
+            break
+        liczby = [float(t) for t in tokeny[i:i + n]]
+        i += n
+        wzgledne = polecenie.islower()
+        p = polecenie.upper()
+        if p == "M":
+            if len(punkty) > 0:
+                podsciezki.append((punkty, False))
+            x = liczby[0] + (x if wzgledne else 0)
+            y = liczby[1] + (y if wzgledne else 0)
+            punkty = [(x, y)]
+            start = (x, y)
+            polecenie = "l" if wzgledne else "L"         # kolejne pary liczb po M to już linie
+        elif p == "L" or p == "T":
+            x = liczby[-2] + (x if wzgledne else 0)
+            y = liczby[-1] + (y if wzgledne else 0)
+            punkty.append((x, y))
+        elif p == "H":
+            x = liczby[0] + (x if wzgledne else 0)
+            punkty.append((x, y))
+        elif p == "V":
+            y = liczby[0] + (y if wzgledne else 0)
+            punkty.append((x, y))
+        elif p == "C":
+            dx = x if wzgledne else 0
+            dy = y if wzgledne else 0
+            p0 = (x, y)
+            p1 = (liczby[0] + dx, liczby[1] + dy)
+            p2 = (liczby[2] + dx, liczby[3] + dy)
+            p3 = (liczby[4] + dx, liczby[5] + dy)
+            for k in range(1, 9):
+                punkty.append(punkt_bezier(p0, p1, p2, p3, k / 8))
+            x, y = p3
+        else:                                            # S, Q, A – prosta do punktu końcowego
+            x = liczby[-2] + (x if wzgledne else 0)
+            y = liczby[-1] + (y if wzgledne else 0)
+            punkty.append((x, y))
+            if p == "A":
+                zapamietaj_brak("SVG łuk (A) przybliżony prostą")
+    if len(punkty) > 0:
+        podsciezki.append((punkty, False))
+    return podsciezki
+
+
+def podsciezki_elementu(element, nazwa):
+    """Kształt elementu SVG jako lista podścieżek [(punkty, czy_zamknieta)]."""
+    if nazwa == "path":
+        return sciezka_svg(element.get("d"))
+    if nazwa in ("polyline", "polygon"):
+        liczby = [float(x) for x in re.findall(r"[-+]?(?:\d*\.\d+|\d+\.?)(?:[eE][-+]?\d+)?", element.get("points", ""))]
+        punkty = []
+        for i in range(0, len(liczby) - 1, 2):
+            punkty.append((liczby[i], liczby[i + 1]))
+        return [(punkty, nazwa == "polygon")]
+    if nazwa == "rect":
+        x = float(element.get("x", "0"))
+        y = float(element.get("y", "0"))
+        w = float(element.get("width", "0"))
+        h = float(element.get("height", "0"))
+        return [([(x, y), (x + w, y), (x + w, y + h), (x, y + h)], True)]
+    if nazwa in ("circle", "ellipse"):
+        cx = float(element.get("cx", "0"))
+        cy = float(element.get("cy", "0"))
+        rx = float(element.get("r", element.get("rx", "0")))
+        ry = float(element.get("r", element.get("ry", "0")))
+        punkty = []
+        for k in range(24):                              # okrąg przybliżamy 24-kątem foremnym
+            kat = 2 * math.pi * k / 24
+            punkty.append((cx + rx * math.cos(kat), cy + ry * math.sin(kat)))
+        return [(punkty, True)]
+    if nazwa == "line":
+        return [([(float(element.get("x1", "0")), float(element.get("y1", "0"))),
+                  (float(element.get("x2", "0")), float(element.get("y2", "0")))], False)]
+    return []
+
+
+def zbierz_ksztalty(element, styl_rodzica, m_rodzica, ksztalty):
+    """Przechodzi drzewo SVG (rekurencyjnie, jak foldery) i zbiera kształty z ich stylem i przekształceniem."""
+    nazwa = element.tag.split("}")[-1]
+    if nazwa in ("defs", "metadata", "namedview", "text", "title", "desc"):
+        return
+    styl = styl_elementu(element, styl_rodzica)
+    if styl.get("display") == "none":
+        return
+    m = zloz(m_rodzica, przeksztalcenie(element.get("transform")))
+    for podsciezki in [podsciezki_elementu(element, nazwa)]:
+        if len(podsciezki) > 0:
+            ksztalty.append((podsciezki, styl, m))
+    for dziecko in element:
+        zbierz_ksztalty(dziecko, styl, m, ksztalty)
+
+
+def svg_na_ksztalty(tekst):
+    """Cały symbol SVG -> {"proporcja": wysokość/szerokość, "ksztalty": [...]}.
+    Każdy kształt: "wielokat" (do wypełnienia, podścieżki połączone mostkami), "linie" (kontury),
+    kolory i grubość konturu. Współrzędne względem środka symbolu, podzielone przez szerokość."""
+    korzen = ET.fromstring(tekst)
+    if korzen.get("viewBox"):
+        x0, y0, szer, wys = [float(v) for v in re.findall(r"[-+]?[\d.]+(?:[eE][-+]?\d+)?", korzen.get("viewBox"))]
+    else:
+        x0 = 0.0
+        y0 = 0.0
+        szer = float(re.sub(r"[^\d.]", "", korzen.get("width", "30")) or 30)
+        wys = float(re.sub(r"[^\d.]", "", korzen.get("height", "30")) or 30)
+    sx = x0 + szer / 2                                   # środek symbolu
+    sy = y0 + wys / 2
+    surowe = []
+    zbierz_ksztalty(korzen, {"fill": "#000000", "stroke": "none", "stroke-width": "1"},
+                    (1.0, 0.0, 0.0, 1.0, 0.0, 0.0), surowe)
+    wynik = []
+    for podsciezki, styl, m in surowe:
+        wypelnienie = kolor_svg(styl.get("fill", "#000000"))
+        if styl.get("fill-opacity", "1").strip() in ("0", "0.0"):
+            wypelnienie = ""
+        kontur = kolor_svg(styl.get("stroke", "none"))
+        skala_m = math.sqrt(abs(m[0] * m[3] - m[1] * m[2]))   # o ile przekształcenie powiększa (do grubości)
+        grubosc = float(re.sub(r"[^\d.eE+-]", "", styl.get("stroke-width", "1")) or 0) * skala_m / szer
+        linie = []
+        wielokat = []
+        for punkty, zamknieta in podsciezki:
+            plaska = []
+            for px, py in punkty:
+                tx = m[0] * px + m[2] * py + m[4]
+                ty = m[1] * px + m[3] * py + m[5]
+                plaska.append(round((tx - sx) / szer, 4))
+                plaska.append(round((ty - sy) / szer, 4))
+            if zamknieta and len(plaska) >= 4:
+                plaska.append(plaska[0])
+                plaska.append(plaska[1])
+            linie.append(plaska)
+            # wypełnienie: wszystkie podścieżki w jeden wielokąt; każdą następną doczepiamy "mostkiem"
+            # do pierwszego punktu i wracamy – mostek idzie tam i z powrotem, więc przy regule
+            # parzystości się znosi, a podścieżka w środku innej robi dziurę (np. w literze O)
+            if len(wielokat) == 0:
+                wielokat.extend(plaska)
+            else:
+                wielokat.extend(plaska)
+                wielokat.append(wielokat[0])
+                wielokat.append(wielokat[1])
+        ksztalt = {"wypelnienie": wypelnienie, "kontur": kontur, "grubosc": round(grubosc, 4)}
+        if wypelnienie != "" and len(wielokat) >= 6:
+            ksztalt["wielokat"] = wielokat
+        if kontur != "":
+            ksztalt["linie"] = linie
+        if "wielokat" in ksztalt or "linie" in ksztalt:
+            wynik.append(ksztalt)
+    return {"proporcja": round(wys / szer, 4), "ksztalty": wynik}
+
+
+def kotwica(u):
+    """Punkt zaczepienia znaczka: [poziomo, pionowo], 0 = lewa/górna krawędź, 1 = środek, 2 = prawa/dolna.
+    Np. krzyż przydrożny ma [1, 2] – stoi podstawą na punkcie, zamiast być nim wyśrodkowany."""
+    return [int(u.get("horizontal_anchor_point", "1")), int(u.get("vertical_anchor_point", "1"))]
 
 
 def przetworz_znaczek(warstwa, pola):
@@ -164,7 +440,8 @@ def przetworz_znaczek(warstwa, pola):
                    "kontur": "",
                    "grubosc_konturu": na_mm(u.get("outline_width", "0"), u.get("outline_width_unit")),
                    "kat": float(u.get("angle", "0")),
-                   "przesuniecie": para_na_mm(u.get("offset"), u.get("offset_unit"))}
+                   "przesuniecie": para_na_mm(u.get("offset"), u.get("offset_unit")),
+                   "kotwica": kotwica(u)}
         if u.get("outline_style") != "no":
             znaczek["kontur"] = kolor_qgis(u.get("outline_color", "0,0,0,255"))
         rozmiar = wlasciwosc_z_danych(warstwa, "size", pola, u.get("size_unit"))
@@ -172,13 +449,21 @@ def przetworz_znaczek(warstwa, pola):
             znaczek["rozmiar_z_pola"] = rozmiar
         return znaczek
     if rodzaj == "SvgMarker":
+        nazwa = nazwa_svg(u.get("name", ""))
+        if nazwa not in symbole_svg:                      # każdy symbol zamieniamy tylko raz
+            tekst = tekst_svg(u.get("name", ""))
+            if tekst is None:
+                zapamietaj_brak("symbol SVG bez pliku")
+            else:
+                symbole_svg[nazwa] = svg_na_ksztalty(tekst)
         return {"rodzaj": "znaczek_svg",
-                "svg": nazwa_svg(u.get("name", "")),
+                "svg": nazwa,
                 "rozmiar": na_mm(u.get("size", "2"), u.get("size_unit")),
                 "kolor": kolor_qgis(u.get("color", "0,0,0,255")),
                 "kontur": kolor_qgis(u.get("outline_color", "0,0,0,255")),
                 "kat": float(u.get("angle", "0")),
-                "przesuniecie": para_na_mm(u.get("offset"), u.get("offset_unit"))}
+                "przesuniecie": para_na_mm(u.get("offset"), u.get("offset_unit")),
+                "kotwica": kotwica(u)}
     zapamietaj_brak(f"znaczek {rodzaj}")
     return {"rodzaj": "nieobslugiwany", "klasa_qgis": rodzaj}
 
@@ -356,7 +641,8 @@ def main():
                      "wtyczki GUGiK BDOT10k_GML_SHP 2.1.1 (licencja GPL-3.0) skryptem qml_na_json.py. "
                      "Wielkości w milimetrach mapy w skali 1:10 000. Warstwy od spodu do wierzchu.",
              "skala_odniesienia": SKALA_ODNIESIENIA,
-             "warstwy": []}
+             "warstwy": [],
+             "svg": symbole_svg}
     znakow = 0
     for pozycja in warstwy_wtyczki:
         styl = przetworz_styl(pozycja)
@@ -365,7 +651,7 @@ def main():
             znakow += len(styl["znaki"])
     with open(PLIK_WYNIKOWY, "w", encoding="utf-8") as plik:
         json.dump(wynik, plik, ensure_ascii=False, indent=1)
-    print(f"Zapisano {PLIK_WYNIKOWY}: {len(wynik['warstwy'])} warstw, {znakow} znaków")
+    print(f"Zapisano {PLIK_WYNIKOWY}: {len(wynik['warstwy'])} warstw, {znakow} znaków, {len(symbole_svg)} symboli SVG")
     print("Czego nie zamieniamy (zostaje uproszczone):")
     for opis in sorted(nieobslugiwane):
         print(f"  {nieobslugiwane[opis]:4} × {opis}")

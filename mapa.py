@@ -16,6 +16,9 @@
 # Krok C1: znaki umowne dla wszystkich klas z naszego pliku znaki/znaki.json (robi go qml_na_json.py
 #          ze stylów wtyczki GUGiK); wielkości w mm mapy przeliczane na piksele według skali widoku,
 #          linie przesunięte w bok, znaczki na liniach i w punktach (kształty proste; SVG w kroku C2).
+# Krok C2: znaki punktowe z symboli SVG – qml_na_json.py zamienia każdy SVG na wielokąty i linie,
+#          a tu skalujemy je do wielkości znaczka, obracamy (np. wzdłuż linii) i przesuwamy;
+#          punkt zaczepienia (kotwica) ze stylu, np. krzyż przydrożny stoi podstawą na punkcie.
 
 import os
 import sys
@@ -402,10 +405,35 @@ def punkt_znaczka(x, y, u, v, cos_k, sin_k):
     return x + u * cos_k - v * sin_k, y + u * sin_k + v * cos_k
 
 
+def punkty_symbolu(wsp, x, y, rozmiar, cos_k, sin_k):
+    """Punkty symbolu SVG [u1, v1, u2, v2, ...] (względem środka, szerokość symbolu = 1) -> piksele ekranu:
+    mnożymy przez rozmiar w pikselach (skalowanie), obracamy i przesuwamy do (x, y)."""
+    wynik = []
+    for i in range(0, len(wsp) - 1, 2):
+        px, py = punkt_znaczka(x, y, wsp[i] * rozmiar, wsp[i + 1] * rozmiar, cos_k, sin_k)
+        wynik.append(px)
+        wynik.append(py)
+    return wynik
+
+
+def rysuj_symbol_svg(x, y, rozmiar, cos_k, sin_k, symbol):
+    """Rysuje symbol SVG zamieniony przez qml_na_json.py na wielokąty (wypełnienia) i linie (kontury)."""
+    for ksztalt in symbol["ksztalty"]:
+        if "wielokat" in ksztalt:
+            piksele = punkty_symbolu(ksztalt["wielokat"], x, y, rozmiar, cos_k, sin_k)
+            canvas.create_polygon(piksele, fill=ksztalt["wypelnienie"], outline="")
+        if "linie" in ksztalt:
+            grubosc = max(1, ksztalt["grubosc"] * rozmiar)     # bardzo cienkie kontury jako 1 piksel
+            for linia in ksztalt["linie"]:
+                piksele = punkty_symbolu(linia, x, y, rozmiar, cos_k, sin_k)
+                if len(piksele) >= 4:
+                    canvas.create_line(piksele, fill=ksztalt["kontur"], width=grubosc)
+
+
 def rysuj_znaczek(x_ekr, y_ekr, kat, z, obiekt):
     """Rysuje znaczek w punkcie ekranu (x_ekr, y_ekr). kat – obrót w radianach (np. kierunek linii),
-    do którego dodajemy kąt ze stylu. Kształty: kreska (line), kółko (circle), trójkąt (triangle).
-    Symbole SVG dorysujemy w kroku C2 – na razie kółko w ich kolorze."""
+    do którego dodajemy kąt ze stylu. Kształty: kreska (line), kółko (circle), trójkąt (triangle)
+    albo symbol SVG (z sekcji "svg" pliku znaki.json)."""
     if z["rodzaj"] not in ("znaczek", "znaczek_svg"):
         return
     rozmiar = mm_na_piksele(wartosc_z_pola(obiekt, z.get("rozmiar_z_pola"), z["rozmiar"]))
@@ -414,12 +442,26 @@ def rysuj_znaczek(x_ekr, y_ekr, kat, z, obiekt):
     kat = kat + math.radians(z["kat"])            # w QGIS kąt rośnie zgodnie z ruchem wskazówek zegara
     cos_k = math.cos(kat)
     sin_k = math.sin(kat)
+    # wymiary znaczka: symbol SVG ma swoją proporcję wysokość/szerokość, proste kształty są "kwadratowe"
+    symbol = None
+    wysokosc = rozmiar
+    if z["rodzaj"] == "znaczek_svg":
+        symbol = znaki["svg"].get(z["svg"])
+        if symbol is not None:
+            wysokosc = rozmiar * symbol["proporcja"]
+    # punkt zaczepienia (kotwica): 0 = lewa/górna krawędź na punkcie, 1 = środek, 2 = prawa/dolna;
+    # np. krzyż przydrożny stoi podstawą na punkcie, więc jego środek przesuwamy o pół wysokości w górę
+    kotwica = z.get("kotwica", [1, 1])           # starszy znaki.json nie ma kotwicy – wtedy środek
+    u = mm_na_piksele(z["przesuniecie"][0]) + (1 - kotwica[0]) * rozmiar / 2
+    v = mm_na_piksele(z["przesuniecie"][1]) + (1 - kotwica[1]) * wysokosc / 2
     # przesunięcie znaczka obraca się razem z nim (dzięki temu ząbki są zawsze z tej samej strony linii)
-    x, y = punkt_znaczka(x_ekr, y_ekr, mm_na_piksele(z["przesuniecie"][0]), mm_na_piksele(z["przesuniecie"][1]),
-                         cos_k, sin_k)
+    x, y = punkt_znaczka(x_ekr, y_ekr, u, v, cos_k, sin_k)
     r = rozmiar / 2
     if z["rodzaj"] == "znaczek_svg":
-        canvas.create_oval(x - r / 2, y - r / 2, x + r / 2, y + r / 2, fill=z["kolor"], outline="")
+        if symbol is None:                        # symbolu nie udało się odczytać – kółko zastępcze
+            canvas.create_oval(x - r / 2, y - r / 2, x + r / 2, y + r / 2, fill=z["kolor"], outline="")
+        else:
+            rysuj_symbol_svg(x, y, rozmiar, cos_k, sin_k, symbol)
         return
     kontur = z["kontur"]
     grubosc = max(1, mm_na_piksele(z["grubosc_konturu"]))

@@ -19,6 +19,9 @@
 # Krok C2: znaki punktowe z symboli SVG – qml_na_json.py zamienia każdy SVG na wielokąty i linie,
 #          a tu skalujemy je do wielkości znaczka, obracamy (np. wzdłuż linii) i przesuwamy;
 #          punkt zaczepienia (kotwica) ze stylu, np. krzyż przydrożny stoi podstawą na punkcie.
+# Krok C3: wypełnienia poligonów wzorem – siatka znaczków (drzewka w lesie, krzyżyki na cmentarzu)
+#          i kreskowanie (bagno); znaczek w środku poligonu (krzyż na kościele). Algorytmy w geometria.py:
+#          przecięcia wielokąta z poziomą prostą, środek ciężkości, punkt na powierzchni.
 
 import os
 import sys
@@ -377,6 +380,16 @@ def rysuj_wypelnienie(obiekt, w):
                     canvas.create_line(piksele, fill=w["kontur"], width=grubosc)
 
 
+def kreski_w_pikselach(kreski_mm):
+    """Długości kresek i przerw z mm mapy na piksele – tkinter chce całych pikseli od 1 do 255."""
+    if kreski_mm is None:
+        return None
+    kreski = []
+    for dlugosc in kreski_mm:
+        kreski.append(min(255, max(1, round(mm_na_piksele(dlugosc)))))
+    return kreski
+
+
 def rysuj_linie_znaku(obiekt, w):
     """Warstwa "linia": kolor, grubość (stała albo z atrybutu, np. szerokości jezdni), przerywanie
     i przesunięcie w bok (linia równoległa, np. pas wzdłuż granicy gminy). Dla poligonu – po brzegu."""
@@ -384,11 +397,7 @@ def rysuj_linie_znaku(obiekt, w):
         return
     grubosc = mm_na_piksele(wartosc_z_pola(obiekt, w.get("grubosc_z_pola"), w["grubosc"]))
     przesuniecie = mm_na_piksele(wartosc_z_pola(obiekt, w.get("przesuniecie_z_pola"), w["przesuniecie"]))
-    kreski = None
-    if w["kreski"] is not None:                   # tkinter chce długości kresek w całych pikselach 1–255
-        kreski = []
-        for dlugosc in w["kreski"]:
-            kreski.append(min(255, max(1, round(mm_na_piksele(dlugosc)))))
+    kreski = kreski_w_pikselach(w["kreski"])
     for wsp in linie_obiektu(obiekt):
         piksele = lista_pikseli(wsp)
         if len(piksele) < 4:
@@ -422,7 +431,9 @@ def rysuj_symbol_svg(x, y, rozmiar, cos_k, sin_k, symbol):
         if "wielokat" in ksztalt:
             piksele = punkty_symbolu(ksztalt["wielokat"], x, y, rozmiar, cos_k, sin_k)
             canvas.create_polygon(piksele, fill=ksztalt["wypelnienie"], outline="")
-        if "linie" in ksztalt:
+        # kontur o grubości 0 (albo prawie 0 – pozostałość po eksporcie rysunku) w SVG znaczy "bez konturu",
+        # tak jak w QGIS; bez tego np. drzewka w lesie miałyby dodatkową jasnozieloną kreskę
+        if "linie" in ksztalt and ksztalt["grubosc"] > 0:
             grubosc = max(1, ksztalt["grubosc"] * rozmiar)     # bardzo cienkie kontury jako 1 piksel
             for linia in ksztalt["linie"]:
                 piksele = punkty_symbolu(linia, x, y, rozmiar, cos_k, sin_k)
@@ -525,6 +536,103 @@ def rysuj_znaczki_na_linii(obiekt, w):
             rysuj_znaczek(x_ekr, y_ekr, kat, z, obiekt)
 
 
+def okno_ekranu(margines):
+    """Prostokąt okienka mapy w pikselach, powiększony z każdej strony o margines
+    (żeby znaczki, których środek jest tuż za brzegiem, nie były ucięte)."""
+    return -margines, -margines, SZEROKOSC + margines, WYSOKOSC + margines
+
+
+def poczatek_wzoru():
+    """Punkt terenu (0, 0) przeliczony na ekran. W nim zaczepiamy siatki wzorów i kreskowań, dlatego przy
+    przesuwaniu mapy wzór przesuwa się razem z terenem, a nie "pływa" po lesie."""
+    return teren_na_ekran(0.0, 0.0)
+
+
+def pierscienie_w_pikselach(pierscienie):
+    """Pierścienie jednego poligonu (obwód i dziury) przeliczone na piksele ekranu."""
+    wynik = []
+    for pierscien in pierscienie:
+        wynik.append(lista_pikseli(pierscien))
+    return wynik
+
+
+def rysuj_wzor_z_punktow(obiekt, w):
+    """Warstwa "wzor_z_punktow" (drzewka w lesie, krzyżyki na cmentarzu, kropki w sadzie): znaczek
+    w każdym punkcie siatki, który leży w poligonie (geometria.punkty_wzoru). Odstępy siatki są w mm mapy,
+    więc przy przybliżaniu rosną razem z mapą – w terenie to zawsze te same metry (las: drzewko co 70 m)."""
+    z = w["znaczek"]
+    dx = mm_na_piksele(w["odstep_x"])
+    dy = mm_na_piksele(w["odstep_y"])
+    rozmiar = mm_na_piksele(z["rozmiar"])
+    if dx < 5 or dy < 5 or rozmiar < 1:
+        return      # znaczki gęściej niż co 5 pikseli albo mniejsze niż piksel – zlałyby się w plamę
+    x0, y0 = poczatek_wzoru()
+    x0 = x0 + mm_na_piksele(w["przesuniecie_x"])            # przesunięcie całego wzoru
+    y0 = y0 + mm_na_piksele(w["przesuniecie_y"])
+    okno = okno_ekranu(rozmiar)
+    for pierscienie in obiekt["czesci"]:
+        piksele = pierscienie_w_pikselach(pierscienie)
+        punkty = geometria.punkty_wzoru(piksele, dx, dy, mm_na_piksele(w["przesuniecie_rzedow_x"]),
+                                        mm_na_piksele(w["przesuniecie_rzedow_y"]), x0, y0, okno)
+        for x, y in punkty:
+            rysuj_znaczek(x, y, 0.0, z, obiekt)
+
+
+def rysuj_kreskowanie(obiekt, w):
+    """Warstwa "kreskowanie" (bagno, teren podmokły, amfiteatr): równoległe linie co stały odstęp pod danym
+    kątem, obcięte do poligonu (geometria.odcinki_kreskowania), narysowane stylem linii ze stylu."""
+    linia = w["linia"]
+    odstep = mm_na_piksele(w["odstep"])
+    if odstep < 3 or linia["kolor"] == "":
+        return                                    # kreski co mniej niż 3 piksele dałyby jednolitą plamę
+    grubosc = max(1, mm_na_piksele(linia["grubosc"]))
+    kreski = kreski_w_pikselach(linia["kreski"])
+    # przesunięcie w bok: całego kreskowania (ze stylu wypełnienia) i samej linii
+    przesuniecie = mm_na_piksele(w.get("przesuniecie", 0.0) + linia["przesuniecie"])
+    x0, y0 = poczatek_wzoru()
+    okno = okno_ekranu(grubosc)
+    for pierscienie in obiekt["czesci"]:
+        piksele = pierscienie_w_pikselach(pierscienie)
+        for x1, y1, x2, y2 in geometria.odcinki_kreskowania(piksele, odstep, w["kat"], przesuniecie, x0, y0, okno):
+            canvas.create_line(x1, y1, x2, y2, fill=linia["kolor"], width=grubosc, dash=kreski,
+                               capstyle=linia["koncowki"])
+
+
+def rysuj_znaczek_w_srodku(obiekt, w):
+    """Warstwa "znaczek_w_srodku" (krzyż na kościele, symbol stacji paliw, wiatrak): znaczek w środku
+    ciężkości poligonu albo – gdy styl tak każe – w "punkcie na powierzchni", który na pewno leży w środku.
+    Liczymy na współrzędnych terenowych (dokładnych), bo takich obiektów jest niewiele."""
+    na_powierzchni = w.get("na_powierzchni", False)
+    punkty = []                                   # (x, y) w terenie
+    if w.get("w_kazdej_czesci", True) or len(obiekt["czesci"]) == 1:
+        for pierscienie in obiekt["czesci"]:      # znaczek w każdej części obiektu wieloczęściowego
+            if na_powierzchni:
+                punkty.append(geometria.punkt_na_powierzchni(pierscienie))
+            else:
+                pole, x, y = geometria.srodek_ciezkosci(pierscienie)
+                punkty.append((x, y))
+    else:
+        # jeden znaczek na cały obiekt: środki części uśrednione z wagami równymi ich polom
+        suma_pol = 0.0
+        suma_x = 0.0
+        suma_y = 0.0
+        najwieksza = None
+        for pierscienie in obiekt["czesci"]:
+            pole, x, y = geometria.srodek_ciezkosci(pierscienie)
+            suma_pol += pole
+            suma_x += pole * x
+            suma_y += pole * y
+            if najwieksza is None or pole > najwieksza[0]:
+                najwieksza = (pole, pierscienie)
+        if na_powierzchni or suma_pol == 0:
+            punkty.append(geometria.punkt_na_powierzchni(najwieksza[1]))
+        else:
+            punkty.append((suma_x / suma_pol, suma_y / suma_pol))
+    for x, y in punkty:
+        x_ekr, y_ekr = teren_na_ekran(x, y)
+        rysuj_znaczek(x_ekr, y_ekr, 0.0, w["znaczek"], obiekt)
+
+
 def rysuj_warstwe_znaku(obiekt, w):
     """Rysuje jedną warstwę znaku umownego dla jednego obiektu."""
     rodzaj = w["rodzaj"]
@@ -538,7 +646,12 @@ def rysuj_warstwe_znaku(obiekt, w):
         for x, y in obiekt["czesci"]:
             x_ekr, y_ekr = teren_na_ekran(x, y)
             rysuj_znaczek(x_ekr, y_ekr, 0.0, w, obiekt)
-    # wzór z punktów (np. drzewka w lesie), kreskowanie i znaczek w środku obszaru – w kroku C3
+    elif rodzaj == "wzor_z_punktow" and obiekt["typ"] == "poligon":
+        rysuj_wzor_z_punktow(obiekt, w)
+    elif rodzaj == "kreskowanie" and obiekt["typ"] == "poligon":
+        rysuj_kreskowanie(obiekt, w)
+    elif rodzaj == "znaczek_w_srodku" and obiekt["typ"] == "poligon":
+        rysuj_znaczek_w_srodku(obiekt, w)
 
 
 def kolor_glowny(warstwy_znaku):
@@ -550,6 +663,8 @@ def kolor_glowny(warstwy_znaku):
             return w["kontur"]
         if "znaczek" in w and w["znaczek"].get("kolor"):
             return w["znaczek"]["kolor"]
+        if "linia" in w and w["linia"].get("kolor"):
+            return w["linia"]["kolor"]
     return "#000000"
 
 

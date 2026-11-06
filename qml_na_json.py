@@ -524,7 +524,11 @@ def przetworz_warstwe(warstwa, pola):
     if rodzaj in ("SimpleMarker", "SvgMarker", "FontMarker"):
         return przetworz_znaczek(warstwa, pola)
     if rodzaj == "CentroidFill":
+        # point_on_surface = 1: znaczek w punkcie, który na pewno leży w poligonie (nie w środku ciężkości);
+        # point_on_all_parts = 1: obiekt wieloczęściowy dostaje znaczek w każdej części
         return {"rodzaj": "znaczek_w_srodku",
+                "na_powierzchni": u.get("point_on_surface", "0") == "1",
+                "w_kazdej_czesci": u.get("point_on_all_parts", "1") == "1",
                 "znaczek": przetworz_znaczek(pierwsza_warstwa(warstwa), pola)}
     if rodzaj == "PointPatternFill":
         return {"rodzaj": "wzor_z_punktow",
@@ -536,9 +540,11 @@ def przetworz_warstwe(warstwa, pola):
                 "przesuniecie_y": na_mm(u.get("offset_y", "0"), u.get("offset_y_unit")),
                 "znaczek": przetworz_znaczek(pierwsza_warstwa(warstwa), pola)}
     if rodzaj == "LinePatternFill":
+        # kąt kresek: w QGIS 3.x zapisany jako "angle" (stare projekty: "lineangle"), domyślnie 45°
         return {"rodzaj": "kreskowanie",
-                "kat": float(u.get("lineangle", "45")),
+                "kat": float(u.get("lineangle", u.get("angle", "45"))),
                 "odstep": na_mm(u.get("distance", "5"), u.get("distance_unit")),
+                "przesuniecie": na_mm(u.get("offset", "0"), u.get("offset_unit")),
                 "linia": przetworz_linie(pierwsza_warstwa(warstwa), pola)}
     zapamietaj_brak(f"warstwa {rodzaj}")
     return {"rodzaj": "nieobslugiwany", "klasa_qgis": rodzaj}

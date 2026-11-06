@@ -1954,8 +1954,9 @@
      "warstwy": [
       {
        "rodzaj": "kreskowanie",
-       "kat": 45.0,
+       "kat": 0.0,
        "odstep": 1.6,
+       "przesuniecie": 0.0,
        "linia": {
         "rodzaj": "linia",
         "kolor": "#53aedd",
@@ -1972,8 +1973,9 @@
       },
       {
        "rodzaj": "kreskowanie",
-       "kat": 45.0,
+       "kat": 0.0,
        "odstep": 1.6,
+       "przesuniecie": 0.02,
        "linia": {
         "rodzaj": "linia",
         "kolor": "#53aedd",
@@ -1995,8 +1997,9 @@
      "warstwy": [
       {
        "rodzaj": "kreskowanie",
-       "kat": 45.0,
+       "kat": 0.0,
        "odstep": 1.6,
+       "przesuniecie": 0.0,
        "linia": {
         "rodzaj": "linia",
         "kolor": "#53aedd",
@@ -2013,8 +2016,9 @@
       },
       {
        "rodzaj": "kreskowanie",
-       "kat": 45.0,
+       "kat": 0.0,
        "odstep": 1.6,
+       "przesuniecie": 0.02,
        "linia": {
         "rodzaj": "linia",
         "kolor": "#53aedd",
@@ -5424,8 +5428,9 @@
       },
       {
        "rodzaj": "kreskowanie",
-       "kat": 45.0,
+       "kat": 0.0,
        "odstep": 1.0,
+       "przesuniecie": 0.0,
        "linia": {
         "rodzaj": "linia",
         "kolor": "#1a171b",
@@ -5707,6 +5712,8 @@
       },
       {
        "rodzaj": "znaczek_w_srodku",
+       "na_powierzchni": true,
+       "w_kazdej_czesci": false,
        "znaczek": {
         "rodzaj": "znaczek_svg",
         "svg": "0010_327_1_krzyz",
@@ -5739,6 +5746,8 @@
       },
       {
        "rodzaj": "znaczek_w_srodku",
+       "na_powierzchni": false,
+       "w_kazdej_czesci": true,
        "znaczek": {
         "rodzaj": "znaczek_svg",
         "svg": "0010_328_1_krzyz",
@@ -5771,6 +5780,8 @@
       },
       {
        "rodzaj": "znaczek_w_srodku",
+       "na_powierzchni": false,
+       "w_kazdej_czesci": true,
        "znaczek": {
         "rodzaj": "znaczek_svg",
         "svg": "0010_329_1_krzyz",
@@ -5820,6 +5831,8 @@
      "warstwy": [
       {
        "rodzaj": "znaczek_w_srodku",
+       "na_powierzchni": true,
+       "w_kazdej_czesci": true,
        "znaczek": {
         "rodzaj": "znaczek_svg",
         "svg": "0010_327_2",
@@ -5845,6 +5858,8 @@
      "warstwy": [
       {
        "rodzaj": "znaczek_w_srodku",
+       "na_powierzchni": true,
+       "w_kazdej_czesci": true,
        "znaczek": {
         "rodzaj": "znaczek_svg",
         "svg": "0010_328_2",
@@ -5870,6 +5885,8 @@
      "warstwy": [
       {
        "rodzaj": "znaczek_w_srodku",
+       "na_powierzchni": true,
+       "w_kazdej_czesci": true,
        "znaczek": {
         "rodzaj": "znaczek_svg",
         "svg": "0010_329_2",
@@ -5895,6 +5912,8 @@
      "warstwy": [
       {
        "rodzaj": "znaczek_w_srodku",
+       "na_powierzchni": false,
+       "w_kazdej_czesci": true,
        "znaczek": {
         "rodzaj": "znaczek_svg",
         "svg": "0010_630",
@@ -8591,8 +8610,9 @@
      "warstwy": [
       {
        "rodzaj": "kreskowanie",
-       "kat": 45.0,
+       "kat": 0.0,
        "odstep": 0.8,
+       "przesuniecie": 0.0,
        "linia": {
         "rodzaj": "linia",
         "kolor": "#4e4a96",
@@ -8633,6 +8653,8 @@
      "warstwy": [
       {
        "rodzaj": "znaczek_w_srodku",
+       "na_powierzchni": false,
+       "w_kazdej_czesci": true,
        "znaczek": {
         "rodzaj": "znaczek_svg",
         "svg": "0010_431_2",
@@ -8704,6 +8726,8 @@
      "warstwy": [
       {
        "rodzaj": "znaczek_w_srodku",
+       "na_powierzchni": false,
+       "w_kazdej_czesci": true,
        "znaczek": {
         "rodzaj": "znaczek_svg",
         "svg": "0010_413",
@@ -8736,6 +8760,8 @@
       },
       {
        "rodzaj": "znaczek_w_srodku",
+       "na_powierzchni": true,
+       "w_kazdej_czesci": true,
        "znaczek": {
         "rodzaj": "znaczek_svg",
         "svg": "svg_d82b9388",
@@ -9061,6 +9087,8 @@
      "warstwy": [
       {
        "rodzaj": "znaczek_w_srodku",
+       "na_powierzchni": false,
+       "w_kazdej_czesci": true,
        "znaczek": {
         "rodzaj": "znaczek_svg",
         "svg": "0010_335",

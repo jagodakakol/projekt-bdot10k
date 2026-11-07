@@ -25,12 +25,15 @@
 # Krok C4: widoczność warstw zależna od skali jak w QGIS (min_skala i max_skala ze stylu), w panelu
 #          na szaro klasy nierysowane w obecnej skali; obwódki linii (np. jezdni) zawsze widoczne,
 #          mimo że tkinter rysuje tylko całymi pikselami.
+# Krok D2: przycisk "Pomiar czasu" – te same widoki z indeksem i bez, tabela wyników i plik pomiary.txt;
+#          w indeks.py planowanie zapytania (przy dużym widoku szybciej przejrzeć wszystkie obiekty).
 
 import os
 import sys
 import math
 import time
 import json
+import platform
 import tkinter as tk
 from tkinter import filedialog
 from tkinter import colorchooser
@@ -259,8 +262,11 @@ def linie_obiektu(obiekt):
 def wybierz_widoczne(klasa, ekran, licz=True):
     """Obiekty klasy, których prostokąt otaczający nachodzi na widoczny fragment mapy.
     Z indeksem sprawdzamy tylko kandydatów z komórek siatki, które przecina okienko;
-    bez indeksu – po kolei wszystkie obiekty klasy. Czas i liczbę sprawdzeń zapisujemy w statystyce."""
-    start = time.time()
+    bez indeksu – po kolei wszystkie obiekty klasy. Czas i liczbę sprawdzeń zapisujemy w statystyce.
+    Czas mierzymy zegarem time.perf_counter() – jest dokładniejszy od time.time() przy krótkich odcinkach."""
+    if klasa in wybrane_w_tym_rysowaniu:
+        return wybrane_w_tym_rysowaniu[klasa]  # klasa z kilkoma stylami (np. jezdnie na/pod/nad gruntem) – już wybrana
+    start = time.perf_counter()
     if uzyj_indeksu.get():
         do_sprawdzenia = indeks.kandydaci(indeks_przestrzenny[klasa], ekran)
     else:
@@ -271,7 +277,8 @@ def wybierz_widoczne(klasa, ekran, licz=True):
             widoczne.append(obiekt)
     if licz:
         statystyka["sprawdzone"] += len(do_sprawdzenia)
-        statystyka["czas_wyboru"] += time.time() - start
+        statystyka["czas_wyboru"] += time.perf_counter() - start
+    wybrane_w_tym_rysowaniu[klasa] = widoczne
     return widoczne
 
 
@@ -351,6 +358,8 @@ def rysuj_prosto(ekran):
 
 # klasy, które przy obecnej skali są rysowane znakami umownymi (pozostałe panel pokazuje na szaro)
 klasy_w_skali = set()
+# obiekty wybrane do narysowania w bieżącym rysowaniu (klasa -> lista); czyścimy na początku rysuj()
+wybrane_w_tym_rysowaniu = {}
 
 # przelicznik milimetrów mapy na piksele – liczony raz na początku każdego rysowania (rysuj())
 przelicznik = {"piksele_na_mm": 1.0}
@@ -793,9 +802,10 @@ def rysuj():
         return
     statystyka["sprawdzone"] = 0
     statystyka["czas_wyboru"] = 0.0
-    start = time.time()
+    start = time.perf_counter()
     canvas.delete("all")
     klasy_w_skali.clear()
+    wybrane_w_tym_rysowaniu.clear()
     ekran = widoczny_prostokat()
     skala_teraz = skala_mapy()
     if znaki is not None:
@@ -806,7 +816,9 @@ def rysuj():
         narysowane = rysuj_prosto(ekran)
     rysuj_nazwy_miejscowosci(ekran, skala_teraz)
     rysuj_zaznaczenie()
-    czas = time.time() - start
+    czas = time.perf_counter() - start
+    statystyka["narysowane"] = narysowane
+    statystyka["czas_rysowania"] = czas
     if znaki_umowne.get() and znaki is not None:
         oznacz_warstwy_w_skali(klasy_w_skali)
     else:
@@ -841,6 +853,8 @@ def zoom(x_ekr, y_ekr, mnoznik):
 def kolko_myszy(event):
     """Kółko myszy: nad mapą przybliża i oddala, nad panelem warstw przewija listę.
     Windows podaje event.delta (+120 / -120), Linux – przyciski 4 i 5."""
+    if pomiar_trwa["tak"]:
+        return                                    # w trakcie pomiaru czasu widoku nie zmieniamy
     do_gory = event.delta > 0 or event.num == 4
     if event.widget == canvas:
         if do_gory:
@@ -861,6 +875,8 @@ przeciaganie = {"x": 0, "y": 0, "start_x": 0, "start_y": 0}
 
 
 def wcisniecie(event):
+    if pomiar_trwa["tak"]:
+        return
     przeciaganie["x"] = event.x
     przeciaganie["y"] = event.y
     przeciaganie["start_x"] = event.x             # gdzie przycisk został wciśnięty
@@ -868,6 +884,8 @@ def wcisniecie(event):
 
 
 def ciagniecie(event):
+    if pomiar_trwa["tak"]:
+        return
     dx = event.x - przeciaganie["x"]              # o ile pikseli przesunęła się myszka
     dy = event.y - przeciaganie["y"]
     canvas.move("all", dx, dy)                    # szybko przesuwamy to, co już jest narysowane
@@ -881,6 +899,8 @@ def ciagniecie(event):
 def puszczenie(event):
     """Puszczenie przycisku: jeśli myszka prawie się nie ruszyła, to było kliknięcie – identyfikujemy obiekt;
     jeśli była przeciągana – rysujemy mapę od nowa, żeby dorysować to, co wjechało na ekran."""
+    if pomiar_trwa["tak"]:
+        return
     przesuniecie = abs(event.x - przeciaganie["start_x"]) + abs(event.y - przeciaganie["start_y"])
     if przesuniecie > 0:
         rysuj()
@@ -931,6 +951,154 @@ def zmiana_rozmiaru(event):
     SZEROKOSC = event.width
     WYSOKOSC = event.height
     rysuj()
+
+
+# --- POMIAR CZASU RYSOWANIA Z INDEKSEM I BEZ (do opisu projektu i na obronę) ---
+
+def ustaw_widok(srodek_x, srodek_y, mianownik):
+    """Widok o środku (srodek_x, srodek_y) w terenie i skali 1:mianownik."""
+    piksele_na_metr_ekranu = canvas.winfo_fpixels("1m") * 1000
+    widok["skala"] = piksele_na_metr_ekranu / mianownik
+    widok["x0"] = srodek_x - (SZEROKOSC / 2) / widok["skala"]
+    widok["y0"] = srodek_y + (WYSOKOSC / 2) / widok["skala"]
+
+
+def zmierz_widok(proby):
+    """Rysuje bieżący widok z indeksem i bez niego, każdy wariant `proby` razy, i zwraca statystyki
+    najszybszych prób: {True: z indeksem, False: bez indeksu}.
+    - Najpierw jedno rysowanie "na rozgrzewkę", którego nie liczymy.
+    - Potem warianty na zmianę: z indeksem, bez, z, bez... Gdy komputer akurat zwalnia albo przyspiesza
+      (np. laptop na baterii rozpędza procesor dopiero po chwili), dotyka to obu wariantów tak samo.
+    - Bierzemy najkrótszy czas, bo najmniej zakłócają go inne programy działające w tym samym czasie."""
+    rysuj()                                       # rozgrzewka
+    okno.update()
+    najlepsze = {True: None, False: None}
+    for proba in range(proby):
+        for z_indeksem in (True, False):
+            uzyj_indeksu.set(z_indeksem)
+            rysuj()
+            okno.update()                         # pokazujemy rysunek na ekranie
+            if najlepsze[z_indeksem] is None or statystyka["czas_rysowania"] < najlepsze[z_indeksem]["czas_rysowania"]:
+                najlepsze[z_indeksem] = dict(statystyka)
+    return najlepsze
+
+
+def liczba(n):
+    """166908 -> "166 908" (spacja jako separator tysięcy, jak po polsku)."""
+    return f"{n:,}".replace(",", " ")
+
+
+def tabela_pomiaru(wiersze, proby, miejsce, srodek_x, srodek_y):
+    """Tekst z wynikami pomiaru: nagłówek (dane, komputer, tryb) i tabela widok × (z indeksem, bez indeksu)."""
+    if znaki_umowne.get():
+        tryb = "znaki umowne GUGiK"
+    else:
+        tryb = "proste kolory"
+    linie = [f"Pomiar czasu rysowania – {opis_danych['nazwa']}: {liczba(opis_danych['obiekty'])} obiektów, "
+             f"{opis_danych['klasy']} klas",
+             f"{time.strftime('%Y-%m-%d %H:%M')} | {platform.system()} {platform.release()} | "
+             f"Python {platform.python_version()} | okno mapy {SZEROKOSC}×{WYSOKOSC} px | {tryb}",
+             f"Indeks: {opis_danych['indeks']}. Każdy czas to najlepszy z {proby} prób "
+             f"(po rozgrzewce, z indeksem i bez na zmianę).",
+             f"Widoki 1:50 000 – 1:2 000 wokół punktu X = {srodek_y:.0f}, Y = {srodek_x:.0f} (PUWG 1992), {miejsce}.",
+             "",
+             f"{'widok':<13}{'skala':>12} | {'z indeksem':^34} | {'bez indeksu':^34} | wybór",
+             f"{'':<13}{'':>12} | {'sprawdzono':>11}{'wybór [s]':>11}{'całość [s]':>12} | "
+             f"{'sprawdzono':>11}{'wybór [s]':>11}{'całość [s]':>12} | szybciej"]
+    for nazwa, mianownik, z, bez in wiersze:
+        if z["czas_wyboru"] > 0:
+            ile_razy = f"{bez['czas_wyboru'] / z['czas_wyboru']:.0f}×"
+        else:
+            ile_razy = "–"
+        linie.append(f"{nazwa:<13}{'1:' + liczba(mianownik):>12} | "
+                     f"{liczba(z['sprawdzone']):>11}{z['czas_wyboru']:>11.3f}{z['czas_rysowania']:>12.3f} | "
+                     f"{liczba(bez['sprawdzone']):>11}{bez['czas_wyboru']:>11.3f}{bez['czas_rysowania']:>12.3f} | "
+                     f"{ile_razy:>8}")
+    linie.append("")
+    linie.append("sprawdzono – ile prostokątów otaczających porównano z widokiem; wybór – czas wyboru obiektów "
+                 "do narysowania; całość – czas całego rysowania (wybór + rysowanie).")
+    return "\n".join(linie)
+
+
+# True, gdy trwa pomiar czasu – wtedy mapa nie reaguje na myszkę i nie da się zacząć drugiego pomiaru
+pomiar_trwa = {"tak": False}
+
+
+def pomiar_czasu():
+    """Przycisk "Pomiar czasu": te same widoki rysujemy z indeksem i bez niego (każdy kilka razy) i pokazujemy
+    tabelę. Widoki: cały powiat oraz skale 1:50 000, 1:10 000 i 1:2 000 wokół środka tego, co teraz widać
+    na mapie – miejsce pomiaru wybieramy więc, przesuwając mapę. Wynik dopisujemy też do pliku pomiary.txt.
+    W trakcie pomiaru małe okienko "Trwa pomiar" przejmuje wszystkie kliknięcia (grab_set), żeby nie dało się
+    zmienić trybu, warstw ani widoku – to zepsułoby porównanie (i nie da się zacząć drugiego pomiaru)."""
+    if wczytywanie["trwa"] or len(dane) == 0 or pomiar_trwa["tak"]:
+        return
+    pomiar_trwa["tak"] = True
+    czekaj = tk.Toplevel(okno)
+    czekaj.title("Pomiar czasu")
+    tk.Label(czekaj, text="Trwa pomiar czasu – proszę czekać i nie ruszać mapy…", padx=24, pady=14).pack()
+    czekaj.protocol("WM_DELETE_WINDOW", lambda: None)      # tego okienka nie da się zamknąć w trakcie pomiaru
+    czekaj.update()
+    # okienko na środek mapy: lewy górny róg mapy na ekranie + połowa mapy − połowa okienka
+    x = canvas.winfo_rootx() + canvas.winfo_width() // 2 - czekaj.winfo_width() // 2
+    y = canvas.winfo_rooty() + canvas.winfo_height() // 2 - czekaj.winfo_height() // 2
+    czekaj.geometry(f"+{x}+{y}")
+    czekaj.update()
+    try:
+        czekaj.grab_set()                                    # kliknięcia w resztę programu są ignorowane
+    except tk.TclError:
+        pass                                                 # gdyby się nie udało – chroni nas pomiar_trwa
+    try:
+        tekst = wykonaj_pomiar()
+    finally:
+        # "finally" wykona się zawsze, nawet po błędzie – program nie zostanie zablokowany
+        pomiar_trwa["tak"] = False
+        czekaj.grab_release()
+        czekaj.destroy()
+    pokaz_wyniki_pomiaru(tekst)
+
+
+def wykonaj_pomiar():
+    """Właściwy pomiar (patrz pomiar_czasu). Zwraca tekst z tabelą wyników."""
+    proby = 3
+    stary_widok = dict(widok)
+    stary_indeks = uzyj_indeksu.get()
+    ekran = widoczny_prostokat()
+    if ekran[0] <= zasieg[0] and ekran[1] <= zasieg[1] and ekran[2] >= zasieg[2] and ekran[3] >= zasieg[3]:
+        # widać cały powiat (np. zaraz po wczytaniu) – mierzymy w miejscu, gdzie jest najwięcej obiektów
+        srodek_x, srodek_y = indeks.najgestsze_miejsce(indeks_przestrzenny)
+        miejsce = "najgęstsze miejsce powiatu"
+    else:
+        srodek_x, srodek_y = ekran_na_teren(SZEROKOSC / 2, WYSOKOSC / 2)
+        miejsce = "środek bieżącego widoku"
+    wiersze = []
+    for nazwa, mianownik in (("cały powiat", None), ("1:50 000", 50000), ("1:10 000", 10000), ("1:2 000", 2000)):
+        if mianownik is None:
+            pokaz_prostokat(zasieg)
+        else:
+            ustaw_widok(srodek_x, srodek_y, mianownik)
+        pasek.config(text=f"Pomiar czasu: {nazwa} – rysuję na zmianę z indeksem i bez…")
+        wyniki = zmierz_widok(proby)
+        wiersze.append((nazwa, round(skala_mapy()), wyniki[True], wyniki[False]))
+    # przywracamy to, co było przed pomiarem
+    widok.update(stary_widok)
+    uzyj_indeksu.set(stary_indeks)
+    rysuj()
+    return tabela_pomiaru(wiersze, proby, miejsce, srodek_x, srodek_y)
+
+
+def pokaz_wyniki_pomiaru(tekst):
+    """Dopisuje wyniki do pliku pomiary.txt (obok programu) i pokazuje je w okienku."""
+    print(tekst)
+    plik = os.path.join(os.path.dirname(os.path.abspath(__file__)), "pomiary.txt")
+    with open(plik, "a", encoding="utf-8") as f:            # "a" – dopisujemy, kolejne pomiary się zbierają
+        f.write(tekst + "\n\n")
+    pasek.config(text="Pomiar zakończony – wyniki dopisane do pliku " + plik)
+    # okienko z wynikami (czcionka o stałej szerokości, żeby kolumny tabeli były równe)
+    okienko = tk.Toplevel(okno)
+    okienko.title("Pomiar czasu – " + opis_danych["nazwa"])
+    pole = tk.Text(okienko, font=("Courier New", 9), width=134, height=len(tekst.split("\n")) + 1, wrap="none")
+    pole.insert("1.0", tekst)
+    pole.pack(fill="both", expand=True)
 
 
 # --- IDENTYFIKACJA OBIEKTU KLIKNIĘCIEM (wariant rozszerzony) ---
@@ -1197,7 +1365,8 @@ kolejnosc_klas = []     # kolejność rysowania prostymi kolorami
 zasieg = None           # prostokąt całego powiatu
 indeks_przestrzenny = {}            # klasa -> siatka (indeks.py)
 wczytywanie = {"trwa": False}
-statystyka = {"sprawdzone": 0, "czas_wyboru": 0.0}   # liczone na nowo przy każdym rysowaniu
+statystyka = {"sprawdzone": 0, "czas_wyboru": 0.0, "narysowane": 0, "czas_rysowania": 0.0}   # przy każdym rysowaniu
+opis_danych = {"nazwa": "", "obiekty": 0, "klasy": 0, "indeks": ""}   # do nagłówka pomiaru czasu
 
 
 def pokaz_postep(tekst):
@@ -1233,6 +1402,10 @@ def otworz_dane(sciezka):
     zaznaczenie["obiekt"] = None
     zbuduj_panel_warstw()
     okno.title("BDOT10k – " + os.path.basename(sciezka.rstrip("/\\")))
+    opis_danych["nazwa"] = os.path.basename(sciezka.rstrip("/\\"))
+    opis_danych["obiekty"] = sum(len(lista) for lista in dane.values())
+    opis_danych["klasy"] = len(dane)
+    opis_danych["indeks"] = indeks.opis_indeksu(indeks_przestrzenny)
     print(opis)
     pokaz_calosc()                                # pierwszy widok: cały powiat
     pasek.config(text=opis)
@@ -1284,6 +1457,7 @@ if znaki is None:
 uzyj_indeksu = tk.BooleanVar(value=True)
 tk.Checkbutton(przyciski, text="Indeks przestrzenny", variable=uzyj_indeksu,
                command=rysuj).pack(side="left")
+tk.Button(przyciski, text="Pomiar czasu", command=pomiar_czasu).pack(side="left", padx=12, pady=2)
 
 # pasek na dole pakujemy przed mapą, żeby zawsze był widoczny, nawet w małym oknie;
 # ma dwa wiersze: współrzędne i skala, a pod nimi statystyka rysowania

@@ -11,6 +11,8 @@ Pliki w tym folderze:
   *.qml            – 96 stylów wtyczki: dla każdej klasy BDOT10k kod obiektu (kodKarto10k) -> znak umowny
   layer_specs.py   – lista warstw wtyczki: która klasa, który styl, jaki filtr, kolejność rysowania
                      (program NIE uruchamia tego pliku – skrypt qml_na_json.py odczytuje z niego same dane)
+  svg/*.svg        – 4 symbole punktowe, które style wskazują jako osobne pliki (z folderu BDOT10k_SVG wtyczki);
+                     pozostałe symbole SVG są zapisane wewnątrz plików .qml
   znaki.json       – NASZ plik ze znakami umownymi, zrobiony skryptem qml_na_json.py; czyta go mapa.py
                      (wielkości w milimetrach mapy w skali 1:10 000)
 

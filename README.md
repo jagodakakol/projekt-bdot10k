@@ -36,6 +36,8 @@ własny indeks przestrzenny i własne algorytmy geometryczne.
 - Prostokąt otaczający obiektu i zasięg całych danych liczymy w tym samym przejściu.
 - Pomijamy obiekty archiwalne (z wypełnionym `koniecWersjiObiektu`).
 - Powiat otwocki (1417): 66 klas, 166 908 obiektów, ok. 2 mln par współrzędnych; wczytanie ok. 13–16 s, ok. 260 MB pamięci.
+- Warszawa (1465): 70 klas, 535 790 obiektów; wczytanie prosto z pliku ZIP (89 MB) 59,6 s, ok. 1,1 GB pamięci.
+  Czas i pamięć rosną liniowo z liczbą obiektów (ok. 9–11 tys. obiektów na sekundę, ok. 1,5–2 KB pamięci na obiekt).
 
 ## Struktura danych
 
@@ -72,8 +74,8 @@ Ten sam indeks służy do identyfikacji obiektu kliknięciem (okno = kwadrat kil
 **Dlaczego siatka:**
 - jest najprostsza do zbudowania (jedno przejście po obiektach) i do wyjaśnienia, a komórkę punktu liczymy jednym dzieleniem;
 - w powiecie gęstość danych jest w miarę równomierna, a obiekty są małe w porównaniu z komórką, więc większość leży w jednej komórce;
-- drzewo czwórkowe albo R-drzewo lepiej znoszą bardzo nierówną gęstość (centrum miasta – las), ale są dużo bardziej złożone,
-  a przy oknie mapy obejmującym setki komórek nie dałyby wyraźnie lepszego wyniku.
+- drzewo czwórkowe albo R-drzewo lepiej znoszą bardzo nierówną gęstość (centrum miasta – las), ale są dużo bardziej złożone;
+  dla powiatu siatka wystarcza – w centrum Otwocka w skali 1:2 000 wybór obiektów trwa 0,002 s (pomiary niżej).
 
 **Rozmiar komórki** dobrany pomiarem (powiat otwocki, etap B1):
 
@@ -116,6 +118,30 @@ najgęstsze miejsce: centrum Otwocka (X = 473 554, Y = 654 842). „Sprawdzono�
 
 Ze znakami bez indeksu „sprawdzono” zależy od skali, bo część klas ma w stylu zakres skal (np. budowle znikają od 1:25 001).
 
+### Duży powiat: Warszawa (1465)
+
+Ten sam laptop i to samo okno, 7 listopada 2026; 535 790 obiektów (3,2× więcej niż powiat otwocki), dane wczytane prosto z ZIP.
+Indeks: 55 740 niepustych komórek, 697 240 wpisów, budowa razem z tablicami sum prefiksowych 1,8 s.
+Widoki wokół centrum Warszawy (X = 487 201, Y = 640 883).
+
+**Proste kolory**
+
+| Widok | Z indeksem: sprawdzono | wybór [s] | całość [s] | Bez indeksu: sprawdzono | wybór [s] | całość [s] | Wybór szybciej |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| cały powiat (1:172 083) | 535 790 | 0,166 | 5,016 | 535 790 | 0,182 | 5,520 | 1× |
+| 1:50 000 | 254 543 | 0,163 | 2,442 | 535 790 | 0,156 | 2,352 | 1× |
+| 1:10 000 | 10 206 | 0,013 | 0,463 | 535 790 | 0,163 | 0,685 | 12× |
+| 1:2 000 | 2 028 | 0,003 | 0,346 | 535 790 | 0,157 | 0,540 | 56× |
+
+**Znaki umowne GUGiK**
+
+| Widok | Z indeksem: sprawdzono | wybór [s] | całość [s] | Bez indeksu: sprawdzono | wybór [s] | całość [s] | Wybór szybciej |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| cały powiat (1:172 083) | 327 377 | 0,113 | 2,884 | 327 377 | 0,114 | 3,267 | 1× |
+| 1:50 000 | 111 960 | 0,108 | 1,762 | 332 563 | 0,106 | 1,718 | 1× |
+| 1:10 000 | 9 928 | 0,015 | 0,552 | 532 412 | 0,150 | 0,645 | 10× |
+| 1:2 000 | 2 006 | 0,003 | 0,096 | 532 412 | 0,145 | 0,243 | 54× |
+
 **Wnioski:**
 - Bez indeksu wybór zawsze kosztuje tyle samo (ok. 0,07 s – przegląd wszystkich obiektów), z indeksem jest tym tańszy, im mniejsze okno:
   w 1:2 000 ok. 30× szybszy, a całe rysowanie krótsze o ok. 1/3 (0,140 s zamiast 0,207 s).
@@ -123,7 +149,9 @@ Ze znakami bez indeksu „sprawdzono” zależy od skali, bo część klas ma w 
   (bez niego w 1:50 000 indeks był ok. 2× wolniejszy od przeglądu wszystkich obiektów).
 - Przy dużych widokach czas zajmuje samo rysowanie w `tkinter` (dziesiątki tysięcy elementów), a nie wybór obiektów.
 - Zysk z indeksu rośnie z wielkością danych: przegląd bez indeksu jest proporcjonalny do liczby wszystkich obiektów powiatu,
-  a z indeksem – do liczby obiektów w pobliżu okna.
+  a z indeksem – do liczby obiektów w pobliżu okna. Potwierdza to Warszawa: bez indeksu wybór w 1:2 000 trwa 0,157 s
+  (w powiecie otwockim 0,070 s), a z indeksem nadal 0,003 s – zysk 56× zamiast 33×, a ze znakami całe rysowanie
+  jest 2,5× krótsze (0,096 s zamiast 0,243 s).
 
 ## Algorytmy geometryczne (`geometria.py`)
 
